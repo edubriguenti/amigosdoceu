@@ -1,0 +1,132 @@
+[
+  {
+    "nome": "Basílica de São Pedro",
+    "local": "Vaticano",
+    "slug": "basilica-sao-pedro",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
+    "descricao": "A Basílica de São Pedro é a maior igreja do mundo e centro da cristandade católica. Construída entre 1506 e 1626, está localizada no Vaticano, sobre o túmulo do apóstolo Pedro. Projetada por mestres como Bramante, Michelangelo e Bernini, a basílica é um símbolo da grandeza do Renascimento e Barroco, com sua imponente cúpula dominando o horizonte romano.",
+    "ano": "1506-1626",
+    "arquiteto": "Bramante, Michelangelo, Bernini",
+    "importancia": "Sede da Igreja Católica, túmulo de São Pedro"
+  },
+  {
+    "nome": "Basílica de Nossa Senhora Aparecida",
+    "local": "Aparecida, São Paulo, Brasil",
+    "slug": "basilica-aparecida",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Bas%C3%ADlica_N.S_Aparecida_2.jpg",
+    "descricao": "O maior santuário mariano do mundo e a segunda maior igreja católica, a Basílica de Aparecida foi construída entre 1955 e 1980. Recebe milhões de romeiros anualmente que vêm venerar Nossa Senhora Aparecida, padroeira do Brasil. O templo possui capacidade para 45 mil pessoas e destaca-se por sua arquitetura moderna em cruz grega.",
+    "ano": "1955-1980",
+    "arquiteto": "Benedito Calixto de Jesus Neto",
+    "importancia": "Maior santuário mariano do mundo, padroeira do Brasil"
+  },
+  {
+    "nome": "Catedral de Notre-Dame de Paris",
+    "local": "Paris, França",
+    "slug": "notre-dame-paris",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/3/38/Facade-notre-dame-paris-ciel-bleu.JPG",
+    "descricao": "Obra-prima da arquitetura gótica, a Catedral de Notre-Dame foi construída entre 1163 e 1345. Famosa por suas gárgulas, vitrais e rosáceas, a catedral foi palco de eventos históricos importantes, incluindo a coroação de Napoleão Bonaparte. Em 2019, sofreu grave incêndio, mas está em processo de restauração para reabrir ao público.",
+    "ano": "1163-1345",
+    "arquiteto": "Maurice de Sully (iniciou construção)",
+    "importancia": "Símbolo de Paris, obra-prima gótica"
+  },
+  {
+    "nome": "Basílica da Sagrada Família",
+    "local": "Barcelona, Espanha",
+    "slug": "sagrada-familia",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/5/57/Sagrada_Familia_8-12-21_%281%29.jpg",
+    "descricao": "Projetada pelo visionário arquiteto Antoni Gaudí, a Sagrada Família é uma obra-prima do modernismo catalão. Iniciada em 1882, ainda está em construção, com previsão de conclusão para 2026. Suas torres esculturais, fachadas elaboradas e interior colorido pelos vitrais fazem dela um dos templos mais únicos e visitados do mundo.",
+    "ano": "1882-presente",
+    "arquiteto": "Antoni Gaudí",
+    "importancia": "Obra-prima modernista, Patrimônio Mundial UNESCO"
+  },
+  {
+    "nome": "Basílica de São João de Latrão",
+    "local": "Roma, Itália",
+    "slug": "sao-joao-laterano",
+    "imagem": "https://www.turismoroma.it/sites/default/files/sangiovanni_0.jpg",
+    "descricao": "Conhecida como 'mãe de todas as igrejas', a Basílica de São João de Latrão é a catedral de Roma e a igreja mais antiga do Ocidente. Fundada por Constantino no século IV, foi a residência papal até o século XIV. Sua fachada monumental e interior barroco impressionam, além de abrigar relíquias importantes da cristandade.",
+    "ano": "324 d.C.",
+    "arquiteto": "Alessandro Galilei (fachada atual)",
+    "importancia": "Catedral de Roma, primeira basílica papal"
+  },
+  {
+    "nome": "Santuário de Fátima",
+    "local": "Fátima, Portugal",
+    "slug": "santuario-fatima",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Fatima_BW_2018-10-07_10-36-14.jpg",
+    "descricao": "Local das aparições de Nossa Senhora aos três pastorinhos em 1917, o Santuário de Fátima tornou-se um dos principais centros de peregrinação católica mundial. O complexo inclui a Basílica de Nossa Senhora do Rosário, a Basílica da Santíssima Trindade e a Capelinha das Aparições. Recebe milhões de peregrinos anualmente, especialmente nos dias 13 de maio e outubro.",
+    "ano": "1928 (início da construção)",
+    "arquiteto": "Vários",
+    "importancia": "Local de aparições marianas, centro de peregrinação mundial"
+  },
+  {
+    "nome": "Basílica de Nossa Senhora de Guadalupe",
+    "local": "Cidade do México, México",
+    "slug": "basilica-guadalupe",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Bas%C3%ADlica_de_Guadalupe_desde_el_aire_6.jpg",
+    "descricao": "Construída no local onde a Virgem Maria apareceu a Juan Diego em 1531, a moderna basílica foi inaugurada em 1976. É o santuário católico mais visitado do mundo, recebendo cerca de 20 milhões de peregrinos por ano. Abriga a sagrada imagem de Nossa Senhora de Guadalupe milagrosamente impressa no manto de Juan Diego.",
+    "ano": "1974-1976",
+    "arquiteto": "Pedro Ramírez Vázquez",
+    "importancia": "Santuário mais visitado do mundo, padroeira da América Latina"
+  },
+  {
+    "nome": "Catedral de Santiago de Compostela",
+    "local": "Santiago de Compostela, Espanha",
+    "slug": "santiago-compostela",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Santiago_cathedral_2021.jpg",
+    "descricao": "Destino final do famoso Caminho de Santiago, a catedral foi construída sobre o túmulo do apóstolo Santiago Maior. Iniciada em 1075, combina estilos românico, gótico e barroco. É um dos principais centros de peregrinação cristã desde a Idade Média e Patrimônio Mundial da UNESCO.",
+    "ano": "1075-1211",
+    "arquiteto": "Mestre Mateo (Pórtico da Glória)",
+    "importancia": "Túmulo de Santiago Maior, fim do Caminho de Santiago"
+  },
+  {
+    "nome": "Basílica de Santa Maria Maggiore",
+    "local": "Roma, Itália",
+    "slug": "santa-maria-maggiore",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/8/84/Basilica_di_Santa_Maria_Maggiore_-_Roma.jpg",
+    "descricao": "Uma das quatro basílicas papais de Roma, Santa Maria Maggiore é a maior igreja dedicada à Virgem Maria em Roma. Fundada no século V, conserva esplêndidos mosaicos paleocristãos e um interior suntuoso. Segundo a tradição, foi construída no local onde caiu neve milagrosamente em pleno verão de 352 d.C.",
+    "ano": "432-440 d.C.",
+    "arquiteto": "Papa Sixto III (fundador)",
+    "importancia": "Maior igreja mariana de Roma, mosaicos paleocristãos"
+  },
+  {
+    "nome": "Catedral de Colônia",
+    "local": "Colônia, Alemanha",
+    "slug": "catedral-colonia",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/7/7b/CologneCathedral-FlightOverCologne001a.jpg",
+    "descricao": "Com suas torres de 157 metros, a Catedral de Colônia é uma obra-prima do gótico alemão. Iniciada em 1248, só foi concluída em 1880, levando mais de 600 anos. Abriga as relíquias dos Três Reis Magos e sobreviveu milagrosamente aos bombardeios da Segunda Guerra Mundial. É Patrimônio Mundial da UNESCO.",
+    "ano": "1248-1880",
+    "arquiteto": "Mestre Gerhard (projeto original)",
+    "importancia": "Relíquias dos Reis Magos, símbolo da Alemanha"
+  },
+  {
+    "nome": "Catedral de Milão",
+    "local": "Milão, Itália",
+    "slug": "catedral-milao",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/5/57/Duomo_di_Milano.JPG",
+    "descricao": "O Duomo di Milano é a terceira maior igreja católica do mundo e uma obra-prima do gótico italiano. Sua construção iniciou em 1386 e levou quase seis séculos para ser concluída. Com 135 torres e agulhas, a catedral é famosa por suas esculturas em mármore branco e pelos 3.400 estátuas que adornam sua estrutura. O telhado acessível oferece vistas panorâmicas espetaculares de Milão.",
+    "ano": "1386-1965",
+    "arquiteto": "Vários arquitetos ao longo dos séculos",
+    "importancia": "Terceira maior igreja católica, símbolo de Milão"
+  },
+  {
+    "nome": "Santuário de Nossa Senhora de Lourdes",
+    "local": "Lourdes, França",
+    "slug": "santuario-lourdes",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/4/46/Lourdes_-_Santuario_visto_dal_forte.JPG",
+    "descricao": "Local das 18 aparições da Virgem Maria à jovem Bernadette Soubirous em 1858, o Santuário de Lourdes é um dos principais centros de peregrinação católica mundial. O complexo religioso abrange 51 hectares e inclui três basílicas principais: a Basílica da Imaculada Conceição (1876), a Basílica do Rosário em estilo romano-bizantino, e a Basílica de São Pio X, uma igreja subterrânea com capacidade para 25.000 pessoas. O santuário recebe cerca de 6 milhões de visitantes anualmente, sendo famoso pelas curas milagrosas atribuídas às águas da gruta.",
+    "ano": "1858-1876",
+    "arquiteto": "Vários arquitetos",
+    "importancia": "Local de aparições marianas, centro mundial de peregrinação e curas"
+  },
+  {
+    "nome": "Catedral Metropolitana de São Paulo",
+    "local": "São Paulo, Brasil",
+    "slug": "catedral-se-sao-paulo",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Catedral_Metropolitana_de_Sao_Paulo%2C_Brasil.jpg",
+    "descricao": "A Catedral da Sé é a catedral metropolitana e sede da Arquidiocese de São Paulo. Projetada no estilo neogótico pelo arquiteto alemão Maximilian Emil Hehl, com cúpula inspirada no Renascimento italiano, sua construção iniciou em 1913 e foi inaugurada em 1954 durante as comemorações do 4º centenário da cidade. Com 111 metros de comprimento, 46 de largura e torres de 92 metros de altura, é considerada o quarto maior templo neogótico do mundo. Possui capacidade para 8.000 pessoas e utilizou 800 toneladas de mármore em seu acabamento.",
+    "ano": "1913-1954",
+    "arquiteto": "Maximilian Emil Hehl",
+    "importancia": "Quarto maior templo neogótico do mundo, símbolo de São Paulo"
+  }
+]

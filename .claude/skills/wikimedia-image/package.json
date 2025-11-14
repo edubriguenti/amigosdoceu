@@ -1,0 +1,7 @@
+{
+  "name": "wikimedia-image",
+  "version": "1.0.0",
+  "description": "Busca URLs de imagens do Wikimedia Commons usando a API oficial",
+  "author": "Claude",
+  "keywords": ["wikimedia", "commons", "image", "url", "api"]
+}
