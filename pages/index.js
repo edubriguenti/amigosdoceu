@@ -18,7 +18,7 @@ export default function Home() {
         </section>
 
         <section className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Link href="/santos" className="group">
               <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
                 <h2 className="text-2xl font-serif mb-3 group-hover:text-gray-600">Santos</h2>
@@ -41,6 +41,19 @@ export default function Home() {
                 </p>
                 <span className="text-sm font-semibold group-hover:underline">
                   Explorar Igrejas →
+                </span>
+              </div>
+            </Link>
+
+            <Link href="/aparicoes" className="group">
+              <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
+                <h2 className="text-2xl font-serif mb-3 group-hover:text-gray-600">Aparições de Nossa Senhora</h2>
+                <p className="text-gray-600 mb-4">
+                  Descubra os locais sagrados onde Nossa Senhora apareceu ao longo da história.
+                  Mensagens de fé, conversão e esperança para toda a humanidade.
+                </p>
+                <span className="text-sm font-semibold group-hover:underline">
+                  Explorar Aparições →
                 </span>
               </div>
             </Link>
