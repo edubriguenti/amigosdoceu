@@ -11,6 +11,7 @@ export default function Layout({ children }) {
         <nav className="flex gap-6">
           <Link href="/santos" className="hover:text-gray-600 transition">Santos</Link>
           <Link href="/igrejas" className="hover:text-gray-600 transition">Igrejas</Link>
+          <Link href="/aparicoes" className="hover:text-gray-600 transition">Aparições</Link>
         </nav>
       </header>
 

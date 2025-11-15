@@ -1,0 +1,86 @@
+[
+  {
+    "nome": "Nossa Senhora de Fátima",
+    "slug": "nossa-senhora-de-fatima",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Fatima_Statue.jpg",
+    "local": "Cova da Iria, Fátima, Portugal",
+    "data": "13 de maio a 13 de outubro de 1917",
+    "linkGoogleMaps": "https://maps.google.com/?q=Santuario+de+Fatima+Portugal",
+    "historia": "Entre maio e outubro de 1917, três crianças pastorinhas - Lúcia dos Santos, Francisco e Jacinta Marto - testemunharam seis aparições de Nossa Senhora na Cova da Iria, próximo a Fátima. A Virgem Maria transmitiu mensagens de oração, penitência e conversão, pedindo a consagração da Rússia ao seu Imaculado Coração. Em 13 de outubro de 1917, cerca de 70 mil pessoas presenciaram o 'Milagre do Sol', quando o sol pareceu dançar no céu. As aparições foram reconhecidas oficialmente pela Igreja Católica em 1930. O Santuário de Fátima tornou-se um dos mais importantes centros de peregrinação católica do mundo.",
+    "tags": [
+      "Portugal",
+      "Século XX",
+      "Milagre do Sol"
+    ]
+  },
+  {
+    "nome": "Nossa Senhora de Lourdes",
+    "slug": "nossa-senhora-de-lourdes",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Lourdes_grotto.jpg",
+    "local": "Gruta de Massabielle, Lourdes, França",
+    "data": "11 de fevereiro a 16 de julho de 1858",
+    "linkGoogleMaps": "https://maps.google.com/?q=Grotte+de+Massabielle+Lourdes+France",
+    "historia": "Entre fevereiro e julho de 1858, Bernadette Soubirous, uma jovem de 14 anos, teve 18 aparições de Nossa Senhora na gruta de Massabielle, às margens do rio Gave. A Virgem Maria identificou-se como a 'Imaculada Conceição' e pediu oração, penitência e a construção de uma capela no local. Durante uma das aparições, Bernadette descobriu uma fonte de água que passou a ser considerada milagrosa, sendo responsável por milhares de curas documentadas. As aparições foram reconhecidas pela Igreja em 1862. Hoje, Lourdes é um dos maiores centros de peregrinação do mundo, recebendo milhões de visitantes anualmente. Santa Bernadette foi canonizada em 1933.",
+    "tags": [
+      "França",
+      "Século XIX",
+      "Água Milagrosa"
+    ]
+  },
+  {
+    "nome": "Nossa Senhora de Guadalupe",
+    "slug": "nossa-senhora-de-guadalupe",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Virgen_de_guadalupe1.jpg",
+    "local": "Colina de Tepeyac, Cidade do México, México",
+    "data": "9 a 12 de dezembro de 1531",
+    "linkGoogleMaps": "https://maps.google.com/?q=Basilica+de+Guadalupe+Mexico+City",
+    "historia": "Em dezembro de 1531, a Virgem Maria apareceu quatro vezes ao índio Juan Diego na colina de Tepeyac, próxima à Cidade do México. Nossa Senhora pediu que fosse construída uma igreja no local e, como prova das aparições, imprimiu sua imagem miraculosamente no manto (tilma) de Juan Diego. A imagem mostra uma jovem mestiça, vestida com símbolos astecas e cristãos, revelando a inculturação da fé. O tecido da tilma, feito de fibras de agave que normalmente se degradam em 20 anos, permanece intacto há quase 500 anos. A aparição marcou a evangelização das Américas e a conversão de milhões de indígenas. Nossa Senhora de Guadalupe foi declarada Padroeira da América Latina e Imperatriz das Américas. Juan Diego foi canonizado em 2002 pelo Papa João Paulo II.",
+    "tags": [
+      "México",
+      "Século XVI",
+      "Imagem Milagrosa"
+    ]
+  },
+  {
+    "nome": "Nossa Senhora Aparecida",
+    "slug": "nossa-senhora-aparecida",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Bas%C3%ADlica_de_Nossa_Senhora_Aparecida.jpg",
+    "local": "Rio Paraíba do Sul, Aparecida, São Paulo, Brasil",
+    "data": "Outubro de 1717",
+    "linkGoogleMaps": "https://maps.google.com/?q=Basilica+Nacional+Nossa+Senhora+Aparecida+SP",
+    "historia": "Em outubro de 1717, três pescadores - Domingos Garcia, Filipe Pedroso e João Alves - lançaram suas redes no rio Paraíba do Sul, próximo a Guaratinguetá, São Paulo. Após horas sem sucesso, recolheram em suas redes o corpo de uma pequena imagem de Nossa Senhora da Conceição, e logo depois, sua cabeça. Após recolherem a imagem completa, os peixes começaram a aparecer em abundância. A imagem de terracota, com apenas 40 centímetros de altura e originalmente com a pele clara mas enegrecida pelas águas, passou a ser venerada na região. Inúmeros milagres foram atribuídos à Virgem Aparecida. Em 1930, o Papa Pio XI proclamou Nossa Senhora Aparecida como Padroeira do Brasil. A Basílica Nacional de Aparecida, inaugurada em 1980, é o segundo maior templo católico do mundo e recebe mais de 12 milhões de peregrinos anualmente.",
+    "tags": [
+      "Brasil",
+      "Século XVIII",
+      "Padroeira"
+    ]
+  },
+  {
+    "nome": "Nossa Senhora de La Salette",
+    "slug": "nossa-senhora-de-la-salette",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/3/33/La_Salette_-_Sanctuaire.jpg",
+    "local": "La Salette, Alpes Franceses, França",
+    "data": "19 de setembro de 1846",
+    "linkGoogleMaps": "https://maps.google.com/?q=Sanctuaire+Notre-Dame+de+La+Salette+France",
+    "historia": "Em 19 de setembro de 1846, duas crianças pastorinhas, Mélanie Calvat (15 anos) e Maximin Giraud (11 anos), encontraram uma 'Bela Senhora' chorando sentada sobre uma pedra nos Alpes franceses, próximo ao vilarejo de La Salette. Nossa Senhora apareceu vestida de luz, com uma coroa de rosas e um crucifixo brilhante no peito, lágrimas escorrendo por seu rosto. Ela transmitiu mensagens sobre a necessidade de conversão, observância do domingo e advertências sobre a falta de fé que levaria a consequências graves, incluindo fomes e epidemias. A Virgem confiou também segredos particulares a cada vidente. As aparições foram reconhecidas pela Igreja em 1851. O Santuário de La Salette tornou-se importante centro de peregrinação, conhecido como o lugar onde Maria derramou lágrimas pela humanidade.",
+    "tags": [
+      "França",
+      "Século XIX",
+      "Mensagem de Conversão"
+    ]
+  },
+  {
+    "nome": "Nossa Senhora de Knock",
+    "slug": "nossa-senhora-de-knock",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Knock_Shrine_Basilica.jpg",
+    "local": "Knock, Condado de Mayo, Irlanda",
+    "data": "21 de agosto de 1879",
+    "linkGoogleMaps": "https://maps.google.com/?q=Knock+Shrine+Ireland",
+    "historia": "Na noite chuvosa de 21 de agosto de 1879, quinze pessoas da pequena vila de Knock testemunharam uma aparição silenciosa na parede externa da igreja paroquial. Nossa Senhora apareceu junto com São José e São João Evangelista, diante de um altar com um cordeiro (simbolizando Jesus) e uma cruz. A aparição durou cerca de duas horas, durante as quais as figuras permaneceram imóveis e em silêncio, mesmo sob forte chuva que não as molhava. Diferentemente de outras aparições, não houve mensagens faladas, mas a cena apresentada foi interpretada como referência à Eucaristia e ao sacrifício de Cristo. O local foi imediatamente associado a curas milagrosas. A aparição foi declarada digna de fé pela Igreja. Em 1979, o Papa João Paulo II visitou Knock no centenário da aparição. O santuário recebe mais de 1,5 milhão de peregrinos por ano.",
+    "tags": [
+      "Irlanda",
+      "Século XIX",
+      "Aparição Silenciosa"
+    ]
+  }
+]
