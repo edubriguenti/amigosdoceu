@@ -153,5 +153,16 @@
       "Doutor da Igreja",
       "Filosofia"
     ]
+  },
+  {
+    "nome": "São Miguel Arcanjo",
+    "slug": "sao-miguel-arcanjo",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/68/Guido_Reni_031.jpg",
+    "descricao": "São Miguel Arcanjo, cujo nome em hebraico significa 'Quem é como Deus?', é um dos três arcanjos mencionados nas Sagradas Escrituras, junto com Gabriel e Rafael. Na tradição católica, é o príncipe dos anjos e comandante das milícias celestiais. Aparece no livro de Daniel como protetor do povo de Deus, no livro de Judas em disputa pelo corpo de Moisés, e no Apocalipse liderando a batalha contra o dragão e seus anjos. É venerado como defensor da Igreja, protetor contra o mal e guardião das almas. Segundo a tradição, São Miguel pesa as almas no juízo final e intercede pelos fiéis. Sua festa é celebrada em 29 de setembro, junto com os arcanjos Gabriel e Rafael. É padroeiro dos guerreiros, policiais, paramédicos e de todos aqueles que combatem o mal.",
+    "oracao": "São Miguel Arcanjo, defendei-nos no combate, sede nosso refúgio contra as maldades e ciladas do demônio. Ordene-lhe Deus, instantemente o pedimos, e vós, Príncipe da milícia celeste, pelo divino poder, precipitai no inferno a Satanás e aos outros espíritos malignos que andam pelo mundo para perder as almas. Amém.",
+    "tags": [
+      "Arcanjo",
+      "Proteção"
+    ]
   }
 ]
