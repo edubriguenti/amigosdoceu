@@ -5,10 +5,16 @@
     "imagem": "/images/francisco_de_assis.jpg",
     "descricao": "Nascido em Assis, Itália, por volta de 1181-1182, Giovanni di Pietro di Bernardone renunciou aos bens materiais após uma experiência espiritual. Em 1209, fundou a Ordem dos Frades Menores (franciscanos), pregando a simplicidade, a pobreza e o amor à natureza. Com Santa Clara, estabeleceu a Ordem das Clarissas em 1212. Faleceu em 3 de outubro de 1226 e foi canonizado em 1228 pelo Papa Gregório IX. Em 1979, o Papa João Paulo II o proclamou padroeiro da ecologia.",
     "oracao": "Senhor, fazei-me instrumento de vossa paz...",
-    "tags": [
-      "Pobreza",
-      "Natureza"
-    ]
+    "tags": ["Pobreza", "Natureza"],
+    "dataNascimento": "1181",
+    "dataFalecimento": "1226",
+    "dataCanonizacao": "1228",
+    "pais": "Itália",
+    "ordemReligiosa": "Franciscanos",
+    "padroeiro": ["Ecologia", "Animais", "Itália"],
+    "periodo": "Idade Média",
+    "doutorIgreja": false,
+    "popularidade": 95
   },
   {
     "nome": "Santa Teresa de Ávila",
@@ -16,10 +22,16 @@
     "imagem": "/images/teresa_de_avila.webp",
     "descricao": "Nascida em 28 de março de 1515, em Gotarrendura, Espanha, Teresa de Ávila ingressou no Convento Carmelita da Encarnação em Ávila em 1535. Após uma profunda experiência mística, iniciou a reforma da Ordem Carmelita, fundando o primeiro convento das Carmelitas Descalças em 1562. Ao longo de sua vida, fundou 17 conventos reformados e escreveu obras espirituais como \"O Livro da Vida\" e \"O Castelo Interior\". Faleceu em 4 de outubro de 1582, foi canonizada em 1622 e proclamada Doutora da Igreja em 1970 pelo Papa Paulo VI, sendo a primeira mulher a receber esse título.",
     "oracao": "Que eu possa encontrar Deus em todas as coisas...",
-    "tags": [
-      "Doutora da Igreja",
-      "Mistica"
-    ]
+    "tags": ["Doutora da Igreja", "Mistica"],
+    "dataNascimento": "1515",
+    "dataFalecimento": "1582",
+    "dataCanonizacao": "1622",
+    "pais": "Espanha",
+    "ordemReligiosa": "Carmelitas",
+    "padroeiro": ["Escritores", "Espanha"],
+    "periodo": "Renascimento",
+    "doutorIgreja": true,
+    "popularidade": 92
   },
   {
     "nome": "São João Paulo II",
@@ -27,10 +39,16 @@
     "imagem": "/images/joao_paulo_II.jpg",
     "descricao": "Nascido Karol Józef Wojtyła em 18 de maio de 1920, em Wadowice, Polônia, foi ordenado sacerdote em 1946. Tornou-se arcebispo de Cracóvia em 1964 e cardeal em 1967. Em 16 de outubro de 1978, foi eleito Papa, tornando-se o primeiro pontífice não italiano em 455 anos. Seu pontificado de 26 anos foi marcado por viagens apostólicas, diálogo inter-religioso e papel significativo na queda do comunismo na Europa Oriental. Faleceu em 2 de abril de 2005 e foi canonizado pelo Papa Francisco em 27 de abril de 2014.",
     "oracao": "Deus, guiai-nos pelo caminho da paz...",
-    "tags": [
-      "Papa",
-      "Concílio"
-    ]
+    "tags": ["Papa", "Concílio"],
+    "dataNascimento": "1920",
+    "dataFalecimento": "2005",
+    "dataCanonizacao": "2014",
+    "pais": "Polônia",
+    "ordemReligiosa": null,
+    "padroeiro": ["Jovens", "Famílias"],
+    "periodo": "Contemporâneo",
+    "doutorIgreja": false,
+    "popularidade": 98
   },
   {
     "nome": "Santo Agostinho",
@@ -38,10 +56,16 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Saint_Augustine_by_Philippe_de_Champaigne.jpg",
     "descricao": "Nascido em 354 em Tagaste, no norte da África (atual Argélia), Agostinho viveu uma juventude marcada pela busca intelectual e espiritual. Após anos de vida dissoluta e adesão ao maniqueísmo, converteu-se ao cristianismo em 386, influenciado pelas pregações de Santo Ambrósio e pelas orações de sua mãe, Santa Mônica. Foi ordenado sacerdote em 391 e tornou-se bispo de Hipona em 395. Suas obras, especialmente 'Confissões' e 'A Cidade de Deus', são pilares da teologia cristã ocidental. Faleceu em 430 durante o cerco de Hipona pelos vândalos. É Doutor da Igreja e padroeiro dos teólogos.",
     "oracao": "Tarde vos amei, ó Beleza tão antiga e tão nova, tarde vos amei!",
-    "tags": [
-      "Doutor da Igreja",
-      "Filosofia"
-    ]
+    "tags": ["Doutor da Igreja", "Filosofia"],
+    "dataNascimento": "354",
+    "dataFalecimento": "430",
+    "dataCanonizacao": null,
+    "pais": "Argélia",
+    "ordemReligiosa": null,
+    "padroeiro": ["Teólogos", "Impressores"],
+    "periodo": "Antiguidade Tardia",
+    "doutorIgreja": true,
+    "popularidade": 94
   },
   {
     "nome": "Santa Teresinha do Menino Jesus",
@@ -49,10 +73,16 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Therese_Lisieux.JPG",
     "descricao": "Nascida Marie-Françoise-Thérèse Martin em 2 de janeiro de 1873, em Alençon, França, Teresinha entrou para o Carmelo de Lisieux aos 15 anos, em 1888. Viveu uma vida de simplicidade e desenvolveu o 'Pequeno Caminho' - uma espiritualidade baseada na confiança total em Deus e no amor aos pequenos gestos cotidianos. Sua autobiografia 'História de uma Alma' tornou-se um dos livros espirituais mais lidos do mundo. Faleceu de tuberculose em 30 de setembro de 1897, aos 24 anos. Foi canonizada em 1925 e proclamada Doutora da Igreja em 1997 pelo Papa João Paulo II. É padroeira das missões e co-padroeira da França.",
     "oracao": "Ó Jesus, quero amar-Vos e fazer-Vos amar. Ajudai-me a espalhar o Vosso perfume por onde eu passar...",
-    "tags": [
-      "Doutora da Igreja",
-      "Pequeno Caminho"
-    ]
+    "tags": ["Doutora da Igreja", "Pequeno Caminho"],
+    "dataNascimento": "1873",
+    "dataFalecimento": "1897",
+    "dataCanonizacao": "1925",
+    "pais": "França",
+    "ordemReligiosa": "Carmelitas",
+    "padroeiro": ["Missões", "França"],
+    "periodo": "Contemporâneo",
+    "doutorIgreja": true,
+    "popularidade": 96
   },
   {
     "nome": "São Padre Pio de Pietrelcina",
@@ -60,10 +90,16 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/5/51/Padre_Pio_portrait.jpg",
     "descricao": "Nascido Francesco Forgione em 25 de maio de 1887, em Pietrelcina, Itália, ingressou na Ordem dos Frades Menores Capuchinhos aos 15 anos. Foi ordenado sacerdote em 1910. Em 1918, recebeu os estigmas - as chagas de Cristo - que permaneceram visíveis por 50 anos até sua morte. Fundou a Casa Alívio do Sofrimento, um hospital moderno em San Giovanni Rotondo. Era conhecido por seus dons místicos, incluindo bilocação, leitura de almas e curas milagrosas. Milhões de peregrinos o procuravam para confissão e conselho espiritual. Faleceu em 23 de setembro de 1968 e foi canonizado em 2002 pelo Papa João Paulo II.",
     "oracao": "Permanecei comigo, Senhor, porque sois Vós a minha vida, e sem Vós sou sem fervor...",
-    "tags": [
-      "Estigmas",
-      "Carismas"
-    ]
+    "tags": ["Estigmas", "Carismas"],
+    "dataNascimento": "1887",
+    "dataFalecimento": "1968",
+    "dataCanonizacao": "2002",
+    "pais": "Itália",
+    "ordemReligiosa": "Capuchinhos",
+    "padroeiro": ["Doentes", "Confessores"],
+    "periodo": "Contemporâneo",
+    "doutorIgreja": false,
+    "popularidade": 97
   },
   {
     "nome": "São Bento de Núrsia",
@@ -71,10 +107,16 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Saint_Benedict_of_Nursia_by_Beuron_School_1900.jpg",
     "descricao": "Nascido por volta de 480 em Núrsia, Itália, São Bento é considerado o pai do monaquismo ocidental. Abandonou os estudos em Roma para viver como eremita em Subiaco, onde atraiu discípulos. Fundou a abadia de Monte Cassino por volta de 529 e escreveu a 'Regra de São Bento', que se tornou base da vida monástica cristã, enfatizando oração, trabalho e obediência. Faleceu em 21 de março de 547 e é padroeiro da Europa e protetor contra o mal.",
     "oracao": "A cruz sagrada seja a minha luz, não seja o dragão o meu guia...",
-    "tags": [
-      "Monges",
-      "Proteção"
-    ]
+    "tags": ["Monges", "Proteção"],
+    "dataNascimento": "480",
+    "dataFalecimento": "547",
+    "dataCanonizacao": null,
+    "pais": "Itália",
+    "ordemReligiosa": "Beneditinos",
+    "padroeiro": ["Europa", "Monges", "Estudantes"],
+    "periodo": "Idade Média",
+    "doutorIgreja": false,
+    "popularidade": 88
   },
   {
     "nome": "Santa Catarina de Sena",
@@ -82,10 +124,16 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Catherine_of_Siena.jpg",
     "descricao": "Nascida em 25 de março de 1347, em Siena, Itália, Santa Catarina foi uma mística e terciária dominicana que exerceu forte influência espiritual e política. Trabalhou pela reforma da Igreja e pela volta do Papa de Avinhão a Roma. Escreveu o 'Diálogo sobre a Divina Providência' e centenas de cartas com profundo conteúdo teológico. Faleceu em 29 de abril de 1380, aos 33 anos. Foi canonizada em 1461 e proclamada Doutora da Igreja e padroeira da Europa.",
     "oracao": "Ó eterna Trindade, sois um mar profundo, onde quanto mais busco, mais encontro...",
-    "tags": [
-      "Doutora da Igreja",
-      "Mística"
-    ]
+    "tags": ["Doutora da Igreja", "Mística"],
+    "dataNascimento": "1347",
+    "dataFalecimento": "1380",
+    "dataCanonizacao": "1461",
+    "pais": "Itália",
+    "ordemReligiosa": "Dominicanos",
+    "padroeiro": ["Europa", "Enfermeiras"],
+    "periodo": "Idade Média",
+    "doutorIgreja": true,
+    "popularidade": 91
   },
   {
     "nome": "São José",
@@ -93,22 +141,33 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Guido_Reni_-_Saint_Joseph_and_the_Christ_Child_-_Google_Art_Project.jpg",
     "descricao": "Esposo da Virgem Maria e pai adotivo de Jesus, São José foi um homem justo e trabalhador, descendente da casa de Davi. Viveu em Nazaré e exerceu o ofício de carpinteiro. É exemplo de humildade, silêncio e obediência à vontade de Deus. Foi declarado padroeiro da Igreja Universal pelo Papa Pio IX em 1870. É também patrono dos trabalhadores e protetor das famílias cristãs.",
     "oracao": "Glorioso São José, modelo de todos os que se dedicam ao trabalho, obtende-me a graça de trabalhar com espírito de penitência e amor...",
-    "tags": [
-      "Família",
-      "Trabalho"
-    ]
-  }
-  ,
+    "tags": ["Família", "Trabalho"],
+    "dataNascimento": null,
+    "dataFalecimento": null,
+    "dataCanonizacao": null,
+    "pais": "Israel",
+    "ordemReligiosa": null,
+    "padroeiro": ["Igreja Universal", "Trabalhadores", "Famílias"],
+    "periodo": "Antiguidade",
+    "doutorIgreja": false,
+    "popularidade": 99
+  },
   {
     "nome": "Santo Antônio de Pádua",
     "slug": "santo-antonio-de-padua",
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Saint_Anthony_of_Padua_with_the_Infant_Christ.jpg",
     "descricao": "Nascido Fernando de Bulhões em 1195, em Lisboa, Portugal, ingressou na Ordem dos Cônegos Regulares de Santo Agostinho, mas depois tornou-se franciscano, assumindo o nome de Antônio. Conhecido por sua eloquência, profundo conhecimento das Escrituras e inúmeros milagres, é um dos santos mais populares do cristianismo. Faleceu em Pádua, Itália, em 13 de junho de 1231, sendo canonizado apenas um ano depois pelo Papa Gregório IX.",
     "oracao": "Santo Antônio, glorioso servo de Deus, que obtendes do Senhor as graças que vos pedem, intercedei por nós e alcançai-nos os favores que necessitamos...",
-    "tags": [
-      "Pregador",
-      "Milagres"
-    ]
+    "tags": ["Pregador", "Milagres"],
+    "dataNascimento": "1195",
+    "dataFalecimento": "1231",
+    "dataCanonizacao": "1232",
+    "pais": "Portugal",
+    "ordemReligiosa": "Franciscanos",
+    "padroeiro": ["Objetos Perdidos", "Portugal"],
+    "periodo": "Idade Média",
+    "doutorIgreja": false,
+    "popularidade": 96
   },
   {
     "nome": "Santa Paulina do Coração Agonizante de Jesus",
@@ -116,10 +175,16 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Santa_Paolina.jpg",
     "descricao": "Nascida Amabile Lúcia Visintainer em 16 de dezembro de 1865, em Vigolo Vattaro, Itália, imigrou com seus pais para o Brasil em 1875, fixando-se em Santa Catarina. Dedicou sua vida ao cuidado dos pobres e doentes, fundando a Congregação das Irmãzinhas da Imaculada Conceição. Faleceu em 9 de julho de 1942 e foi canonizada em 2002, tornando-se a primeira santa brasileira.",
     "oracao": "Santa Paulina, ajudai-nos a conservar firme a fé, a esperança e o amor, e fazei-nos sempre sensíveis às necessidades dos irmãos...",
-    "tags": [
-      "Brasil",
-      "Caridade"
-    ]
+    "tags": ["Brasil", "Caridade"],
+    "dataNascimento": "1865",
+    "dataFalecimento": "1942",
+    "dataCanonizacao": "2002",
+    "pais": "Brasil",
+    "ordemReligiosa": "Irmãzinhas da Imaculada Conceição",
+    "padroeiro": ["Brasil"],
+    "periodo": "Contemporâneo",
+    "doutorIgreja": false,
+    "popularidade": 85
   },
   {
     "nome": "Frei Galvão",
@@ -127,10 +192,16 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/3/35/Frei_Galv%C3%A3o.JPG",
     "descricao": "Nascido Antônio de Sant'Ana Galvão em 10 de maio de 1739, em Guaratinguetá, São Paulo, Frei Galvão foi frade franciscano e é reconhecido por sua santidade, dons de cura e pelas famosas pílulas de papel com orações. Fundou o Mosteiro da Luz, em São Paulo, hoje patrimônio mundial da UNESCO. Faleceu em 23 de dezembro de 1822 e foi canonizado pelo Papa Bento XVI em 2007, tornando-se o primeiro santo nascido no Brasil.",
     "oracao": "Santo Frei Galvão, fazei que eu tenha saúde do corpo e da alma e, pela vossa intercessão, obtenha de Deus o que confiadamente peço...",
-    "tags": [
-      "Brasil",
-      "Milagres"
-    ]
+    "tags": ["Brasil", "Milagres"],
+    "dataNascimento": "1739",
+    "dataFalecimento": "1822",
+    "dataCanonizacao": "2007",
+    "pais": "Brasil",
+    "ordemReligiosa": "Franciscanos",
+    "padroeiro": ["Brasil"],
+    "periodo": "Idade Moderna",
+    "doutorIgreja": false,
+    "popularidade": 88
   },
   {
     "nome": "São Paulo da Cruz",
@@ -138,10 +209,16 @@
     "imagem": "/images/sao-paulo-da-cruz.jpg",
     "descricao": "Nascido Paolo Francesco Danei em 3 de janeiro de 1694, em Ovada, Itália, São Paulo da Cruz teve uma profunda experiência mística aos 19 anos que o levou a dedicar sua vida à meditação da Paixão de Cristo. Em 1720, fundou a Congregação dos Clérigos Descalços da Santa Cruz e Paixão de Nosso Senhor Jesus Cristo (Passionistas), ordem religiosa centrada na pregação da Paixão de Cristo e na vida de oração. Foi um grande diretor espiritual e místico, conhecido por suas visões e dons sobrenaturais. Fundou diversos retiros e conventos na Itália. Faleceu em 18 de outubro de 1775, em Roma, e foi canonizado pelo Papa Pio IX em 1867. É padroeiro da juventude católica italiana.",
     "oracao": "Ó glorioso São Paulo da Cruz, que meditastes com tanto amor a Paixão de Jesus Cristo, fazei que também nós amemos profundamente nosso Salvador e que vivamos sempre unidos à Cruz...",
-    "tags": [
-      "Paixão de Cristo",
-      "Mística"
-    ]
+    "tags": ["Paixão de Cristo", "Mística"],
+    "dataNascimento": "1694",
+    "dataFalecimento": "1775",
+    "dataCanonizacao": "1867",
+    "pais": "Itália",
+    "ordemReligiosa": "Passionistas",
+    "padroeiro": ["Juventude Italiana"],
+    "periodo": "Idade Moderna",
+    "doutorIgreja": false,
+    "popularidade": 75
   },
   {
     "nome": "São Tomás de Aquino",
@@ -149,10 +226,16 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/e/e3/St-thomas-aquinas.jpg",
     "descricao": "Nascido em 1225 no castelo de Roccasecca, perto de Aquino, Itália, Tomás de Aquino é um dos maiores teólogos e filósofos da Igreja Católica. Ingressou na Ordem Dominicana contra a vontade de sua família. Estudou em Paris e Colônia sob orientação de Santo Alberto Magno. Sua obra-prima, a 'Suma Teológica', é uma síntese magistral da teologia cristã e da filosofia aristotélica, sendo até hoje fundamental para a teologia católica. Escreveu também a 'Suma contra os Gentios' e inúmeros comentários filosóficos e teológicos. Faleceu em 7 de março de 1274, a caminho do Concílio de Lyon. Foi canonizado em 1323 pelo Papa João XXII e proclamado Doutor da Igreja. É padroeiro dos estudantes, universidades e academias católicas.",
     "oracao": "Concedei-me, Senhor, uma mente que vos conheça, um coração que vos ame, uma simplicidade que vos agrade, uma fé que vos abrace, uma confiança que vos aceite e uma paciência que vos aguarde...",
-    "tags": [
-      "Doutor da Igreja",
-      "Filosofia"
-    ]
+    "tags": ["Doutor da Igreja", "Filosofia"],
+    "dataNascimento": "1225",
+    "dataFalecimento": "1274",
+    "dataCanonizacao": "1323",
+    "pais": "Itália",
+    "ordemReligiosa": "Dominicanos",
+    "padroeiro": ["Estudantes", "Universidades", "Filósofos"],
+    "periodo": "Idade Média",
+    "doutorIgreja": true,
+    "popularidade": 90
   },
   {
     "nome": "São Miguel Arcanjo",
@@ -160,9 +243,15 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/68/Guido_Reni_031.jpg",
     "descricao": "São Miguel Arcanjo, cujo nome em hebraico significa 'Quem é como Deus?', é um dos três arcanjos mencionados nas Sagradas Escrituras, junto com Gabriel e Rafael. Na tradição católica, é o príncipe dos anjos e comandante das milícias celestiais. Aparece no livro de Daniel como protetor do povo de Deus, no livro de Judas em disputa pelo corpo de Moisés, e no Apocalipse liderando a batalha contra o dragão e seus anjos. É venerado como defensor da Igreja, protetor contra o mal e guardião das almas. Segundo a tradição, São Miguel pesa as almas no juízo final e intercede pelos fiéis. Sua festa é celebrada em 29 de setembro, junto com os arcanjos Gabriel e Rafael. É padroeiro dos guerreiros, policiais, paramédicos e de todos aqueles que combatem o mal.",
     "oracao": "São Miguel Arcanjo, defendei-nos no combate, sede nosso refúgio contra as maldades e ciladas do demônio. Ordene-lhe Deus, instantemente o pedimos, e vós, Príncipe da milícia celeste, pelo divino poder, precipitai no inferno a Satanás e aos outros espíritos malignos que andam pelo mundo para perder as almas. Amém.",
-    "tags": [
-      "Arcanjo",
-      "Proteção"
-    ]
+    "tags": ["Arcanjo", "Proteção"],
+    "dataNascimento": null,
+    "dataFalecimento": null,
+    "dataCanonizacao": null,
+    "pais": null,
+    "ordemReligiosa": null,
+    "padroeiro": ["Guerreiros", "Policiais", "Paramédicos"],
+    "periodo": "Celestial",
+    "doutorIgreja": false,
+    "popularidade": 95
   }
 ]
