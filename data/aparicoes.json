@@ -2,7 +2,7 @@
   {
     "nome": "Nossa Senhora de Fátima",
     "slug": "nossa-senhora-de-fatima",
-    "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Fatima_Statue.jpg",
+    "imagem": "/images/aparicoes/fatima.svg",
     "local": "Cova da Iria, Fátima, Portugal",
     "data": "13 de maio a 13 de outubro de 1917",
     "linkGoogleMaps": "https://maps.google.com/?q=Santuario+de+Fatima+Portugal",
@@ -16,7 +16,7 @@
   {
     "nome": "Nossa Senhora de Lourdes",
     "slug": "nossa-senhora-de-lourdes",
-    "imagem": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Lourdes_grotto.jpg",
+    "imagem": "/images/aparicoes/lourdes.svg",
     "local": "Gruta de Massabielle, Lourdes, França",
     "data": "11 de fevereiro a 16 de julho de 1858",
     "linkGoogleMaps": "https://maps.google.com/?q=Grotte+de+Massabielle+Lourdes+France",
@@ -30,7 +30,7 @@
   {
     "nome": "Nossa Senhora de Guadalupe",
     "slug": "nossa-senhora-de-guadalupe",
-    "imagem": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Virgen_de_guadalupe1.jpg",
+    "imagem": "/images/aparicoes/guadalupe.svg",
     "local": "Colina de Tepeyac, Cidade do México, México",
     "data": "9 a 12 de dezembro de 1531",
     "linkGoogleMaps": "https://maps.google.com/?q=Basilica+de+Guadalupe+Mexico+City",
@@ -44,7 +44,7 @@
   {
     "nome": "Nossa Senhora Aparecida",
     "slug": "nossa-senhora-aparecida",
-    "imagem": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Bas%C3%ADlica_de_Nossa_Senhora_Aparecida.jpg",
+    "imagem": "/images/aparicoes/aparecida.svg",
     "local": "Rio Paraíba do Sul, Aparecida, São Paulo, Brasil",
     "data": "Outubro de 1717",
     "linkGoogleMaps": "https://maps.google.com/?q=Basilica+Nacional+Nossa+Senhora+Aparecida+SP",
@@ -58,7 +58,7 @@
   {
     "nome": "Nossa Senhora de La Salette",
     "slug": "nossa-senhora-de-la-salette",
-    "imagem": "https://upload.wikimedia.org/wikipedia/commons/3/33/La_Salette_-_Sanctuaire.jpg",
+    "imagem": "/images/aparicoes/la-salette.svg",
     "local": "La Salette, Alpes Franceses, França",
     "data": "19 de setembro de 1846",
     "linkGoogleMaps": "https://maps.google.com/?q=Sanctuaire+Notre-Dame+de+La+Salette+France",
@@ -72,7 +72,7 @@
   {
     "nome": "Nossa Senhora de Knock",
     "slug": "nossa-senhora-de-knock",
-    "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Knock_Shrine_Basilica.jpg",
+    "imagem": "/images/aparicoes/knock.svg",
     "local": "Knock, Condado de Mayo, Irlanda",
     "data": "21 de agosto de 1879",
     "linkGoogleMaps": "https://maps.google.com/?q=Knock+Shrine+Ireland",
