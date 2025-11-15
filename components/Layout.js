@@ -12,6 +12,8 @@ export default function Layout({ children }) {
           <Link href="/santos" className="hover:text-gray-600 transition">Santos</Link>
           <Link href="/igrejas" className="hover:text-gray-600 transition">Igrejas</Link>
           <Link href="/aparicoes" className="hover:text-gray-600 transition">Aparições</Link>
+          <Link href="/santos-do-dia" className="hover:text-gray-600 transition">Santos do Dia</Link>
+          <Link href="/calendario" className="hover:text-gray-600 transition">Calendário</Link>
         </nav>
       </header>
 

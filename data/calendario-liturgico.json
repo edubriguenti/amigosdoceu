@@ -1,0 +1,250 @@
+{
+  "janeiro": {
+    "1": {
+      "nome": "Santa Maria, Mãe de Deus",
+      "tipo": "Solenidade",
+      "descricao": "Solenidade de Santa Maria, Mãe de Deus",
+      "cor": "branco",
+      "santos": []
+    },
+    "6": {
+      "nome": "Epifania do Senhor",
+      "tipo": "Solenidade",
+      "descricao": "Manifestação de Jesus aos Reis Magos",
+      "cor": "branco",
+      "santos": []
+    },
+    "25": {
+      "nome": "Conversão de São Paulo",
+      "tipo": "Festa",
+      "descricao": "Conversão do Apóstolo Paulo",
+      "cor": "branco",
+      "santos": []
+    },
+    "28": {
+      "nome": "São Tomás de Aquino",
+      "tipo": "Memória",
+      "descricao": "Doutor da Igreja, teólogo e filósofo",
+      "cor": "branco",
+      "santos": ["sao-tomas-de-aquino"]
+    }
+  },
+  "fevereiro": {
+    "2": {
+      "nome": "Apresentação do Senhor",
+      "tipo": "Festa",
+      "descricao": "Apresentação de Jesus no Templo",
+      "cor": "branco",
+      "santos": []
+    }
+  },
+  "marco": {
+    "19": {
+      "nome": "São José",
+      "tipo": "Solenidade",
+      "descricao": "Esposo da Virgem Maria e Padroeiro da Igreja Universal",
+      "cor": "branco",
+      "santos": ["sao-jose"]
+    },
+    "21": {
+      "nome": "São Bento de Núrsia",
+      "tipo": "Memória",
+      "descricao": "Pai do Monaquismo Ocidental",
+      "cor": "branco",
+      "santos": ["sao-bento-de-nursia"]
+    },
+    "25": {
+      "nome": "Anunciação do Senhor",
+      "tipo": "Solenidade",
+      "descricao": "O Anjo Gabriel anuncia à Maria que ela será a Mãe de Deus",
+      "cor": "branco",
+      "santos": []
+    },
+    "25": {
+      "nome": "Santa Catarina de Sena",
+      "tipo": "Memória",
+      "descricao": "Doutora da Igreja, mística e patrona da Europa (nascimento)",
+      "cor": "branco",
+      "santos": ["santa-catarina-de-sena"]
+    }
+  },
+  "abril": {
+    "29": {
+      "nome": "Santa Catarina de Sena",
+      "tipo": "Festa",
+      "descricao": "Doutora da Igreja, mística e patrona da Europa",
+      "cor": "branco",
+      "santos": ["santa-catarina-de-sena"]
+    }
+  },
+  "maio": {
+    "1": {
+      "nome": "São José Operário",
+      "tipo": "Memória",
+      "descricao": "Padroeiro dos Trabalhadores",
+      "cor": "branco",
+      "santos": ["sao-jose"]
+    },
+    "10": {
+      "nome": "Frei Galvão",
+      "tipo": "Memória",
+      "descricao": "Primeiro santo nascido no Brasil (nascimento)",
+      "cor": "branco",
+      "santos": ["frei-galvao"]
+    }
+  },
+  "junho": {
+    "13": {
+      "nome": "Santo Antônio de Pádua",
+      "tipo": "Memória",
+      "descricao": "Doutor da Igreja, pregador e taumaturgo",
+      "cor": "branco",
+      "santos": ["santo-antonio-de-padua"]
+    },
+    "24": {
+      "nome": "Nascimento de São João Batista",
+      "tipo": "Solenidade",
+      "descricao": "Precursor de Jesus Cristo",
+      "cor": "branco",
+      "santos": []
+    },
+    "29": {
+      "nome": "São Pedro e São Paulo",
+      "tipo": "Solenidade",
+      "descricao": "Apóstolos e colunas da Igreja",
+      "cor": "vermelho",
+      "santos": []
+    }
+  },
+  "julho": {
+    "9": {
+      "nome": "Santa Paulina do Coração Agonizante de Jesus",
+      "tipo": "Memória",
+      "descricao": "Primeira santa brasileira",
+      "cor": "branco",
+      "santos": ["santa-paulina"]
+    }
+  },
+  "agosto": {
+    "28": {
+      "nome": "Santo Agostinho",
+      "tipo": "Memória",
+      "descricao": "Bispo, Doutor da Igreja e filósofo",
+      "cor": "branco",
+      "santos": ["santo-agostinho"]
+    }
+  },
+  "setembro": {
+    "23": {
+      "nome": "São Padre Pio de Pietrelcina",
+      "tipo": "Memória",
+      "descricao": "Estigmatizado, místico e confessor",
+      "cor": "branco",
+      "santos": ["sao-padre-pio"]
+    },
+    "29": {
+      "nome": "São Miguel, São Gabriel e São Rafael",
+      "tipo": "Festa",
+      "descricao": "Arcanjos",
+      "cor": "branco",
+      "santos": ["sao-miguel-arcanjo"]
+    },
+    "30": {
+      "nome": "Santa Teresinha do Menino Jesus",
+      "tipo": "Memória",
+      "descricao": "Doutora da Igreja, mística e patrona das missões",
+      "cor": "branco",
+      "santos": ["santa-teresinha-do-menino-jesus"]
+    }
+  },
+  "outubro": {
+    "1": {
+      "nome": "Santa Teresinha do Menino Jesus",
+      "tipo": "Memória",
+      "descricao": "Doutora da Igreja (festa litúrgica)",
+      "cor": "branco",
+      "santos": ["santa-teresinha-do-menino-jesus"]
+    },
+    "2": {
+      "nome": "Santos Anjos da Guarda",
+      "tipo": "Memória",
+      "descricao": "Guardiões enviados por Deus",
+      "cor": "branco",
+      "santos": []
+    },
+    "4": {
+      "nome": "São Francisco de Assis",
+      "tipo": "Memória",
+      "descricao": "Fundador da Ordem Franciscana, patrono da ecologia",
+      "cor": "branco",
+      "santos": ["sao-francisco-de-assis"]
+    },
+    "15": {
+      "nome": "Santa Teresa de Ávila",
+      "tipo": "Memória",
+      "descricao": "Doutora da Igreja, mística e reformadora",
+      "cor": "branco",
+      "santos": ["santa-teresa-de-avila"]
+    },
+    "18": {
+      "nome": "São Paulo da Cruz",
+      "tipo": "Memória",
+      "descricao": "Fundador dos Passionistas",
+      "cor": "branco",
+      "santos": ["sao-paulo-da-cruz"]
+    },
+    "22": {
+      "nome": "São João Paulo II",
+      "tipo": "Memória",
+      "descricao": "Papa e Pastor da Igreja Universal",
+      "cor": "branco",
+      "santos": ["sao-joao-paulo-ii"]
+    }
+  },
+  "novembro": {
+    "1": {
+      "nome": "Todos os Santos",
+      "tipo": "Solenidade",
+      "descricao": "Celebração de todos os santos conhecidos e desconhecidos",
+      "cor": "branco",
+      "santos": []
+    },
+    "2": {
+      "nome": "Finados",
+      "tipo": "Comemoração",
+      "descricao": "Oração pelos fiéis defuntos",
+      "cor": "roxo",
+      "santos": []
+    }
+  },
+  "dezembro": {
+    "8": {
+      "nome": "Imaculada Conceição",
+      "tipo": "Solenidade",
+      "descricao": "Nossa Senhora concebida sem pecado original",
+      "cor": "branco",
+      "santos": []
+    },
+    "16": {
+      "nome": "Santa Paulina (nascimento)",
+      "tipo": "Memória",
+      "descricao": "Primeira santa brasileira (nascimento)",
+      "cor": "branco",
+      "santos": ["santa-paulina"]
+    },
+    "23": {
+      "nome": "Frei Galvão",
+      "tipo": "Memória",
+      "descricao": "Primeiro santo nascido no Brasil",
+      "cor": "branco",
+      "santos": ["frei-galvao"]
+    },
+    "25": {
+      "nome": "Natal de Nosso Senhor Jesus Cristo",
+      "tipo": "Solenidade",
+      "descricao": "Nascimento de Jesus",
+      "cor": "branco",
+      "santos": []
+    }
+  }
+}

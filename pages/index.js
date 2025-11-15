@@ -18,7 +18,7 @@ export default function Home() {
         </section>
 
         <section className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8">
             <Link href="/santos" className="group">
               <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
                 <h2 className="text-2xl font-serif mb-3 group-hover:text-gray-600">Santos</h2>
@@ -55,6 +55,39 @@ export default function Home() {
                 <span className="text-sm font-semibold group-hover:underline">
                   Explorar Aparições →
                 </span>
+              </div>
+            </Link>
+
+            <Link href="/santos-do-dia" className="group">
+              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition">
+                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700">Santos do Dia</h2>
+                <p className="text-gray-700 mb-4">
+                  Descubra qual santo é celebrado hoje no calendário litúrgico. Acompanhe as festas
+                  e celebrações importantes da Igreja Católica.
+                </p>
+                <span className="text-sm font-semibold group-hover:underline">
+                  Ver Santos de Hoje →
+                </span>
+              </div>
+            </Link>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <Link href="/calendario" className="group">
+              <div className="border-2 border-amber-400 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-8 hover:shadow-xl transition">
+                <div className="flex items-start gap-4">
+                  <div className="text-4xl">📅</div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700">Calendário Litúrgico</h2>
+                    <p className="text-gray-700 mb-4">
+                      Explore o calendário completo com todas as celebrações, festas, solenidades e memórias
+                      dos santos ao longo do ano litúrgico. Receba notificações das datas importantes.
+                    </p>
+                    <span className="text-sm font-semibold group-hover:underline">
+                      Acessar Calendário Completo →
+                    </span>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>

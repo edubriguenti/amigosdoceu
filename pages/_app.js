@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import NotificacoesLiturgicas from '../components/NotificacoesLiturgicas'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/images/rosario_icon2.png" />
       </Head>
       <Component {...pageProps} />
+      <NotificacoesLiturgicas />
     </>
   )
 }
