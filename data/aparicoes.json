@@ -11,7 +11,9 @@
       "Portugal",
       "Século XX",
       "Milagre do Sol"
-    ]
+    ],
+    "latitude": 39.6319,
+    "longitude": -8.6725
   },
   {
     "nome": "Nossa Senhora de Lourdes",
@@ -25,7 +27,9 @@
       "França",
       "Século XIX",
       "Água Milagrosa"
-    ]
+    ],
+    "latitude": 43.0948,
+    "longitude": -0.0467
   },
   {
     "nome": "Nossa Senhora de Guadalupe",
@@ -39,7 +43,9 @@
       "México",
       "Século XVI",
       "Imagem Milagrosa"
-    ]
+    ],
+    "latitude": 19.4847,
+    "longitude": -99.1172
   },
   {
     "nome": "Nossa Senhora Aparecida",
@@ -53,7 +59,9 @@
       "Brasil",
       "Século XVIII",
       "Padroeira"
-    ]
+    ],
+    "latitude": -22.8517,
+    "longitude": -45.2315
   },
   {
     "nome": "Nossa Senhora de La Salette",
@@ -67,7 +75,9 @@
       "França",
       "Século XIX",
       "Mensagem de Conversão"
-    ]
+    ],
+    "latitude": 44.8658,
+    "longitude": 5.9892
   },
   {
     "nome": "Nossa Senhora de Knock",
@@ -81,6 +91,8 @@
       "Irlanda",
       "Século XIX",
       "Aparição Silenciosa"
-    ]
+    ],
+    "latitude": 53.7950,
+    "longitude": -8.9153
   }
 ]

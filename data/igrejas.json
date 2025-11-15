@@ -31,8 +31,8 @@
     "estiloArquitetonico": "Moderno",
     "tipo": "Basílica",
     "capacidade": 45000,
-    "latitude": -22.8501,
-    "longitude": -45.2313,
+    "latitude": -22.8517,
+    "longitude": -45.2315,
     "tags": ["Mariana", "Peregrinação", "Brasil"]
   },
   {
@@ -103,8 +103,8 @@
     "estiloArquitetonico": "Neoclássico e Moderno",
     "tipo": "Santuário",
     "capacidade": 9000,
-    "latitude": 39.6317,
-    "longitude": -8.6726,
+    "latitude": 39.6319,
+    "longitude": -8.6725,
     "tags": ["Mariana", "Peregrinação", "Aparições"]
   },
   {
@@ -121,8 +121,8 @@
     "estiloArquitetonico": "Moderno",
     "tipo": "Basílica",
     "capacidade": 10000,
-    "latitude": 19.4848,
-    "longitude": -99.1174,
+    "latitude": 19.4847,
+    "longitude": -99.1172,
     "tags": ["Mariana", "Peregrinação", "América Latina"]
   },
   {
@@ -176,7 +176,7 @@
     "tipo": "Catedral",
     "capacidade": 4000,
     "latitude": 50.9413,
-    "longitude": 6.9583,
+    "longitude": 6.9582,
     "tags": ["Gótico", "UNESCO", "Relíquias"]
   },
   {
@@ -211,8 +211,8 @@
     "estiloArquitetonico": "Romano-Bizantino",
     "tipo": "Santuário",
     "capacidade": 25000,
-    "latitude": 43.0954,
-    "longitude": -0.0461,
+    "latitude": 43.0948,
+    "longitude": -0.0467,
     "tags": ["Mariana", "Peregrinação", "Curas", "Aparições"]
   },
   {
