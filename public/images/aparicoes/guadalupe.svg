@@ -1,0 +1,6 @@
+<svg width="800" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#f0e8d4"/>
+  <text x="400" y="480" font-family="serif" font-size="32" fill="#5a3a2a" text-anchor="middle">Nossa Senhora de Guadalupe</text>
+  <text x="400" y="520" font-family="sans-serif" font-size="20" fill="#7a5a4a" text-anchor="middle">Cidade do México, México</text>
+  <text x="400" y="560" font-family="sans-serif" font-size="16" fill="#8a6a5a" text-anchor="middle">1531</text>
+</svg>
