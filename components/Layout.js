@@ -1,29 +1,32 @@
-import Link from 'next/link'
+import Header from './Header'
+import Footer from './Footer'
 
+/**
+ * Layout Principal
+ * Usa novos componentes Header (responsivo) e Footer (expandido)
+ * Sticky header + skip link para acessibilidade
+ */
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="py-6 px-6 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-serif">
-          Amigos do Céu
-        </Link>
+      {/* Skip Link - Acessibilidade (visível apenas no :focus) */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-3 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:font-medium"
+      >
+        Pular para conteúdo principal
+      </a>
 
-        <nav className="flex gap-6">
-          <Link href="/santos" className="hover:text-gray-600 transition">Santos</Link>
-          <Link href="/igrejas" className="hover:text-gray-600 transition">Igrejas</Link>
-          <Link href="/aparicoes" className="hover:text-gray-600 transition">Aparições</Link>
-          <Link href="/mapa" className="hover:text-gray-600 transition">Mapa</Link>
-          <Link href="/santos-do-dia" className="hover:text-gray-600 transition">Santos do Dia</Link>
-          <Link href="/calendario" className="hover:text-gray-600 transition">Calendário</Link>
-        </nav>
-      </header>
+      {/* Header responsivo com hamburger menu */}
+      <Header />
 
-      <main className="flex-1 container mx-auto px-6">{children}</main>
+      {/* Main content com ID para skip link */}
+      <main id="main-content" className="flex-1 container mx-auto px-4 md:px-6">
+        {children}
+      </main>
 
-      <footer className="py-8 text-center text-sm text-gray-600">
-        <div>Que os santos intercedam por nós.</div>
-        <div className="mt-2">Créditos das imagens: verificar licenças em /data/santos.json</div>
-      </footer>
+      {/* Footer expandido */}
+      <Footer />
     </div>
   )
 }
