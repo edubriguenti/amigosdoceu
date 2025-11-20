@@ -14,7 +14,19 @@
     "padroeiro": ["Ecologia", "Animais", "Itália"],
     "periodo": "Idade Média",
     "doutorIgreja": false,
-    "popularidade": 95
+    "popularidade": 95,
+    "relacionamentos": [
+      {
+        "santoSlug": "santo-antonio-de-padua",
+        "tipo": "mentor",
+        "descricao": "Santo Antônio de Pádua foi discípulo de São Francisco e membro da Ordem Franciscana fundada por ele"
+      },
+      {
+        "santoSlug": "frei-galvao",
+        "tipo": "fundador",
+        "descricao": "Frei Galvão pertenceu à Ordem Franciscana fundada por São Francisco de Assis"
+      }
+    ]
   },
   {
     "nome": "Santa Teresa de Ávila",
@@ -31,7 +43,19 @@
     "padroeiro": ["Escritores", "Espanha"],
     "periodo": "Renascimento",
     "doutorIgreja": true,
-    "popularidade": 92
+    "popularidade": 92,
+    "relacionamentos": [
+      {
+        "santoSlug": "santa-teresinha-do-menino-jesus",
+        "tipo": "mesmaOrdem",
+        "descricao": "Ambas pertenceram à Ordem Carmelita. Santa Teresinha seguiu a tradição carmelita reformada por Santa Teresa de Ávila"
+      },
+      {
+        "santoSlug": "santo-agostinho",
+        "tipo": "contemporaneo",
+        "descricao": "Ambos são Doutores da Igreja, reconhecidos por suas profundas contribuições à teologia mística e espiritual"
+      }
+    ]
   },
   {
     "nome": "São João Paulo II",
@@ -48,7 +72,24 @@
     "padroeiro": ["Jovens", "Famílias"],
     "periodo": "Contemporâneo",
     "doutorIgreja": false,
-    "popularidade": 98
+    "popularidade": 98,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-padre-pio",
+        "tipo": "canonizadoPor",
+        "descricao": "São João Paulo II canonizou Padre Pio em 2002, reconhecendo sua santidade e dons místicos"
+      },
+      {
+        "santoSlug": "santa-paulina",
+        "tipo": "canonizadoPor",
+        "descricao": "São João Paulo II canonizou Santa Paulina em 2002, tornando-a a primeira santa brasileira"
+      },
+      {
+        "santoSlug": "santa-teresinha-do-menino-jesus",
+        "tipo": "proclamadoPor",
+        "descricao": "São João Paulo II proclamou Santa Teresinha como Doutora da Igreja em 1997"
+      }
+    ]
   },
   {
     "nome": "Santo Agostinho",
@@ -133,7 +174,19 @@
     "padroeiro": ["Europa", "Enfermeiras"],
     "periodo": "Idade Média",
     "doutorIgreja": true,
-    "popularidade": 91
+    "popularidade": 91,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-tomas-de-aquino",
+        "tipo": "mesmaOrdem",
+        "descricao": "Ambos pertenceram à Ordem Dominicana e são Doutores da Igreja, reconhecidos por suas contribuições teológicas"
+      },
+      {
+        "santoSlug": "sao-bento-de-nursia",
+        "tipo": "contemporaneo",
+        "descricao": "Ambos são padroeiros da Europa, reconhecidos por suas contribuições à fé cristã no continente"
+      }
+    ]
   },
   {
     "nome": "São José",
@@ -167,7 +220,19 @@
     "padroeiro": ["Objetos Perdidos", "Portugal"],
     "periodo": "Idade Média",
     "doutorIgreja": false,
-    "popularidade": 96
+    "popularidade": 96,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-francisco-de-assis",
+        "tipo": "discipulo",
+        "descricao": "Santo Antônio foi discípulo de São Francisco de Assis e tornou-se um dos mais eloquentes pregadores da Ordem Franciscana"
+      },
+      {
+        "santoSlug": "frei-galvao",
+        "tipo": "mesmaOrdem",
+        "descricao": "Ambos pertenceram à Ordem Franciscana, seguindo o ideal de pobreza e serviço de São Francisco"
+      }
+    ]
   },
   {
     "nome": "Santa Paulina do Coração Agonizante de Jesus",
@@ -184,7 +249,19 @@
     "padroeiro": ["Brasil"],
     "periodo": "Contemporâneo",
     "doutorIgreja": false,
-    "popularidade": 85
+    "popularidade": 85,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-joao-paulo-ii",
+        "tipo": "canonizadoPor",
+        "descricao": "Santa Paulina foi canonizada por São João Paulo II em 2002, tornando-se a primeira santa brasileira"
+      },
+      {
+        "santoSlug": "frei-galvao",
+        "tipo": "contemporaneo",
+        "descricao": "Ambos são santos brasileiros, padroeiros do Brasil e símbolos da fé católica no país"
+      }
+    ]
   },
   {
     "nome": "Frei Galvão",
@@ -201,7 +278,24 @@
     "padroeiro": ["Brasil"],
     "periodo": "Idade Moderna",
     "doutorIgreja": false,
-    "popularidade": 88
+    "popularidade": 88,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-francisco-de-assis",
+        "tipo": "discipulo",
+        "descricao": "Frei Galvão pertenceu à Ordem Franciscana fundada por São Francisco de Assis, seguindo seus ideais de pobreza e caridade"
+      },
+      {
+        "santoSlug": "santo-antonio-de-padua",
+        "tipo": "mesmaOrdem",
+        "descricao": "Ambos foram membros da Ordem Franciscana e são reconhecidos por seus milagres e devoção"
+      },
+      {
+        "santoSlug": "santa-paulina",
+        "tipo": "contemporaneo",
+        "descricao": "Ambos são santos brasileiros, padroeiros do Brasil e símbolos da fé católica no país"
+      }
+    ]
   },
   {
     "nome": "São Paulo da Cruz",
@@ -235,7 +329,19 @@
     "padroeiro": ["Estudantes", "Universidades", "Filósofos"],
     "periodo": "Idade Média",
     "doutorIgreja": true,
-    "popularidade": 90
+    "popularidade": 90,
+    "relacionamentos": [
+      {
+        "santoSlug": "santa-catarina-de-sena",
+        "tipo": "mesmaOrdem",
+        "descricao": "Ambos pertenceram à Ordem Dominicana e são Doutores da Igreja, contribuindo profundamente para a teologia católica"
+      },
+      {
+        "santoSlug": "santo-agostinho",
+        "tipo": "influenciadoPor",
+        "descricao": "São Tomás foi profundamente influenciado pelos escritos de Santo Agostinho, incorporando seus ensinamentos na teologia escolástica"
+      }
+    ]
   },
   {
     "nome": "São Miguel Arcanjo",
