@@ -1,0 +1,281 @@
+{
+  "oracoes": {
+    "sinalDaCruz": {
+      "nome": "Sinal da Cruz",
+      "texto": "Pelo sinal da Santa Cruz, livrai-nos, Deus Nosso Senhor, dos nossos inimigos. Em nome do Pai, do Filho e do Espírito Santo. Amém."
+    },
+    "credo": {
+      "nome": "Creio em Deus Pai (Credo)",
+      "texto": "Creio em Deus Pai todo-poderoso, Criador do céu e da terra; e em Jesus Cristo, seu único Filho, Nosso Senhor; que foi concebido pelo poder do Espírito Santo; nasceu da Virgem Maria, padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado. Desceu à mansão dos mortos; ressuscitou ao terceiro dia; subiu aos céus, está sentado à direita de Deus Pai todo-poderoso, donde há de vir a julgar os vivos e os mortos. Creio no Espírito Santo, na santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém."
+    },
+    "paiNosso": {
+      "nome": "Pai Nosso",
+      "texto": "Pai Nosso, que estais nos Céus, santificado seja o Vosso nome, venha a nós o Vosso reino, seja feita a Vossa vontade assim na terra como no Céu. O pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas assim como nós perdoamos a quem nos tem ofendido, e não nos deixeis cair em tentação, mas livrai-nos do mal. Amém."
+    },
+    "aveMaria": {
+      "nome": "Ave Maria",
+      "texto": "Ave Maria, cheia de graça, o Senhor é convosco, bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós pecadores, agora e na hora da nossa morte. Amém."
+    },
+    "gloria": {
+      "nome": "Glória ao Pai",
+      "texto": "Glória ao Pai, ao Filho e ao Espírito Santo. Como era no princípio, agora e sempre. Amém."
+    },
+    "fatima": {
+      "nome": "Oração de Fátima",
+      "texto": "Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o Céu, principalmente as que mais precisarem da Vossa misericórdia."
+    },
+    "salveRainha": {
+      "nome": "Salve Rainha",
+      "texto": "Salve, Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A Vós bradamos, os degredados filhos de Eva. A Vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses Vossos olhos misericordiosos a nós volvei. E depois deste desterro, mostrai-nos Jesus, bendito fruto do Vosso ventre. Ó clemente, ó piedosa, ó doce sempre Virgem Maria. Rogai por nós, Santa Mãe de Deus, para que sejamos dignos das promessas de Cristo. Amém."
+    },
+    "oracaoFinal": {
+      "nome": "Oração Final",
+      "texto": "Infinitas graças vos damos, Soberana Rainha, pelos benefícios que todos os dias recebemos de vossas mãos liberais. Dignai-vos, agora e para sempre, tomar-nos debaixo do vosso poderoso amparo e, para mais vos agradecer, vos oferecemos esta Salve Rainha. Salve, Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve!"
+    }
+  },
+  "misterios": {
+    "gozosos": {
+      "nome": "Mistérios Gozosos",
+      "dia": "Segunda-feira e Sábado",
+      "cor": "#4F46E5",
+      "lista": [
+        {
+          "numero": 1,
+          "titulo": "A Anunciação do Anjo Gabriel a Maria",
+          "reflexao": "Meditemos sobre a humildade de Maria ao aceitar ser Mãe de Deus.",
+          "fruto": "Humildade"
+        },
+        {
+          "numero": 2,
+          "titulo": "A Visitação de Nossa Senhora a sua prima Santa Isabel",
+          "reflexao": "Meditemos sobre a caridade de Maria ao visitar e ajudar sua prima.",
+          "fruto": "Caridade fraterna"
+        },
+        {
+          "numero": 3,
+          "titulo": "O Nascimento de Jesus em Belém",
+          "reflexao": "Meditemos sobre a simplicidade do nascimento do Salvador do mundo.",
+          "fruto": "Pobreza de espírito"
+        },
+        {
+          "numero": 4,
+          "titulo": "A Apresentação do Menino Jesus no Templo",
+          "reflexao": "Meditemos sobre a obediência de Maria e José à lei de Deus.",
+          "fruto": "Obediência"
+        },
+        {
+          "numero": 5,
+          "titulo": "A Perda e o Encontro do Menino Jesus no Templo",
+          "reflexao": "Meditemos sobre a alegria de Maria ao encontrar Jesus entre os doutores.",
+          "fruto": "Alegria em encontrar Jesus"
+        }
+      ]
+    },
+    "dolorosos": {
+      "nome": "Mistérios Dolorosos",
+      "dia": "Terça-feira e Sexta-feira",
+      "cor": "#DC2626",
+      "lista": [
+        {
+          "numero": 1,
+          "titulo": "A Agonia de Jesus no Horto das Oliveiras",
+          "reflexao": "Meditemos sobre a tristeza de Jesus ao aceitar a vontade do Pai.",
+          "fruto": "Conformidade com a vontade de Deus"
+        },
+        {
+          "numero": 2,
+          "titulo": "A Flagelação de Jesus atado à coluna",
+          "reflexao": "Meditemos sobre o sofrimento de Jesus pelos nossos pecados.",
+          "fruto": "Mortificação dos sentidos"
+        },
+        {
+          "numero": 3,
+          "titulo": "A Coroação de espinhos",
+          "reflexao": "Meditemos sobre a humilhação que Jesus sofreu por amor a nós.",
+          "fruto": "Desprezo do mundo"
+        },
+        {
+          "numero": 4,
+          "titulo": "Jesus carrega a Cruz até o Calvário",
+          "reflexao": "Meditemos sobre a paciência de Jesus ao carregar a cruz.",
+          "fruto": "Paciência nas adversidades"
+        },
+        {
+          "numero": 5,
+          "titulo": "A Crucificação e Morte de Jesus",
+          "reflexao": "Meditemos sobre o amor infinito de Jesus que deu Sua vida por nós.",
+          "fruto": "Perseverança final"
+        }
+      ]
+    },
+    "gloriosos": {
+      "nome": "Mistérios Gloriosos",
+      "dia": "Quarta-feira e Domingo",
+      "cor": "#FBBF24",
+      "lista": [
+        {
+          "numero": 1,
+          "titulo": "A Ressurreição de Jesus",
+          "reflexao": "Meditemos sobre a vitória de Jesus sobre a morte e o pecado.",
+          "fruto": "Fé"
+        },
+        {
+          "numero": 2,
+          "titulo": "A Ascensão de Jesus ao Céu",
+          "reflexao": "Meditemos sobre a esperança que Jesus nos deu ao subir aos céus.",
+          "fruto": "Esperança e desejo do Céu"
+        },
+        {
+          "numero": 3,
+          "titulo": "A Vinda do Espírito Santo sobre os Apóstolos",
+          "reflexao": "Meditemos sobre os dons do Espírito Santo derramados sobre a Igreja.",
+          "fruto": "Sabedoria e fortaleza"
+        },
+        {
+          "numero": 4,
+          "titulo": "A Assunção de Nossa Senhora ao Céu",
+          "reflexao": "Meditemos sobre a glória de Maria junto a seu Filho.",
+          "fruto": "Boa morte"
+        },
+        {
+          "numero": 5,
+          "titulo": "A Coroação de Nossa Senhora como Rainha do Céu e da Terra",
+          "reflexao": "Meditemos sobre a realeza de Maria e sua intercessão por nós.",
+          "fruto": "Confiança em Maria"
+        }
+      ]
+    },
+    "luminosos": {
+      "nome": "Mistérios Luminosos",
+      "dia": "Quinta-feira",
+      "cor": "#10B981",
+      "lista": [
+        {
+          "numero": 1,
+          "titulo": "O Batismo de Jesus no rio Jordão",
+          "reflexao": "Meditemos sobre o início da vida pública de Jesus e nossa vocação batismal.",
+          "fruto": "Fidelidade às promessas do Batismo"
+        },
+        {
+          "numero": 2,
+          "titulo": "A Auto-revelação de Jesus nas Bodas de Caná",
+          "reflexao": "Meditemos sobre o primeiro milagre de Jesus e a intercessão de Maria.",
+          "fruto": "Docilidade à Palavra de Cristo"
+        },
+        {
+          "numero": 3,
+          "titulo": "O Anúncio do Reino de Deus e o convite à conversão",
+          "reflexao": "Meditemos sobre a pregação de Jesus e nosso chamado à conversão.",
+          "fruto": "Conversão do coração"
+        },
+        {
+          "numero": 4,
+          "titulo": "A Transfiguração de Jesus no Monte Tabor",
+          "reflexao": "Meditemos sobre a glória divina de Jesus revelada aos apóstolos.",
+          "fruto": "Busca da santidade"
+        },
+        {
+          "numero": 5,
+          "titulo": "A Instituição da Eucaristia",
+          "reflexao": "Meditemos sobre o dom do Corpo e Sangue de Jesus na Última Ceia.",
+          "fruto": "Amor à Eucaristia"
+        }
+      ]
+    }
+  },
+  "estruturaRosario": {
+    "inicio": [
+      {
+        "tipo": "oracao",
+        "nome": "sinalDaCruz",
+        "conta": "cruz"
+      },
+      {
+        "tipo": "oracao",
+        "nome": "credo",
+        "conta": "cruz"
+      },
+      {
+        "tipo": "oracao",
+        "nome": "paiNosso",
+        "conta": "grande"
+      },
+      {
+        "tipo": "oracao",
+        "nome": "aveMaria",
+        "conta": "pequena",
+        "intencao": "Para aumentar a Fé"
+      },
+      {
+        "tipo": "oracao",
+        "nome": "aveMaria",
+        "conta": "pequena",
+        "intencao": "Para aumentar a Esperança"
+      },
+      {
+        "tipo": "oracao",
+        "nome": "aveMaria",
+        "conta": "pequena",
+        "intencao": "Para aumentar a Caridade"
+      },
+      {
+        "tipo": "oracao",
+        "nome": "gloria",
+        "conta": null
+      }
+    ],
+    "decada": [
+      {
+        "tipo": "misterio",
+        "conta": null
+      },
+      {
+        "tipo": "oracao",
+        "nome": "paiNosso",
+        "conta": "grande"
+      },
+      {
+        "tipo": "oracao",
+        "nome": "aveMaria",
+        "conta": "pequena",
+        "repeticoes": 10
+      },
+      {
+        "tipo": "oracao",
+        "nome": "gloria",
+        "conta": null
+      },
+      {
+        "tipo": "oracao",
+        "nome": "fatima",
+        "conta": null
+      }
+    ],
+    "final": [
+      {
+        "tipo": "oracao",
+        "nome": "salveRainha",
+        "conta": null
+      },
+      {
+        "tipo": "oracao",
+        "nome": "oracaoFinal",
+        "conta": null
+      },
+      {
+        "tipo": "oracao",
+        "nome": "sinalDaCruz",
+        "conta": null
+      }
+    ]
+  },
+  "diasDaSemana": {
+    "0": "gloriosos",
+    "1": "gozosos",
+    "2": "dolorosos",
+    "3": "gloriosos",
+    "4": "luminosos",
+    "5": "dolorosos",
+    "6": "gozosos"
+  }
+}
