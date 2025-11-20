@@ -22,7 +22,7 @@ export async function getStaticProps({ params }) {
   // Buscar santo relacionado, se houver
   let santoRelacionado = null;
   if (novena.santoRelacionado) {
-    santoRelacionado = santos.find(s => s.slug === novena.santoRelacionado);
+    santoRelacionado = santos.find(s => s.slug === novena.santoRelacionado) || null;
   }
 
   return {

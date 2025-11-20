@@ -21,7 +21,7 @@ export async function getStaticProps({ params }) {
   // Buscar santo relacionado, se houver
   let santoRelacionado = null;
   if (oracao.santoRelacionado) {
-    santoRelacionado = santos.find(s => s.slug === oracao.santoRelacionado);
+    santoRelacionado = santos.find(s => s.slug === oracao.santoRelacionado) || null;
   }
 
   // Buscar orações relacionadas (mesma categoria)
