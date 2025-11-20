@@ -1,0 +1,437 @@
+[
+  {
+    "id": 1,
+    "nome": "Novena a Nossa Senhora Aparecida",
+    "slug": "novena-nossa-senhora-aparecida",
+    "santoRelacionado": null,
+    "imagem": "/images/novenas/nossa-senhora-aparecida.jpg",
+    "descricao": "Novena à Padroeira do Brasil, Nossa Senhora Aparecida, para pedir proteção, graças e intercessão.",
+    "duracao": 9,
+    "dataFesta": "12 de outubro",
+    "categoria": "Marianas",
+    "tags": ["maria", "brasil", "proteção"],
+    "popularidade": 10,
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Fé e Confiança",
+        "leitura": "Lucas 1:26-38",
+        "meditacao": "Hoje meditamos sobre a fé de Maria ao aceitar ser Mãe de Deus. Nossa Senhora Aparecida nos ensina a confiar na providência divina.",
+        "oracao": "Ó Maria Aparecida, Mãe de Deus e nossa Mãe, aumentai em nós a fé e a confiança na providência divina. Que possamos, como vós, dizer sim a todos os chamados de Deus. Intercedei por nós junto a Jesus, vosso Filho amado. Amém.",
+        "intencao": "Pela fé e confiança em Deus"
+      },
+      {
+        "dia": 2,
+        "titulo": "Proteção da Família",
+        "leitura": "Lucas 2:41-52",
+        "meditacao": "Contemplamos a Sagrada Família e pedimos a proteção de Nossa Senhora sobre nossas famílias.",
+        "oracao": "Ó Maria Aparecida, Rainha do Brasil, protegei nossas famílias. Que vosso manto maternal nos cubra e nos livre de todo mal. Guardai nossos lares na paz e no amor. Intercedei por todas as famílias brasileiras. Amém.",
+        "intencao": "Pela proteção das famílias"
+      },
+      {
+        "dia": 3,
+        "titulo": "Humildade e Simplicidade",
+        "leitura": "Lucas 1:46-55",
+        "meditacao": "Maria nos ensina a ser humildes e simples de coração, confiando na misericórdia de Deus.",
+        "oracao": "Ó humilde serva do Senhor, Nossa Senhora Aparecida, ensinai-nos a humildade e simplicidade. Livrai-nos da soberba e do orgulho. Que possamos ser pequeninos diante de Deus. Amém.",
+        "intencao": "Pela humildade de coração"
+      },
+      {
+        "dia": 4,
+        "titulo": "Graças e Milagres",
+        "leitura": "João 2:1-11",
+        "meditacao": "Lembramos os milagres realizados por intercessão de Maria, especialmente em Caná.",
+        "oracao": "Ó Maria, Medianeira de todas as graças, Nossa Senhora Aparecida, apresentai a Jesus nossas necessidades. Alcançai-nos as graças de que precisamos, especialmente [fazer pedido pessoal]. Amém.",
+        "intencao": "Pelas graças necessárias"
+      },
+      {
+        "dia": 5,
+        "titulo": "Conversão dos Pecadores",
+        "leitura": "João 19:25-27",
+        "meditacao": "Ao pé da Cruz, Maria recebeu a missão de ser Mãe de todos nós, especialmente dos pecadores.",
+        "oracao": "Ó Mãe da Divina Graça, Nossa Senhora Aparecida, rogai pela conversão dos pecadores. Acolhei em vosso coração maternal todos os filhos afastados de Deus. Trazei-os de volta ao amor de Jesus. Amém.",
+        "intencao": "Pela conversão dos pecadores"
+      },
+      {
+        "dia": 6,
+        "titulo": "Saúde e Cura",
+        "leitura": "Marcos 5:25-34",
+        "meditacao": "Jesus cura a mulher hemorrágica. Pedimos a Nossa Senhora a cura física e espiritual.",
+        "oracao": "Ó Saúde dos Enfermos, Nossa Senhora Aparecida, intercedei pelos doentes. Levai a Jesus nossos pedidos de cura e conforto. Dai força aos que sofrem e paz aos que cuidam dos enfermos. Amém.",
+        "intencao": "Pela saúde e cura dos enfermos"
+      },
+      {
+        "dia": 7,
+        "titulo": "Brasil e sua Missão",
+        "leitura": "Mateus 28:18-20",
+        "meditacao": "Pedimos a proteção de Nossa Senhora sobre o Brasil e seu povo.",
+        "oracao": "Ó Padroeira do Brasil, Nossa Senhora Aparecida, abençoai nossa Pátria. Guiai nossos governantes na justiça e na paz. Protegei nosso povo e fazei do Brasil uma terra de fé e caridade. Amém.",
+        "intencao": "Pelo Brasil e seu povo"
+      },
+      {
+        "dia": 8,
+        "titulo": "Perseverança Final",
+        "leitura": "Atos 1:12-14",
+        "meditacao": "Maria perseverava em oração com os Apóstolos. Pedimos a graça da perseverança.",
+        "oracao": "Ó Nossa Senhora Aparecida, alcançai-nos a graça da perseverança final. Que possamos permanecer fiéis até o fim, sempre sob vossa proteção maternal. Guardai-nos do pecado mortal. Amém.",
+        "intencao": "Pela perseverança na fé"
+      },
+      {
+        "dia": 9,
+        "titulo": "Agradecimento e Consagração",
+        "leitura": "Lucas 1:39-45",
+        "meditacao": "Agradecemos a Nossa Senhora por todas as graças e nos consagramos a Ela.",
+        "oracao": "Ó Maria Aparecida, Mãe amada, agradecemos por vossa proteção e intercessão. Consagramos-nos hoje a vós, nosso corpo, nossa alma, nossa vida. Sedi sempre nosso refúgio e caminho que nos leva a Jesus. Rainha e Mãe, abençoai-nos! Amém.",
+        "intencao": "Em ação de graças"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "Novena do Espírito Santo",
+    "slug": "novena-espirito-santo",
+    "santoRelacionado": null,
+    "imagem": "/images/novenas/espirito-santo.jpg",
+    "descricao": "Novena preparatória para Pentecostes, pedindo os dons do Espírito Santo.",
+    "duracao": 9,
+    "dataFesta": "Pentecostes (50 dias após a Páscoa)",
+    "categoria": "Espírito Santo",
+    "tags": ["espírito santo", "dons", "pentecostes"],
+    "popularidade": 9,
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Vinde, Espírito Santo",
+        "leitura": "Atos 2:1-13",
+        "meditacao": "Pedimos a vinda do Espírito Santo para renovar nossa vida espiritual.",
+        "oracao": "Vinde, Espírito Santo, enchei os corações dos vossos fiéis e acendei neles o fogo do Vosso amor. Enviai o Vosso Espírito e tudo será criado, e renovareis a face da terra. Amém.",
+        "intencao": "Pela renovação espiritual"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dom da Sabedoria",
+        "leitura": "1 Coríntios 2:6-16",
+        "meditacao": "Pedimos o dom da Sabedoria para conhecer e amar as coisas de Deus.",
+        "oracao": "Espírito Santo, dai-nos o dom da Sabedoria para que possamos conhecer o que vem de Deus e ordenar nossa vida segundo Sua vontade. Que possamos ter o gosto pelas coisas do céu. Amém.",
+        "intencao": "Pelo dom da Sabedoria"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dom do Entendimento",
+        "leitura": "João 14:15-26",
+        "meditacao": "Pedimos o dom do Entendimento para compreender as verdades da fé.",
+        "oracao": "Espírito de verdade, dai-nos o dom do Entendimento para penetrar nas verdades reveladas e compreender melhor os mistérios da fé. Iluminai nossa inteligência. Amém.",
+        "intencao": "Pelo dom do Entendimento"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dom do Conselho",
+        "leitura": "Romanos 8:26-27",
+        "meditacao": "Pedimos o dom do Conselho para discernir a vontade de Deus.",
+        "oracao": "Espírito Santo, Conselheiro divino, guiai-nos em nossas decisões. Dai-nos o dom do Conselho para que possamos escolher sempre o que é bom e agradável a Deus. Amém.",
+        "intencao": "Pelo dom do Conselho"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dom da Fortaleza",
+        "leitura": "Atos 4:23-31",
+        "meditacao": "Pedimos o dom da Fortaleza para perseverar no bem mesmo diante das dificuldades.",
+        "oracao": "Espírito Santo, dai-nos o dom da Fortaleza para enfrentar as provações da vida. Fortalecei-nos contra as tentações e dai-nos coragem para testemunhar a fé. Amém.",
+        "intencao": "Pelo dom da Fortaleza"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dom da Ciência",
+        "leitura": "1 João 2:20-27",
+        "meditacao": "Pedimos o dom da Ciência para conhecer as criaturas em relação a Deus.",
+        "oracao": "Espírito Santo, dai-nos o dom da Ciência para que possamos ver todas as coisas à luz de Deus. Que usemos a criação para Sua glória. Amém.",
+        "intencao": "Pelo dom da Ciência"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dom da Piedade",
+        "leitura": "Romanos 8:14-17",
+        "meditacao": "Pedimos o dom da Piedade para amar a Deus como Pai e ao próximo como irmão.",
+        "oracao": "Espírito Santo, dai-nos o dom da Piedade para que possamos amar a Deus como filhos e tratar todos como irmãos. Aumentai em nós o amor filial. Amém.",
+        "intencao": "Pelo dom da Piedade"
+      },
+      {
+        "dia": 8,
+        "titulo": "Dom do Temor de Deus",
+        "leitura": "Provérbios 9:10-12",
+        "meditacao": "Pedimos o dom do Temor de Deus para respeitar e reverenciar o Criador.",
+        "oracao": "Espírito Santo, dai-nos o dom do santo Temor de Deus para que possamos evitar o pecado por amor a Deus. Que tenhamos reverência e respeito pelas coisas santas. Amém.",
+        "intencao": "Pelo dom do Temor de Deus"
+      },
+      {
+        "dia": 9,
+        "titulo": "Pentecostes Interior",
+        "leitura": "Atos 2:1-4",
+        "meditacao": "Preparamos nosso coração para receber a efusão do Espírito Santo.",
+        "oracao": "Vinde, Espírito Santo! Vinde habitar em nossos corações. Transformai-nos com vosso fogo divino. Concedei-nos todos os vossos dons e frutos. Fazei de nós instrumentos de vosso amor. Amém.",
+        "intencao": "Pela efusão do Espírito Santo"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nome": "Novena a Santo Antônio",
+    "slug": "novena-santo-antonio",
+    "santoRelacionado": "santo-antonio-de-padua",
+    "imagem": "/images/novenas/santo-antonio.jpg",
+    "descricao": "Novena ao santo das causas impossíveis e dos pobres, celebrado em 13 de junho.",
+    "duracao": 9,
+    "dataFesta": "13 de junho",
+    "categoria": "Santos",
+    "tags": ["santo antônio", "causas impossíveis", "pobres"],
+    "popularidade": 9,
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Conversão e Chamado",
+        "leitura": "Atos 9:1-19",
+        "meditacao": "Santo Antônio deixou tudo para seguir Jesus. Pedimos a graça da conversão.",
+        "oracao": "Glorioso Santo Antônio, que deixastes tudo para seguir Jesus Cristo, rogai por nós para que tenhamos coragem de responder aos chamados de Deus. Ajudai-nos em nossas necessidades. Amém.",
+        "intencao": "Pela conversão do coração"
+      },
+      {
+        "dia": 2,
+        "titulo": "Pobreza e Desapego",
+        "leitura": "Mateus 6:19-21",
+        "meditacao": "Santo Antônio viveu em pobreza total. Pedimos a graça do desapego.",
+        "oracao": "Santo Antônio, amigo dos pobres, ensinai-nos o desapego dos bens materiais. Que possamos buscar primeiro o Reino de Deus. Socorrei os necessitados. Amém.",
+        "intencao": "Pelo desapego e caridade"
+      },
+      {
+        "dia": 3,
+        "titulo": "Pregação e Sabedoria",
+        "leitura": "Mateus 10:16-20",
+        "meditacao": "Santo Antônio pregava com sabedoria e poder. Pedimos a graça de testemunhar a fé.",
+        "oracao": "Santo Antônio, doutor evangélico, dai-nos sabedoria para anunciar o Evangelho. Que nossas palavras e ações testemunhem Cristo. Amém.",
+        "intencao": "Pela evangelização"
+      },
+      {
+        "dia": 4,
+        "titulo": "Milagres e Intercessão",
+        "leitura": "Marcos 16:15-20",
+        "meditacao": "Deus operou muitos milagres através de Santo Antônio. Confiamos em sua intercessão.",
+        "oracao": "Santo Antônio, taumaturgo poderoso, apresentai a Deus nossas necessidades e aflições. Alcançai-nos as graças que tanto desejamos, especialmente [fazer pedido]. Amém.",
+        "intencao": "Pelas graças necessárias"
+      },
+      {
+        "dia": 5,
+        "titulo": "Humildade e Obediência",
+        "leitura": "Filipenses 2:5-11",
+        "meditacao": "Santo Antônio era humilde e obediente. Pedimos estas virtudes.",
+        "oracao": "Santo Antônio, modelo de humildade, livrai-nos do orgulho e da vanglória. Ensinai-nos a obediência amorosa à vontade de Deus. Amém.",
+        "intencao": "Pela humildade e obediência"
+      },
+      {
+        "dia": 6,
+        "titulo": "Devoção ao Menino Jesus",
+        "leitura": "Mateus 18:1-5",
+        "meditacao": "Santo Antônio tinha grande devoção ao Menino Jesus. Pedimos pureza de coração.",
+        "oracao": "Santo Antônio, que tivestes o Menino Jesus em vossos braços, alcançai-nos pureza de coração e amor infantil a Jesus. Amém.",
+        "intencao": "Pela pureza e simplicidade"
+      },
+      {
+        "dia": 7,
+        "titulo": "Causas Impossíveis",
+        "leitura": "Lucas 1:37",
+        "meditacao": "Para Deus nada é impossível. Santo Antônio nos ajuda nas causas difíceis.",
+        "oracao": "Santo Antônio, advogado das causas impossíveis, apresentai a Deus minhas aflições. Socorrei-me nesta necessidade [fazer pedido]. Confio em vossa poderosa intercessão. Amém.",
+        "intencao": "Pelas causas impossíveis"
+      },
+      {
+        "dia": 8,
+        "titulo": "Coisas Perdidas",
+        "leitura": "Lucas 15:8-10",
+        "meditacao": "Santo Antônio ajuda a encontrar o que está perdido, especialmente as almas.",
+        "oracao": "Santo Antônio, que ajudais a encontrar o que se perdeu, alcançai-nos a graça de encontrar o que buscamos, especialmente a paz de espírito e a amizade com Deus. Amém.",
+        "intencao": "Por encontrar o que está perdido"
+      },
+      {
+        "dia": 9,
+        "titulo": "Festa de Santo Antônio",
+        "leitura": "João 15:9-17",
+        "meditacao": "Celebramos a memória de Santo Antônio e renovamos nossa devoção.",
+        "oracao": "Glorioso Santo Antônio, agradecemos por vossa intercessão. Continuai a proteger-nos e guiar-nos. Que possamos imitar vossas virtudes e alcançar a vida eterna. Amém.",
+        "intencao": "Em ação de graças"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nome": "Novena à Divina Misericórdia",
+    "slug": "novena-divina-misericordia",
+    "santoRelacionado": "santa-faustina-kowalska",
+    "imagem": "/images/novenas/divina-misericordia.jpg",
+    "descricao": "Novena revelada por Jesus a Santa Faustina, rezada antes do Domingo da Divina Misericórdia.",
+    "duracao": 9,
+    "dataFesta": "Domingo após a Páscoa",
+    "categoria": "Jesus Cristo",
+    "tags": ["jesus", "misericórdia", "santa faustina"],
+    "popularidade": 8,
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Toda a Humanidade",
+        "leitura": "João 3:16-21",
+        "meditacao": "Jesus deseja que toda a humanidade conheça Seu amor misericordioso.",
+        "oracao": "Misericordiosíssimo Jesus, cuja prerrogativa é compadecer-se de nós e perdoar-nos, não olheis os nossos pecados, mas a confiança que temos na Vossa infinita bondade, e recebei-nos na morada do Vosso Sacratíssimo Coração, e disso não nos deixeis sair por toda a eternidade. Amém.",
+        "intencao": "Por toda a humanidade"
+      },
+      {
+        "dia": 2,
+        "titulo": "Almas dos Sacerdotes e Religiosos",
+        "leitura": "João 17:14-19",
+        "meditacao": "Pedimos por aqueles que dedicaram suas vidas ao serviço de Deus.",
+        "oracao": "Misericordiosíssimo Jesus, de quem vem todo o bem, aumentai em nós as graças para que pratiquemos obras dignas da Vossa misericórdia, a fim de que os que nos veem possam glorificar o Pai da Misericórdia que está nos céus. Amém.",
+        "intencao": "Pelos sacerdotes e religiosos"
+      },
+      {
+        "dia": 3,
+        "titulo": "Almas Devotas e Fiéis",
+        "leitura": "Lucas 10:38-42",
+        "meditacao": "Pedimos pelas almas que já conhecem e amam a Deus.",
+        "oracao": "Misericordiosíssimo Jesus, da abundância da Vossa misericórdia, derramai sobre nós as Vossas bênçãos, para que, durante toda a nossa vida, nunca pequemos contra a Vossa misericórdia e conservemos como tesouro precioso no momento da morte a gloriosa proteção da Vossa misericórdia. Amém.",
+        "intencao": "Pelas almas devotas e fiéis"
+      },
+      {
+        "dia": 4,
+        "titulo": "Pagãos e Afastados",
+        "leitura": "João 10:14-16",
+        "meditacao": "Jesus quer reunir todas as ovelhas no único rebanho.",
+        "oracao": "Misericordiosíssimo Jesus, que sois a própria bondade e compaixão, trago ao Vosso coração as almas que ainda não Vos conhecem. Fazei que eles também glorifiquem o abismo da Vossa misericórdia. Amém.",
+        "intencao": "Pelos pagãos e afastados da fé"
+      },
+      {
+        "dia": 5,
+        "titulo": "Almas Heréticas e Cismáticas",
+        "leitura": "João 17:20-23",
+        "meditacao": "Jesus quer a unidade de todos os cristãos.",
+        "oracao": "Misericordiosíssimo Jesus, bondade mesma, não recuseis luz às almas que Vos pedem. Uni-as na santa Igreja pela força da Vossa misericórdia. Amém.",
+        "intencao": "Pela unidade dos cristãos"
+      },
+      {
+        "dia": 6,
+        "titulo": "Almas Mansas e Humildes",
+        "leitura": "Mateus 11:28-30",
+        "meditacao": "Jesus atrai especialmente as almas humildes e pequenas.",
+        "oracao": "Misericordiosíssimo Jesus, fazei que todos conheçam a grandeza da Vossa misericórdia. Concedei-nos a graça de vivermos conforme a Vossa vontade. Amém.",
+        "intencao": "Pelas almas mansas e humildes"
+      },
+      {
+        "dia": 7,
+        "titulo": "Almas que Veneram a Misericórdia",
+        "leitura": "Lucas 7:36-50",
+        "meditacao": "Jesus abençoa especialmente aqueles que confiam em Sua misericórdia.",
+        "oracao": "Misericordiosíssimo Jesus, cujo Coração está sempre aberto, abençoai aqueles que veneram e proclamam Vossa misericórdia. Protegei-os com o Vosso poder. Amém.",
+        "intencao": "Por aqueles que veneram a Divina Misericórdia"
+      },
+      {
+        "dia": 8,
+        "titulo": "Almas Detidas no Purgatório",
+        "leitura": "2 Macabeus 12:43-46",
+        "meditacao": "Pedimos misericórdia para as almas que se purificam no purgatório.",
+        "oracao": "Misericordiosíssimo Jesus, Vós mesmo dissestes que desejais misericórdia. Trago ao Vosso Coração as almas do purgatório. Derramai sobre elas o Vosso Sangue e apressai sua entrada no Céu. Amém.",
+        "intencao": "Pelas almas do purgatório"
+      },
+      {
+        "dia": 9,
+        "titulo": "Almas Tíbias",
+        "leitura": "Apocalipse 3:15-20",
+        "meditacao": "Jesus deseja inflamar com Seu amor as almas tíbias e frias.",
+        "oracao": "Misericordiosíssimo Jesus, que sois o próprio fogo do amor, inflama com esse fogo as almas tíbias e frias. Transformai-as em chamas vivas de amor a Vós. Amém.",
+        "intencao": "Pelas almas tíbias e frias"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nome": "Novena a São José",
+    "slug": "novena-sao-jose",
+    "santoRelacionado": "sao-jose",
+    "imagem": "/images/novenas/sao-jose.jpg",
+    "descricao": "Novena ao pai adotivo de Jesus e esposo de Maria, patrono da Igreja Universal.",
+    "duracao": 9,
+    "dataFesta": "19 de março",
+    "categoria": "Santos",
+    "tags": ["são josé", "família", "trabalho"],
+    "popularidade": 8,
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "São José, Homem Justo",
+        "leitura": "Mateus 1:18-25",
+        "meditacao": "São José é chamado de homem justo, obediente à vontade de Deus.",
+        "oracao": "Glorioso São José, esposo de Maria, obtende-nos a graça de vivermos sempre na justiça e na obediência à vontade divina. Protegei nossas famílias. Amém.",
+        "intencao": "Pela justiça e retidão"
+      },
+      {
+        "dia": 2,
+        "titulo": "Protetor da Sagrada Família",
+        "leitura": "Mateus 2:13-15",
+        "meditacao": "São José protegeu Jesus e Maria com amor e dedicação.",
+        "oracao": "São José, guardião da Sagrada Família, protegei também nossas famílias. Livrai-nos de todo perigo e mal. Sede nosso guia e protetor. Amém.",
+        "intencao": "Pela proteção das famílias"
+      },
+      {
+        "dia": 3,
+        "titulo": "Patrono dos Trabalhadores",
+        "leitura": "Gênesis 2:15",
+        "meditacao": "São José sustentou a Sagrada Família com seu trabalho honesto.",
+        "oracao": "São José Operário, abençoai nosso trabalho. Ajudai-nos a trabalhar com dignidade e honestidade. Protegei os trabalhadores e desempregados. Amém.",
+        "intencao": "Pelos trabalhadores e pelo emprego"
+      },
+      {
+        "dia": 4,
+        "titulo": "Modelo de Castidade",
+        "leitura": "1 Tessalonicenses 4:3-7",
+        "meditacao": "São José viveu em castidade perfeita, respeitando Maria.",
+        "oracao": "Castíssimo São José, guardião da Virgem Maria, ensinai-nos a pureza e o respeito. Protegei os jovens e as famílias. Amém.",
+        "intencao": "Pela pureza e castidade"
+      },
+      {
+        "dia": 5,
+        "titulo": "Educador de Jesus",
+        "leitura": "Lucas 2:51-52",
+        "meditacao": "São José ensinou e educou Jesus com amor paternal.",
+        "oracao": "São José, mestre e educador, ajudai os pais a educarem bem seus filhos na fé. Iluminai os educadores em sua missão. Amém.",
+        "intencao": "Pelos pais e educadores"
+      },
+      {
+        "dia": 6,
+        "titulo": "Homem de Silêncio",
+        "leitura": "Eclesiastes 3:7",
+        "meditacao": "São José nos ensina o valor do silêncio e da contemplação.",
+        "oracao": "São José, homem de silêncio, ensinai-nos a ouvir Deus. Que saibamos contemplar e meditar em nossos corações. Amém.",
+        "intencao": "Pelo silêncio interior"
+      },
+      {
+        "dia": 7,
+        "titulo": "Terror dos Demônios",
+        "leitura": "Efésios 6:10-17",
+        "meditacao": "São José, pela sua santidade, é terror dos demônios.",
+        "oracao": "Poderoso São José, protegei-nos contra os ataques do inimigo. Sede nosso escudo e defesa em todas as batalhas espirituais. Amém.",
+        "intencao": "Pela proteção espiritual"
+      },
+      {
+        "dia": 8,
+        "titulo": "Patrono da Boa Morte",
+        "leitura": "Filipenses 1:21-23",
+        "meditacao": "São José morreu assistido por Jesus e Maria, tendo uma morte santa.",
+        "oracao": "São José, patrono da boa morte, alcançai-nos a graça de morrermos em estado de graça, assistidos por Jesus e Maria. Amém.",
+        "intencao": "Pela boa morte"
+      },
+      {
+        "dia": 9,
+        "titulo": "Patrono da Igreja Universal",
+        "leitura": "Efésios 5:25-27",
+        "meditacao": "São José foi constituído patrono da Igreja por sua fidelidade.",
+        "oracao": "São José, protetor da Igreja, rogai por toda a Igreja Católica. Protegei o Papa, os bispos e todos os fiéis. Que a Igreja seja sempre fiel a Cristo. Amém.",
+        "intencao": "Pela Igreja Universal"
+      }
+    ]
+  }
+]

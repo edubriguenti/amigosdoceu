@@ -41,7 +41,10 @@ export default function Header() {
     { name: 'Mapa', href: '/mapa' },
     { name: 'Santos do Dia', href: '/santos-do-dia' },
     { name: 'Rosário', href: '/rosario' },
-    { name: 'Calendário', href: '/calendario' }
+    { name: 'Calendário', href: '/calendario' },
+    { name: 'Orações', href: '/oracoes' },
+    { name: 'Novenas', href: '/novenas' },
+    { name: 'Intenções', href: '/intencoes' }
   ];
 
   const favoritosCount = loaded ? getTotalCount() : 0;
