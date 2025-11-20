@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
+import FavoritoButton from '../../components/FavoritoButton'
 import churches from '../../data/igrejas.json'
 import { motion } from 'framer-motion'
 
@@ -13,8 +14,13 @@ export default function ChurchPage() {
     <Layout>
       <article className="py-12">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="max-w-4xl mx-auto">
-            <img src={church.imagem} alt={church.nome} className="img-hero rounded-lg shadow-lg mb-6" />
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="relative">
+              <img src={church.imagem} alt={church.nome} className="img-hero rounded-lg shadow-lg mb-6" />
+              <div className="absolute top-4 right-4">
+                <FavoritoButton tipo="igrejas" item={church} variant="button" size="md" />
+              </div>
+            </div>
             <h1 className="text-3xl font-serif mb-2">{church.nome}</h1>
             <p className="text-lg text-gray-600 mb-6">{church.local}</p>
 

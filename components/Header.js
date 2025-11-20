@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useFavoritos } from '../hooks/useFavoritos';
 
 /**
  * Header Responsivo Mobile-First
@@ -12,6 +13,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
+  const { getTotalCount, loaded } = useFavoritos();
 
   // Fecha menu ao navegar
   useEffect(() => {
@@ -40,6 +42,8 @@ export default function Header() {
     { name: 'Santos do Dia', href: '/santos-do-dia' },
     { name: 'Calendário', href: '/calendario' }
   ];
+
+  const favoritosCount = loaded ? getTotalCount() : 0;
 
   return (
     <>
@@ -77,6 +81,28 @@ export default function Header() {
                   </Link>
                 );
               })}
+              {/* Favoritos Link com Badge */}
+              <Link
+                href="/favoritos"
+                className={`
+                  relative px-3 lg:px-4 py-2 text-sm lg:text-base font-medium rounded-lg transition-all
+                  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+                  ${router.pathname === '/favoritos'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
+                  }
+                `}
+                title="Meus Favoritos"
+              >
+                <span className="flex items-center gap-1">
+                  ❤️
+                  {favoritosCount > 0 && (
+                    <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-semibold text-white bg-accent-500 rounded-full">
+                      {favoritosCount > 99 ? '99+' : favoritosCount}
+                    </span>
+                  )}
+                </span>
+              </Link>
             </nav>
 
             {/* Mobile Menu Button - Visível apenas em mobile */}
@@ -160,6 +186,28 @@ export default function Header() {
                     </Link>
                   );
                 })}
+                {/* Favoritos Link com Badge (Mobile) */}
+                <Link
+                  href="/favoritos"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`
+                    flex items-center justify-between px-4 py-3 text-base font-medium rounded-lg transition-all
+                    focus:outline-none focus:ring-2 focus:ring-blue-500
+                    ${router.pathname === '/favoritos'
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                    }
+                  `}
+                >
+                  <span className="flex items-center gap-2">
+                    ❤️ Meus Favoritos
+                  </span>
+                  {favoritosCount > 0 && (
+                    <span className="inline-flex items-center justify-center min-w-[24px] h-6 px-2 text-xs font-semibold text-white bg-accent-500 rounded-full">
+                      {favoritosCount > 99 ? '99+' : favoritosCount}
+                    </span>
+                  )}
+                </Link>
               </div>
 
               {/* Footer do Menu - Citação bíblica */}
