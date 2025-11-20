@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import FavoritoButton from '../../components/FavoritoButton'
+import RelacionamentosSanto from '../../components/RelacionamentosSanto'
 import saints from '../../data/santos.json'
 import { motion } from 'framer-motion'
 
@@ -36,6 +37,11 @@ export default function SaintPage() {
             )}
           </div>
         </motion.div>
+
+        {/* Santos Relacionados */}
+        {slug && (
+          <RelacionamentosSanto santoSlug={slug} santosData={saints} />
+        )}
       </article>
     </Layout>
   )
