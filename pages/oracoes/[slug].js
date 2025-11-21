@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
 import FavoritoButton from '../../components/FavoritoButton';
+import YouTubePlayer from '../../components/YouTubePlayer';
 import oracoes from '../../data/oracoes.json';
 import santos from '../../data/santos.json';
 import Link from 'next/link';
@@ -172,6 +173,22 @@ export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionad
                 {oracao.texto}
               </p>
             </motion.div>
+
+            {/* Player de Vídeo da Oração */}
+            {oracao.videoId && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="mb-8 flex justify-center"
+              >
+                <YouTubePlayer
+                  videoId={oracao.videoId}
+                  title={oracao.nome}
+                  size="medium"
+                />
+              </motion.div>
+            )}
 
             {/* Ações */}
             <motion.div
