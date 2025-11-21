@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import FavoritoButton from '../../components/FavoritoButton'
 import RelacionamentosSanto from '../../components/RelacionamentosSanto'
+import YouTubePlayer from '../../components/YouTubePlayer'
 import saints from '../../data/santos.json'
 import { motion } from 'framer-motion'
 
@@ -27,6 +28,17 @@ export default function SaintPage() {
               <p>{saint.descricao}</p>
               <blockquote className="italic mt-4 p-4 border-l-4">{saint.oracao}</blockquote>
             </div>
+
+            {/* Player de Oração em Vídeo */}
+            {saint.videoOracaoId && (
+              <div className="mt-6 flex justify-center">
+                <YouTubePlayer
+                  videoId={saint.videoOracaoId}
+                  title={`Oração - ${saint.nome}`}
+                  size="medium"
+                />
+              </div>
+            )}
 
             {saint.tags && (
               <div className="mt-6">
