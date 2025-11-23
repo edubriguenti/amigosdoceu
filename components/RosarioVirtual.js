@@ -109,7 +109,7 @@ export default function RosarioVirtual() {
     const misterioDoDia = getMisterioDoDia();
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50 py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50 py-12 -mx-4 md:-mx-6 px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -243,7 +243,7 @@ export default function RosarioVirtual() {
   const estaCompleto = oracaoAtual?.tipo === 'completo';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50 py-8 -mx-4 md:-mx-6 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header com timer e progresso */}
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">

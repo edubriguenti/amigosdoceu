@@ -4,7 +4,7 @@ import RosarioVirtual from '../components/RosarioVirtual';
 
 export default function RosarioPage() {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Rosário Virtual - Amigos do Céu</title>
         <meta
@@ -25,6 +25,6 @@ export default function RosarioPage() {
       </Head>
 
       <RosarioVirtual />
-    </>
+    </Layout>
   );
 }
