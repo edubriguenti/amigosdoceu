@@ -72,6 +72,27 @@ export default function Home() {
             </Link>
           </div>
 
+          <div className="max-w-6xl mx-auto mb-8">
+            <Link href="/vida-de-cristo" className="group">
+              <div className="border-2 border-secondary-400 bg-gradient-to-r from-secondary-50 to-amber-50 rounded-lg p-8 hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2">
+                <div className="flex items-start gap-4">
+                  <div className="text-4xl" role="img" aria-label="Cruz">✝️</div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-serif mb-3 group-hover:text-secondary-700 transition-colors">Vida de Cristo em Imagens</h2>
+                    <p className="text-gray-800 mb-4 leading-relaxed">
+                      Contemple toda a vida de Jesus Cristo através de uma linha do tempo visual com imagens
+                      inspiradas no estilo sacro barroco-brasileiro. Da Anunciação à Ascensão, uma jornada completa
+                      pela história da Redenção.
+                    </p>
+                    <span className="text-sm font-semibold text-secondary-700 group-hover:underline">
+                      Iniciar Jornada Visual →
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
           <div className="max-w-6xl mx-auto">
             <Link href="/calendario" className="group">
               <div className="border-2 border-amber-400 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-8 hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
