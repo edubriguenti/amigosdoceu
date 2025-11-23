@@ -40,6 +40,7 @@ export default function Header() {
     { name: 'Aparições', href: '/aparicoes' },
     { name: 'Mapa', href: '/mapa' },
     { name: 'Santos do Dia', href: '/santos-do-dia' },
+    { name: 'Vida de Cristo', href: '/vida-de-cristo' },
     { name: 'Rosário', href: '/rosario' },
     { name: 'Calendário', href: '/calendario' },
     { name: 'Orações', href: '/oracoes' },
