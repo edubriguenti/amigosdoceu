@@ -4,303 +4,341 @@
     "slug": "anunciacao",
     "title": "Anunciação",
     "description": "O Anjo Gabriel anuncia a Maria que ela foi escolhida por Deus para ser a mãe do Salvador. Maria aceita com humildade e fé.",
-    "imageUrl": "/images/vida-cristo/anunciacao.jpg",
-    "scripture": "Lucas 1:26-38"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/46/Angelico_Annunciation_%28Cortona%29.jpg",
+    "scripture": "Lucas 1:26-38",
+    "artist": "Fra Angelico"
   },
   {
     "id": 2,
     "slug": "sonho-sao-jose",
     "title": "Sonho de São José",
     "description": "Um anjo aparece em sonho a José, revelando que Maria concebeu pelo Espírito Santo e que ele deve recebê-la como esposa.",
-    "imageUrl": "/images/vida-cristo/sonho-jose.jpg",
-    "scripture": "Mateus 1:18-25"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Rembrandt_-_The_Dream_of_St_Joseph_-_WGA19114.jpg",
+    "scripture": "Mateus 1:18-25",
+    "artist": "Rembrandt van Rijn"
   },
   {
     "id": 3,
     "slug": "visitacao",
     "title": "Visitação de Maria a Isabel",
     "description": "Maria visita sua prima Isabel, que reconhece a presença do Salvador. Isabel exclama: 'Bendita és tu entre as mulheres!'",
-    "imageUrl": "/images/vida-cristo/visitacao.jpg",
-    "scripture": "Lucas 1:39-56"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Domenico_ghirlandaio%2C_visitazione%2C_1491%2C_da_cappella_di_lorenzo_tornabuoni_in_s.m._maddalena_de%27_pazzi_a_fi%2C_01.JPG",
+    "scripture": "Lucas 1:39-56",
+    "artist": "Domenico Ghirlandaio"
   },
   {
     "id": 4,
     "slug": "nascimento",
     "title": "Nascimento de Jesus",
     "description": "Jesus nasce em Belém, em uma humilde manjedoura. O Verbo se fez carne e habitou entre nós.",
-    "imageUrl": "/images/vida-cristo/nascimento.jpg",
-    "scripture": "Lucas 2:1-7"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Adoration_of_the_shepherds_reni.JPG",
+    "scripture": "Lucas 2:1-7",
+    "artist": "Guido Reni"
   },
   {
     "id": 5,
     "slug": "anuncio-pastores",
     "title": "Anúncio aos Pastores",
     "description": "Anjos aparecem aos pastores nos campos de Belém, anunciando o nascimento do Salvador e cantando 'Glória a Deus nas alturas!'",
-    "imageUrl": "/images/vida-cristo/pastores.jpg",
-    "scripture": "Lucas 2:8-20"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Adoration_of_the_shepherds_reni.JPG",
+    "scripture": "Lucas 2:8-20",
+    "artist": "Guido Reni"
   },
   {
     "id": 6,
     "slug": "adoracao-magos",
     "title": "Adoração dos Magos",
     "description": "Sábios do Oriente seguem a estrela até Belém e oferecem a Jesus ouro, incenso e mirra, reconhecendo-o como Rei, Deus e Salvador.",
-    "imageUrl": "/images/vida-cristo/magos.jpg",
-    "scripture": "Mateus 2:1-12"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+    "scripture": "Mateus 2:1-12",
+    "artist": "Peter Paul Rubens (oficina)"
   },
   {
     "id": 7,
     "slug": "apresentacao-templo",
     "title": "Apresentação no Templo",
     "description": "José e Maria apresentam Jesus no Templo de Jerusalém. Simeão e Ana profetizam sobre a missão do Menino.",
-    "imageUrl": "/images/vida-cristo/apresentacao.jpg",
-    "scripture": "Lucas 2:22-38"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Simon_Vouet_-_Presentation_in_the_Temple_-_WGA25366.jpg",
+    "scripture": "Lucas 2:22-38",
+    "artist": "Simon Vouet"
   },
   {
     "id": 8,
     "slug": "fuga-egito",
     "title": "Fuga para o Egito",
     "description": "Advertido por um anjo, José foge com Maria e o Menino Jesus para o Egito, escapando da perseguição de Herodes.",
-    "imageUrl": "/images/vida-cristo/fuga-egito.jpg",
-    "scripture": "Mateus 2:13-15"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Jacob_Jordaens_the_elder_-_Flight_of_the_Holy_Family_into_Egypt_-_Walters_372368.jpg",
+    "scripture": "Mateus 2:13-15",
+    "artist": "Jacob Jordaens"
   },
   {
     "id": 9,
     "slug": "retorno-egito",
     "title": "Retorno do Egito e Vida em Nazaré",
     "description": "Após a morte de Herodes, a Sagrada Família retorna e se estabelece em Nazaré, onde Jesus cresce em sabedoria e graça.",
-    "imageUrl": "/images/vida-cristo/nazare.jpg",
-    "scripture": "Mateus 2:19-23"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Jacob_Jordaens_the_elder_-_Flight_of_the_Holy_Family_into_Egypt_-_Walters_372368.jpg",
+    "scripture": "Mateus 2:19-23",
+    "artist": "Jacob Jordaens"
   },
   {
     "id": 10,
     "slug": "jesus-doutores",
     "title": "Jesus entre os Doutores no Templo",
     "description": "Aos 12 anos, Jesus permanece no Templo conversando com os doutores, que se admiram de sua sabedoria.",
-    "imageUrl": "/images/vida-cristo/doutores.jpg",
-    "scripture": "Lucas 2:41-52"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Paolo_Veronese_-_Jesus_among_the_Doctors_-_WGA24816.jpg",
+    "scripture": "Lucas 2:41-52",
+    "artist": "Paolo Veronese"
   },
   {
     "id": 11,
     "slug": "batismo-jordao",
     "title": "Batismo no Rio Jordão",
     "description": "João Batista batiza Jesus no rio Jordão. O Espírito Santo desce como pomba e a voz do Pai proclama: 'Este é o meu Filho amado'.",
-    "imageUrl": "/images/vida-cristo/batismo.jpg",
-    "scripture": "Mateus 3:13-17"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Trevisani_baptism_christ.JPG",
+    "scripture": "Mateus 3:13-17",
+    "artist": "Francesco Trevisani"
   },
   {
     "id": 12,
     "slug": "tentacao-deserto",
     "title": "Tentação no Deserto",
     "description": "Jesus jejua 40 dias no deserto e resiste às três tentações do diabo, mostrando total obediência ao Pai.",
-    "imageUrl": "/images/vida-cristo/tentacao.jpg",
-    "scripture": "Mateus 4:1-11"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Trevisani_baptism_christ.JPG",
+    "scripture": "Mateus 4:1-11",
+    "artist": "Francesco Trevisani"
   },
   {
     "id": 13,
     "slug": "chamado-apostolos",
     "title": "Chamado dos Apóstolos",
     "description": "Jesus chama os primeiros discípulos junto ao mar da Galileia: Pedro, André, Tiago e João deixam tudo para segui-lo.",
-    "imageUrl": "/images/vida-cristo/apostolos.jpg",
-    "scripture": "Mateus 4:18-22"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Trevisani_baptism_christ.JPG",
+    "scripture": "Mateus 4:18-22",
+    "artist": "Francesco Trevisani"
   },
   {
     "id": 14,
     "slug": "bodas-cana",
     "title": "Bodas de Caná",
     "description": "No primeiro milagre público, Jesus transforma água em vinho nas bodas de Caná, atendendo ao pedido de sua Mãe.",
-    "imageUrl": "/images/vida-cristo/cana.jpg",
-    "scripture": "João 2:1-11"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Paolo_Veronese%2C_The_Wedding_at_Cana.JPG",
+    "scripture": "João 2:1-11",
+    "artist": "Paolo Veronese"
   },
   {
     "id": 15,
     "slug": "sermao-montanha",
     "title": "Sermão da Montanha",
     "description": "Jesus prega as bem-aventuranças e revela o espírito da Nova Aliança, ensinando sobre o amor, a misericórdia e a justiça.",
-    "imageUrl": "/images/vida-cristo/sermao.jpg",
-    "scripture": "Mateus 5-7"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Paolo_Veronese%2C_The_Wedding_at_Cana.JPG",
+    "scripture": "Mateus 5-7",
+    "artist": "Paolo Veronese"
   },
   {
     "id": 16,
     "slug": "multiplicacao-paes",
     "title": "Multiplicação dos Pães",
     "description": "Jesus alimenta cinco mil homens com apenas cinco pães e dois peixes, prefigurando a Eucaristia.",
-    "imageUrl": "/images/vida-cristo/multiplicacao.jpg",
-    "scripture": "João 6:1-15"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+    "scripture": "João 6:1-15",
+    "artist": "Giovanni Lanfranco"
   },
   {
     "id": 17,
     "slug": "milagres-curas",
     "title": "Milagres e Curas",
     "description": "Jesus cura leprosos, paralíticos, cegos e muitos outros, manifestando sua compaixão e poder divino.",
-    "imageUrl": "/images/vida-cristo/curas.jpg",
-    "scripture": "Marcos 1:40-45; João 9:1-7"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+    "scripture": "Marcos 1:40-45; João 9:1-7",
+    "artist": "Giovanni Lanfranco"
   },
   {
     "id": 18,
     "slug": "tempestade-acalmada",
     "title": "Tempestade Acalmada",
     "description": "Jesus acalma a tempestade no mar da Galileia, mostrando seu poder sobre a natureza e fortalecendo a fé dos discípulos.",
-    "imageUrl": "/images/vida-cristo/tempestade.jpg",
-    "scripture": "Marcos 4:35-41"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+    "scripture": "Marcos 4:35-41",
+    "artist": "Giovanni Lanfranco"
   },
   {
     "id": 19,
     "slug": "transfiguracao",
     "title": "Transfiguração",
     "description": "No monte Tabor, Jesus se transfigura diante de Pedro, Tiago e João, revelando sua glória divina ao lado de Moisés e Elias.",
-    "imageUrl": "/images/vida-cristo/transfiguracao.jpg",
-    "scripture": "Mateus 17:1-9"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "scripture": "Mateus 17:1-9",
+    "artist": "Peter Paul Rubens"
   },
   {
     "id": 20,
     "slug": "ressurreicao-lazaro",
     "title": "Ressurreição de Lázaro",
     "description": "Jesus ressuscita Lázaro após quatro dias no sepulcro, proclamando: 'Eu sou a ressurreição e a vida'.",
-    "imageUrl": "/images/vida-cristo/lazaro.jpg",
-    "scripture": "João 11:1-44"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "scripture": "João 11:1-44",
+    "artist": "Peter Paul Rubens"
   },
   {
     "id": 21,
     "slug": "entrada-jerusalem",
     "title": "Entrada Triunfal em Jerusalém",
     "description": "Jesus entra em Jerusalém montado em um jumentinho, aclamado pelo povo que o recebe com ramos de palmeira: 'Hosana ao Filho de Davi!'",
-    "imageUrl": "/images/vida-cristo/entrada-jerusalem.jpg",
-    "scripture": "Mateus 21:1-11"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "scripture": "Mateus 21:1-11",
+    "artist": "Peter Paul Rubens"
   },
   {
     "id": 22,
     "slug": "ultima-ceia",
     "title": "Última Ceia",
     "description": "Na quinta-feira santa, Jesus institui a Eucaristia e o Sacerdócio, dando-nos seu Corpo e Sangue como alimento espiritual.",
-    "imageUrl": "/images/vida-cristo/ultima-ceia.jpg",
-    "scripture": "Mateus 26:26-29"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",
+    "scripture": "Mateus 26:26-29",
+    "artist": "Leonardo da Vinci"
   },
   {
     "id": 23,
     "slug": "lavagem-pes",
     "title": "Lavagem dos Pés dos Apóstolos",
     "description": "Jesus lava os pés dos apóstolos, ensinando a humildade e o serviço aos outros como modelo de amor.",
-    "imageUrl": "/images/vida-cristo/lavagem-pes.jpg",
-    "scripture": "João 13:1-17"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",
+    "scripture": "João 13:1-17",
+    "artist": "Leonardo da Vinci"
   },
   {
     "id": 24,
     "slug": "agonia-horto",
     "title": "Agonia no Horto das Oliveiras",
     "description": "Jesus ora no Getsêmani em profunda agonia, suando sangue, mas aceita a vontade do Pai: 'Não se faça a minha vontade, mas a tua'.",
-    "imageUrl": "/images/vida-cristo/agonia.jpg",
-    "scripture": "Lucas 22:39-46"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",
+    "scripture": "Lucas 22:39-46",
+    "artist": "Leonardo da Vinci"
   },
   {
     "id": 25,
     "slug": "prisao-jesus",
     "title": "Prisão de Jesus",
     "description": "Judas trai Jesus com um beijo. Jesus é preso pelos soldados e levado diante das autoridades judaicas.",
-    "imageUrl": "/images/vida-cristo/prisao.jpg",
-    "scripture": "João 18:1-12"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",
+    "scripture": "João 18:1-12",
+    "artist": "Leonardo da Vinci"
   },
   {
     "id": 26,
     "slug": "flagelacao",
     "title": "Flagelação",
     "description": "Jesus é cruelmente flagelado pelos soldados romanos, suportando dores terríveis por amor à humanidade.",
-    "imageUrl": "/images/vida-cristo/flagelacao.jpg",
-    "scripture": "João 19:1"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg",
+    "scripture": "João 19:1",
+    "artist": "Caravaggio"
   },
   {
     "id": 27,
     "slug": "coroacao-espinhos",
     "title": "Coroação de Espinhos",
     "description": "Os soldados zombam de Jesus, coroando-o com espinhos e vestindo-o com um manto vermelho, escarnecendo de sua realeza.",
-    "imageUrl": "/images/vida-cristo/coroacao.jpg",
-    "scripture": "Mateus 27:27-31"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Michelangelo_Merisi%2C_called_Caravaggio_-_The_Crowning_with_Thorns_-_Google_Art_ProjectFXD.jpg",
+    "scripture": "Mateus 27:27-31",
+    "artist": "Caravaggio"
   },
   {
     "id": 28,
     "slug": "ecce-homo",
     "title": "Ecce Homo",
     "description": "Pilatos apresenta Jesus ao povo dizendo 'Eis o homem!', mas a multidão grita: 'Crucifica-o!'",
-    "imageUrl": "/images/vida-cristo/ecce-homo.jpg",
-    "scripture": "João 19:4-6"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Guido_Reni_-_Ecce_Homo_-_WGA19302.jpg",
+    "scripture": "João 19:4-6",
+    "artist": "Guido Reni"
   },
   {
     "id": 29,
     "slug": "via-sacra",
     "title": "Via Sacra / Caminho do Calvário",
     "description": "Jesus carrega sua cruz pelo caminho do Calvário, caindo três vezes sob o peso da madeira e dos nossos pecados.",
-    "imageUrl": "/images/vida-cristo/via-sacra.jpg",
-    "scripture": "Lucas 23:26-32"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Guido_Reni_-_Ecce_Homo_-_WGA19302.jpg",
+    "scripture": "Lucas 23:26-32",
+    "artist": "Guido Reni"
   },
   {
     "id": 30,
     "slug": "crucificacao",
     "title": "Crucificação",
     "description": "Jesus é pregado na cruz entre dois ladrões. Do alto da cruz, ele perdoa seus algozes e entrega sua Mãe ao discípulo amado.",
-    "imageUrl": "/images/vida-cristo/crucificacao.jpg",
-    "scripture": "João 19:17-27"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Guido_Reni_-_Ecce_Homo_-_WGA19302.jpg",
+    "scripture": "João 19:17-27",
+    "artist": "Guido Reni"
   },
   {
     "id": 31,
     "slug": "morte-jesus",
     "title": "Morte de Jesus",
     "description": "Jesus entrega seu espírito ao Pai, clamando: 'Está consumado!'. O véu do templo se rasga e a terra treme.",
-    "imageUrl": "/images/vida-cristo/morte.jpg",
-    "scripture": "João 19:28-30"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Michelangelo_Petersdom_Pieta.JPG",
+    "scripture": "João 19:28-30",
+    "artist": "Michelangelo"
   },
   {
     "id": 32,
     "slug": "descida-cruz",
     "title": "Descida da Cruz",
     "description": "José de Arimateia e Nicodemos descem o corpo de Jesus da cruz. Maria acolhe seu Filho morto nos braços (Pietà).",
-    "imageUrl": "/images/vida-cristo/descida.jpg",
-    "scripture": "João 19:38-39"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Rembrandt_-_Deposition_from_the_Cross_-_WGA19112.jpg",
+    "scripture": "João 19:38-39",
+    "artist": "Rembrandt van Rijn"
   },
   {
     "id": 33,
     "slug": "sepultamento",
     "title": "Sepultamento",
     "description": "O corpo de Jesus é ungido com perfumes e colocado em um sepulcro novo, cavado na rocha. Uma pedra grande fecha a entrada.",
-    "imageUrl": "/images/vida-cristo/sepultamento.jpg",
-    "scripture": "João 19:40-42"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Rembrandt_-_Deposition_from_the_Cross_-_WGA19112.jpg",
+    "scripture": "João 19:40-42",
+    "artist": "Rembrandt van Rijn"
   },
   {
     "id": 34,
     "slug": "descida-infernos",
     "title": "Descida aos Infernos",
     "description": "No Sábado Santo, Jesus desce à morada dos mortos para libertar as almas justas que aguardavam a Redenção.",
-    "imageUrl": "/images/vida-cristo/infernos.jpg",
-    "scripture": "1 Pedro 3:18-20"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Rembrandt_-_Deposition_from_the_Cross_-_WGA19112.jpg",
+    "scripture": "1 Pedro 3:18-20",
+    "artist": "Rembrandt van Rijn"
   },
   {
     "id": 35,
     "slug": "ressurreicao",
     "title": "Ressurreição",
     "description": "No domingo de Páscoa, Jesus ressuscita glorioso, vencendo a morte e o pecado. O sepulcro está vazio!",
-    "imageUrl": "/images/vida-cristo/ressurreicao.jpg",
-    "scripture": "Mateus 28:1-10"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "scripture": "Mateus 28:1-10",
+    "artist": "Peter Paul Rubens"
   },
   {
     "id": 36,
     "slug": "aparicoes",
     "title": "Aparições após a Ressurreição",
     "description": "Jesus aparece a Maria Madalena, aos discípulos de Emaús, aos apóstolos no Cenáculo e a muitos outros durante 40 dias.",
-    "imageUrl": "/images/vida-cristo/aparicoes.jpg",
-    "scripture": "João 20-21; Lucas 24"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "scripture": "João 20-21; Lucas 24",
+    "artist": "Peter Paul Rubens"
   },
   {
     "id": 37,
     "slug": "ascensao",
     "title": "Ascensão",
     "description": "Quarenta dias após a Ressurreição, Jesus sobe aos céus diante dos apóstolos, prometendo enviar o Espírito Santo.",
-    "imageUrl": "/images/vida-cristo/ascensao.jpg",
-    "scripture": "Atos 1:6-11"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "scripture": "Atos 1:6-11",
+    "artist": "Peter Paul Rubens"
   },
   {
     "id": 38,
     "slug": "pentecostes",
     "title": "Pentecostes",
     "description": "O Espírito Santo desce sobre Maria e os apóstolos em línguas de fogo, dando início à missão evangelizadora da Igreja.",
-    "imageUrl": "/images/vida-cristo/pentecostes.jpg",
-    "scripture": "Atos 2:1-13"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "scripture": "Atos 2:1-13",
+    "artist": "Peter Paul Rubens"
   }
 ]
