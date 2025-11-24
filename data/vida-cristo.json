@@ -31,9 +31,9 @@
     "slug": "nascimento",
     "title": "Nascimento de Jesus",
     "description": "Jesus nasce em Belém, em uma humilde manjedoura. O Verbo se fez carne e habitou entre nós.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Adoration_of_the_shepherds_reni.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Jacob_Jordaens_the_elder_-_Flight_of_the_Holy_Family_into_Egypt_-_Walters_372368.jpg",
     "scripture": "Lucas 2:1-7",
-    "artist": "Guido Reni"
+    "artist": "Jacob Jordaens"
   },
   {
     "id": 5,
@@ -76,9 +76,9 @@
     "slug": "retorno-egito",
     "title": "Retorno do Egito e Vida em Nazaré",
     "description": "Após a morte de Herodes, a Sagrada Família retorna e se estabelece em Nazaré, onde Jesus cresce em sabedoria e graça.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Jacob_Jordaens_the_elder_-_Flight_of_the_Holy_Family_into_Egypt_-_Walters_372368.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Simon_Vouet_-_Presentation_in_the_Temple_-_WGA25366.jpg",
     "scripture": "Mateus 2:19-23",
-    "artist": "Jacob Jordaens"
+    "artist": "Simon Vouet"
   },
   {
     "id": 10,
@@ -103,18 +103,18 @@
     "slug": "tentacao-deserto",
     "title": "Tentação no Deserto",
     "description": "Jesus jejua 40 dias no deserto e resiste às três tentações do diabo, mostrando total obediência ao Pai.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Trevisani_baptism_christ.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/El_Greco_-_The_Agony_in_the_Garden_-_WGA10558.jpg",
     "scripture": "Mateus 4:1-11",
-    "artist": "Francesco Trevisani"
+    "artist": "El Greco"
   },
   {
     "id": 13,
     "slug": "chamado-apostolos",
     "title": "Chamado dos Apóstolos",
     "description": "Jesus chama os primeiros discípulos junto ao mar da Galileia: Pedro, André, Tiago e João deixam tudo para segui-lo.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Trevisani_baptism_christ.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Duccio_di_Buoninsegna_-_Calling_of_Peter_and_Andrew_-_WGA06774.jpg",
     "scripture": "Mateus 4:18-22",
-    "artist": "Francesco Trevisani"
+    "artist": "Duccio di Buoninsegna"
   },
   {
     "id": 14,
@@ -130,9 +130,9 @@
     "slug": "sermao-montanha",
     "title": "Sermão da Montanha",
     "description": "Jesus prega as bem-aventuranças e revela o espírito da Nova Aliança, ensinando sobre o amor, a misericórdia e a justiça.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Paolo_Veronese%2C_The_Wedding_at_Cana.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cosimo_Rosselli_Sermone_della_Montagna.jpg",
     "scripture": "Mateus 5-7",
-    "artist": "Paolo Veronese"
+    "artist": "Cosimo Rosselli"
   },
   {
     "id": 16,
@@ -148,18 +148,18 @@
     "slug": "milagres-curas",
     "title": "Milagres e Curas",
     "description": "Jesus cura leprosos, paralíticos, cegos e muitos outros, manifestando sua compaixão e poder divino.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Christ_Healing_the_Blind_by_Philippe_de_Champaigne%2C_Timken_Museum_of_Art.JPG",
     "scripture": "Marcos 1:40-45; João 9:1-7",
-    "artist": "Giovanni Lanfranco"
+    "artist": "Philippe de Champaigne"
   },
   {
     "id": 18,
     "slug": "tempestade-acalmada",
     "title": "Tempestade Acalmada",
     "description": "Jesus acalma a tempestade no mar da Galileia, mostrando seu poder sobre a natureza e fortalecendo a fé dos discípulos.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
     "scripture": "Marcos 4:35-41",
-    "artist": "Giovanni Lanfranco"
+    "artist": "Rembrandt van Rijn"
   },
   {
     "id": 19,
@@ -175,18 +175,18 @@
     "slug": "ressurreicao-lazaro",
     "title": "Ressurreição de Lázaro",
     "description": "Jesus ressuscita Lázaro após quatro dias no sepulcro, proclamando: 'Eu sou a ressurreição e a vida'.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Giotto_-_Scrovegni_-_-25-_-_Raising_of_Lazarus.jpg",
     "scripture": "João 11:1-44",
-    "artist": "Peter Paul Rubens"
+    "artist": "Giotto di Bondone"
   },
   {
     "id": 21,
     "slug": "entrada-jerusalem",
     "title": "Entrada Triunfal em Jerusalém",
     "description": "Jesus entra em Jerusalém montado em um jumentinho, aclamado pelo povo que o recebe com ramos de palmeira: 'Hosana ao Filho de Davi!'",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Giotto_di_Bondone_-_No._26_Scenes_from_the_Life_of_Christ_-_10._Entry_into_Jerusalem_-_WGA09206.jpg",
     "scripture": "Mateus 21:1-11",
-    "artist": "Peter Paul Rubens"
+    "artist": "Giotto di Bondone"
   },
   {
     "id": 22,
@@ -202,27 +202,27 @@
     "slug": "lavagem-pes",
     "title": "Lavagem dos Pés dos Apóstolos",
     "description": "Jesus lava os pés dos apóstolos, ensinando a humildade e o serviço aos outros como modelo de amor.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Jacopo_Tintoretto_-_Christ_Washing_the_Feet_of_His_Disciples_-_WGA22427.jpg",
     "scripture": "João 13:1-17",
-    "artist": "Leonardo da Vinci"
+    "artist": "Tintoretto"
   },
   {
     "id": 24,
     "slug": "agonia-horto",
     "title": "Agonia no Horto das Oliveiras",
     "description": "Jesus ora no Getsêmani em profunda agonia, suando sangue, mas aceita a vontade do Pai: 'Não se faça a minha vontade, mas a tua'.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/El_Greco_-_The_Agony_in_the_Garden_-_WGA10558.jpg",
     "scripture": "Lucas 22:39-46",
-    "artist": "Leonardo da Vinci"
+    "artist": "El Greco"
   },
   {
     "id": 25,
     "slug": "prisao-jesus",
     "title": "Prisão de Jesus",
     "description": "Judas trai Jesus com um beijo. Jesus é preso pelos soldados e levado diante das autoridades judaicas.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/The_Taking_of_Christ-Caravaggio_%28c.1602%29.jpg",
     "scripture": "João 18:1-12",
-    "artist": "Leonardo da Vinci"
+    "artist": "Caravaggio"
   },
   {
     "id": 26,
@@ -256,18 +256,18 @@
     "slug": "via-sacra",
     "title": "Via Sacra / Caminho do Calvário",
     "description": "Jesus carrega sua cruz pelo caminho do Calvário, caindo três vezes sob o peso da madeira e dos nossos pecados.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Guido_Reni_-_Ecce_Homo_-_WGA19302.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Hieronymus_Bosch_-_Christ_Carrying_the_Cross_-_WGA02556.jpg",
     "scripture": "Lucas 23:26-32",
-    "artist": "Guido Reni"
+    "artist": "Hieronymus Bosch"
   },
   {
     "id": 30,
     "slug": "crucificacao",
     "title": "Crucificação",
     "description": "Jesus é pregado na cruz entre dois ladrões. Do alto da cruz, ele perdoa seus algozes e entrega sua Mãe ao discípulo amado.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Guido_Reni_-_Ecce_Homo_-_WGA19302.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Peter_Paul_Rubens%2C_Crucifixion%2C_c.1618-1620.jpg",
     "scripture": "João 19:17-27",
-    "artist": "Guido Reni"
+    "artist": "Peter Paul Rubens"
   },
   {
     "id": 31,
@@ -292,25 +292,25 @@
     "slug": "sepultamento",
     "title": "Sepultamento",
     "description": "O corpo de Jesus é ungido com perfumes e colocado em um sepulcro novo, cavado na rocha. Uma pedra grande fecha a entrada.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Rembrandt_-_Deposition_from_the_Cross_-_WGA19112.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Caravaggio_-_La_Deposizione_di_Cristo.jpg",
     "scripture": "João 19:40-42",
-    "artist": "Rembrandt van Rijn"
+    "artist": "Caravaggio"
   },
   {
     "id": 34,
     "slug": "descida-infernos",
     "title": "Descida aos Infernos",
     "description": "No Sábado Santo, Jesus desce à morada dos mortos para libertar as almas justas que aguardavam a Redenção.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Rembrandt_-_Deposition_from_the_Cross_-_WGA19112.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Agnolo_bronzino%2C_discesa_di_cristo_al_limbo%2C_1552%2C_04.JPG",
     "scripture": "1 Pedro 3:18-20",
-    "artist": "Rembrandt van Rijn"
+    "artist": "Bronzino"
   },
   {
     "id": 35,
     "slug": "ressurreicao",
     "title": "Ressurreição",
     "description": "No domingo de Páscoa, Jesus ressuscita glorioso, vencendo a morte e o pecado. O sepulcro está vazio!",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/Peter_Paul_Rubens_-_The_Resurrection_of_Christ_-_WGA20209.jpg",
     "scripture": "Mateus 28:1-10",
     "artist": "Peter Paul Rubens"
   },
@@ -319,9 +319,9 @@
     "slug": "aparicoes",
     "title": "Aparições após a Ressurreição",
     "description": "Jesus aparece a Maria Madalena, aos discípulos de Emaús, aos apóstolos no Cenáculo e a muitos outros durante 40 dias.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Titian_-_Christus_und_Maria_Magdalena_Noli_me_tangere.jpg",
     "scripture": "João 20-21; Lucas 24",
-    "artist": "Peter Paul Rubens"
+    "artist": "Titian"
   },
   {
     "id": 37,
@@ -337,8 +337,8 @@
     "slug": "pentecostes",
     "title": "Pentecostes",
     "description": "O Espírito Santo desce sobre Maria e os apóstolos em línguas de fogo, dando início à missão evangelizadora da Igreja.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Transfiguration-Rubens.JPG",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/El_Greco_-_The_Pentecost_-_WGA10533.jpg",
     "scripture": "Atos 2:1-13",
-    "artist": "Peter Paul Rubens"
+    "artist": "El Greco"
   }
 ]
