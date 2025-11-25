@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "nome": "São Francisco de Assis",
+    "slug": "sao-francisco-de-assis",
+    "imagem": "/images/sao-francisco.jpg",
+    "raridade": "comum",
+    "bloqueada": false,
+    "colecaoId": 1,
+    "posicao": 1,
+    "descricao": "Fundador da Ordem Franciscana, patrono da ecologia e dos animais. Conhecido por sua vida de pobreza radical e amor à natureza.",
+    "historia": "Francisco nasceu em Assis, Itália, em 1182. Filho de um rico comerciante, renunciou a todas as suas posses para viver em pobreza evangélica. Fundou a Ordem dos Frades Menores e recebeu os estigmas de Cristo. Morreu em 1226 e foi canonizado em 1228.",
+    "oracao": "Senhor, fazei-me instrumento de vossa paz. Onde houver ódio, que eu leve o amor; onde houver ofensa, que eu leve o perdão; onde houver discórdia, que eu leve a união; onde houver dúvida, que eu leve a fé; onde houver erro, que eu leve a verdade.",
+    "curiosidades": [
+      "Recebeu os estigmas de Cristo no Monte Alverne",
+      "Compôs o famoso Cântico das Criaturas",
+      "É padroeiro da Itália junto com Santa Catarina de Sena"
+    ],
+    "igrejas": ["Basílica de São Francisco de Assis, Assis, Itália"]
+  },
+  {
+    "id": 2,
+    "nome": "Santa Teresinha do Menino Jesus",
+    "slug": "santa-teresinha",
+    "imagem": "/images/santa-teresinha.jpg",
+    "raridade": "rara",
+    "bloqueada": false,
+    "colecaoId": 1,
+    "posicao": 2,
+    "descricao": "Doutora da Igreja, autora de 'História de Uma Alma'. Ensinou o caminho da confiança e do amor.",
+    "historia": "Marie-Françoise-Thérèse Martin nasceu em Alençon, França, em 1873. Entrou no Carmelo de Lisieux aos 15 anos. Desenvolveu sua 'pequena via' de santidade através de pequenos atos de amor. Morreu de tuberculose em 1897, aos 24 anos.",
+    "oracao": "Ó pequena Teresinha do Menino Jesus, que disseste que passarias o teu céu fazendo o bem sobre a terra, atende a minha súplica e derrama sobre mim uma chuva de rosas.",
+    "curiosidades": [
+      "Declarada Doutora da Igreja em 1997",
+      "Padroeira das missões sem nunca ter saído do convento",
+      "Sua autobiografia é um dos livros católicos mais lidos"
+    ],
+    "igrejas": ["Basílica de Santa Teresinha, Lisieux, França"]
+  },
+  {
+    "id": 3,
+    "nome": "São Padre Pio",
+    "slug": "sao-padre-pio",
+    "imagem": "/images/sao-padre-pio.jpg",
+    "raridade": "epica",
+    "bloqueada": false,
+    "colecaoId": 1,
+    "posicao": 3,
+    "descricao": "Capuchinho italiano com os estigmas de Cristo. Conhecido por seus milagres, bilocação e dom de ler almas.",
+    "historia": "Francesco Forgione nasceu em Pietrelcina, Itália, em 1887. Tornou-se capuchinho e recebeu os estigmas em 1918, que permaneceram por 50 anos. Fundou a Casa Alívio do Sofrimento, um hospital moderno. Faleceu em 1968 e foi canonizado em 2002.",
+    "oracao": "Querido Padre Pio, vós que fostes um fiel servo de Deus e recebestes os estigmas de Nosso Senhor Jesus Cristo, intercedei por mim junto ao Pai.",
+    "curiosidades": [
+      "Seus estigmas desapareceram após sua morte",
+      "Podia ler os corações dos penitentes na confissão",
+      "Milhões de pessoas visitam seu santuário anualmente"
+    ],
+    "igrejas": ["Santuário de São Pio de Pietrelcina, San Giovanni Rotondo, Itália"]
+  },
+  {
+    "id": 4,
+    "nome": "Santa Faustina Kowalska",
+    "slug": "santa-faustina",
+    "imagem": "/images/santa-faustina.jpg",
+    "raridade": "rara",
+    "bloqueada": false,
+    "colecaoId": 1,
+    "posicao": 4,
+    "descricao": "Apóstola da Divina Misericórdia. Recebeu visões de Jesus e propagou a devoção à Misericórdia Divina.",
+    "historia": "Helena Kowalska nasceu na Polônia em 1905. Tornou-se religiosa da Congregação das Irmãs de Nossa Senhora da Misericórdia. Recebeu revelações de Jesus sobre Sua Misericórdia e escreveu um diário espiritual. Morreu em 1938 aos 33 anos e foi canonizada em 2000.",
+    "oracao": "Jesus, eu confio em Vós! Ó Sangue e Água que jorraste do Coração de Jesus como fonte de misericórdia para nós, eu confio em Vós!",
+    "curiosidades": [
+      "Primeira santa canonizada no terceiro milênio",
+      "A imagem de Jesus Misericordioso foi pintada segundo sua visão",
+      "Instituiu a Festa da Divina Misericórdia"
+    ],
+    "igrejas": ["Santuário da Divina Misericórdia, Cracóvia, Polônia"]
+  },
+  {
+    "id": 5,
+    "nome": "São João Paulo II",
+    "slug": "sao-joao-paulo-ii",
+    "imagem": "/images/sao-joao-paulo-ii.jpg",
+    "raridade": "epica",
+    "bloqueada": false,
+    "colecaoId": 1,
+    "posicao": 5,
+    "descricao": "Papa que revolucionou o pontificado com suas viagens apostólicas. Promoveu o diálogo inter-religioso e a dignidade humana.",
+    "historia": "Karol Józef Wojtyła nasceu em Wadowice, Polônia, em 1920. Foi eleito Papa em 1978, tornando-se o primeiro papa polonês. Seu pontificado durou quase 27 anos, um dos mais longos da história. Sobreviveu a um atentado em 1981. Faleceu em 2005 e foi canonizado em 2014.",
+    "oracao": "São João Paulo II, guardião da fé e testemunha de esperança, intercedei por nós junto ao Senhor para que permaneçamos firmes na fé.",
+    "curiosidades": [
+      "Visitou 129 países durante seu pontificado",
+      "Escreveu 14 encíclicas",
+      "Foi beatificado apenas 6 anos após sua morte"
+    ],
+    "igrejas": ["Basílica de São Pedro, Vaticano"]
+  },
+  {
+    "id": 6,
+    "nome": "Santa Rita de Cássia",
+    "slug": "santa-rita",
+    "imagem": "/images/santa-rita.jpg",
+    "raridade": "comum",
+    "bloqueada": false,
+    "colecaoId": 1,
+    "posicao": 6,
+    "descricao": "Advogada das causas impossíveis. Esposa, mãe, viúva e religiosa agostiniana.",
+    "historia": "Margherita Lotti nasceu em Roccaporena, Itália, em 1381. Casou-se jovem e teve dois filhos. Após a morte violenta do marido, perdoou seus assassinos. Tornou-se agostiniana após a morte dos filhos. Recebeu um espinho da coroa de Cristo em sua testa. Morreu em 1457.",
+    "oracao": "Ó gloriosa Santa Rita, vossa vida foi marcada pelo sofrimento e pela paciência. Intercedei por nós nas causas impossíveis e desesperadas.",
+    "curiosidades": [
+      "Ficou 15 anos com a ferida do espinho em sua testa",
+      "É padroeira das causas impossíveis",
+      "Seu corpo permanece incorrupto"
+    ],
+    "igrejas": ["Basílica de Santa Rita, Cássia, Itália"]
+  },
+  {
+    "id": 7,
+    "nome": "Santo Antônio de Pádua",
+    "slug": "santo-antonio",
+    "imagem": "/images/santo-antonio.jpg",
+    "raridade": "comum",
+    "bloqueada": false,
+    "colecaoId": 2,
+    "posicao": 1,
+    "descricao": "Doutor da Igreja, pregador eloquente. Padroeiro dos objetos perdidos e casamenteiro.",
+    "historia": "Fernando de Bulhões nasceu em Lisboa, Portugal, em 1195. Tornou-se franciscano e foi para a Itália, onde se tornou famoso pregador. Conhecia profundamente as Escrituras. Morreu em Pádua, Itália, em 1231, aos 36 anos. Foi canonizado menos de um ano após sua morte.",
+    "oracao": "Glorioso Santo Antônio, que tivestes o privilégio de tomar o Menino Jesus em vossos braços, alcançai-me do Coração de Jesus as graças que ardentemente vos solicito.",
+    "curiosidades": [
+      "Canonizado em menos de 1 ano, o mais rápido até então",
+      "Doutor Evangélico da Igreja",
+      "Pregou aos peixes segundo a lenda"
+    ],
+    "igrejas": ["Basílica de Santo Antônio, Pádua, Itália"]
+  },
+  {
+    "id": 8,
+    "nome": "São Bento de Núrsia",
+    "slug": "sao-bento",
+    "imagem": "/images/sao-bento.jpg",
+    "raridade": "rara",
+    "bloqueada": false,
+    "colecaoId": 2,
+    "posicao": 2,
+    "descricao": "Patriarca do monasticismo ocidental. Autor da Regra de São Bento, base da vida monástica.",
+    "historia": "Nasceu em Núrsia, Itália, por volta de 480. Viveu como eremita antes de fundar vários mosteiros. Estabeleceu a famosa abadia de Monte Cassino. Escreveu a Regra, que equilibra oração, trabalho e estudo. Morreu em 547.",
+    "oracao": "São Bento, rogai por nós! A Santa Cruz seja minha luz! Não seja o dragão meu guia! Retira-te, Satanás!",
+    "curiosidades": [
+      "Padroeiro da Europa",
+      "Sua Regra é seguida por milhares de mosteiros",
+      "A Medalha de São Bento é símbolo de proteção"
+    ],
+    "igrejas": ["Abadia de Monte Cassino, Itália"]
+  },
+  {
+    "id": 9,
+    "nome": "Santa Clara de Assis",
+    "slug": "santa-clara",
+    "imagem": "/images/santa-clara.jpg",
+    "raridade": "comum",
+    "bloqueada": true,
+    "colecaoId": 2,
+    "posicao": 3,
+    "descricao": "Fundadora das Clarissas. Seguidora de São Francisco, dedicou-se à vida contemplativa e à pobreza radical.",
+    "historia": "Nasceu em Assis em 1194. Aos 18 anos, inspirada por São Francisco, fugiu de casa para abraçar a vida religiosa. Fundou a Ordem das Damas Pobres (Clarissas). Defendeu corajosamente a pobreza absoluta. Morreu em 1253.",
+    "oracao": "Santa Clara, espelho de Cristo, iluminai nosso caminho e ajudai-nos a seguir Jesus com humildade e amor.",
+    "curiosidades": [
+      "Padroeira da televisão (milagre da visão)",
+      "Defendeu Assis com o Santíssimo Sacramento",
+      "Primeira mulher a escrever uma Regra religiosa"
+    ],
+    "igrejas": ["Basílica de Santa Clara, Assis, Itália"]
+  },
+  {
+    "id": 10,
+    "nome": "São Tomás de Aquino",
+    "slug": "sao-tomas-de-aquino",
+    "imagem": "/images/sao-tomas.jpg",
+    "raridade": "epica",
+    "bloqueada": true,
+    "colecaoId": 2,
+    "posicao": 4,
+    "descricao": "Doutor Angélico. Maior teólogo da Escolástica, autor da Suma Teológica.",
+    "historia": "Nasceu no castelo de Roccasecca, Itália, em 1225. Estudou com Santo Alberto Magno. Dominicano, tornou-se professor em Paris. Escreveu extensamente, unindo fé e razão. Sua Suma Teológica é obra fundamental da teologia católica. Morreu em 1274.",
+    "oracao": "São Tomás de Aquino, Doutor Angélico, iluminai nossa inteligência para compreendermos os mistérios da fé e vivermos segundo a verdade.",
+    "curiosidades": [
+      "Chamado de 'Boi Mudo' por seus colegas estudantes",
+      "Doutor da Igreja e padroeiro dos estudantes",
+      "Sua Suma Teológica tem mais de 3000 páginas"
+    ],
+    "igrejas": ["Basílica de São Domingos, Bolonha, Itália"]
+  },
+  {
+    "id": 11,
+    "nome": "Santa Teresa de Ávila",
+    "slug": "santa-teresa-de-avila",
+    "imagem": "/images/santa-teresa-avila.jpg",
+    "raridade": "epica",
+    "bloqueada": true,
+    "colecaoId": 2,
+    "posicao": 5,
+    "descricao": "Doutora da Igreja, mística e reformadora carmelita. Autora de clássicos da espiritualidade.",
+    "historia": "Teresa de Cepeda y Ahumada nasceu em Ávila, Espanha, em 1515. Carmelita, reformou a Ordem retornando à Regra primitiva. Fundou 17 mosteiros. Escreveu obras fundamentais sobre oração e vida espiritual. Morreu em 1582.",
+    "oracao": "Santa Teresa de Jesus, ensinai-nos a orar com fervor e a buscar a Deus em todas as coisas.",
+    "curiosidades": [
+      "Primeira mulher declarada Doutora da Igreja (1970)",
+      "Levitou várias vezes durante êxtases místicos",
+      "Padroeira da Espanha"
+    ],
+    "igrejas": ["Convento de Santa Teresa, Ávila, Espanha"]
+  },
+  {
+    "id": 12,
+    "nome": "São Maximiliano Kolbe",
+    "slug": "sao-maximiliano-kolbe",
+    "imagem": "/images/sao-maximiliano.jpg",
+    "raridade": "rara",
+    "bloqueada": true,
+    "colecaoId": 2,
+    "posicao": 6,
+    "descricao": "Mártir da caridade. Ofereceu sua vida em lugar de um pai de família em Auschwitz.",
+    "historia": "Raimundo Kolbe nasceu na Polônia em 1894. Franciscano, propagou a devoção à Imaculada. Durante a Segunda Guerra, foi preso pelos nazistas. Em Auschwitz, ofereceu-se para morrer no lugar de um prisioneiro condenado. Morreu por inanição em 1941.",
+    "oracao": "São Maximiliano Kolbe, mártir da caridade, ensinai-nos a amar até o sacrifício supremo.",
+    "curiosidades": [
+      "Fundou a Milícia da Imaculada",
+      "Foi jornalista e editou revistas católicas",
+      "Canonizado como mártir da caridade"
+    ],
+    "igrejas": ["Santuário de Niepokalanów, Polônia"]
+  }
+]

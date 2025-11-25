@@ -55,7 +55,8 @@ export default function Header() {
     { name: 'Santos do Dia', href: '/santos-do-dia' },
     { name: 'Vida de Cristo', href: '/vida-de-cristo' },
     { name: 'Rosário', href: '/rosario' },
-    { name: 'Calendário', href: '/calendario' }
+    { name: 'Calendário', href: '/calendario' },
+    { name: 'Álbum Sagrado', href: '/album-sagrado' }
   ];
 
   const devotionsMenu = [
