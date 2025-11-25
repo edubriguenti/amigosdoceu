@@ -20,52 +20,52 @@ export default function Home() {
         <section className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8">
             <Link href="/santos" className="group">
-              <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                <h2 className="text-2xl font-serif mb-3 group-hover:text-blue-600 transition-colors">Santos</h2>
-                <p className="text-gray-700 mb-4 leading-relaxed">
+              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Santos</h2>
+                <p className="text-gray-800 mb-4 leading-relaxed">
                   Conheça as vidas inspiradoras de homens e mulheres que dedicaram suas vidas a Deus
                   e ao próximo. Histórias de fé, milagres e santidade.
                 </p>
-                <span className="text-sm font-semibold text-blue-600 group-hover:underline">
+                <span className="text-sm font-semibold text-amber-700 group-hover:underline">
                   Explorar Santos →
                 </span>
               </div>
             </Link>
 
             <Link href="/igrejas" className="group">
-              <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                <h2 className="text-2xl font-serif mb-3 group-hover:text-blue-600 transition-colors">Igrejas e Paróquias</h2>
-                <p className="text-gray-700 mb-4 leading-relaxed">
+              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Igrejas e Paróquias</h2>
+                <p className="text-gray-800 mb-4 leading-relaxed">
                   Descubra os templos mais importantes e sagrados do cristianismo. Basílicas, catedrais
                   e santuários que são testemunhos de fé ao redor do mundo.
                 </p>
-                <span className="text-sm font-semibold text-blue-600 group-hover:underline">
+                <span className="text-sm font-semibold text-amber-700 group-hover:underline">
                   Explorar Igrejas →
                 </span>
               </div>
             </Link>
 
             <Link href="/aparicoes" className="group">
-              <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                <h2 className="text-2xl font-serif mb-3 group-hover:text-blue-600 transition-colors">Aparições de Nossa Senhora</h2>
-                <p className="text-gray-700 mb-4 leading-relaxed">
+              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Aparições de Nossa Senhora</h2>
+                <p className="text-gray-800 mb-4 leading-relaxed">
                   Descubra os locais sagrados onde Nossa Senhora apareceu ao longo da história.
                   Mensagens de fé, conversão e esperança para toda a humanidade.
                 </p>
-                <span className="text-sm font-semibold text-blue-600 group-hover:underline">
+                <span className="text-sm font-semibold text-amber-700 group-hover:underline">
                   Explorar Aparições →
                 </span>
               </div>
             </Link>
 
             <Link href="/santos-do-dia" className="group">
-              <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                <h2 className="text-2xl font-serif mb-3 group-hover:text-blue-600 transition-colors">Santos do Dia</h2>
-                <p className="text-gray-700 mb-4 leading-relaxed">
+              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Santos do Dia</h2>
+                <p className="text-gray-800 mb-4 leading-relaxed">
                   Descubra qual santo é celebrado hoje no calendário litúrgico. Acompanhe as festas
                   e celebrações importantes da Igreja Católica.
                 </p>
-                <span className="text-sm font-semibold text-blue-600 group-hover:underline">
+                <span className="text-sm font-semibold text-amber-700 group-hover:underline">
                   Ver Santos de Hoje →
                 </span>
               </div>
