@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -12,6 +12,8 @@ import { useFavoritos } from '../hooks/useFavoritos';
  */
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [devotionsOpen, setDevotionsOpen] = useState(false);
+  const devotionsRef = useRef(null);
   const router = useRouter();
   const { getTotalCount, loaded } = useFavoritos();
 
@@ -34,6 +36,17 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
+  // Fecha dropdown ao clicar fora
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (devotionsRef.current && !devotionsRef.current.contains(event.target)) {
+        setDevotionsOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const navigation = [
     { name: 'Santos', href: '/santos' },
     { name: 'Igrejas', href: '/igrejas' },
@@ -42,11 +55,16 @@ export default function Header() {
     { name: 'Santos do Dia', href: '/santos-do-dia' },
     { name: 'Vida de Cristo', href: '/vida-de-cristo' },
     { name: 'Rosário', href: '/rosario' },
-    { name: 'Calendário', href: '/calendario' },
+    { name: 'Calendário', href: '/calendario' }
+  ];
+
+  const devotionsMenu = [
     { name: 'Orações', href: '/oracoes' },
     { name: 'Novenas', href: '/novenas' },
     { name: 'Intenções', href: '/intencoes' }
   ];
+
+  const isDevotionsActive = devotionsMenu.some(item => router.pathname.startsWith(item.href));
 
   const favoritosCount = loaded ? getTotalCount() : 0;
 
@@ -66,7 +84,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation - Oculto em mobile */}
-            <nav className="hidden md:flex items-center gap-1" aria-label="Navegação principal">
+            <nav className="hidden md:flex items-center gap-3 lg:gap-4" aria-label="Navegação principal">
               {navigation.map((item) => {
                 const isActive = router.pathname.startsWith(item.href);
                 return (
@@ -74,7 +92,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     className={`
-                      px-3 lg:px-4 py-2 text-sm lg:text-base font-medium rounded-lg transition-all
+                      px-3 lg:px-4 py-2.5 text-sm lg:text-base font-medium rounded-lg transition-all whitespace-nowrap
                       focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                       ${isActive
                         ? 'text-blue-600 bg-blue-50'
@@ -86,11 +104,70 @@ export default function Header() {
                   </Link>
                 );
               })}
+
+              {/* Dropdown Devoções */}
+              <div ref={devotionsRef} className="relative">
+                <button
+                  onClick={() => setDevotionsOpen(!devotionsOpen)}
+                  className={`
+                    px-3 lg:px-4 py-2.5 text-sm lg:text-base font-medium rounded-lg transition-all whitespace-nowrap
+                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center gap-1.5
+                    ${isDevotionsActive
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
+                    }
+                  `}
+                >
+                  Devoções
+                  <svg
+                    className={`w-4 h-4 transition-transform ${devotionsOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {devotionsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                    >
+                      {devotionsMenu.map((item) => {
+                        const isActive = router.pathname.startsWith(item.href);
+                        return (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={() => setDevotionsOpen(false)}
+                            className={`
+                              block px-4 py-2.5 text-sm font-medium transition-all
+                              ${isActive
+                                ? 'text-blue-600 bg-blue-50'
+                                : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                              }
+                            `}
+                          >
+                            {item.name}
+                          </Link>
+                        );
+                      })}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               {/* Favoritos Link com Badge */}
               <Link
                 href="/favoritos"
                 className={`
-                  relative px-3 lg:px-4 py-2 text-sm lg:text-base font-medium rounded-lg transition-all
+                  relative px-3 lg:px-4 py-2.5 text-sm lg:text-base font-medium rounded-lg transition-all
                   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                   ${router.pathname === '/favoritos'
                     ? 'text-blue-600 bg-blue-50'
@@ -170,7 +247,7 @@ export default function Header() {
               </div>
 
               {/* Links de Navegação */}
-              <div className="p-4 space-y-1">
+              <div className="p-4 space-y-2">
                 {navigation.map((item) => {
                   const isActive = router.pathname.startsWith(item.href);
                   return (
@@ -191,6 +268,34 @@ export default function Header() {
                     </Link>
                   );
                 })}
+
+                {/* Seção Devoções */}
+                <div className="pt-2 mt-2 border-t border-gray-200">
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Devoções
+                  </div>
+                  {devotionsMenu.map((item) => {
+                    const isActive = router.pathname.startsWith(item.href);
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`
+                          block px-4 py-3 text-base font-medium rounded-lg transition-all
+                          focus:outline-none focus:ring-2 focus:ring-blue-500
+                          ${isActive
+                            ? 'text-blue-600 bg-blue-50'
+                            : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                          }
+                        `}
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </div>
+
                 {/* Favoritos Link com Badge (Mobile) */}
                 <Link
                   href="/favoritos"
