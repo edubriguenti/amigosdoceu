@@ -64,9 +64,9 @@ export default function ColecaoPage() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="py-12"
+        className="py-6 md:py-12 px-4"
       >
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           <button
             onClick={() => router.push('/album-sagrado')}
             className="text-accent-600 hover:text-accent-700 flex items-center gap-2 mb-4"
@@ -74,18 +74,18 @@ export default function ColecaoPage() {
             ← Voltar às Coleções
           </button>
 
-          <div className="flex items-start justify-between gap-6 mb-6">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-6 mb-6">
             <div className="flex-1">
-              <div className="flex items-center gap-4 mb-3">
-                <span className="text-5xl">{colecao.icone}</span>
-                <div>
-                  <h1 className="text-3xl md:text-4xl font-serif">{colecao.nome}</h1>
-                  <p className="text-gray-600">{colecao.descricao}</p>
+              <div className="flex items-center gap-3 md:gap-4 mb-3">
+                <span className="text-3xl md:text-5xl flex-shrink-0">{colecao.icone}</span>
+                <div className="min-w-0">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif break-words">{colecao.nome}</h1>
+                  <p className="text-sm md:text-base text-gray-600 break-words">{colecao.descricao}</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white border-2 border-secondary-300 rounded-lg p-4 min-w-[200px]">
+            <div className="bg-white border-2 border-secondary-300 rounded-lg p-4 w-full md:min-w-[200px] md:max-w-[240px]">
               <div className="text-center mb-3">
                 <div className="text-3xl mb-1">
                   {completo ? '🏆' : '📊'}
@@ -114,7 +114,7 @@ export default function ColecaoPage() {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto mb-8 relative">
+        <div className="max-w-5xl mx-auto mb-6 md:mb-8 relative">
           <AlbumPage
             figurinhas={figurinhasColecao}
             onFigurinhaClick={setFigurinhaSelecionada}
@@ -122,46 +122,46 @@ export default function ColecaoPage() {
             totalPaginas={totalPaginas}
           />
 
-          <div className="flex justify-center gap-4 mt-12">
+          <div className="flex justify-center gap-3 md:gap-4 mt-8 md:mt-12">
             <button
               onClick={paginaAnterior}
               disabled={paginaAtual === 1}
-              className="px-6 py-3 bg-accent-500 text-white rounded-lg font-semibold disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-accent-600 transition-colors shadow-md"
+              className="px-4 md:px-6 py-2 md:py-3 bg-accent-500 text-white rounded-lg text-sm md:text-base font-semibold disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-accent-600 transition-colors shadow-md"
             >
               ← Anterior
             </button>
             <button
               onClick={proximaPagina}
               disabled={paginaAtual === totalPaginas}
-              className="px-6 py-3 bg-accent-500 text-white rounded-lg font-semibold disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-accent-600 transition-colors shadow-md"
+              className="px-4 md:px-6 py-2 md:py-3 bg-accent-500 text-white rounded-lg text-sm md:text-base font-semibold disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-accent-600 transition-colors shadow-md"
             >
               Próxima →
             </button>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-primary-100 border border-secondary-200 rounded-lg p-4 text-center">
-            <div className="text-2xl mb-2">🔓</div>
-            <p className="text-sm text-gray-600 mb-1">Desbloqueadas</p>
-            <p className="text-xl font-bold text-secondary-700">{desbloqueadas}</p>
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <div className="bg-primary-100 border border-secondary-200 rounded-lg p-3 md:p-4 text-center">
+            <div className="text-xl md:text-2xl mb-1 md:mb-2">🔓</div>
+            <p className="text-xs md:text-sm text-gray-600 mb-1">Desbloqueadas</p>
+            <p className="text-lg md:text-xl font-bold text-secondary-700">{desbloqueadas}</p>
           </div>
-          <div className="bg-primary-100 border border-secondary-200 rounded-lg p-4 text-center">
-            <div className="text-2xl mb-2">🔒</div>
-            <p className="text-sm text-gray-600 mb-1">Bloqueadas</p>
-            <p className="text-xl font-bold text-gray-700">{figurinhasColecao.length - desbloqueadas}</p>
+          <div className="bg-primary-100 border border-secondary-200 rounded-lg p-3 md:p-4 text-center">
+            <div className="text-xl md:text-2xl mb-1 md:mb-2">🔒</div>
+            <p className="text-xs md:text-sm text-gray-600 mb-1">Bloqueadas</p>
+            <p className="text-lg md:text-xl font-bold text-gray-700">{figurinhasColecao.length - desbloqueadas}</p>
           </div>
-          <div className="bg-primary-100 border border-secondary-200 rounded-lg p-4 text-center">
-            <div className="text-2xl mb-2">⭐</div>
-            <p className="text-sm text-gray-600 mb-1">Raras</p>
-            <p className="text-xl font-bold text-accent-700">
+          <div className="bg-primary-100 border border-secondary-200 rounded-lg p-3 md:p-4 text-center">
+            <div className="text-xl md:text-2xl mb-1 md:mb-2">⭐</div>
+            <p className="text-xs md:text-sm text-gray-600 mb-1">Raras</p>
+            <p className="text-lg md:text-xl font-bold text-accent-700">
               {figurinhasColecao.filter((f) => f.raridade === 'rara' && !f.bloqueada).length}
             </p>
           </div>
-          <div className="bg-primary-100 border border-secondary-200 rounded-lg p-4 text-center">
-            <div className="text-2xl mb-2">💎</div>
-            <p className="text-sm text-gray-600 mb-1">Épicas</p>
-            <p className="text-xl font-bold text-secondary-700">
+          <div className="bg-primary-100 border border-secondary-200 rounded-lg p-3 md:p-4 text-center">
+            <div className="text-xl md:text-2xl mb-1 md:mb-2">💎</div>
+            <p className="text-xs md:text-sm text-gray-600 mb-1">Épicas</p>
+            <p className="text-lg md:text-xl font-bold text-secondary-700">
               {figurinhasColecao.filter((f) => f.raridade === 'epica' && !f.bloqueada).length}
             </p>
           </div>
