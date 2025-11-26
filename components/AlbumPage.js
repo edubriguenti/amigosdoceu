@@ -12,7 +12,7 @@ export default function AlbumPage({ figurinhas, onFigurinhaClick, paginaAtual, t
   })
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 bg-gradient-to-br from-primary-50 to-amber-50 rounded-lg border-4 border-secondary-400 shadow-xl">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 p-4 md:p-6 bg-gradient-to-br from-primary-50 to-amber-50 rounded-lg border-2 md:border-4 border-secondary-400 shadow-xl">
       {slots.map((figurinha, idx) => (
         <motion.div
           key={`slot-${inicio + idx}`}
@@ -24,7 +24,7 @@ export default function AlbumPage({ figurinhas, onFigurinhaClick, paginaAtual, t
           {figurinha.bloqueada ? (
             <div className="aspect-[3/4] border-2 border-dashed border-gray-300 rounded-lg bg-white/50 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-4xl text-gray-300 mb-2">🔲</div>
+                <div className="text-3xl md:text-4xl text-gray-300 mb-2">🔲</div>
                 <p className="text-xs text-gray-400">#{inicio + idx + 1}</p>
               </div>
             </div>
@@ -38,7 +38,7 @@ export default function AlbumPage({ figurinhas, onFigurinhaClick, paginaAtual, t
         </motion.div>
       ))}
 
-      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-secondary-100 px-4 py-1 rounded-full text-sm text-gray-700 font-medium shadow">
+      <div className="absolute -bottom-6 md:-bottom-8 left-1/2 transform -translate-x-1/2 bg-secondary-100 px-3 md:px-4 py-1 rounded-full text-xs md:text-sm text-gray-700 font-medium shadow whitespace-nowrap">
         Página {paginaAtual} / {totalPaginas}
       </div>
     </div>
