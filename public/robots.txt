@@ -1,0 +1,13 @@
+# robots.txt para Amigos do Céu
+# Gerado automaticamente
+
+# Permitir todos os bots
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://amigosdoceu.com.br/sitemap.xml
+
+# Bloquear diretórios sensíveis
+Disallow: /api/
+Disallow: /_next/
