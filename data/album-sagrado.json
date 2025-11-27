@@ -41,7 +41,7 @@
     "id": 3,
     "nome": "São Padre Pio",
     "slug": "sao-padre-pio",
-    "imagem": "/images/padre_pio.jpg",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/5/51/Padre_Pio_portrait.jpg",
     "raridade": "epica",
     "bloqueada": false,
     "colecaoId": 1,
