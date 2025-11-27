@@ -72,6 +72,10 @@ export default function ColecaoPage() {
   }
 
   const handleFigurinhaClick = (figurinha) => {
+    if (!figurinha || !figurinha.id) {
+      return // Ignorar slots vazios
+    }
+    
     if (figurinha.bloqueada) {
       // Se está bloqueada, mostrar modal de oração
       setFigurinhaParaOracao(figurinha)

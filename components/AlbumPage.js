@@ -21,20 +21,11 @@ export default function AlbumPage({ figurinhas, onFigurinhaClick, paginaAtual, t
           transition={{ delay: idx * 0.05 }}
           className="relative"
         >
-          {figurinha.bloqueada ? (
-            <div className="aspect-[3/4] border-2 border-dashed border-gray-300 rounded-lg bg-white/50 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl text-gray-300 mb-2">🔲</div>
-                <p className="text-xs text-gray-400">#{inicio + idx + 1}</p>
-              </div>
-            </div>
-          ) : (
-            <FigurinhaCard
-              figurinha={figurinha}
-              onClick={() => onFigurinhaClick(figurinha)}
-              pequeno={false}
-            />
-          )}
+          <FigurinhaCard
+            figurinha={figurinha}
+            onClick={() => onFigurinhaClick && onFigurinhaClick(figurinha)}
+            pequeno={false}
+          />
         </motion.div>
       ))}
 

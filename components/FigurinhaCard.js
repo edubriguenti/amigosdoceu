@@ -14,8 +14,22 @@ export default function FigurinhaCard({ figurinha, onClick, pequeno = false }) {
   }
 
   if (figurinha.bloqueada) {
+    // Se não tem id, é um slot vazio - não deve ser clicável
+    if (!figurinha.id) {
+      return (
+        <div className={`relative border-2 border-dashed border-gray-300 bg-gray-100 rounded-lg ${pequeno ? 'p-2' : 'p-4'} flex items-center justify-center`}>
+          <div className="text-center">
+            <div className={`text-gray-400 ${pequeno ? 'text-2xl' : 'text-4xl'} mb-2`}>🔲</div>
+            {!pequeno && figurinha.posicao && <p className="text-xs text-gray-400">#{figurinha.posicao}</p>}
+          </div>
+        </div>
+      )
+    }
+    
     return (
-      <div 
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         className={`relative border-2 border-dashed border-gray-300 bg-gray-100 rounded-lg ${pequeno ? 'p-2' : 'p-4'} flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors`}
         onClick={onClick}
       >
@@ -23,7 +37,7 @@ export default function FigurinhaCard({ figurinha, onClick, pequeno = false }) {
           <div className={`text-gray-400 ${pequeno ? 'text-2xl' : 'text-4xl'} mb-2`}>🔒</div>
           {!pequeno && <p className="text-xs text-gray-500">Clique para desbloquear</p>}
         </div>
-      </div>
+      </motion.div>
     )
   }
 
