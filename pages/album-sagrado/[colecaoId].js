@@ -5,6 +5,8 @@ import Layout from '../../components/Layout'
 import AlbumPage from '../../components/AlbumPage'
 import FigurinhaModal from '../../components/FigurinhaModal'
 import CompletionOverlay from '../../components/CompletionOverlay'
+import OracaoDesbloqueio from '../../components/OracaoDesbloqueio'
+import { useOracaoDesbloqueio } from '../../hooks/useOracaoDesbloqueio'
 import colecoes from '../../data/album-colecoes.json'
 import figurinhas from '../../data/album-sagrado.json'
 
@@ -16,9 +18,19 @@ export default function ColecaoPage() {
   const [figurinhaSelecionada, setFigurinhaSelecionada] = useState(null)
   const [mostrarOverlay, setMostrarOverlay] = useState(false)
   const [jaVisualizou, setJaVisualizou] = useState(false)
+  const [mostrarOracao, setMostrarOracao] = useState(false)
+  const [figurinhaParaOracao, setFigurinhaParaOracao] = useState(null)
+
+  const { isDesbloqueada } = useOracaoDesbloqueio()
 
   const colecao = colecoes.find((c) => c.slug === colecaoId)
-  const figurinhasColecao = figurinhas.filter((f) => f.colecaoId === colecao?.id)
+  const figurinhasColecao = figurinhas
+    .filter((f) => f.colecaoId === colecao?.id)
+    .sort((a, b) => a.posicao - b.posicao)
+    .map((f) => ({
+      ...f,
+      bloqueada: f.bloqueada && !isDesbloqueada(f.id) // Desbloqueada se já foi desbloqueada via oração
+    }))
 
   const figurinhasPorPagina = 6
   const totalPaginas = Math.ceil(figurinhasColecao.length / figurinhasPorPagina)
@@ -57,6 +69,24 @@ export default function ColecaoPage() {
     if (paginaAtual > 1) {
       setPaginaAtual(paginaAtual - 1)
     }
+  }
+
+  const handleFigurinhaClick = (figurinha) => {
+    if (figurinha.bloqueada) {
+      // Se está bloqueada, mostrar modal de oração
+      setFigurinhaParaOracao(figurinha)
+      setMostrarOracao(true)
+    } else {
+      // Se está desbloqueada, mostrar modal normal
+      setFigurinhaSelecionada(figurinha)
+    }
+  }
+
+  const handleDesbloqueio = (figurinha) => {
+    setMostrarOracao(false)
+    setFigurinhaParaOracao(null)
+    // Forçar atualização do componente
+    router.replace(router.asPath)
   }
 
   return (
@@ -117,7 +147,7 @@ export default function ColecaoPage() {
         <div className="max-w-5xl mx-auto mb-6 md:mb-8 relative">
           <AlbumPage
             figurinhas={figurinhasColecao}
-            onFigurinhaClick={setFigurinhaSelecionada}
+            onFigurinhaClick={handleFigurinhaClick}
             paginaAtual={paginaAtual}
             totalPaginas={totalPaginas}
           />
@@ -183,6 +213,44 @@ export default function ColecaoPage() {
             colecao={colecao}
             onClose={() => setMostrarOverlay(false)}
           />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {mostrarOracao && figurinhaParaOracao && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+            onClick={() => setMostrarOracao(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-2xl font-serif text-secondary-800">
+                    Desbloquear {figurinhaParaOracao.nome}
+                  </h2>
+                  <button
+                    onClick={() => setMostrarOracao(false)}
+                    className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+                  >
+                    ×
+                  </button>
+                </div>
+                <OracaoDesbloqueio
+                  figurinha={figurinhaParaOracao}
+                  onDesbloqueio={handleDesbloqueio}
+                />
+              </div>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </Layout>

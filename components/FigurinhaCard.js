@@ -15,10 +15,13 @@ export default function FigurinhaCard({ figurinha, onClick, pequeno = false }) {
 
   if (figurinha.bloqueada) {
     return (
-      <div className={`relative border-2 border-dashed border-gray-300 bg-gray-100 rounded-lg ${pequeno ? 'p-2' : 'p-4'} flex items-center justify-center`}>
+      <div 
+        className={`relative border-2 border-dashed border-gray-300 bg-gray-100 rounded-lg ${pequeno ? 'p-2' : 'p-4'} flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors`}
+        onClick={onClick}
+      >
         <div className="text-center">
           <div className={`text-gray-400 ${pequeno ? 'text-2xl' : 'text-4xl'} mb-2`}>🔒</div>
-          {!pequeno && <p className="text-xs text-gray-500">Bloqueada</p>}
+          {!pequeno && <p className="text-xs text-gray-500">Clique para desbloquear</p>}
         </div>
       </div>
     )
