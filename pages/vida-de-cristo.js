@@ -177,22 +177,32 @@ export default function VidaDeCristo() {
         </div>
       </section>
 
-      {/* Quick Navigation */}
-      <div className="fixed right-2 top-32 z-40 hidden lg:block">
-        <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200/50 p-2 max-h-[400px] overflow-y-auto w-48 hover:bg-white/95 hover:w-56 transition-all duration-300">
-          <h3 className="text-xs font-semibold text-gray-700 mb-2 sticky top-0 bg-white/90 backdrop-blur-sm pb-1 border-b border-gray-200/50">
-            Nav. Rápida
-          </h3>
-          <div className="space-y-0.5">
-            {vidaCristoData.map((event, index) => (
-              <button
-                key={event.id}
-                onClick={() => scrollToEvent(index)}
-                className="w-full text-left px-2 py-1.5 text-xs text-gray-600 hover:bg-secondary-50 hover:text-secondary-700 rounded transition-all focus:outline-none focus:ring-1 focus:ring-secondary-400"
-              >
-                <span className="font-semibold text-secondary-600">{event.id}.</span> <span className="truncate block">{event.title}</span>
-              </button>
-            ))}
+      {/* Quick Navigation - Collapsed by default */}
+      <div className="fixed right-0 top-32 z-40 hidden lg:block group">
+        {/* Tab/Handle - sempre visível */}
+        <div className="absolute right-0 top-0 bg-secondary-500 text-white px-2 py-3 rounded-l-lg shadow-lg cursor-pointer group-hover:bg-secondary-600 transition-colors">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </div>
+
+        {/* Panel - aparece no hover */}
+        <div className="absolute right-0 top-0 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out">
+          <div className="bg-white rounded-l-lg shadow-xl border border-gray-200 p-3 max-h-[400px] overflow-y-auto w-56 ml-10">
+            <h3 className="text-xs font-semibold text-gray-900 mb-2 sticky top-0 bg-white pb-1 border-b border-gray-200">
+              Navegação Rápida
+            </h3>
+            <div className="space-y-0.5">
+              {vidaCristoData.map((event, index) => (
+                <button
+                  key={event.id}
+                  onClick={() => scrollToEvent(index)}
+                  className="w-full text-left px-2 py-1.5 text-xs text-gray-700 hover:bg-secondary-50 hover:text-secondary-700 rounded transition-colors focus:outline-none focus:ring-1 focus:ring-secondary-400"
+                >
+                  <span className="font-semibold text-secondary-600">{event.id}.</span> {event.title}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
