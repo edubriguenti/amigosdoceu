@@ -178,19 +178,19 @@ export default function VidaDeCristo() {
       </section>
 
       {/* Quick Navigation */}
-      <div className="fixed right-4 bottom-4 z-40 hidden lg:block">
-        <div className="bg-white rounded-lg shadow-xl border border-gray-200 p-3 max-h-[500px] overflow-y-auto w-64">
-          <h3 className="text-sm font-semibold text-gray-900 mb-3 sticky top-0 bg-white pb-2 border-b border-gray-200">
-            Navegação Rápida
+      <div className="fixed right-2 top-32 z-40 hidden lg:block">
+        <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200/50 p-2 max-h-[400px] overflow-y-auto w-48 hover:bg-white/95 hover:w-56 transition-all duration-300">
+          <h3 className="text-xs font-semibold text-gray-700 mb-2 sticky top-0 bg-white/90 backdrop-blur-sm pb-1 border-b border-gray-200/50">
+            Nav. Rápida
           </h3>
-          <div className="space-y-1">
+          <div className="space-y-0.5">
             {vidaCristoData.map((event, index) => (
               <button
                 key={event.id}
                 onClick={() => scrollToEvent(index)}
-                className="w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-secondary-50 hover:text-secondary-700 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-secondary-400"
+                className="w-full text-left px-2 py-1.5 text-xs text-gray-600 hover:bg-secondary-50 hover:text-secondary-700 rounded transition-all focus:outline-none focus:ring-1 focus:ring-secondary-400"
               >
-                <span className="font-semibold">{event.id}.</span> {event.title}
+                <span className="font-semibold text-secondary-600">{event.id}.</span> <span className="truncate block">{event.title}</span>
               </button>
             ))}
           </div>
