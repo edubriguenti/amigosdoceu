@@ -6,7 +6,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://amigosdoceu.com.br/sitemap.xml
+Sitemap: https://amigosdoceu.vercel.app/sitemap.xml
 
 # Bloquear diretórios sensíveis
 Disallow: /api/

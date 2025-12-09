@@ -1,8 +1,22 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-// Domínio do site (altere para o domínio real em produção)
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://amigosdoceu.vercel.app';
+// Função para ler arquivos JSON
+function readJsonFile(filePath) {
+  try {
+    const fullPath = path.join(process.cwd(), filePath);
+    const fileContent = fs.readFileSync(fullPath, 'utf8');
+    return JSON.parse(fileContent);
+  } catch (error) {
+    console.error(`Erro ao ler ${filePath}:`, error.message);
+    return [];
+  }
+}
+
+// Função para formatar data no formato ISO
+function formatDate(date) {
+  return date.toISOString().split('T')[0];
+}
 
 // Páginas estáticas
 const staticPages = [
@@ -21,23 +35,6 @@ const staticPages = [
   { url: '/favoritos', changefreq: 'monthly', priority: '0.5' },
   { url: '/intencoes', changefreq: 'monthly', priority: '0.6' },
 ];
-
-// Função para ler arquivos JSON
-function readJsonFile(filePath) {
-  try {
-    const fullPath = path.join(__dirname, '..', filePath);
-    const fileContent = fs.readFileSync(fullPath, 'utf8');
-    return JSON.parse(fileContent);
-  } catch (error) {
-    console.error(`Erro ao ler ${filePath}:`, error.message);
-    return [];
-  }
-}
-
-// Função para formatar data no formato ISO
-function formatDate(date) {
-  return date.toISOString().split('T')[0];
-}
 
 // Gerar URLs dinâmicas por categoria
 function generateDynamicUrls() {
@@ -133,7 +130,7 @@ function generateDynamicUrls() {
 }
 
 // Gerar XML de um sitemap individual
-function generateSitemapXml(urls) {
+function generateSitemapXml(urls, siteUrl) {
   const today = formatDate(new Date());
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -141,7 +138,7 @@ function generateSitemapXml(urls) {
 
   urls.forEach(page => {
     xml += '  <url>\n';
-    xml += `    <loc>${SITE_URL}${page.url}</loc>\n`;
+    xml += `    <loc>${siteUrl}${page.url}</loc>\n`;
     xml += `    <lastmod>${page.lastmod || today}</lastmod>\n`;
     xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
     xml += `    <priority>${page.priority}</priority>\n`;
@@ -154,7 +151,7 @@ function generateSitemapXml(urls) {
 }
 
 // Gerar sitemap index XML
-function generateSitemapIndex(sitemaps) {
+function generateSitemapIndex(sitemaps, siteUrl) {
   const today = formatDate(new Date());
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -162,7 +159,7 @@ function generateSitemapIndex(sitemaps) {
 
   sitemaps.forEach(sitemap => {
     xml += '  <sitemap>\n';
-    xml += `    <loc>${SITE_URL}/${sitemap.filename}</loc>\n`;
+    xml += `    <loc>${siteUrl}/${sitemap.filename}</loc>\n`;
     xml += `    <lastmod>${sitemap.lastmod || today}</lastmod>\n`;
     xml += '  </sitemap>\n';
   });
@@ -172,104 +169,111 @@ function generateSitemapIndex(sitemaps) {
   return xml;
 }
 
-// Salvar sitemaps
-function saveSitemaps() {
-  const publicDir = path.join(__dirname, '..', 'public');
-
-  // Criar diretório public se não existir
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
+// Função para obter a URL do site dinamicamente
+function getSiteUrl(req) {
+  // Priorizar variável de ambiente
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL;
   }
 
+  // Usar VERCEL_URL em produção
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+  // Usar host do request como fallback
+  const host = req.headers.host;
+  const protocol = host.includes('localhost') ? 'http' : 'https';
+  return `${protocol}://${host}`;
+}
+
+export async function getServerSideProps({ req, res, query }) {
+  // Obter URL do site dinamicamente
+  const siteUrl = getSiteUrl(req);
   const today = formatDate(new Date());
+
+  // Verificar se é uma requisição para um sub-sitemap específico
+  const { type } = query;
+
+  if (type) {
+    // Gerar sub-sitemap específico
+    const dynamicUrls = generateDynamicUrls();
+    let urls = [];
+
+    switch (type) {
+      case 'pages':
+        urls = staticPages;
+        break;
+      case 'santos':
+        urls = dynamicUrls.santos;
+        break;
+      case 'igrejas':
+        urls = dynamicUrls.igrejas;
+        break;
+      case 'aparicoes':
+        urls = dynamicUrls.aparicoes;
+        break;
+      case 'novenas':
+        urls = dynamicUrls.novenas;
+        break;
+      case 'oracoes':
+        urls = dynamicUrls.oracoes;
+        break;
+      case 'album':
+        urls = dynamicUrls.album;
+        break;
+      default:
+        res.statusCode = 404;
+        return { props: {} };
+    }
+
+    const xml = generateSitemapXml(urls, siteUrl);
+    res.setHeader('Content-Type', 'application/xml');
+    res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400');
+    res.write(xml);
+    res.end();
+
+    return { props: {} };
+  }
+
+  // Gerar sitemap index (principal)
   const dynamicUrls = generateDynamicUrls();
   const sitemaps = [];
 
-  // Páginas principais
+  // Adicionar sitemaps apenas se houver URLs
   if (staticPages.length > 0) {
-    const pagesXml = generateSitemapXml(staticPages);
-    const pagesPath = path.join(publicDir, 'pages-sitemap.xml');
-    fs.writeFileSync(pagesPath, pagesXml, 'utf8');
-    sitemaps.push({ filename: 'pages-sitemap.xml', lastmod: today });
-    console.log('✅ pages-sitemap.xml gerado');
+    sitemaps.push({ filename: 'sitemap.xml?type=pages', lastmod: today });
   }
-
-  // Santos
   if (dynamicUrls.santos.length > 0) {
-    const santosXml = generateSitemapXml(dynamicUrls.santos);
-    const santosPath = path.join(publicDir, 'santos-sitemap.xml');
-    fs.writeFileSync(santosPath, santosXml, 'utf8');
-    sitemaps.push({ filename: 'santos-sitemap.xml', lastmod: today });
-    console.log('✅ santos-sitemap.xml gerado');
+    sitemaps.push({ filename: 'sitemap.xml?type=santos', lastmod: today });
   }
-
-  // Igrejas
   if (dynamicUrls.igrejas.length > 0) {
-    const igrejasXml = generateSitemapXml(dynamicUrls.igrejas);
-    const igrejasPath = path.join(publicDir, 'igrejas-sitemap.xml');
-    fs.writeFileSync(igrejasPath, igrejasXml, 'utf8');
-    sitemaps.push({ filename: 'igrejas-sitemap.xml', lastmod: today });
-    console.log('✅ igrejas-sitemap.xml gerado');
+    sitemaps.push({ filename: 'sitemap.xml?type=igrejas', lastmod: today });
   }
-
-  // Aparições
   if (dynamicUrls.aparicoes.length > 0) {
-    const aparicoesXml = generateSitemapXml(dynamicUrls.aparicoes);
-    const aparicoesPath = path.join(publicDir, 'aparicoes-sitemap.xml');
-    fs.writeFileSync(aparicoesPath, aparicoesXml, 'utf8');
-    sitemaps.push({ filename: 'aparicoes-sitemap.xml', lastmod: today });
-    console.log('✅ aparicoes-sitemap.xml gerado');
+    sitemaps.push({ filename: 'sitemap.xml?type=aparicoes', lastmod: today });
   }
-
-  // Novenas
   if (dynamicUrls.novenas.length > 0) {
-    const novenasXml = generateSitemapXml(dynamicUrls.novenas);
-    const novenasPath = path.join(publicDir, 'novenas-sitemap.xml');
-    fs.writeFileSync(novenasPath, novenasXml, 'utf8');
-    sitemaps.push({ filename: 'novenas-sitemap.xml', lastmod: today });
-    console.log('✅ novenas-sitemap.xml gerado');
+    sitemaps.push({ filename: 'sitemap.xml?type=novenas', lastmod: today });
   }
-
-  // Orações
   if (dynamicUrls.oracoes.length > 0) {
-    const oracoesXml = generateSitemapXml(dynamicUrls.oracoes);
-    const oracoesPath = path.join(publicDir, 'oracoes-sitemap.xml');
-    fs.writeFileSync(oracoesPath, oracoesXml, 'utf8');
-    sitemaps.push({ filename: 'oracoes-sitemap.xml', lastmod: today });
-    console.log('✅ oracoes-sitemap.xml gerado');
+    sitemaps.push({ filename: 'sitemap.xml?type=oracoes', lastmod: today });
   }
-
-  // Álbum Sagrado
   if (dynamicUrls.album.length > 0) {
-    const albumXml = generateSitemapXml(dynamicUrls.album);
-    const albumPath = path.join(publicDir, 'album-sitemap.xml');
-    fs.writeFileSync(albumPath, albumXml, 'utf8');
-    sitemaps.push({ filename: 'album-sitemap.xml', lastmod: today });
-    console.log('✅ album-sitemap.xml gerado');
+    sitemaps.push({ filename: 'sitemap.xml?type=album', lastmod: today });
   }
 
-  // Gerar sitemap index
-  const sitemapIndexXml = generateSitemapIndex(sitemaps);
-  const sitemapIndexPath = path.join(publicDir, 'sitemap.xml');
-  fs.writeFileSync(sitemapIndexPath, sitemapIndexXml, 'utf8');
+  const xml = generateSitemapIndex(sitemaps, siteUrl);
 
-  const totalUrls = staticPages.length + 
-    dynamicUrls.santos.length + 
-    dynamicUrls.igrejas.length + 
-    dynamicUrls.aparicoes.length + 
-    dynamicUrls.novenas.length + 
-    dynamicUrls.oracoes.length + 
-    dynamicUrls.album.length;
+  res.setHeader('Content-Type', 'application/xml');
+  res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400');
+  res.write(xml);
+  res.end();
 
-  console.log('\n✅ Sitemap index gerado com sucesso em /public/sitemap.xml');
-  console.log(`📊 Total de URLs: ${totalUrls}`);
-  console.log(`📁 Total de sitemaps: ${sitemaps.length}`);
+  return { props: {} };
 }
 
-// Executar
-try {
-  saveSitemaps();
-} catch (error) {
-  console.error('❌ Erro ao gerar sitemap:', error);
-  process.exit(1);
+// Componente vazio (não renderiza nada, apenas retorna XML via getServerSideProps)
+export default function Sitemap() {
+  return null;
 }

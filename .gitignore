@@ -44,3 +44,7 @@ next-env.d.ts
 .DS_Store
 Thumbs.db
 
+# Sitemap files (generated dynamically)
+/public/sitemap.xml
+/public/*-sitemap.xml
+
