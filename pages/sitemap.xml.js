@@ -171,17 +171,22 @@ function generateSitemapIndex(sitemaps, siteUrl) {
 
 // Função para obter a URL do site dinamicamente
 function getSiteUrl(req) {
-  // Priorizar variável de ambiente
+  // Priorizar variável de ambiente personalizada (use esta no Vercel!)
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL;
   }
 
-  // Usar VERCEL_URL em produção
+  // Detectar produção Vercel pela URL principal
+  if (process.env.VERCEL_ENV === 'production' && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+
+  // Para preview/development, usar VERCEL_URL
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
 
-  // Usar host do request como fallback
+  // Fallback para localhost
   const host = req.headers.host;
   const protocol = host.includes('localhost') ? 'http' : 'https';
   return `${protocol}://${host}`;
