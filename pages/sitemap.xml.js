@@ -132,6 +132,16 @@ function generateAllUrls() {
   return urls;
 }
 
+// Função para escapar caracteres especiais em XML
+function escapeXml(unsafe) {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 // Gerar XML do sitemap
 function generateSitemapXml(urls, siteUrl) {
   const today = formatDate(new Date());
@@ -140,8 +150,9 @@ function generateSitemapXml(urls, siteUrl) {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   urls.forEach(page => {
-    // Escapar URLs para XML
-    const escapedUrl = `${siteUrl}${page.url}`.replace(/&/g, '&amp;');
+    // Construir URL completa e escapar para XML
+    const fullUrl = `${siteUrl}${page.url}`;
+    const escapedUrl = escapeXml(fullUrl);
     
     xml += '  <url>\n';
     xml += `    <loc>${escapedUrl}</loc>\n`;
@@ -173,10 +184,16 @@ function getSiteUrl(req) {
     return `https://${process.env.VERCEL_URL}`;
   }
 
+  // Fallback específico para o domínio de produção
+  const host = req?.headers?.host || '';
+  if (host.includes('amigosdoceu.vercel.app') || host.includes('amigosdoceu.com')) {
+    return 'https://amigosdoceu.vercel.app';
+  }
+
   // Fallback para localhost
-  const host = req?.headers?.host || 'localhost:3000';
-  const protocol = host.includes('localhost') ? 'http' : 'https';
-  return `${protocol}://${host}`;
+  const fallbackHost = host || 'localhost:3000';
+  const protocol = fallbackHost.includes('localhost') ? 'http' : 'https';
+  return `${protocol}://${fallbackHost}`;
 }
 
 export async function getServerSideProps({ req, res }) {
