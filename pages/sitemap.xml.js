@@ -36,23 +36,26 @@ const staticPages = [
   { url: '/intencoes', changefreq: 'monthly', priority: '0.6' },
 ];
 
-// Gerar URLs dinâmicas por categoria
-function generateDynamicUrls() {
-  const urls = {
-    santos: [],
-    igrejas: [],
-    aparicoes: [],
-    novenas: [],
-    oracoes: [],
-    album: []
-  };
+// Gerar todas as URLs dinâmicas
+function generateAllUrls() {
+  const urls = [];
   const today = formatDate(new Date());
+
+  // Adicionar páginas estáticas
+  staticPages.forEach(page => {
+    urls.push({
+      url: page.url,
+      changefreq: page.changefreq,
+      priority: page.priority,
+      lastmod: today
+    });
+  });
 
   // Santos
   const santos = readJsonFile('data/santos.json');
   santos.forEach(santo => {
     if (santo.slug) {
-      urls.santos.push({
+      urls.push({
         url: `/santos/${santo.slug}`,
         changefreq: 'monthly',
         priority: '0.8',
@@ -65,7 +68,7 @@ function generateDynamicUrls() {
   const igrejas = readJsonFile('data/igrejas.json');
   igrejas.forEach(igreja => {
     if (igreja.slug) {
-      urls.igrejas.push({
+      urls.push({
         url: `/igrejas/${igreja.slug}`,
         changefreq: 'monthly',
         priority: '0.8',
@@ -78,7 +81,7 @@ function generateDynamicUrls() {
   const aparicoes = readJsonFile('data/aparicoes.json');
   aparicoes.forEach(aparicao => {
     if (aparicao.slug) {
-      urls.aparicoes.push({
+      urls.push({
         url: `/aparicoes/${aparicao.slug}`,
         changefreq: 'monthly',
         priority: '0.8',
@@ -91,7 +94,7 @@ function generateDynamicUrls() {
   const novenas = readJsonFile('data/novenas.json');
   novenas.forEach(novena => {
     if (novena.slug) {
-      urls.novenas.push({
+      urls.push({
         url: `/novenas/${novena.slug}`,
         changefreq: 'monthly',
         priority: '0.7',
@@ -104,7 +107,7 @@ function generateDynamicUrls() {
   const oracoes = readJsonFile('data/oracoes.json');
   oracoes.forEach(oracao => {
     if (oracao.slug) {
-      urls.oracoes.push({
+      urls.push({
         url: `/oracoes/${oracao.slug}`,
         changefreq: 'monthly',
         priority: '0.7',
@@ -117,7 +120,7 @@ function generateDynamicUrls() {
   const colecoes = readJsonFile('data/album-colecoes.json');
   colecoes.forEach(colecao => {
     if (colecao.slug) {
-      urls.album.push({
+      urls.push({
         url: `/album-sagrado/${colecao.slug}`,
         changefreq: 'weekly',
         priority: '0.6',
@@ -129,7 +132,7 @@ function generateDynamicUrls() {
   return urls;
 }
 
-// Gerar XML de um sitemap individual
+// Gerar XML do sitemap
 function generateSitemapXml(urls, siteUrl) {
   const today = formatDate(new Date());
 
@@ -137,8 +140,11 @@ function generateSitemapXml(urls, siteUrl) {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   urls.forEach(page => {
+    // Escapar URLs para XML
+    const escapedUrl = `${siteUrl}${page.url}`.replace(/&/g, '&amp;');
+    
     xml += '  <url>\n';
-    xml += `    <loc>${siteUrl}${page.url}</loc>\n`;
+    xml += `    <loc>${escapedUrl}</loc>\n`;
     xml += `    <lastmod>${page.lastmod || today}</lastmod>\n`;
     xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
     xml += `    <priority>${page.priority}</priority>\n`;
@@ -150,30 +156,11 @@ function generateSitemapXml(urls, siteUrl) {
   return xml;
 }
 
-// Gerar sitemap index XML
-function generateSitemapIndex(sitemaps, siteUrl) {
-  const today = formatDate(new Date());
-
-  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-
-  sitemaps.forEach(sitemap => {
-    xml += '  <sitemap>\n';
-    xml += `    <loc>${siteUrl}/${sitemap.filename}</loc>\n`;
-    xml += `    <lastmod>${sitemap.lastmod || today}</lastmod>\n`;
-    xml += '  </sitemap>\n';
-  });
-
-  xml += '</sitemapindex>';
-
-  return xml;
-}
-
 // Função para obter a URL do site dinamicamente
 function getSiteUrl(req) {
   // Priorizar variável de ambiente personalizada (use esta no Vercel!)
   if (process.env.NEXT_PUBLIC_SITE_URL) {
-    return process.env.NEXT_PUBLIC_SITE_URL;
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, ''); // Remove trailing slash
   }
 
   // Detectar produção Vercel pela URL principal
@@ -187,95 +174,39 @@ function getSiteUrl(req) {
   }
 
   // Fallback para localhost
-  const host = req.headers.host;
+  const host = req?.headers?.host || 'localhost:3000';
   const protocol = host.includes('localhost') ? 'http' : 'https';
   return `${protocol}://${host}`;
 }
 
-export async function getServerSideProps({ req, res, query }) {
-  // Obter URL do site dinamicamente
-  const siteUrl = getSiteUrl(req);
-  const today = formatDate(new Date());
+export async function getServerSideProps({ req, res }) {
+  try {
+    // Obter URL do site dinamicamente
+    const siteUrl = getSiteUrl(req);
+    
+    // Gerar todas as URLs
+    const allUrls = generateAllUrls();
+    
+    // Gerar XML
+    const xml = generateSitemapXml(allUrls, siteUrl);
 
-  // Verificar se é uma requisição para um sub-sitemap específico
-  const { type } = query;
-
-  if (type) {
-    // Gerar sub-sitemap específico
-    const dynamicUrls = generateDynamicUrls();
-    let urls = [];
-
-    switch (type) {
-      case 'pages':
-        urls = staticPages;
-        break;
-      case 'santos':
-        urls = dynamicUrls.santos;
-        break;
-      case 'igrejas':
-        urls = dynamicUrls.igrejas;
-        break;
-      case 'aparicoes':
-        urls = dynamicUrls.aparicoes;
-        break;
-      case 'novenas':
-        urls = dynamicUrls.novenas;
-        break;
-      case 'oracoes':
-        urls = dynamicUrls.oracoes;
-        break;
-      case 'album':
-        urls = dynamicUrls.album;
-        break;
-      default:
-        res.statusCode = 404;
-        return { props: {} };
-    }
-
-    const xml = generateSitemapXml(urls, siteUrl);
-    res.setHeader('Content-Type', 'application/xml');
+    // Configurar headers corretos para XML
+    res.setHeader('Content-Type', 'text/xml; charset=utf-8');
     res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400');
+    
+    // Escrever resposta
     res.write(xml);
     res.end();
 
     return { props: {} };
+  } catch (error) {
+    console.error('Erro ao gerar sitemap:', error);
+    res.statusCode = 500;
+    res.setHeader('Content-Type', 'text/xml; charset=utf-8');
+    res.write('<?xml version="1.0" encoding="UTF-8"?><error>Erro ao gerar sitemap</error>');
+    res.end();
+    return { props: {} };
   }
-
-  // Gerar sitemap index (principal)
-  const dynamicUrls = generateDynamicUrls();
-  const sitemaps = [];
-
-  // Adicionar sitemaps apenas se houver URLs
-  if (staticPages.length > 0) {
-    sitemaps.push({ filename: 'sitemap.xml?type=pages', lastmod: today });
-  }
-  if (dynamicUrls.santos.length > 0) {
-    sitemaps.push({ filename: 'sitemap.xml?type=santos', lastmod: today });
-  }
-  if (dynamicUrls.igrejas.length > 0) {
-    sitemaps.push({ filename: 'sitemap.xml?type=igrejas', lastmod: today });
-  }
-  if (dynamicUrls.aparicoes.length > 0) {
-    sitemaps.push({ filename: 'sitemap.xml?type=aparicoes', lastmod: today });
-  }
-  if (dynamicUrls.novenas.length > 0) {
-    sitemaps.push({ filename: 'sitemap.xml?type=novenas', lastmod: today });
-  }
-  if (dynamicUrls.oracoes.length > 0) {
-    sitemaps.push({ filename: 'sitemap.xml?type=oracoes', lastmod: today });
-  }
-  if (dynamicUrls.album.length > 0) {
-    sitemaps.push({ filename: 'sitemap.xml?type=album', lastmod: today });
-  }
-
-  const xml = generateSitemapIndex(sitemaps, siteUrl);
-
-  res.setHeader('Content-Type', 'application/xml');
-  res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400');
-  res.write(xml);
-  res.end();
-
-  return { props: {} };
 }
 
 // Componente vazio (não renderiza nada, apenas retorna XML via getServerSideProps)
