@@ -14,6 +14,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm start` - Start production server
 - `npm run lint` - Run Next.js linter
 
+## Git Workflow
+
+**IMPORTANT: Always create a new branch before making changes.**
+
+### Branch Naming Conventions
+
+- **Features**: `feature/short-description` (e.g., `feature/dark-mode`)
+- **Bug fixes**: `fix/short-description` (e.g., `fix/sitemap-google-console`)
+- **Improvements**: `improve/short-description` (e.g., `improve/performance`)
+- **Refactoring**: `refactor/short-description` (e.g., `refactor/search-utils`)
+
+### Workflow Steps
+
+1. **Create a new branch** from main:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Make your changes** and commit with descriptive messages
+
+3. **Push the branch** to remote:
+   ```bash
+   git push -u origin feature/your-feature-name
+   ```
+
+4. **Create a Pull Request** on GitHub for review
+
+5. **Merge to main** after review/testing
+
+### Never Work Directly on Main
+
+Always use feature branches to:
+- Keep main branch stable and deployable
+- Enable easier code review
+- Allow rollback if issues arise
+- Facilitate parallel development
+
 ## Architecture
 
 ### Data-Driven Content
