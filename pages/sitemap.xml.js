@@ -209,7 +209,6 @@ export async function getServerSideProps({ req, res }) {
 
     // Configurar headers corretos para XML
     res.setHeader('Content-Type', 'application/xml; charset=utf-8');
-    res.setHeader('X-Robots-Tag', 'noindex');
     res.setHeader('Cache-Control', 'public, s-maxage=3600, must-revalidate');
     res.setHeader('ETag', `"${Date.now()}"`);
     
