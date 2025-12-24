@@ -208,8 +208,10 @@ export async function getServerSideProps({ req, res }) {
     const xml = generateSitemapXml(allUrls, siteUrl);
 
     // Configurar headers corretos para XML
-    res.setHeader('Content-Type', 'text/xml; charset=utf-8');
-    res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400');
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('X-Robots-Tag', 'noindex');
+    res.setHeader('Cache-Control', 'public, s-maxage=3600, must-revalidate');
+    res.setHeader('ETag', `"${Date.now()}"`);
     
     // Escrever resposta
     res.write(xml);
@@ -219,7 +221,7 @@ export async function getServerSideProps({ req, res }) {
   } catch (error) {
     console.error('Erro ao gerar sitemap:', error);
     res.statusCode = 500;
-    res.setHeader('Content-Type', 'text/xml; charset=utf-8');
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
     res.write('<?xml version="1.0" encoding="UTF-8"?><error>Erro ao gerar sitemap</error>');
     res.end();
     return { props: {} };
