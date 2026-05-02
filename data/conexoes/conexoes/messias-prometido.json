@@ -1,0 +1,56 @@
+[
+  {
+    "id": "isaias-53-1pedro-2",
+    "slug": "isaias-53-1pedro-2",
+    "tema": "Sofrimento e Redenção",
+    "trilhaId": "messias-prometido",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Isaías 53:5",
+      "texto": "Mas ele foi ferido por causa das nossas transgressões, e moído por causa das nossas iniquidades; o castigo que nos traz a paz estava sobre ele, e pelas suas pisaduras fomos sarados.",
+      "imagem": "/images/conexoes/isaias-53.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "1 Pedro 2:24",
+      "texto": "Ele mesmo, em seu corpo, os nossos pecados levou sobre o madeiro, para que, mortos para os pecados, vivamos para a justiça; e pelas suas pisaduras fostes sarados.",
+      "imagem": "/images/conexoes/1-pedro-2.jpg"
+    },
+    "explicacao": "Isaías profetizou séculos antes que o Servo Sofredor carregaria as nossas dores e seria ferido por nós. Pedro confirma que Jesus cumpriu essa profecia ao levar nossos pecados na cruz e nos conceder cura e paz."
+  },
+  {
+    "id": "miqueias-5-mateus-2",
+    "slug": "miqueias-5-mateus-2",
+    "tema": "Nascimento em Belém",
+    "trilhaId": "messias-prometido",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Miquéias 5:2",
+      "texto": "E tu, Belém Efrata, posto que pequena entre os milhares de Judá, de ti me sairá o que será Senhor em Israel.",
+      "imagem": "/images/conexoes/miqueias-5.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Mateus 2:1",
+      "texto": "Tendo, pois, Jesus nascido em Belém de Judeia, no tempo do rei Herodes, eis que vieram do oriente magos a Jerusalém.",
+      "imagem": "/images/conexoes/mateus-2.jpg"
+    },
+    "explicacao": "Sete séculos antes do nascimento de Jesus, Miquéias indicou Belém como o lugar onde nasceria o governante de Israel. Mateus registra o cumprimento exato: Jesus nasce na pequena Belém da Judeia."
+  },
+  {
+    "id": "zacarias-9-mateus-21",
+    "slug": "zacarias-9-mateus-21",
+    "tema": "Rei humilde",
+    "trilhaId": "messias-prometido",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Zacarias 9:9",
+      "texto": "Eis que o teu rei virá a ti, justo e salvador, pobre e montado sobre um jumento, sobre um jumentinho, filho de jumenta.",
+      "imagem": "/images/conexoes/zacarias-9.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Mateus 21:5",
+      "texto": "Eis aí te vem o teu Rei, manso e assentado sobre uma jumenta, e sobre um jumentinho.",
+      "imagem": "/images/conexoes/mateus-21.jpg"
+    },
+    "explicacao": "Zacarias previu que o Messias entraria em Jerusalém montado em um jumentinho — sinal de humildade e paz, não de conquista militar. Mateus mostra Jesus cumprindo isso no Domingo de Ramos."
+  }
+]

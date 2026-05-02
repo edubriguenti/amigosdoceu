@@ -1,0 +1,102 @@
+[
+  {
+    "id": "d-001",
+    "versiculoNT": { "referencia": "Mateus 2:15", "texto": "E ficou lá até à morte de Herodes, para que se cumprisse o que foi dito pelo Senhor, pelo profeta…" },
+    "alternativas": [
+      { "id": "a", "texto": "Jeremias 31:15" },
+      { "id": "b", "texto": "Oséias 11:1", "correta": true },
+      { "id": "c", "texto": "Miquéias 5:2" }
+    ],
+    "explicacao": "Mateus cita Oséias 11:1 — 'Do Egito chamei o meu filho' — aplicando a Israel uma profecia que se cumpre plenamente em Jesus."
+  },
+  {
+    "id": "d-002",
+    "versiculoNT": { "referencia": "João 19:36", "texto": "Nenhum dos seus ossos será quebrado." },
+    "alternativas": [
+      { "id": "a", "texto": "Êxodo 12:46", "correta": true },
+      { "id": "b", "texto": "Levítico 16:21" },
+      { "id": "c", "texto": "Salmo 22:1" }
+    ],
+    "explicacao": "Êxodo 12:46 prescreve que nenhum osso do cordeiro pascal seja quebrado. João vê em Jesus o Cordeiro definitivo."
+  },
+  {
+    "id": "d-003",
+    "versiculoNT": { "referencia": "Mateus 21:5", "texto": "Eis aí te vem o teu Rei, manso e assentado sobre uma jumenta…" },
+    "alternativas": [
+      { "id": "a", "texto": "Isaías 9:6" },
+      { "id": "b", "texto": "Zacarias 9:9", "correta": true },
+      { "id": "c", "texto": "Malaquias 3:1" }
+    ],
+    "explicacao": "Zacarias 9:9 anunciou o rei messiânico vindo humilde sobre um jumentinho — cumprido na entrada triunfal."
+  },
+  {
+    "id": "d-004",
+    "versiculoNT": { "referencia": "Lucas 1:32-33", "texto": "Dar-lhe-á o Senhor Deus o trono de Davi, seu pai; e reinará eternamente." },
+    "alternativas": [
+      { "id": "a", "texto": "Gênesis 49:10" },
+      { "id": "b", "texto": "2 Samuel 7:13", "correta": true },
+      { "id": "c", "texto": "Salmo 89:35" }
+    ],
+    "explicacao": "Em 2 Samuel 7:13 Deus promete a Davi que o trono de seu descendente seria firmado para sempre."
+  },
+  {
+    "id": "d-005",
+    "versiculoNT": { "referencia": "1 Pedro 2:24", "texto": "Ele mesmo, em seu corpo, os nossos pecados levou sobre o madeiro." },
+    "alternativas": [
+      { "id": "a", "texto": "Isaías 53:5", "correta": true },
+      { "id": "b", "texto": "Salmo 51:5" },
+      { "id": "c", "texto": "Jeremias 17:9" }
+    ],
+    "explicacao": "Isaías 53 descreve o Servo Sofredor ferido pelas nossas transgressões — Pedro vê o cumprimento na cruz."
+  },
+  {
+    "id": "d-006",
+    "versiculoNT": { "referencia": "Mateus 26:64", "texto": "Vereis em breve o Filho do homem assentado à direita do Todo-Poderoso." },
+    "alternativas": [
+      { "id": "a", "texto": "Daniel 7:13", "correta": true },
+      { "id": "b", "texto": "Ezequiel 1:26" },
+      { "id": "c", "texto": "Zacarias 14:9" }
+    ],
+    "explicacao": "Daniel 7 viu o 'Filho do homem' recebendo domínio eterno — Jesus aplica esse título a si diante do Sinédrio."
+  },
+  {
+    "id": "d-007",
+    "versiculoNT": { "referencia": "Hebreus 8:10", "texto": "Porei as minhas leis no seu entendimento, e em seu coração as escreverei." },
+    "alternativas": [
+      { "id": "a", "texto": "Êxodo 24:8" },
+      { "id": "b", "texto": "Jeremias 31:33", "correta": true },
+      { "id": "c", "texto": "Ezequiel 36:26" }
+    ],
+    "explicacao": "Jeremias 31 anunciou a Nova Aliança escrita no coração — Hebreus confirma o cumprimento em Cristo."
+  },
+  {
+    "id": "d-008",
+    "versiculoNT": { "referencia": "Mateus 1:23", "texto": "Eis que a virgem conceberá e dará à luz um filho, e ele será chamado Emanuel." },
+    "alternativas": [
+      { "id": "a", "texto": "Isaías 7:14", "correta": true },
+      { "id": "b", "texto": "Jeremias 23:5" },
+      { "id": "c", "texto": "Miquéias 5:3" }
+    ],
+    "explicacao": "Isaías 7:14 dá o sinal da virgem que conceberá o Emanuel — citado diretamente por Mateus."
+  },
+  {
+    "id": "d-009",
+    "versiculoNT": { "referencia": "João 1:29", "texto": "Eis o Cordeiro de Deus, que tira o pecado do mundo." },
+    "alternativas": [
+      { "id": "a", "texto": "Levítico 16:10" },
+      { "id": "b", "texto": "Êxodo 12:13", "correta": true },
+      { "id": "c", "texto": "Números 19:2" }
+    ],
+    "explicacao": "O cordeiro pascal de Êxodo 12, cujo sangue protegia da morte, prefigura o Cordeiro Jesus."
+  },
+  {
+    "id": "d-010",
+    "versiculoNT": { "referencia": "Mateus 27:46", "texto": "Deus meu, Deus meu, por que me desamparaste?" },
+    "alternativas": [
+      { "id": "a", "texto": "Salmo 22:1", "correta": true },
+      { "id": "b", "texto": "Salmo 31:5" },
+      { "id": "c", "texto": "Lamentações 3:8" }
+    ],
+    "explicacao": "Jesus na cruz cita o Salmo 22 — todo o salmo descreve o sofrimento messiânico de forma detalhada."
+  }
+]

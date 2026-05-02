@@ -1,0 +1,9 @@
+[
+  { "id": "criacao", "nome": "Criação", "referencia": "Gênesis 1–2", "icone": "🌱", "cor": "emerald" },
+  { "id": "alianca", "nome": "Aliança", "referencia": "Gênesis 12,1-3", "icone": "🤝", "cor": "purple" },
+  { "id": "lei", "nome": "Lei", "referencia": "Êxodo 20", "icone": "📖", "cor": "amber" },
+  { "id": "profetas", "nome": "Profetas", "referencia": "Isaías 53", "icone": "🔥", "cor": "orange" },
+  { "id": "jesus", "nome": "Jesus", "referencia": "Mateus 1–4", "icone": "✝️", "cor": "blue" },
+  { "id": "igreja", "nome": "Igreja", "referencia": "Atos 2", "icone": "👥", "cor": "indigo" },
+  { "id": "eternidade", "nome": "Eternidade", "referencia": "Apocalipse 21–22", "icone": "👑", "cor": "violet" }
+]

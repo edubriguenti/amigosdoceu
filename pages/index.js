@@ -1,149 +1,121 @@
 import Layout from '../components/Layout'
-import Link from 'next/link'
+import SEO from '../components/SEO'
+import HomeHeroButton from '../components/HomeHeroButton'
+import HomeSecondaryCard from '../components/HomeSecondaryCard'
 import { motion } from 'framer-motion'
 
+const HERO_SECTIONS = [
+  {
+    href: '/vida-de-cristo',
+    title: 'Vida de Cristo',
+    imageSrc: '/images/home/vida-cristo.jpg',
+    imageAlt: 'Ícone do Cristo Pantocrator do Mosteiro de Santa Catarina no Sinai',
+  },
+  {
+    href: '/santos',
+    title: 'Santos',
+    imageSrc: '/images/home/santos.jpg',
+    imageAlt: 'Os Precursores de Cristo com Santos e Mártires, de Fra Angelico',
+  },
+  {
+    href: '/igrejas',
+    title: 'Igrejas',
+    imageSrc: '/images/home/igrejas.jpg',
+    imageAlt: 'Fachada da Basílica de São Pedro no Vaticano',
+  },
+  {
+    href: '/oracoes',
+    title: 'Orações',
+    imageSrc: '/images/home/oracoes.jpg',
+    imageAlt: 'Mãos em oração, estudo de Albrecht Dürer',
+  },
+]
+
+const SECONDARY_SECTIONS = [
+  { href: '/conexoes', icon: '🔗', title: 'Conexões', description: 'AT ↔ NT interativo' },
+  { href: '/aparicoes', icon: '🌹', title: 'Aparições', description: 'Locais e mensagens marianas' },
+  { href: '/calendario', icon: '📅', title: 'Calendário', description: 'Ano litúrgico completo' },
+  { href: '/santos-do-dia', icon: '✨', title: 'Santos do Dia', description: 'Celebrados hoje' },
+  { href: '/album-sagrado', icon: '📖', title: 'Álbum Sagrado', description: 'Coleção interativa' },
+  { href: '/rosario', icon: '📿', title: 'Rosário', description: 'Mistérios e meditações' },
+  { href: '/novenas', icon: '🕯️', title: 'Novenas', description: 'Nove dias de oração' },
+  { href: '/mapa', icon: '🗺️', title: 'Mapa', description: 'Lugares sagrados' },
+  { href: '/intencoes', icon: '🙏', title: 'Intenções', description: 'Peça orações' },
+  { href: '/favoritos', icon: '⭐', title: 'Favoritos', description: 'Seu caminho devocional' },
+]
+
 export default function Home() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Amigos do Céu',
+    url: 'https://amigosdoceu.vercel.app',
+    description:
+      'Portal contemplativo da fé católica: santos, igrejas, aparições marianas, calendário litúrgico, orações, vida de Cristo e conexões bíblicas interativas.',
+    inLanguage: 'pt-BR',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Amigos do Céu',
+      url: 'https://amigosdoceu.vercel.app',
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://amigosdoceu.vercel.app/santos?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
   return (
-    <Layout>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <section className="py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-serif mb-6">Amigos do Céu</h1>
-            <p className="text-lg md:text-xl text-gray-800 mb-8 leading-relaxed">
-              Uma jornada contemplativa pela fé católica. Conheça os amigos do céu — vidas que inspiram
-              fé, coragem e amor. Descubra também os templos sagrados que testemunharam séculos de
-              devoção e história.
-            </p>
+    <Layout hideHeader fullBleed>
+      <SEO
+        title="Amigos do Céu"
+        description="Uma jornada contemplativa pela fé católica. Vida de Cristo, santos, igrejas, orações, aparições marianas e conexões bíblicas — tudo em um só lugar."
+        url="https://amigosdoceu.vercel.app"
+        keywords="vida de cristo, santos católicos, igrejas históricas, orações católicas, aparições marianas, calendário litúrgico, conexões bíblicas"
+        structuredData={structuredData}
+      />
+      <motion.section
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="pt-10 pb-6 md:pt-14 md:pb-8 text-center max-w-3xl mx-auto px-4"
+      >
+        <h1 className="text-4xl md:text-5xl font-serif text-neutral-900 mb-3">Amigos do Céu</h1>
+        <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
+          Uma jornada contemplativa pela fé católica. Escolha por onde começar.
+        </p>
+      </motion.section>
+
+      <section className="px-4 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-6xl mx-auto">
+          {HERO_SECTIONS.map((section, i) => (
+            <HomeHeroButton key={section.href} index={i} {...section} />
+          ))}
+        </div>
+      </section>
+
+      <section className="px-4 py-10 bg-amber-50/40 border-y border-amber-100">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-amber-800 mb-5 text-center">
+            Explore também
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+            {SECONDARY_SECTIONS.map((s) => (
+              <HomeSecondaryCard key={s.href} {...s} />
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8">
-            <Link href="/santos" className="group">
-              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
-                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Santos</h2>
-                <p className="text-gray-800 mb-4 leading-relaxed">
-                  Conheça as vidas inspiradoras de homens e mulheres que dedicaram suas vidas a Deus
-                  e ao próximo. Histórias de fé, milagres e santidade.
-                </p>
-                <span className="text-sm font-semibold text-amber-700 group-hover:underline">
-                  Explorar Santos →
-                </span>
-              </div>
-            </Link>
-
-            <Link href="/igrejas" className="group">
-              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
-                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Igrejas e Paróquias</h2>
-                <p className="text-gray-800 mb-4 leading-relaxed">
-                  Descubra os templos mais importantes e sagrados do cristianismo. Basílicas, catedrais
-                  e santuários que são testemunhos de fé ao redor do mundo.
-                </p>
-                <span className="text-sm font-semibold text-amber-700 group-hover:underline">
-                  Explorar Igrejas →
-                </span>
-              </div>
-            </Link>
-
-            <Link href="/aparicoes" className="group">
-              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
-                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Aparições de Nossa Senhora</h2>
-                <p className="text-gray-800 mb-4 leading-relaxed">
-                  Descubra os locais sagrados onde Nossa Senhora apareceu ao longo da história.
-                  Mensagens de fé, conversão e esperança para toda a humanidade.
-                </p>
-                <span className="text-sm font-semibold text-amber-700 group-hover:underline">
-                  Explorar Aparições →
-                </span>
-              </div>
-            </Link>
-
-            <Link href="/santos-do-dia" className="group">
-              <div className="border border-amber-300 bg-amber-50 rounded-lg p-8 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
-                <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Santos do Dia</h2>
-                <p className="text-gray-800 mb-4 leading-relaxed">
-                  Descubra qual santo é celebrado hoje no calendário litúrgico. Acompanhe as festas
-                  e celebrações importantes da Igreja Católica.
-                </p>
-                <span className="text-sm font-semibold text-amber-700 group-hover:underline">
-                  Ver Santos de Hoje →
-                </span>
-              </div>
-            </Link>
-          </div>
-
-          <div className="max-w-6xl mx-auto mb-8">
-            <Link href="/vida-de-cristo" className="group">
-              <div className="border-2 border-secondary-400 bg-gradient-to-r from-secondary-50 to-amber-50 rounded-lg p-8 hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2">
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl" role="img" aria-label="Cruz">✝️</div>
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-serif mb-3 group-hover:text-secondary-700 transition-colors">Vida de Cristo em Imagens</h2>
-                    <p className="text-gray-800 mb-4 leading-relaxed">
-                      Contemple toda a vida de Jesus Cristo através de uma linha do tempo visual com imagens
-                      inspiradas no estilo sacro barroco-brasileiro. Da Anunciação à Ascensão, uma jornada completa
-                      pela história da Redenção.
-                    </p>
-                    <span className="text-sm font-semibold text-secondary-700 group-hover:underline">
-                      Iniciar Jornada Visual →
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="max-w-6xl mx-auto mb-8">
-            <Link href="/calendario" className="group">
-              <div className="border-2 border-amber-400 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-8 hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl" role="img" aria-label="Calendário">📅</div>
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-serif mb-3 group-hover:text-amber-700 transition-colors">Calendário Litúrgico</h2>
-                    <p className="text-gray-800 mb-4 leading-relaxed">
-                      Explore o calendário completo com todas as celebrações, festas, solenidades e memórias
-                      dos santos ao longo do ano litúrgico. Receba notificações das datas importantes.
-                    </p>
-                    <span className="text-sm font-semibold text-amber-700 group-hover:underline">
-                      Acessar Calendário Completo →
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <Link href="/album-sagrado" className="group">
-              <div className="border-2 border-accent-400 bg-gradient-to-r from-accent-50 to-secondary-50 rounded-lg p-8 hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl" role="img" aria-label="Álbum">📖</div>
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-serif mb-3 group-hover:text-accent-700 transition-colors">Álbum Sagrado Interativo</h2>
-                    <p className="text-gray-800 mb-4 leading-relaxed">
-                      Colecione, descubra e mergulhe nas histórias dos santos através de um álbum de figurinhas
-                      interativo. Uma jornada visual e espiritual pelas vidas que iluminam nossa fé.
-                    </p>
-                    <span className="text-sm font-semibold text-accent-700 group-hover:underline">
-                      Explorar Álbum Sagrado →
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
-
-        <section className="py-12 text-center">
-          <div className="max-w-2xl mx-auto">
-            <p className="text-gray-700 italic text-lg">
-              "Temos ao nosso redor uma grande nuvem de testemunhas."
-              <br />
-              <span className="font-semibold">— Hebreus 12:1</span>
-            </p>
-          </div>
-        </section>
-      </motion.div>
+      <section className="py-12 text-center px-4">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-neutral-700 italic text-lg font-serif">
+            "Temos ao nosso redor uma grande nuvem de testemunhas."
+            <br />
+            <span className="font-semibold not-italic text-sm tracking-wider text-amber-800">— HEBREUS 12:1</span>
+          </p>
+        </div>
+      </section>
     </Layout>
   )
 }

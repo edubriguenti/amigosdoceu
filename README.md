@@ -1,5 +1,8 @@
-# Amigos do Céu — Starter (corrigido)
-Projeto Next.js + Tailwind + Framer Motion corrigido para ter configuração compatível de Tailwind/PostCSS.
+# Amigos do Céu
+
+Portal contemplativo da fé católica — santos, igrejas históricas, aparições marianas, calendário litúrgico, orações, novenas, rosário, vida de Cristo e a seção interativa **Conexões da Bíblia** (linha do tempo, desafios diários e progresso gamificado mostrando como o Antigo Testamento se conecta ao Novo).
+
+Stack: Next.js 14 (SSG), React 18, Tailwind CSS, Framer Motion, Leaflet. Site totalmente estático — todo o estado do usuário (favoritos, progresso, streak) vive em `localStorage`.
 
 ## Como rodar localmente
 1. `npm install`

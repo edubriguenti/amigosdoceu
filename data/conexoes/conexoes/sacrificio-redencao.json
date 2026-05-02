@@ -1,0 +1,38 @@
+[
+  {
+    "id": "exodo-12-joao-1",
+    "slug": "exodo-12-joao-1",
+    "tema": "O Cordeiro Pascal",
+    "trilhaId": "sacrificio-redencao",
+    "eventoId": "lei",
+    "antigoTestamento": {
+      "referencia": "Êxodo 12:13",
+      "texto": "E aquele sangue vos será por sinal nas casas em que estiverdes; vendo eu sangue, passarei por cima de vós, e não haverá entre vós praga de mortandade.",
+      "imagem": "/images/conexoes/exodo-12.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "João 1:29",
+      "texto": "Eis o Cordeiro de Deus, que tira o pecado do mundo.",
+      "imagem": "/images/conexoes/joao-1.jpg"
+    },
+    "explicacao": "O cordeiro pascal protegia os hebreus da morte no Egito pelo seu sangue. João Batista identifica Jesus como o Cordeiro definitivo: seu sangue tira o pecado de toda a humanidade."
+  },
+  {
+    "id": "genesis-22-romanos-8",
+    "slug": "genesis-22-romanos-8",
+    "tema": "O Pai entrega o Filho",
+    "trilhaId": "sacrificio-redencao",
+    "eventoId": "alianca",
+    "antigoTestamento": {
+      "referencia": "Gênesis 22:8",
+      "texto": "Deus proverá para si o cordeiro para o holocausto, meu filho.",
+      "imagem": "/images/conexoes/genesis-22.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Romanos 8:32",
+      "texto": "Aquele que nem mesmo a seu próprio Filho poupou, antes o entregou por todos nós.",
+      "imagem": "/images/conexoes/romanos-8.jpg"
+    },
+    "explicacao": "Abraão é poupado de sacrificar Isaac quando Deus provê um carneiro. Paulo revela o sentido pleno: o próprio Pai entregou seu Filho amado para que ninguém mais precisasse morrer."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "exodo-20-mateus-5",
+    "slug": "exodo-20-mateus-5",
+    "tema": "Da Lei à plenitude",
+    "trilhaId": "lei-graca",
+    "eventoId": "lei",
+    "antigoTestamento": {
+      "referencia": "Êxodo 20:13-14",
+      "texto": "Não matarás. Não adulterarás.",
+      "imagem": "/images/conexoes/exodo-20.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Mateus 5:21-22, 27-28",
+      "texto": "Qualquer que se encolerizar contra seu irmão sem motivo será réu de juízo. Qualquer que atentar numa mulher para a cobiçar, já em seu coração cometeu adultério com ela.",
+      "imagem": "/images/conexoes/mateus-5.jpg"
+    },
+    "explicacao": "A Lei proibia atos exteriores. Jesus mostra que a verdadeira justiça começa no coração — não basta não matar, é preciso não odiar; não basta não adulterar, é preciso purificar o desejo."
+  },
+  {
+    "id": "jeremias-31-hebreus-8",
+    "slug": "jeremias-31-hebreus-8",
+    "tema": "Nova Aliança",
+    "trilhaId": "lei-graca",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Jeremias 31:33",
+      "texto": "Porei a minha lei no seu interior, e a escreverei no seu coração; e eu serei o seu Deus e eles serão o meu povo.",
+      "imagem": "/images/conexoes/jeremias-31.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Hebreus 8:10",
+      "texto": "Porei as minhas leis no seu entendimento, e em seu coração as escreverei.",
+      "imagem": "/images/conexoes/hebreus-8.jpg"
+    },
+    "explicacao": "Jeremias anunciou uma aliança nova, interior, gravada no coração. Hebreus confirma que essa nova aliança é cumprida em Cristo: a lei deixa de ser pedra e vira vida."
+  }
+]
