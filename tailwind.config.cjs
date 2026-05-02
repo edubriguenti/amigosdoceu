@@ -93,8 +93,8 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'Times New Roman', 'serif'],
       },
 
       // Espaçamento adicional para breakpoints específicos

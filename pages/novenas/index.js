@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import useNovena from '../../hooks/useNovena';
 import novenas from '../../data/novenas.json';
 
@@ -35,10 +36,13 @@ export default function NovenasPage() {
   };
 
   return (
-    <Layout
-      title="Novenas Católicas"
-      description="Novenas tradicionais da Igreja Católica para fortalecer sua devoção e fé."
-    >
+    <Layout>
+      <SEO
+        title="Novenas Católicas"
+        description="Nove dias de oração intensa. Conheça novenas tradicionais: Nossa Senhora Aparecida, Espírito Santo, Santo Antônio e muitas outras."
+        url="https://amigosdoceu.vercel.app/novenas"
+        keywords="novenas, nossa senhora aparecida, espírito santo, santo antônio, oração nove dias, devoção"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-accent-500 to-accent-700 text-white py-16">
         <div className="container mx-auto px-4">

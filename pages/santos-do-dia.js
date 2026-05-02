@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import SaintCard from '../components/SaintCard'
 import { getCelebracaoDoDia, getSantosPorSlugs, formatarData, getProximasCelebracoes } from '../lib/calendarUtils'
 
@@ -27,9 +28,19 @@ export default function SantosDoDia() {
     setProximasCelebracoes(proximas)
   }, [])
 
+  const seoBlock = (
+    <SEO
+      title="Santos do Dia"
+      description="Santo celebrado hoje no calendário litúrgico católico. Veja a vida, oração e tradição associada à data de hoje."
+      url="https://amigosdoceu.vercel.app/santos-do-dia"
+      keywords="santo do dia, calendário litúrgico, santo de hoje, comemoração diária, hagiografia"
+    />
+  )
+
   if (!dataAtual) {
     return (
       <Layout>
+        {seoBlock}
         <div className="text-center py-20">
           <p className="text-gray-600">Carregando...</p>
         </div>
@@ -39,6 +50,7 @@ export default function SantosDoDia() {
 
   return (
     <Layout>
+      {seoBlock}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import SEO from '../../components/SEO'
 import AlbumCard from '../../components/AlbumCard'
 import colecoes from '../../data/album-colecoes.json'
 import figurinhas from '../../data/album-sagrado.json'
@@ -29,6 +30,12 @@ export default function AlbumSagradoIndex() {
 
   return (
     <Layout>
+      <SEO
+        title="Álbum Sagrado"
+        description="Coleção interativa de figurinhas dos santos. Descubra, colecione e mergulhe nas histórias que iluminam a fé católica."
+        url="https://amigosdoceu.vercel.app/album-sagrado"
+        keywords="álbum sagrado, figurinhas santos, coleção interativa, gamificação fé, devoção"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import MapaInterativo from '../../components/MapaInterativo';
 import igrejasData from '../../data/igrejas.json';
 import aparicoesData from '../../data/aparicoes.json';
@@ -7,6 +8,12 @@ import aparicoesData from '../../data/aparicoes.json';
 export default function MapaPage() {
   return (
     <Layout>
+      <SEO
+        title="Mapa Interativo"
+        description="Explore lugares sagrados no mundo: igrejas históricas, basílicas, santuários e locais de aparições marianas. Encontre rotas de peregrinação."
+        url="https://amigosdoceu.vercel.app/mapa"
+        keywords="mapa católico, peregrinação, lugares sagrados, igrejas mundo, santuários mapa, aparições marianas"
+      />
       <div className="min-h-screen bg-parchment py-12 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Cabeçalho */}
