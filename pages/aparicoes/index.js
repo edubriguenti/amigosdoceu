@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout'
+import SEO from '../../components/SEO'
 import AparicaoCard from '../../components/AparicaoCard'
 import aparicoes from '../../data/aparicoes.json'
 import { motion } from 'framer-motion'
@@ -6,6 +7,12 @@ import { motion } from 'framer-motion'
 export default function AparicoesPage() {
   return (
     <Layout>
+      <SEO
+        title="Aparições de Nossa Senhora"
+        description="Locais sagrados onde Nossa Senhora apareceu. Conheça a história, mensagens e impacto das aparições marianas reconhecidas pela Igreja Católica."
+        url="https://amigosdoceu.vercel.app/aparicoes"
+        keywords="aparições marianas, nossa senhora, fátima, lourdes, guadalupe, mensagens marianas, mariologia"
+      />
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
         <section className="py-12">
           <div className="max-w-3xl mb-12">

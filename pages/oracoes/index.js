@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import OracaoCard from '../../components/OracaoCard';
 import oracoes from '../../data/oracoes.json';
 
@@ -22,10 +23,13 @@ export default function OracoesPage() {
   });
 
   return (
-    <Layout
-      title="Orações Católicas"
-      description="Coleção de orações católicas tradicionais e devocionais para fortalecer sua vida espiritual."
-    >
+    <Layout>
+      <SEO
+        title="Orações Católicas"
+        description="Coleção de orações tradicionais católicas: Pai Nosso, Ave Maria, Glória, Credo, terços e mais. Pesquise por categoria ou intenção."
+        url="https://amigosdoceu.vercel.app/oracoes"
+        keywords="orações católicas, pai nosso, ave maria, terço, credo, oração, devocionário"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-accent-500 to-accent-700 text-white py-16">
         <div className="container mx-auto px-4">

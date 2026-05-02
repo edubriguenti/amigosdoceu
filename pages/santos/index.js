@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout'
+import SEO from '../../components/SEO'
 import Gallery from '../../components/Gallery'
 import SearchBar from '../../components/SearchBar'
 import FilterPanel from '../../components/FilterPanel'
@@ -66,6 +67,12 @@ export default function SantosPage() {
 
   return (
     <Layout>
+      <SEO
+        title="Santos Católicos"
+        description="Galeria contemplativa com vidas de santos, mártires e doutores da Igreja. Pesquise por nome, padroado, ordem religiosa, país ou período histórico."
+        url="https://amigosdoceu.vercel.app/santos"
+        keywords="santos católicos, padroeiros, mártires, doutores da igreja, vidas dos santos, hagiografia"
+      />
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
         <section className="py-12">
           <div className="max-w-3xl mb-8">

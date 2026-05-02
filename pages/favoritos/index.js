@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import { useFavoritos } from '../../hooks/useFavoritos';
 import SaintCard from '../../components/SaintCard';
 import ChurchCard from '../../components/ChurchCard';
@@ -104,9 +105,20 @@ export default function FavoritosPage() {
     setNewListDesc(lista.descricao);
   };
 
+  const seoBlock = (
+    <SEO
+      title="Meus Favoritos"
+      description="Sua coleção pessoal de santos, igrejas e aparições. Organize em listas personalizadas seu caminho devocional."
+      url="https://amigosdoceu.vercel.app/favoritos"
+      keywords="favoritos, lista pessoal, devoção católica, coleção"
+      noindex={true}
+    />
+  );
+
   if (!loaded) {
     return (
-      <Layout title="Meus Favoritos">
+      <Layout>
+        {seoBlock}
         <div className="py-12 text-center">
           <p className="text-neutral-600">Carregando favoritos...</p>
         </div>
@@ -117,7 +129,8 @@ export default function FavoritosPage() {
   const totalFavorites = getTotalFavorites();
 
   return (
-    <Layout title="Meus Favoritos - Amigos do Céu">
+    <Layout>
+      {seoBlock}
       <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">

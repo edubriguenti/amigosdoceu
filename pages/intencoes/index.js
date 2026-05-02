@@ -1,13 +1,17 @@
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import IntencoesOracao from '../../components/IntencoesOracao';
 import Link from 'next/link';
 
 export default function IntencoesPage() {
   return (
-    <Layout
-      title="Intenções de Oração"
-      description="Compartilhe suas intenções de oração e una-se em oração pelos pedidos da comunidade."
-    >
+    <Layout>
+      <SEO
+        title="Intenções de Oração"
+        description="Compartilhe suas intenções e una-se em oração pelos pedidos da comunidade. Espaço de comunhão espiritual."
+        url="https://amigosdoceu.vercel.app/intencoes"
+        keywords="intenções de oração, pedidos de oração, comunidade católica, intercessão"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-accent-500 to-accent-700 text-white py-16">
         <div className="container mx-auto px-4">

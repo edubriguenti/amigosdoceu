@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout'
+import SEO from '../../components/SEO'
 import ChurchGallery from '../../components/ChurchGallery'
 import SearchBar from '../../components/SearchBar'
 import FilterPanel from '../../components/FilterPanel'
@@ -61,6 +62,12 @@ export default function IgrejasPage() {
 
   return (
     <Layout>
+      <SEO
+        title="Igrejas e Basílicas"
+        description="Templos sagrados do cristianismo: basílicas, catedrais e santuários ao redor do mundo. Pesquise por país, cidade, estilo arquitetônico ou capacidade."
+        url="https://amigosdoceu.vercel.app/igrejas"
+        keywords="basílicas, catedrais, igrejas católicas, santuários, arquitetura sacra, peregrinação"
+      />
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
         <section className="py-12">
           <div className="max-w-3xl mb-8">

@@ -1,11 +1,18 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import CalendarioMensal from '../components/CalendarioMensal'
 
 export default function Calendario() {
   return (
     <Layout>
+      <SEO
+        title="Calendário Litúrgico"
+        description="Calendário completo da Igreja Católica: festas, solenidades, memórias dos santos e tempos litúrgicos do ano."
+        url="https://amigosdoceu.vercel.app/calendario"
+        keywords="calendário litúrgico, ano litúrgico, festas católicas, solenidades, memórias santos, advento, quaresma"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
