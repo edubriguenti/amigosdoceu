@@ -49,7 +49,47 @@ module.exports = {
           700: '#404040',
           800: '#262626',  // Texto principal ✅ (8.1:1)
           900: '#171717',
+        },
+
+        // Tema Cósmico — usado APENAS em /conexoes
+        cosmic: {
+          bg: '#0a0e1f',
+          surface: '#121833',
+          'surface-2': '#1a2042',
+          border: 'rgba(255,255,255,0.08)',
+          blue: '#3b82f6',
+          'blue-light': '#60a5fa',
+          gold: '#fbbf24',
+          purple: '#a855f7',
+          glow: 'rgba(96,165,250,0.4)',
         }
+      },
+
+      keyframes: {
+        'pulse-glow': {
+          '0%, 100%': { opacity: '0.6' },
+          '50%': { opacity: '1' },
+        },
+        'flow-line': {
+          '0%': { strokeDashoffset: '100' },
+          '100%': { strokeDashoffset: '0' },
+        },
+        'pulse-scale': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.08)' },
+        },
+        'shake-soft': {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '25%': { transform: 'translateX(-4px)' },
+          '75%': { transform: 'translateX(4px)' },
+        },
+      },
+
+      animation: {
+        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+        'flow-line': 'flow-line 4s linear infinite',
+        'pulse-scale': 'pulse-scale 2s ease-in-out infinite',
+        'shake-soft': 'shake-soft 0.4s ease-in-out',
       },
 
       fontFamily: {

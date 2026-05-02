@@ -1,0 +1,30 @@
+[
+  {
+    "id": "messias-prometido",
+    "nome": "O Messias Prometido",
+    "descricao": "Profecias sobre o Messias e seu cumprimento em Jesus",
+    "imagem": "/images/conexoes/trilha-messias.jpg",
+    "totalConexoes": 12
+  },
+  {
+    "id": "sacrificio-redencao",
+    "nome": "Sacrifício e Redenção",
+    "descricao": "Como o plano de Deus aponta para a cruz",
+    "imagem": "/images/conexoes/trilha-sacrificio.jpg",
+    "totalConexoes": 10
+  },
+  {
+    "id": "reino-deus",
+    "nome": "Reino de Deus",
+    "descricao": "A promessa do Reino no AT e sua expansão no NT",
+    "imagem": "/images/conexoes/trilha-reino.jpg",
+    "totalConexoes": 11
+  },
+  {
+    "id": "lei-graca",
+    "nome": "Lei e Graça",
+    "descricao": "Da Lei dada por Moisés à graça revelada em Cristo",
+    "imagem": "/images/conexoes/trilha-lei-graca.jpg",
+    "totalConexoes": 9
+  }
+]

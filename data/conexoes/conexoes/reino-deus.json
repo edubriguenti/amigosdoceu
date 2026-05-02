@@ -1,0 +1,38 @@
+[
+  {
+    "id": "daniel-7-mateus-26",
+    "slug": "daniel-7-mateus-26",
+    "tema": "Filho do Homem",
+    "trilhaId": "reino-deus",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Daniel 7:13-14",
+      "texto": "Eis que com as nuvens do céu vinha um como o Filho do homem… e foi-lhe dado o domínio, e a glória, e o reino.",
+      "imagem": "/images/conexoes/daniel-7.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Mateus 26:64",
+      "texto": "Vereis em breve o Filho do homem assentado à direita do Todo-Poderoso, e vindo sobre as nuvens do céu.",
+      "imagem": "/images/conexoes/mateus-26.jpg"
+    },
+    "explicacao": "Daniel viu uma figura messiânica recebendo um reino eterno. Jesus aplica essa mesma profecia a si mesmo diante do Sinédrio, declarando-se aquele que recebe domínio e glória."
+  },
+  {
+    "id": "2samuel-7-lucas-1",
+    "slug": "2samuel-7-lucas-1",
+    "tema": "Trono eterno de Davi",
+    "trilhaId": "reino-deus",
+    "eventoId": "alianca",
+    "antigoTestamento": {
+      "referencia": "2 Samuel 7:13",
+      "texto": "Esse edificará uma casa ao meu nome, e confirmarei o trono do seu reino para sempre.",
+      "imagem": "/images/conexoes/2samuel-7.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Lucas 1:32-33",
+      "texto": "Dar-lhe-á o Senhor Deus o trono de Davi, seu pai; e reinará eternamente na casa de Jacó, e o seu reino não terá fim.",
+      "imagem": "/images/conexoes/lucas-1.jpg"
+    },
+    "explicacao": "Deus prometeu a Davi um descendente cujo trono duraria para sempre. Gabriel anuncia a Maria que esse descendente é Jesus, cujo reinado é eterno."
+  }
+]
