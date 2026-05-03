@@ -141,8 +141,20 @@ export default function ImageModal({ event, isOpen, onClose, onPrev, onNext, cur
                 {event.description}
               </p>
               {event.scripture && (
-                <p className="text-sm text-secondary-600 font-medium italic mb-4">
+                <p className="text-sm text-secondary-600 font-medium italic mb-3">
                   📖 {event.scripture}
+                </p>
+              )}
+              {(event.obra || event.artist) && (
+                <p className="text-xs text-gray-500 italic mb-4 flex items-center gap-1.5">
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>
+                    {event.obra && <strong className="not-italic">{event.obra}</strong>}
+                    {event.obra && event.artist && ' — '}
+                    {event.artist}
+                  </span>
                 </p>
               )}
 

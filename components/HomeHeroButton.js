@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-export default function HomeHeroButton({ href, imageSrc, imageAlt, title, index = 0 }) {
+export default function HomeHeroButton({ href, imageSrc, imageAlt, title, index = 0, imagePosition = 'center' }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -19,6 +19,7 @@ export default function HomeHeroButton({ href, imageSrc, imageAlt, title, index 
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-105"
+          style={{ objectPosition: imagePosition }}
           priority={index < 2}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 group-hover:from-black/85 transition-colors" />

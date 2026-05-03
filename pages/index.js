@@ -10,6 +10,7 @@ const HERO_SECTIONS = [
     title: 'Vida de Cristo',
     imageSrc: '/images/home/vida-cristo.jpg',
     imageAlt: 'Ícone do Cristo Pantocrator do Mosteiro de Santa Catarina no Sinai',
+    imagePosition: 'top',
   },
   {
     href: '/santos',
@@ -24,15 +25,15 @@ const HERO_SECTIONS = [
     imageAlt: 'Fachada da Basílica de São Pedro no Vaticano',
   },
   {
-    href: '/oracoes',
-    title: 'Orações',
-    imageSrc: '/images/home/oracoes.jpg',
-    imageAlt: 'Mãos em oração, estudo de Albrecht Dürer',
+    href: '/conexoes',
+    title: 'Conexões da Bíblia',
+    imageSrc: '/images/home/conexoes.jpg',
+    imageAlt: 'Página iluminada da Bíblia de Gutenberg — conexões entre o Antigo e Novo Testamento',
   },
 ]
 
 const SECONDARY_SECTIONS = [
-  { href: '/conexoes', icon: '🔗', title: 'Conexões', description: 'AT ↔ NT interativo' },
+  { href: '/oracoes', icon: '✝️', title: 'Orações', description: 'Orações e devoções' },
   { href: '/aparicoes', icon: '🌹', title: 'Aparições', description: 'Locais e mensagens marianas' },
   { href: '/calendario', icon: '📅', title: 'Calendário', description: 'Ano litúrgico completo' },
   { href: '/santos-do-dia', icon: '✨', title: 'Santos do Dia', description: 'Celebrados hoje' },
@@ -80,8 +81,8 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="pt-10 pb-6 md:pt-14 md:pb-8 text-center max-w-3xl mx-auto px-4"
       >
-        <h1 className="text-4xl md:text-5xl font-serif text-neutral-900 mb-3">Amigos do Céu</h1>
-        <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
+        <h1 className="text-4xl md:text-5xl font-serif text-neutral-100 mb-3">Amigos do Céu</h1>
+        <p className="text-base md:text-lg text-neutral-300 leading-relaxed">
           Uma jornada contemplativa pela fé católica. Escolha por onde começar.
         </p>
       </motion.section>
@@ -94,9 +95,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-10 bg-amber-50/40 border-y border-amber-100">
+      <section className="px-4 py-10 bg-cosmic-surface/40 border-y border-cosmic-border">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-amber-800 mb-5 text-center">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-cosmic-gold mb-5 text-center">
             Explore também
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
@@ -109,10 +110,10 @@ export default function Home() {
 
       <section className="py-12 text-center px-4">
         <div className="max-w-2xl mx-auto">
-          <p className="text-neutral-700 italic text-lg font-serif">
+          <p className="text-neutral-300 italic text-lg font-serif">
             "Temos ao nosso redor uma grande nuvem de testemunhas."
             <br />
-            <span className="font-semibold not-italic text-sm tracking-wider text-amber-800">— HEBREUS 12:1</span>
+            <span className="font-semibold not-italic text-sm tracking-wider text-cosmic-gold">— HEBREUS 12:1</span>
           </p>
         </div>
       </section>
