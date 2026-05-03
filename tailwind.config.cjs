@@ -51,7 +51,7 @@ module.exports = {
           900: '#171717',
         },
 
-        // Tema Cósmico — usado APENAS em /conexoes
+        // Tema Cósmico — tema global do site
         cosmic: {
           bg: '#0a0e1f',
           surface: '#121833',

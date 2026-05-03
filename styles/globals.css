@@ -7,7 +7,7 @@ html, body, #__next {
 }
 
 body {
-  @apply bg-parchment text-gray-900 antialiased font-sans;
+  @apply bg-cosmic-bg text-neutral-100 antialiased font-sans;
 }
 
 h1, h2, h3 {

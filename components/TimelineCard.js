@@ -52,6 +52,13 @@ export default function TimelineCard({ event, index, onImageClick }) {
               {event.id}
             </div>
           </button>
+          {(event.obra || event.artist) && (
+            <p className="mt-2 text-xs text-neutral-400 italic text-center leading-snug">
+              {event.obra && <span className="not-italic font-medium text-neutral-300">{event.obra}</span>}
+              {event.obra && event.artist && ' — '}
+              {event.artist}
+            </p>
+          )}
         </div>
 
         {/* Conteúdo */}

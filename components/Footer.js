@@ -12,7 +12,7 @@ export default function Footer() {
     'hover:text-white transition-colors focus:outline-none focus:underline';
 
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-auto">
+    <footer className="bg-cosmic-bg text-neutral-300 mt-auto">
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
 
@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="p-2 bg-cosmic-surface-2 hover:bg-cosmic-surface rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-cosmic-blue"
                 aria-label="Facebook"
                 rel="noopener"
               >
@@ -36,7 +36,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="p-2 bg-cosmic-surface-2 hover:bg-cosmic-surface rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-cosmic-blue"
                 aria-label="Instagram"
                 rel="noopener"
               >
@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8 border-t border-cosmic-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
             <p>&copy; {currentYear} Amigos do Céu. Todos os direitos reservados.</p>
             <p className="italic text-center">"Que os santos intercedam por nós."</p>

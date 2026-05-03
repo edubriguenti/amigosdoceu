@@ -6,7 +6,7 @@ export default function AparicaoCard({ aparicao }) {
   return (
     <div className="relative group">
       <Link href={`/aparicoes/${aparicao.slug}`} className="block overflow-hidden rounded-lg">
-        <div className="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+        <div className="relative aspect-[4/5] bg-cosmic-surface overflow-hidden">
           {aparicao.imagem && (
             <Image
               src={aparicao.imagem}
@@ -19,8 +19,8 @@ export default function AparicaoCard({ aparicao }) {
         </div>
         <div className="mt-3">
           <h3 className="font-serif text-lg">{aparicao.nome}</h3>
-          <p className="text-sm text-gray-600 mt-1">{aparicao.local}</p>
-          <p className="text-xs text-gray-500 mt-1">{aparicao.data}</p>
+          <p className="text-sm text-neutral-400 mt-1">{aparicao.local}</p>
+          <p className="text-xs text-neutral-500 mt-1">{aparicao.data}</p>
         </div>
       </Link>
       <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
