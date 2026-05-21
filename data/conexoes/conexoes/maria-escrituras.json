@@ -1,0 +1,78 @@
+[
+  {
+    "id": "genesis-3-joao-19",
+    "slug": "genesis-3-joao-19",
+    "tema": "A Nova Eva",
+    "trilhaId": "maria-escrituras",
+    "eventoId": "criacao",
+    "antigoTestamento": {
+      "referencia": "Gênesis 3:15",
+      "texto": "E porei inimizade entre ti e a mulher, e entre a tua semente e a sua semente; esta te ferirá a cabeça, e tu lhe ferirás o calcanhar.",
+      "imagem": "/images/conexoes/genesis-3.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "João 19:26-27",
+      "texto": "Vendo Jesus ali sua mãe, e que o discípulo a quem ele amava estava presente, disse a sua mãe: Mulher, eis aí o teu filho. Depois disse ao discípulo: Eis aí tua mãe.",
+      "imagem": "/images/conexoes/joao-19.jpg"
+    },
+    "explicacao": "Já no primeiro Evangelho (Gn 3:15, o Protoevangelho), Deus anuncia uma Mulher cuja descendência esmagaria a cabeça da serpente. Junto à cruz, Jesus dirige-se à sua Mãe como 'Mulher' (mesma palavra de Caná e do Apocalipse), apresentando-a como a Nova Eva, mãe de todos os viventes na ordem da graça.",
+    "tradicaoCatolica": "Santo Irineu de Lyon (Adv. Haereses III.22) é o pioneiro: 'O nó da desobediência de Eva foi desatado pela obediência de Maria'. Lumen Gentium 56 retoma essa antítese Eva-Maria. CIC §411 e §494 ensinam que Maria, por seu 'fiat', tornou-se a Nova Eva, cooperando com o Novo Adão na obra da Redenção."
+  },
+  {
+    "id": "2samuel-6-lucas-1",
+    "slug": "2samuel-6-lucas-1",
+    "tema": "Arca da Nova Aliança",
+    "trilhaId": "maria-escrituras",
+    "eventoId": "alianca",
+    "antigoTestamento": {
+      "referencia": "2 Samuel 6:9, 14-16",
+      "texto": "Davi teve medo do Senhor naquele dia, e disse: Como virá a mim a arca do Senhor? E Davi saltava com todas as suas forças diante do Senhor… E sucedeu que, entrando a arca do Senhor na cidade de Davi, Mical, filha de Saul, estava olhando pela janela.",
+      "imagem": "/images/conexoes/2samuel-6.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Lucas 1:43-44, 56",
+      "texto": "E donde me provém isto a mim, que a mãe do meu Senhor venha a mim? Porque, eis que, ao soar em meus ouvidos a voz da tua saudação, a criancinha saltou de alegria no meu ventre… E Maria ficou com ela quase três meses.",
+      "imagem": "/images/conexoes/lucas-1-visitacao.jpg"
+    },
+    "explicacao": "Lucas constrói um paralelo cuidadoso entre Davi diante da Arca e Isabel diante de Maria: o mesmo medo reverente ('como?'), o mesmo saltar de alegria, os mesmos três meses de permanência. Maria carrega no ventre a verdadeira Presença — Cristo, a Palavra encarnada — sendo a Arca da Nova Aliança.",
+    "tradicaoCatolica": "Santo Atanásio, São Gregório Taumaturgo e Santo Ambrósio chamam Maria de 'Arca da Aliança'. As Ladainhas Lauretanas confessam 'Arca da Aliança, rogai por nós'. Apocalipse 11:19—12:1 mostra a Arca no céu logo seguida pela Mulher vestida de sol — leitura mariana antiquíssima."
+  },
+  {
+    "id": "1reis-2-joao-2",
+    "slug": "1reis-2-joao-2",
+    "tema": "A Rainha-Mãe (Gebirah)",
+    "trilhaId": "maria-escrituras",
+    "eventoId": "alianca",
+    "antigoTestamento": {
+      "referencia": "1 Reis 2:19-20",
+      "texto": "Então Bate-Seba foi ao rei Salomão, a falar-lhe por Adonias; e o rei se levantou a encontrar-se com ela, e se inclinou diante dela; então se assentou no seu trono, e fez pôr uma cadeira para a mãe do rei, e ela se assentou à sua mão direita. Então disse ela: Só uma pequena petição te faço; não ma rejeites. E o rei lhe disse: Pede, minha mãe, porque te não farei virar o rosto.",
+      "imagem": "/images/conexoes/1reis-2.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "João 2:3-5",
+      "texto": "E faltando o vinho, a mãe de Jesus lhe disse: Não têm vinho… Disse, então, sua mãe aos serventes: Fazei tudo quanto ele vos disser.",
+      "imagem": "/images/conexoes/joao-2-cana.jpg"
+    },
+    "explicacao": "No reino davídico, a 'Gebirah' (Senhora-Mãe) intercedia junto ao rei pelo povo e ocupava o trono à sua direita. Em Caná, Maria exerce essa função: leva a Jesus a necessidade humana e instrui os servos com a confiança de quem sabe que o Rei-Filho atenderá.",
+    "tradicaoCatolica": "São Bernardo prega que toda graça de Cristo passa pelas mãos de Maria, sua Mãe-Rainha (cf. CIC §969, Mediatrix). A doutrina da realeza mariana, definida por Pio XII em Ad Caeli Reginam (1954), repousa precisamente sobre a tipologia da Gebirah davídica e sobre o Apocalipse 12 (a Mulher coroada de doze estrelas)."
+  },
+  {
+    "id": "genesis-3-apocalipse-12",
+    "slug": "genesis-3-apocalipse-12",
+    "tema": "A Mulher vestida de sol",
+    "trilhaId": "maria-escrituras",
+    "eventoId": "eternidade",
+    "antigoTestamento": {
+      "referencia": "Gênesis 3:15",
+      "texto": "E porei inimizade entre ti e a mulher, e entre a tua semente e a sua semente; esta te ferirá a cabeça, e tu lhe ferirás o calcanhar.",
+      "imagem": "/images/conexoes/genesis-3-mulher.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Apocalipse 12:1, 5",
+      "texto": "E viu-se um grande sinal no céu: uma mulher vestida do sol, tendo a lua debaixo dos pés, e uma coroa de doze estrelas sobre a sua cabeça… E ela deu à luz um filho, um varão que há de reger todas as nações com vara de ferro.",
+      "imagem": "/images/conexoes/apocalipse-12.jpg"
+    },
+    "explicacao": "A inimizade prometida no Éden encontra seu desfecho cósmico em Apocalipse 12: a Mulher e sua descendência triunfam definitivamente sobre a serpente antiga. A cena reúne dimensão mariana (a Mãe do Messias) e eclesiológica (a Igreja perseguida e vitoriosa).",
+    "tradicaoCatolica": "Pio XII, em Munificentissimus Deus (1950), funda dogmaticamente a Assunção sobre essa tipologia: a Mulher do Apocalipse, glorificada no céu, é Maria assunta corpo e alma. CIC §966 e §2853 confessam a vitória de Maria e da Igreja sobre o dragão. A solenidade da Imaculada Conceição (8 de dezembro) também ecoa esse 'inimizade' do Gênesis."
+  }
+]

@@ -117,6 +117,19 @@ function generateAllUrls() {
     }
   });
 
+  // Trilhas de Conexões
+  const trilhas = readJsonFile('data/conexoes/trilhas.json');
+  trilhas.forEach(trilha => {
+    if (trilha.id) {
+      urls.push({
+        url: `/conexoes/trilhas/${trilha.id}`,
+        changefreq: 'monthly',
+        priority: '0.7',
+        lastmod: today
+      });
+    }
+  });
+
   // Coleções do Álbum Sagrado
   const colecoes = readJsonFile('data/album-colecoes.json');
   colecoes.forEach(colecao => {

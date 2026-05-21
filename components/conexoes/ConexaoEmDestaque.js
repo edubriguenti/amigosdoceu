@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { useConexoes } from '../../contexts/ConexoesContext'
+import { useFavoritos } from '../../hooks/useFavoritos'
 import LinhaLuminosa from './LinhaLuminosa'
 import EmptyState from './EmptyState'
 
@@ -11,7 +12,19 @@ import EmptyState from './EmptyState'
  */
 export default function ConexaoEmDestaque() {
   const { conexaoAtiva, conexoesFiltradas, proximaConexao, conexaoAnterior, setConexaoAtiva } = useConexoes()
+  const { toggleFavorito, isFavorito, loaded: favLoaded } = useFavoritos()
   const [hover, setHover] = useState(false)
+
+  const favorito = favLoaded && conexaoAtiva ? isFavorito('conexoes', conexaoAtiva.slug) : false
+
+  function onToggleFavorito() {
+    if (!conexaoAtiva) return
+    toggleFavorito('conexoes', {
+      slug: conexaoAtiva.slug,
+      nome: conexaoAtiva.tema,
+      trilhaId: conexaoAtiva.trilhaId,
+    })
+  }
 
   if (!conexaoAtiva || conexoesFiltradas.length === 0) {
     return (
@@ -31,10 +44,20 @@ export default function ConexaoEmDestaque() {
         <h2 className="font-serif text-lg md:text-xl text-white">Conexão em destaque</h2>
         <button
           type="button"
-          aria-label="Salvar nos favoritos"
-          className="p-2 rounded-lg hover:bg-white/5 text-neutral-400 hover:text-cosmic-gold transition-colors"
+          onClick={onToggleFavorito}
+          aria-label={favorito ? 'Remover dos favoritos' : 'Salvar nos favoritos'}
+          aria-pressed={favorito}
+          className={`p-2 rounded-lg hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light ${
+            favorito ? 'text-cosmic-gold' : 'text-neutral-400 hover:text-cosmic-gold'
+          }`}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            className="w-5 h-5"
+            fill={favorito ? 'currentColor' : 'none'}
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
           </svg>
         </button>

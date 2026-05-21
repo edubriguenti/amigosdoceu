@@ -15,7 +15,8 @@
       "texto": "Qualquer que se encolerizar contra seu irmão sem motivo será réu de juízo. Qualquer que atentar numa mulher para a cobiçar, já em seu coração cometeu adultério com ela.",
       "imagem": "/images/conexoes/mateus-5.jpg"
     },
-    "explicacao": "A Lei proibia atos exteriores. Jesus mostra que a verdadeira justiça começa no coração — não basta não matar, é preciso não odiar; não basta não adulterar, é preciso purificar o desejo."
+    "explicacao": "A Lei proibia atos exteriores. Jesus mostra que a verdadeira justiça começa no coração — não basta não matar, é preciso não odiar; não basta não adulterar, é preciso purificar o desejo.",
+    "tradicaoCatolica": "Santo Agostinho (De Sermone Domini in Monte) ensina que o Sermão da Montanha é a 'carta magna' da vida cristã, não abolindo a Lei mas conduzindo-a à perfeição interior. CIC §1968 explica que a Lei nova de Cristo aperfeiçoa a Lei antiga, libertando-a do que era externo e disciplinar."
   },
   {
     "id": "jeremias-31-hebreus-8",
@@ -33,6 +34,64 @@
       "texto": "Porei as minhas leis no seu entendimento, e em seu coração as escreverei.",
       "imagem": "/images/conexoes/hebreus-8.jpg"
     },
-    "explicacao": "Jeremias anunciou uma aliança nova, interior, gravada no coração. Hebreus confirma que essa nova aliança é cumprida em Cristo: a lei deixa de ser pedra e vira vida."
+    "explicacao": "Jeremias anunciou uma aliança nova, interior, gravada no coração. Hebreus confirma que essa nova aliança é cumprida em Cristo: a lei deixa de ser pedra e vira vida.",
+    "tradicaoCatolica": "São Tomás de Aquino (ST I-II, q.106, a.1) ensina que a Lei Nova 'principalmente é a graça do Espírito Santo' dada aos fiéis em Cristo. CIC §1965-1966 retoma essa doutrina: a Lei nova não é um código escrito, mas a presença interior do Espírito Santo."
+  },
+  {
+    "id": "ezequiel-36-2corintios-3",
+    "slug": "ezequiel-36-2corintios-3",
+    "tema": "Coração Novo",
+    "trilhaId": "lei-graca",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Ezequiel 36:26",
+      "texto": "Dar-vos-ei um coração novo, e porei dentro de vós um espírito novo; e tirarei o coração de pedra da vossa carne, e vos darei um coração de carne.",
+      "imagem": "/images/conexoes/ezequiel-36.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "2 Coríntios 3:3",
+      "texto": "Manifestando-vos como a carta de Cristo… escrita não com tinta, mas com o Espírito de Deus vivo, não em tábuas de pedra, mas nas tábuas de carne do coração.",
+      "imagem": "/images/conexoes/2corintios-3.jpg"
+    },
+    "explicacao": "Ezequiel prometeu uma transformação radical: trocar o coração de pedra por um coração sensível ao Espírito. Paulo afirma que os cristãos são a carta viva dessa promessa cumprida — o Espírito Santo escreve a Lei no íntimo do crente batizado.",
+    "tradicaoCatolica": "São Cirilo de Alexandria liga este texto à efusão do Espírito em Pentecostes, momento em que a promessa de Ezequiel se torna realidade na Igreja. CIC §715 cita Ezequiel 36 como anúncio profético do Espírito Santo, que faz da Igreja a 'comunidade da Nova Aliança'."
+  },
+  {
+    "id": "deuteronomio-30-romanos-2",
+    "slug": "deuteronomio-30-romanos-2",
+    "tema": "Circuncisão do Coração",
+    "trilhaId": "lei-graca",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Deuteronômio 30:6",
+      "texto": "E o Senhor teu Deus circuncidará o teu coração, e o coração de tua semente, para amares ao Senhor teu Deus com todo o teu coração e com toda a tua alma, para que vivas.",
+      "imagem": "/images/conexoes/deuteronomio-30.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Romanos 2:28-29",
+      "texto": "Porque não é judeu o que o é exteriormente, nem é circuncisão a que o é exteriormente na carne. Mas é judeu o que o é no interior, e circuncisão, a que é do coração, no espírito, não na letra.",
+      "imagem": "/images/conexoes/romanos-2.jpg"
+    },
+    "explicacao": "Já no Deuteronômio, Deus prometia uma circuncisão interior — uma transformação do coração para amar verdadeiramente. Paulo declara que essa é a marca do povo da Nova Aliança: não um sinal na carne, mas a obra do Espírito no coração.",
+    "tradicaoCatolica": "São Justino (Diálogo 12) e os Padres viam o batismo cristão como a 'verdadeira circuncisão', não da carne mas do pecado original. CIC §1214 ensina que o batismo 'circuncida' o coração ao incorporar o crente a Cristo. Cf. também Col 2:11-12."
+  },
+  {
+    "id": "salmo-51-1joao-1",
+    "slug": "salmo-51-1joao-1",
+    "tema": "Lavagem dos pecados",
+    "trilhaId": "lei-graca",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Salmo 51:7",
+      "texto": "Purifica-me com hissopo, e ficarei puro; lava-me, e ficarei mais branco do que a neve.",
+      "imagem": "/images/conexoes/salmo-51.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "1 João 1:7",
+      "texto": "O sangue de Jesus Cristo, seu Filho, nos purifica de todo o pecado.",
+      "imagem": "/images/conexoes/1-joao-1.jpg"
+    },
+    "explicacao": "Davi, esmagado pelo pecado, suplicava ser lavado mais branco que a neve. O Novo Testamento revela como essa lavagem se torna real: o sangue de Cristo purifica de todo pecado, sacramentalmente aplicado no Batismo e na Reconciliação.",
+    "tradicaoCatolica": "Santo Ambrósio (De Mysteriis) liga o hissopo do Salmo 51 ao sangue de Cristo aspergido sobre a alma na Confissão. O Miserere é rezado na Liturgia das Horas toda sexta-feira e em cada celebração penitencial, lembrando que a graça de Cristo realiza o que a Antiga Aliança apenas pedia."
   }
 ]

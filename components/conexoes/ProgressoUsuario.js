@@ -52,16 +52,6 @@ export default function ProgressoUsuario() {
         />
       </div>
 
-      <button
-        type="button"
-        className="mt-5 w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-cosmic-bg/50 hover:bg-cosmic-bg border border-cosmic-border rounded-lg text-sm text-neutral-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
-      >
-        <span aria-hidden="true">🏆</span>
-        Ver todas as conquistas
-        <svg className="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
     </div>
   )
 }

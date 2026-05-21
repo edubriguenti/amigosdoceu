@@ -8,7 +8,7 @@ const LISTS_KEY = 'amigosdoceu_listas';
  * Suporta: santos, igrejas, aparições
  */
 export function useFavoritos() {
-  const [favoritos, setFavoritos] = useState({ santos: [], igrejas: [], aparicoes: [] });
+  const [favoritos, setFavoritos] = useState({ santos: [], igrejas: [], aparicoes: [], conexoes: [] });
   const [listas, setListas] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
@@ -182,7 +182,7 @@ export function useFavoritos() {
 
   // Limpar todos os favoritos
   const clearAllFavoritos = useCallback(() => {
-    setFavoritos({ santos: [], igrejas: [], aparicoes: [] });
+    setFavoritos({ santos: [], igrejas: [], aparicoes: [], conexoes: [] });
   }, []);
 
   // Exportar favoritos como JSON

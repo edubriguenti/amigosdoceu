@@ -15,7 +15,8 @@
       "texto": "Ele mesmo, em seu corpo, os nossos pecados levou sobre o madeiro, para que, mortos para os pecados, vivamos para a justiça; e pelas suas pisaduras fostes sarados.",
       "imagem": "/images/conexoes/1-pedro-2.jpg"
     },
-    "explicacao": "Isaías profetizou séculos antes que o Servo Sofredor carregaria as nossas dores e seria ferido por nós. Pedro confirma que Jesus cumpriu essa profecia ao levar nossos pecados na cruz e nos conceder cura e paz."
+    "explicacao": "Isaías profetizou séculos antes que o Servo Sofredor carregaria as nossas dores e seria ferido por nós. Pedro confirma que Jesus cumpriu essa profecia ao levar nossos pecados na cruz e nos conceder cura e paz.",
+    "tradicaoCatolica": "Os Padres viram em Isaías 53 a profecia central da Paixão. São Justino Mártir (Diálogo com Trifão, 13) usa esse texto para mostrar aos judeus que o Messias devia sofrer. CIC §601 ensina que o desígnio divino de salvação pela morte do Servo Sofredor foi anunciado de antemão na Escritura."
   },
   {
     "id": "miqueias-5-mateus-2",
@@ -33,7 +34,8 @@
       "texto": "Tendo, pois, Jesus nascido em Belém de Judeia, no tempo do rei Herodes, eis que vieram do oriente magos a Jerusalém.",
       "imagem": "/images/conexoes/mateus-2.jpg"
     },
-    "explicacao": "Sete séculos antes do nascimento de Jesus, Miquéias indicou Belém como o lugar onde nasceria o governante de Israel. Mateus registra o cumprimento exato: Jesus nasce na pequena Belém da Judeia."
+    "explicacao": "Sete séculos antes do nascimento de Jesus, Miquéias indicou Belém como o lugar onde nasceria o governante de Israel. Mateus registra o cumprimento exato: Jesus nasce na pequena Belém da Judeia.",
+    "tradicaoCatolica": "São Jerônimo, que viveu em Belém por mais de trinta anos, comenta que a pequenez da cidade revela o estilo de Deus: escolher o humilde para confundir o poderoso (cf. 1Cor 1:27). CIC §525 contempla este nascimento pobre como sinal da glória escondida do Verbo."
   },
   {
     "id": "zacarias-9-mateus-21",
@@ -51,6 +53,45 @@
       "texto": "Eis aí te vem o teu Rei, manso e assentado sobre uma jumenta, e sobre um jumentinho.",
       "imagem": "/images/conexoes/mateus-21.jpg"
     },
-    "explicacao": "Zacarias previu que o Messias entraria em Jerusalém montado em um jumentinho — sinal de humildade e paz, não de conquista militar. Mateus mostra Jesus cumprindo isso no Domingo de Ramos."
+    "explicacao": "Zacarias previu que o Messias entraria em Jerusalém montado em um jumentinho — sinal de humildade e paz, não de conquista militar. Mateus mostra Jesus cumprindo isso no Domingo de Ramos.",
+    "tradicaoCatolica": "Santo Ambrósio (Comentário a Lucas X) lê o jumentinho como figura dos gentios, antes selvagens e agora dóceis à condução de Cristo. A liturgia do Domingo de Ramos retoma essa cena anualmente, lembrando que Cristo reina pela mansidão, não pela força."
+  },
+  {
+    "id": "isaias-7-mateus-1",
+    "slug": "isaias-7-mateus-1",
+    "tema": "O Filho da Virgem",
+    "trilhaId": "messias-prometido",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Isaías 7:14",
+      "texto": "Eis que a virgem conceberá, e dará à luz um filho, e chamará o seu nome Emanuel.",
+      "imagem": "/images/conexoes/isaias-7.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Mateus 1:22-23",
+      "texto": "Tudo isto aconteceu para que se cumprisse o que foi dito da parte do Senhor pelo profeta, que diz: Eis que a virgem conceberá e dará à luz um filho, e chamá-lo-ão pelo nome de Emanuel, que traduzido é: Deus conosco.",
+      "imagem": "/images/conexoes/mateus-1.jpg"
+    },
+    "explicacao": "Isaías anunciou um sinal extraordinário: uma virgem daria à luz o Emanuel — 'Deus conosco'. Mateus declara explicitamente que esse sinal se cumpre no nascimento virginal de Jesus, gerado pelo Espírito Santo no seio de Maria.",
+    "tradicaoCatolica": "Santo Ireneu (Adv. Haereses III.21) defende a tradução 'virgem' contra os que diziam 'jovem mulher', mostrando que o sinal só é prodigioso se for uma concepção virginal. CIC §497 confirma a concepção virginal de Jesus como cumprimento literal desta profecia."
+  },
+  {
+    "id": "salmo-118-1pedro-2",
+    "slug": "salmo-118-1pedro-2",
+    "tema": "A Pedra Angular Rejeitada",
+    "trilhaId": "messias-prometido",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Salmo 118:22",
+      "texto": "A pedra que os edificadores rejeitaram tornou-se a cabeça da esquina.",
+      "imagem": "/images/conexoes/salmo-118.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "1 Pedro 2:7",
+      "texto": "E assim para vós, os que credes, é preciosa, mas para os rebeldes a pedra que os edificadores reprovaram, essa foi a principal da esquina.",
+      "imagem": "/images/conexoes/1-pedro-2-pedra.jpg"
+    },
+    "explicacao": "O salmista cantou que a pedra desprezada se tornaria fundamento. Jesus aplica esse versículo a si mesmo (Mt 21:42) e Pedro o aplica de novo, mostrando que Cristo rejeitado pelos líderes religiosos é o alicerce vivo da Igreja.",
+    "tradicaoCatolica": "Santo Agostinho (Sermão 89) explica: 'Ele se fez pedra angular porque uniu em si dois povos — judeus e gentios — como duas paredes que se encontram em um só edifício.' CIC §756 retoma essa imagem para descrever a Igreja como edifício de Deus cuja pedra angular é Cristo."
   }
 ]
