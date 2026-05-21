@@ -98,5 +98,105 @@
       { "id": "c", "texto": "Lamentações 3:8" }
     ],
     "explicacao": "Jesus na cruz cita o Salmo 22 — todo o salmo descreve o sofrimento messiânico de forma detalhada."
+  },
+  {
+    "id": "d-011",
+    "versiculoNT": { "referencia": "João 3:14", "texto": "Como Moisés levantou a serpente no deserto, assim importa que o Filho do homem seja levantado." },
+    "alternativas": [
+      { "id": "a", "texto": "Êxodo 17:6" },
+      { "id": "b", "texto": "Números 21:8-9", "correta": true },
+      { "id": "c", "texto": "Deuteronômio 8:15" }
+    ],
+    "explicacao": "Jesus alude à serpente de bronze erguida por Moisés em Números 21 — quem olhava com fé era curado, prefigurando o Crucificado."
+  },
+  {
+    "id": "d-012",
+    "versiculoNT": { "referencia": "João 6:51", "texto": "Eu sou o pão vivo que desceu do céu; se alguém comer deste pão, viverá para sempre." },
+    "alternativas": [
+      { "id": "a", "texto": "Êxodo 16:14-15", "correta": true },
+      { "id": "b", "texto": "Provérbios 9:5" },
+      { "id": "c", "texto": "Isaías 55:1" }
+    ],
+    "explicacao": "Jesus contrapõe-se ao maná dado no deserto (Êx 16): Ele é o verdadeiro pão do céu, que dá vida eterna."
+  },
+  {
+    "id": "d-013",
+    "versiculoNT": { "referencia": "Hebreus 7:17", "texto": "Tu és sacerdote eternamente, segundo a ordem de Melquisedeque." },
+    "alternativas": [
+      { "id": "a", "texto": "Gênesis 14:18", "correta": true },
+      { "id": "b", "texto": "Êxodo 28:1" },
+      { "id": "c", "texto": "Números 18:1" }
+    ],
+    "explicacao": "Melquisedeque, rei-sacerdote de Salém que ofereceu pão e vinho (Gn 14), prefigura Cristo, Sumo Sacerdote eterno."
+  },
+  {
+    "id": "d-014",
+    "versiculoNT": { "referencia": "Mateus 16:18", "texto": "Tu és Pedro, e sobre esta pedra edificarei a minha igreja… e dar-te-ei as chaves do reino dos céus." },
+    "alternativas": [
+      { "id": "a", "texto": "Isaías 22:22", "correta": true },
+      { "id": "b", "texto": "Salmo 118:22" },
+      { "id": "c", "texto": "Daniel 2:34" }
+    ],
+    "explicacao": "Em Isaías 22:22, Deus entrega a Eliaquim a 'chave da casa de Davi' — figura do primado de Pedro como mordomo do Reino."
+  },
+  {
+    "id": "d-015",
+    "versiculoNT": { "referencia": "Lucas 1:43", "texto": "Donde me provém isto a mim, que a mãe do meu Senhor venha a mim?" },
+    "alternativas": [
+      { "id": "a", "texto": "Êxodo 25:10" },
+      { "id": "b", "texto": "2 Samuel 6:9", "correta": true },
+      { "id": "c", "texto": "1 Reis 8:6" }
+    ],
+    "explicacao": "Isabel repete o gesto de Davi diante da Arca (2Sm 6:9), revelando Maria como a Arca da Nova Aliança."
+  },
+  {
+    "id": "d-016",
+    "versiculoNT": { "referencia": "João 19:26", "texto": "Mulher, eis aí o teu filho." },
+    "alternativas": [
+      { "id": "a", "texto": "Cântico 6:10" },
+      { "id": "b", "texto": "Gênesis 3:15", "correta": true },
+      { "id": "c", "texto": "Provérbios 31:10" }
+    ],
+    "explicacao": "Jesus chama Maria de 'Mulher' — o mesmo título do Protoevangelho (Gn 3:15) — apresentando-a como a Nova Eva."
+  },
+  {
+    "id": "d-017",
+    "versiculoNT": { "referencia": "Hebreus 4:9-10", "texto": "Portanto, resta ainda um repouso para o povo de Deus." },
+    "alternativas": [
+      { "id": "a", "texto": "Gênesis 2:2-3", "correta": true },
+      { "id": "b", "texto": "Êxodo 16:23" },
+      { "id": "c", "texto": "Deuteronômio 5:14" }
+    ],
+    "explicacao": "O descanso de Deus no sétimo dia da Criação (Gn 2:2-3) prefigura o repouso eterno em Cristo."
+  },
+  {
+    "id": "d-018",
+    "versiculoNT": { "referencia": "João 10:11", "texto": "Eu sou o bom Pastor; o bom Pastor dá a sua vida pelas ovelhas." },
+    "alternativas": [
+      { "id": "a", "texto": "Salmo 23:1" },
+      { "id": "b", "texto": "Ezequiel 34:23", "correta": true },
+      { "id": "c", "texto": "Jeremias 23:4" }
+    ],
+    "explicacao": "Ezequiel 34 prometeu um único Pastor, descendente de Davi — Jesus se identifica como o cumprimento."
+  },
+  {
+    "id": "d-019",
+    "versiculoNT": { "referencia": "Mateus 2:2", "texto": "Onde está aquele que é nascido rei dos judeus? porque vimos a sua estrela no oriente." },
+    "alternativas": [
+      { "id": "a", "texto": "Números 24:17", "correta": true },
+      { "id": "b", "texto": "Isaías 60:3" },
+      { "id": "c", "texto": "Salmo 72:10" }
+    ],
+    "explicacao": "Balaão profetizou: 'Uma estrela procederá de Jacó' (Nm 24:17). Os Magos seguem essa estrela messiânica até Belém."
+  },
+  {
+    "id": "d-020",
+    "versiculoNT": { "referencia": "1 Coríntios 10:2", "texto": "E todos foram batizados em Moisés, na nuvem e no mar." },
+    "alternativas": [
+      { "id": "a", "texto": "Êxodo 14:21-22", "correta": true },
+      { "id": "b", "texto": "Josué 3:16" },
+      { "id": "c", "texto": "2 Reis 5:14" }
+    ],
+    "explicacao": "Paulo lê a travessia do Mar Vermelho (Êx 14) como prefiguração do Batismo cristão — morre-se ao pecado, nasce-se para a vida nova."
   }
 ]

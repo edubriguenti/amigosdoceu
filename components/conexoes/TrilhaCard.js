@@ -1,12 +1,13 @@
 import { memo } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function TrilhaCardImpl({ trilha, conexoesDescobertas = 0 }) {
   const pct = trilha.totalConexoes ? Math.round((conexoesDescobertas / trilha.totalConexoes) * 100) : 0
   return (
-    <button
-      type="button"
-      className="group text-left relative overflow-hidden rounded-2xl bg-cosmic-surface/60 border border-cosmic-border min-h-[200px] md:min-h-[240px] focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light motion-safe:hover:scale-[1.02] transition-transform"
+    <Link
+      href={`/conexoes/trilhas/${trilha.id}`}
+      className="group text-left relative overflow-hidden rounded-2xl bg-cosmic-surface/60 border border-cosmic-border min-h-[200px] md:min-h-[240px] focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light motion-safe:hover:scale-[1.02] transition-transform block"
     >
       <div className="absolute inset-0">
         <Image
@@ -32,7 +33,7 @@ function TrilhaCardImpl({ trilha, conexoesDescobertas = 0 }) {
           />
         </div>
       </div>
-    </button>
+    </Link>
   )
 }
 

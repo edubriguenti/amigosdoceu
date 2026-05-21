@@ -15,7 +15,8 @@
       "texto": "Eis o Cordeiro de Deus, que tira o pecado do mundo.",
       "imagem": "/images/conexoes/joao-1.jpg"
     },
-    "explicacao": "O cordeiro pascal protegia os hebreus da morte no Egito pelo seu sangue. João Batista identifica Jesus como o Cordeiro definitivo: seu sangue tira o pecado de toda a humanidade."
+    "explicacao": "O cordeiro pascal protegia os hebreus da morte no Egito pelo seu sangue. João Batista identifica Jesus como o Cordeiro definitivo: seu sangue tira o pecado de toda a humanidade.",
+    "tradicaoCatolica": "Melitão de Sardes (Homilia sobre a Páscoa, séc. II) já lia Cristo como o verdadeiro Cordeiro pascal cuja morte na Sexta-Feira coincide com o sacrifício no Templo. CIC §608 e o 'Agnus Dei' da Missa repetem esta confissão a cada Eucaristia."
   },
   {
     "id": "genesis-22-romanos-8",
@@ -33,6 +34,64 @@
       "texto": "Aquele que nem mesmo a seu próprio Filho poupou, antes o entregou por todos nós.",
       "imagem": "/images/conexoes/romanos-8.jpg"
     },
-    "explicacao": "Abraão é poupado de sacrificar Isaac quando Deus provê um carneiro. Paulo revela o sentido pleno: o próprio Pai entregou seu Filho amado para que ninguém mais precisasse morrer."
+    "explicacao": "Abraão é poupado de sacrificar Isaac quando Deus provê um carneiro. Paulo revela o sentido pleno: o próprio Pai entregou seu Filho amado para que ninguém mais precisasse morrer.",
+    "tradicaoCatolica": "Os Padres chamavam este episódio de 'Aqedah' e viam Isaac carregando a lenha como figura de Cristo carregando a cruz (Orígenes, Hom. Gen. 8). O monte Moriá da tradição é identificado com o Calvário. CIC §2572 ensina que Abraão é configurado a Deus Pai, que não poupou o próprio Filho."
+  },
+  {
+    "id": "numeros-21-joao-3",
+    "slug": "numeros-21-joao-3",
+    "tema": "A Serpente de Bronze",
+    "trilhaId": "sacrificio-redencao",
+    "eventoId": "lei",
+    "antigoTestamento": {
+      "referencia": "Números 21:8-9",
+      "texto": "Faze-te uma serpente ardente, e põe-na sobre uma haste; e será que viverá todo o que, mordido, olhar para ela. E Moisés fez uma serpente de bronze, e pô-la sobre uma haste; e era que, mordendo alguma serpente a alguém, e olhando ele para a serpente de bronze, vivia.",
+      "imagem": "/images/conexoes/numeros-21.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "João 3:14-15",
+      "texto": "Como Moisés levantou a serpente no deserto, assim importa que o Filho do homem seja levantado, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.",
+      "imagem": "/images/conexoes/joao-3.jpg"
+    },
+    "explicacao": "No deserto, quem fitava a serpente erguida no madeiro era curado da mordida mortal. Jesus aplica essa imagem à sua própria elevação na cruz: olhar com fé para o Crucificado é receber a vida eterna.",
+    "tradicaoCatolica": "Santo Agostinho (Tract. Jo. 12) explica que a serpente de bronze era 'inerte' como Cristo crucificado, sem veneno como Aquele que assumiu a semelhança da carne do pecado, sem o pecado. A imagem aparece também na liturgia da Exaltação da Santa Cruz (14 de setembro)."
+  },
+  {
+    "id": "exodo-24-mateus-26",
+    "slug": "exodo-24-mateus-26",
+    "tema": "Sangue da Aliança",
+    "trilhaId": "sacrificio-redencao",
+    "eventoId": "lei",
+    "antigoTestamento": {
+      "referencia": "Êxodo 24:8",
+      "texto": "Então Moisés tomou aquele sangue, e o espargiu sobre o povo, e disse: Eis aqui o sangue da aliança que o Senhor fez convosco sobre todas estas palavras.",
+      "imagem": "/images/conexoes/exodo-24.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Mateus 26:28",
+      "texto": "Porque isto é o meu sangue, o sangue do novo testamento, que é derramado por muitos, para remissão dos pecados.",
+      "imagem": "/images/conexoes/mateus-26-ceia.jpg"
+    },
+    "explicacao": "Moisés selou a Antiga Aliança aspergindo o povo com o sangue dos novilhos. Na Última Ceia, Jesus declara o cálice como o sangue da Nova e eterna Aliança, não mais sobre vítimas animais, mas a entrega do próprio Filho de Deus.",
+    "tradicaoCatolica": "São Tomás de Aquino (ST III, q.78, a.3) ensina que as palavras da Consagração tornam presente sacramentalmente o próprio Sangue derramado no Calvário. O Cânon Romano e todas as Orações Eucarísticas retomam literalmente a fórmula 'Sangue da Nova e Eterna Aliança'. CIC §613."
+  },
+  {
+    "id": "levitico-16-hebreus-9",
+    "slug": "levitico-16-hebreus-9",
+    "tema": "O Sumo Sacerdote Definitivo",
+    "trilhaId": "sacrificio-redencao",
+    "eventoId": "lei",
+    "antigoTestamento": {
+      "referencia": "Levítico 16:15-16",
+      "texto": "Depois imolará o bode da expiação… e fará expiação pelo santuário por causa das imundícias dos filhos de Israel e das suas transgressões.",
+      "imagem": "/images/conexoes/levitico-16.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Hebreus 9:11-12",
+      "texto": "Mas, vindo Cristo, o sumo sacerdote dos bens futuros… nem por sangue de bodes e bezerros, mas por seu próprio sangue, entrou uma vez no santuário, havendo efetuado uma eterna redenção.",
+      "imagem": "/images/conexoes/hebreus-9.jpg"
+    },
+    "explicacao": "No Dia da Expiação (Yom Kippur), o sumo sacerdote entrava uma vez por ano no Santo dos Santos com sangue de animais. Hebreus mostra que Cristo, Sumo Sacerdote eterno, entrou de uma vez por todas no santuário celeste com seu próprio sangue — redenção definitiva.",
+    "tradicaoCatolica": "A Carta aos Hebreus é a chave patrística do sacerdócio de Cristo. CIC §1544 ensina que todas as figuras do sacerdócio do AT encontram em Cristo seu cumprimento. Cada Missa atualiza este único sacrifício do Calvário (CIC §1366), sem repeti-lo."
   }
 ]

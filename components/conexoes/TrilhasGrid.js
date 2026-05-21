@@ -19,14 +19,11 @@ export default function TrilhasGrid() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-14">
-      <div className="flex items-end justify-between mb-5">
-        <div>
-          <h2 className="font-serif text-xl md:text-2xl text-white">Trilhas temáticas</h2>
-          <p className="text-sm text-neutral-400">Aprenda através de jornadas guiadas</p>
-        </div>
-        <a href="#" className="text-sm text-cosmic-blue-light hover:underline">Ver todas as trilhas →</a>
+      <div className="mb-5">
+        <h2 className="font-serif text-xl md:text-2xl text-white">Trilhas temáticas</h2>
+        <p className="text-sm text-neutral-400">Aprenda através de jornadas guiadas</p>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         {trilhas.map((t) => (
           <TrilhaCard
             key={t.id}

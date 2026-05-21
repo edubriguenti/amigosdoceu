@@ -1,0 +1,78 @@
+[
+  {
+    "id": "genesis-14-hebreus-7",
+    "slug": "genesis-14-hebreus-7",
+    "tema": "Melquisedeque, Pão e Vinho",
+    "trilhaId": "eucaristia-sacramentos",
+    "eventoId": "alianca",
+    "antigoTestamento": {
+      "referencia": "Gênesis 14:18-20",
+      "texto": "E Melquisedeque, rei de Salém, trouxe pão e vinho; e era este sacerdote do Deus Altíssimo. E abençoou-o e disse: Bendito seja Abrão pelo Deus Altíssimo, o Possuidor dos céus e da terra.",
+      "imagem": "/images/conexoes/genesis-14.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Hebreus 7:1-3, 17",
+      "texto": "Este Melquisedeque… é primeiramente rei de justiça, e depois também rei de Salém, que é rei de paz, sem pai, sem mãe, sem genealogia… feito semelhante ao Filho de Deus, permanece sacerdote para sempre. Porque dele assim se testifica: Tu és sacerdote eternamente, segundo a ordem de Melquisedeque.",
+      "imagem": "/images/conexoes/hebreus-7.jpg"
+    },
+    "explicacao": "O misterioso sacerdote-rei Melquisedeque oferece pão e vinho — antes mesmo do sacerdócio levítico — e abençoa Abraão. Hebreus revela que Cristo é o Sumo Sacerdote eterno 'segundo a ordem de Melquisedeque', cujo sacrifício verdadeiro se atualiza sob as espécies do pão e do vinho na Eucaristia.",
+    "tradicaoCatolica": "O Cânon Romano cita explicitamente Melquisedeque: 'aceita-o como aceitaste… a oferta do teu sumo sacerdote Melquisedeque'. São Cipriano (Ep. 63) já no século III lê o pão e vinho de Salém como prefiguração eucarística. CIC §1333 e §1544 ensinam que o sacerdócio melquisedequiano se cumpre em Cristo e participam dele os ministros ordenados."
+  },
+  {
+    "id": "exodo-16-joao-6",
+    "slug": "exodo-16-joao-6",
+    "tema": "O Pão do Céu",
+    "trilhaId": "eucaristia-sacramentos",
+    "eventoId": "lei",
+    "antigoTestamento": {
+      "referencia": "Êxodo 16:14-15",
+      "texto": "E, alçando-se o orvalho caído, eis que sobre a face do deserto estava uma coisa miúda… E vendo-a os filhos de Israel, disseram uns aos outros: Que é isto? porque não sabiam o que era. Disse-lhes pois Moisés: Este é o pão que o Senhor vos deu para comer.",
+      "imagem": "/images/conexoes/exodo-16.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "João 6:48-51",
+      "texto": "Eu sou o pão da vida. Vossos pais comeram o maná no deserto, e morreram. Este é o pão que desce do céu, para que o que dele comer não morra. Eu sou o pão vivo que desceu do céu; se alguém comer deste pão, viverá para sempre; e o pão que eu der é a minha carne, que eu darei pela vida do mundo.",
+      "imagem": "/images/conexoes/joao-6.jpg"
+    },
+    "explicacao": "O maná sustentou Israel quarenta anos no deserto, mas todos que o comeram morreram. Jesus declara-se o Pão definitivo, descido do céu, que dá vida eterna — não pão miraculoso ao lado, mas o próprio corpo entregue por nós.",
+    "tradicaoCatolica": "São Cirilo de Jerusalém (Catequese Mistagógica IV) ensina aos neófitos: 'Não vejas no pão e no vinho meros elementos: é o Corpo e Sangue de Cristo'. Santo Tomás de Aquino sintetiza no hino Lauda Sion: 'Eis a figura: Isaac imolado, o Cordeiro pascal, o maná dado aos pais'. CIC §1094 e §1334 ligam diretamente o maná à Eucaristia."
+  },
+  {
+    "id": "levitico-24-mateus-12",
+    "slug": "levitico-24-mateus-12",
+    "tema": "Pão da Proposição",
+    "trilhaId": "eucaristia-sacramentos",
+    "eventoId": "lei",
+    "antigoTestamento": {
+      "referencia": "Levítico 24:5-9",
+      "texto": "Também tomarás flor de farinha, e dela cozerás doze bolos… e os porás em duas fileiras, seis em cada fileira, sobre a mesa pura, perante o Senhor… será para Arão e para seus filhos, que o comerão no lugar santo, porque uma coisa santíssima é para ele.",
+      "imagem": "/images/conexoes/levitico-24.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Mateus 12:3-6",
+      "texto": "Não tendes lido o que fez Davi… como entrou na casa de Deus, e comeu os pães da proposição, que não lhe era lícito comer… digo-vos, porém, que está aqui quem é maior do que o templo.",
+      "imagem": "/images/conexoes/mateus-12.jpg"
+    },
+    "explicacao": "Sobre a mesa do santuário ficavam permanentemente doze pães, sinal da aliança com as doze tribos, reservados aos sacerdotes. Jesus, 'maior que o templo', anuncia que o verdadeiro Pão da Presença é Ele mesmo — alimento perpétuo do novo Povo de Deus, repartido com os doze apóstolos na Última Ceia.",
+    "tradicaoCatolica": "São Tomás de Aquino (ST III, q.83, a.4) compara a Mesa do Senhor à mesa dos pães da proposição: ambas estão diante de Deus em adoração. Por isso a Igreja conserva a Eucaristia no sacrário, com lâmpada acesa, e adora o Santíssimo Sacramento. CIC §1379 fundamenta a reserva e a adoração eucarística."
+  },
+  {
+    "id": "exodo-14-1corintios-10",
+    "slug": "exodo-14-1corintios-10",
+    "tema": "Batismo no Mar Vermelho",
+    "trilhaId": "eucaristia-sacramentos",
+    "eventoId": "lei",
+    "antigoTestamento": {
+      "referencia": "Êxodo 14:21-22",
+      "texto": "Então Moisés estendeu a sua mão sobre o mar, e o Senhor fez retirar o mar por um forte vento oriental toda aquela noite; e o mar tornou-se em seco, e as águas foram partidas. E os filhos de Israel entraram pelo meio do mar em seco.",
+      "imagem": "/images/conexoes/exodo-14.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "1 Coríntios 10:1-2",
+      "texto": "Nossos pais… todos passaram pelo mar. E todos foram batizados em Moisés, na nuvem e no mar.",
+      "imagem": "/images/conexoes/1corintios-10.jpg"
+    },
+    "explicacao": "A travessia do Mar Vermelho — passagem da escravidão à liberdade através das águas — prefigura o Batismo cristão. Paulo já lê o evento explicitamente como 'batismo': morre-se ao Egito (o pecado) e nasce-se para a terra prometida (a vida nova).",
+    "tradicaoCatolica": "Santo Ambrósio (De Sacramentis I) e Santo Agostinho fazem do Mar Vermelho a figura batismal clássica: o Faraó submerso é o demônio derrotado, a coluna de nuvem é o Espírito Santo, Moisés é Cristo. A liturgia da Vigília Pascal proclama Êxodo 14 antes da bênção da água batismal. CIC §1221."
+  }
+]

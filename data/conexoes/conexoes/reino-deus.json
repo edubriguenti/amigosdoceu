@@ -15,7 +15,8 @@
       "texto": "Vereis em breve o Filho do homem assentado à direita do Todo-Poderoso, e vindo sobre as nuvens do céu.",
       "imagem": "/images/conexoes/mateus-26.jpg"
     },
-    "explicacao": "Daniel viu uma figura messiânica recebendo um reino eterno. Jesus aplica essa mesma profecia a si mesmo diante do Sinédrio, declarando-se aquele que recebe domínio e glória."
+    "explicacao": "Daniel viu uma figura messiânica recebendo um reino eterno. Jesus aplica essa mesma profecia a si mesmo diante do Sinédrio, declarando-se aquele que recebe domínio e glória.",
+    "tradicaoCatolica": "São João Crisóstomo (Hom. Mat. 84) destaca que ao citar Daniel diante do sumo sacerdote, Jesus assume diretamente o título divino. CIC §440 explica que 'Filho do Homem' designa, segundo Daniel, uma figura celeste e transcendente — não apenas humana — recebendo de Deus o reino."
   },
   {
     "id": "2samuel-7-lucas-1",
@@ -33,6 +34,64 @@
       "texto": "Dar-lhe-á o Senhor Deus o trono de Davi, seu pai; e reinará eternamente na casa de Jacó, e o seu reino não terá fim.",
       "imagem": "/images/conexoes/lucas-1.jpg"
     },
-    "explicacao": "Deus prometeu a Davi um descendente cujo trono duraria para sempre. Gabriel anuncia a Maria que esse descendente é Jesus, cujo reinado é eterno."
+    "explicacao": "Deus prometeu a Davi um descendente cujo trono duraria para sempre. Gabriel anuncia a Maria que esse descendente é Jesus, cujo reinado é eterno.",
+    "tradicaoCatolica": "CIC §709 vê na promessa a Davi a esperança messiânica que atravessa todo o AT. A liturgia do Advento canta as 'antífonas Ó' (Ó Filho de Davi, Ó Rei das nações…), confessando que essa promessa se cumpre em Cristo. Esta filiação davídica é tão central que abre o Evangelho de Mateus (Mt 1:1)."
+  },
+  {
+    "id": "ezequiel-34-joao-10",
+    "slug": "ezequiel-34-joao-10",
+    "tema": "O Bom Pastor",
+    "trilhaId": "reino-deus",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Ezequiel 34:23",
+      "texto": "E suscitarei sobre elas um só pastor, e ele as apascentará: o meu servo Davi; ele as apascentará, e ele lhes será por pastor.",
+      "imagem": "/images/conexoes/ezequiel-34.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "João 10:11",
+      "texto": "Eu sou o bom Pastor; o bom Pastor dá a sua vida pelas ovelhas.",
+      "imagem": "/images/conexoes/joao-10.jpg"
+    },
+    "explicacao": "Ezequiel denunciou os falsos pastores de Israel e prometeu um único Pastor, descendente de Davi, que cuidaria de cada ovelha. Jesus se declara esse Bom Pastor — e não apenas guia o rebanho, mas dá a vida por ele.",
+    "tradicaoCatolica": "A imagem do Bom Pastor é uma das mais antigas da arte cristã (catacumbas de Roma, séc. III). CIC §754 ensina que a Igreja é o rebanho de Cristo, único Pastor. Bento XVI lembrou que os pastores da Igreja só são autênticos quando agem 'in persona Christi capitis'."
+  },
+  {
+    "id": "isaias-9-lucas-1",
+    "slug": "isaias-9-lucas-1",
+    "tema": "O Reino sem fim",
+    "trilhaId": "reino-deus",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Isaías 9:6-7",
+      "texto": "Porque um menino nos nasceu, um filho se nos deu; e o principado está sobre os seus ombros; e o seu nome será Maravilhoso Conselheiro, Deus Forte, Pai da Eternidade, Príncipe da Paz. Do incremento deste principado e da paz não haverá fim.",
+      "imagem": "/images/conexoes/isaias-9.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Lucas 1:32-33",
+      "texto": "Este será grande, e será chamado filho do Altíssimo… e o seu reino não terá fim.",
+      "imagem": "/images/conexoes/lucas-1-anunciacao.jpg"
+    },
+    "explicacao": "Isaías profetizou um Menino-Príncipe cujo governo seria eterno e cujos nomes seriam atributos divinos. Gabriel ecoa essas mesmas palavras a Maria, declarando que Jesus é o Filho do Altíssimo cujo reino não terá fim.",
+    "tradicaoCatolica": "A liturgia da Noite de Natal proclama Isaías 9 como primeira leitura, ligando explicitamente a profecia ao nascimento de Cristo. CIC §664 confessa que 'do seu Reino não haverá fim' (Credo Niceno-Constantinopolitano) é eco direto desta promessa profética."
+  },
+  {
+    "id": "salmo-2-apocalipse-19",
+    "slug": "salmo-2-apocalipse-19",
+    "tema": "Rei dos reis",
+    "trilhaId": "reino-deus",
+    "eventoId": "profetas",
+    "antigoTestamento": {
+      "referencia": "Salmo 2:7-9",
+      "texto": "Tu és meu Filho, eu hoje te gerei. Pede-me, e eu te darei as nações por herança, e os fins da terra por tua possessão. Tu as esmigalharás com uma vara de ferro.",
+      "imagem": "/images/conexoes/salmo-2.jpg"
+    },
+    "novoTestamento": {
+      "referencia": "Apocalipse 19:15-16",
+      "texto": "E da sua boca saía uma aguda espada, para ferir com ela as nações; e ele as regerá com vara de ferro… E no seu vestido e na sua coxa tem escrito este nome: Rei dos reis e Senhor dos senhores.",
+      "imagem": "/images/conexoes/apocalipse-19.jpg"
+    },
+    "explicacao": "O Salmo 2 canta o Rei-Filho a quem o Pai entrega as nações. Apocalipse revela o cumprimento glorioso: Cristo ressuscitado é proclamado Rei dos reis, e seu reinado universal vence toda oposição.",
+    "tradicaoCatolica": "A solenidade de Cristo Rei do Universo (instituída por Pio XI em 1925, Quas Primas) celebra anualmente esta verdade. CIC §664 e §2105 ensinam que a realeza social de Cristo não é mera metáfora política: é o reconhecimento de que toda autoridade humana deve render-se à sua soberania."
   }
 ]
