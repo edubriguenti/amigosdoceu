@@ -359,5 +359,77 @@
     "periodo": "Celestial",
     "doutorIgreja": false,
     "popularidade": 95
+  },
+  {
+    "nome": "São Pedro",
+    "slug": "sao-pedro",
+    "imagem": "/images/sao-pedro.jpg",
+    "descricao": "Simão Pedro, filho de Jonas, era pescador em Betsaida quando Jesus o chamou para ser 'pescador de homens'. Tornou-se o líder dos doze apóstolos e recebeu de Cristo as 'chaves do Reino dos Céus' (Mt 16,19), tornando-se o primeiro papa da Igreja Católica. Após negar Cristo três vezes durante a Paixão, arrependeu-se profundamente e foi reabilitado pelo Ressuscitado à beira do Mar da Galileia. Pregou em Jerusalém, Antioquia e Roma, onde fundou a comunidade cristã com São Paulo. Sofreu martírio crucificado de cabeça para baixo, por não se considerar digno de morrer como Cristo, por volta do ano 64-68 d.C. sob o imperador Nero. Sua tumba está sob a Basílica de São Pedro no Vaticano.",
+    "oracao": "São Pedro, príncipe dos apóstolos e pedra sobre a qual Cristo edificou sua Igreja, intercedei por nós junto ao Senhor. Que possamos, como vós, reconhecer em Jesus o Cristo, o Filho de Deus vivo, e permanecer firmes na fé mesmo diante das tempestades da vida. Amém.",
+    "tags": ["Apóstolos", "Papa", "Pescadores"],
+    "dataNascimento": "~1 a.C.",
+    "dataFalecimento": "~67",
+    "dataCanonizacao": "Pré-Congregação",
+    "pais": "Israel",
+    "ordemReligiosa": null,
+    "padroeiro": ["Pescadores", "Papas", "Igreja Católica"],
+    "periodo": "Antiguidade",
+    "doutorIgreja": false,
+    "popularidade": 97,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-paulo-da-cruz",
+        "tipo": "contemporaneo",
+        "descricao": "São Pedro e São Paulo foram os principais apóstolos e fundadores da Igreja em Roma, morrendo mártires durante a perseguição de Nero"
+      }
+    ]
+  },
+  {
+    "nome": "São Sebastião",
+    "slug": "sao-sebastiao",
+    "imagem": "/images/sao-sebastiao.jpg",
+    "descricao": "Sebastião nasceu por volta de 256 d.C. em Narbona, na Gália (atual França), e foi educado em Milão. Tornou-se oficial da Guarda Pretoriana do imperador Diocleciano sem revelar sua fé cristã, usando sua posição para confortar e converter prisioneiros cristãos. Descoberto, foi condenado à morte e crivado de flechas, mas sobreviveu graças ao cuidado de Santa Irene. Ao se apresentar novamente ao imperador para denunciar a perseguição, foi morto a pauladas em 288 d.C. e seu corpo lançado no esgoto de Roma. É um dos santos mais venerados no Brasil, padroeiro da cidade do Rio de Janeiro desde o período colonial. Sua festa é celebrada em 20 de janeiro.",
+    "oracao": "São Sebastião, mártir corajoso que preferiu a morte a renegar a Cristo, intercedei por nós. Defendei-nos contra as epidemias, as perseguições e todos os males do corpo e da alma. Que possamos, como vós, permanecer fiéis a Deus em todas as provações da vida. Amém.",
+    "tags": ["Mártires", "Militares", "Brasil"],
+    "dataNascimento": "~256",
+    "dataFalecimento": "~288",
+    "dataCanonizacao": "Pré-Congregação",
+    "pais": "França",
+    "ordemReligiosa": null,
+    "padroeiro": ["Rio de Janeiro", "Soldados", "Atletas"],
+    "periodo": "Antiguidade",
+    "doutorIgreja": false,
+    "popularidade": 90,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-miguel-arcanjo",
+        "tipo": "contemporaneo",
+        "descricao": "Ambos são intercessores da proteção divina — São Miguel no plano espiritual e São Sebastião como mártir militar que protegeu os cristãos com sua vida"
+      }
+    ]
+  },
+  {
+    "nome": "São João Bosco",
+    "slug": "sao-joao-bosco",
+    "imagem": "/images/sao-joao-bosco.jpg",
+    "descricao": "João Bosco nasceu em 16 de agosto de 1815 em Becchi, no Piemonte, Itália, em uma família humilde. Desde criança sonhou com sua missão de educar jovens abandonados. Ordenado sacerdote em 1841, dedicou-se integralmente à juventude pobre e desamparada de Turim, fundando o Oratório de São Francisco de Sales. Em 1859, fundou a Congregação Salesiana, nomeada em homenagem a São Francisco de Sales, que hoje está presente em mais de 130 países. Criou um método educativo revolucionário baseado no amor, na razão e na religião — o Sistema Preventivo —, que influencia a pedagogia até hoje. Faleceu em 31 de janeiro de 1888 e foi canonizado pelo Papa Pio XI em 1934. É padroeiro dos jovens, dos aprendizes e dos editores.",
+    "oracao": "São João Bosco, pai e mestre da juventude, intercedei por todos os jovens do mundo. Que possamos encontrar, como vós, a vocação que Deus preparou para cada um de nós e dedicar nossa vida com alegria ao serviço dos irmãos. Amém.",
+    "tags": ["Educação", "Juventude", "Salesianos"],
+    "dataNascimento": "1815",
+    "dataFalecimento": "1888",
+    "dataCanonizacao": "1934",
+    "pais": "Itália",
+    "ordemReligiosa": "Salesianos",
+    "padroeiro": ["Jovens", "Estudantes", "Aprendizes"],
+    "periodo": "Contemporâneo",
+    "doutorIgreja": false,
+    "popularidade": 85,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-francisco-de-assis",
+        "tipo": "inspiracao",
+        "descricao": "Dom Bosco admirava profundamente São Francisco de Assis pela humildade e pelo amor aos pobres, valores que nortearam sua missão educativa"
+      }
+    ]
   }
 ]
