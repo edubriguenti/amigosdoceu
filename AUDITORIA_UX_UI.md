@@ -984,7 +984,7 @@ import Head from 'next/head';
 export default function SEO({
   title = 'Amigos do Céu',
   description = 'Galeria contemplativa de santos católicos, igrejas históricas e aparições marianas. Explore vidas que inspiram fé e devoção.',
-  image = '/images/og-image.jpg',
+  image = '/images/site/og-image.jpg',
   url = 'https://amigosdoceu.vercel.app',
   type = 'website',
   structuredData = null
@@ -1278,12 +1278,12 @@ export default function Home() {
    - Peso: <150KB (compressão TinyPNG)
    - Fonte: Unsplash ou ilustração custom
 
-2. **OG Image** (`/public/images/og-image.jpg`):
+2. **OG Image** (`/public/images/site/og-image.jpg`):
    - Dimensões: 1200x630px
    - Peso: <200KB
    - Texto overlay: "Amigos do Céu" + tagline
 
-3. **Favicon** (já existe em `/images/rosario_icon2.png`)
+3. **Favicon** (já existe em `/images/site/rosario_icon2.png`)
 
 **Sprites/Ícones:**
 - Usar Heroicons v2 (já importável via `@heroicons/react`)

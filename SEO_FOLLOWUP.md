@@ -10,7 +10,7 @@ Pendências da auditoria SEO (rodada em 2026-05-01 pelo `searchfit-seo:seo-audit
 |---|---|---|
 | C1 | `<SEO>` em todas as páginas top-level (11 que estavam sem) | `pages/santos`, `igrejas`, `aparicoes`, `oracoes`, `novenas`, `album-sagrado`, `calendario`, `santos-do-dia`, `intencoes`, `favoritos`, `mapa` |
 | C2 | `santos/[slug]`, `igrejas/[slug]`, `aparicoes/[slug]` convertidos para SSG (`getStaticPaths` + `getStaticProps`) | 3 arquivos `pages/*/[slug].js` |
-| C3 | `/images/og-image.jpg` criado (1920×941) | `public/images/og-image.jpg` |
+| C3 | `/images/site/og-image.jpg` criado (1920×941) | `public/images/site/og-image.jpg` |
 | C4 | `<html lang="pt-BR">` | `pages/_document.js` |
 | C5 | `_app.js` não injeta mais `<title>`/`<meta description>` conflitantes | `pages/_app.js` |
 | H2 | Footer expandido com 14 links (todas as 7 seções faltantes) | `components/Footer.js` |

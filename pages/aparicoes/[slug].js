@@ -98,7 +98,7 @@ export default function AparicaoPage({ aparicao }) {
         title={aparicao.nome}
         description={description}
         url={url}
-        image={aparicao.imagem || '/images/og-image.jpg'}
+        image={aparicao.imagem || '/images/site/og-image.jpg'}
         keywords={keywords}
         type="article"
         structuredData={buildSchema(aparicao)}

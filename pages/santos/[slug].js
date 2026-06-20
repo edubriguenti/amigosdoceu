@@ -96,7 +96,7 @@ export default function SaintPage({ saint }) {
         title={saint.nome}
         description={description}
         url={url}
-        image={saint.imagem || '/images/og-image.jpg'}
+        image={saint.imagem || '/images/site/og-image.jpg'}
         keywords={keywords}
         type="article"
         structuredData={buildSchema(saint)}

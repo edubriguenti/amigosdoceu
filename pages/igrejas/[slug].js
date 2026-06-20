@@ -92,7 +92,7 @@ export default function ChurchPage({ church }) {
         title={church.nome}
         description={description}
         url={url}
-        image={church.imagem || '/images/og-image.jpg'}
+        image={church.imagem || '/images/site/og-image.jpg'}
         keywords={keywords}
         type="article"
         structuredData={buildSchema(church)}

@@ -8,7 +8,7 @@ import Head from 'next/head';
 export default function SEO({
   title = 'Amigos do Céu',
   description = 'Galeria contemplativa de santos católicos, igrejas históricas e aparições marianas. Explore vidas que inspiram fé e devoção através dos séculos.',
-  image = '/images/og-image.jpg',
+  image = '/images/site/og-image.jpg',
   url = 'https://amigosdoceu.vercel.app',
   type = 'website',
   author = null,
@@ -97,7 +97,7 @@ export default function SEO({
                 "name": "Amigos do Céu",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://amigosdoceu.vercel.app/images/rosario_icon2.png"
+                  "url": "https://amigosdoceu.vercel.app/images/site/rosario_icon2.png"
                 }
               }
             })

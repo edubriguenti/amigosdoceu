@@ -2,7 +2,7 @@
   {
     "nome": "São Francisco de Assis",
     "slug": "sao-francisco-de-assis",
-    "imagem": "/images/francisco_de_assis.jpg",
+    "imagem": "/images/santos/francisco_de_assis.jpg",
     "descricao": "Nascido em Assis, Itália, por volta de 1181-1182, Giovanni di Pietro di Bernardone renunciou aos bens materiais após uma experiência espiritual. Em 1209, fundou a Ordem dos Frades Menores (franciscanos), pregando a simplicidade, a pobreza e o amor à natureza. Com Santa Clara, estabeleceu a Ordem das Clarissas em 1212. Faleceu em 3 de outubro de 1226 e foi canonizado em 1228 pelo Papa Gregório IX. Em 1979, o Papa João Paulo II o proclamou padroeiro da ecologia.",
     "oracao": "Senhor, fazei-me instrumento de vossa paz...",
     "tags": ["Pobreza", "Natureza"],
@@ -31,7 +31,7 @@
   {
     "nome": "Santa Teresa de Ávila",
     "slug": "santa-teresa-de-avila",
-    "imagem": "/images/teresa_de_avila.webp",
+    "imagem": "/images/santos/teresa_de_avila.webp",
     "descricao": "Nascida em 28 de março de 1515, em Gotarrendura, Espanha, Teresa de Ávila ingressou no Convento Carmelita da Encarnação em Ávila em 1535. Após uma profunda experiência mística, iniciou a reforma da Ordem Carmelita, fundando o primeiro convento das Carmelitas Descalças em 1562. Ao longo de sua vida, fundou 17 conventos reformados e escreveu obras espirituais como \"O Livro da Vida\" e \"O Castelo Interior\". Faleceu em 4 de outubro de 1582, foi canonizada em 1622 e proclamada Doutora da Igreja em 1970 pelo Papa Paulo VI, sendo a primeira mulher a receber esse título.",
     "oracao": "Que eu possa encontrar Deus em todas as coisas...",
     "tags": ["Doutora da Igreja", "Mistica"],
@@ -60,7 +60,7 @@
   {
     "nome": "São João Paulo II",
     "slug": "sao-joao-paulo-ii",
-    "imagem": "/images/joao_paulo_II.jpg",
+    "imagem": "/images/santos/joao_paulo_II.jpg",
     "descricao": "Nascido Karol Józef Wojtyła em 18 de maio de 1920, em Wadowice, Polônia, foi ordenado sacerdote em 1946. Tornou-se arcebispo de Cracóvia em 1964 e cardeal em 1967. Em 16 de outubro de 1978, foi eleito Papa, tornando-se o primeiro pontífice não italiano em 455 anos. Seu pontificado de 26 anos foi marcado por viagens apostólicas, diálogo inter-religioso e papel significativo na queda do comunismo na Europa Oriental. Faleceu em 2 de abril de 2005 e foi canonizado pelo Papa Francisco em 27 de abril de 2014.",
     "oracao": "Deus, guiai-nos pelo caminho da paz...",
     "tags": ["Papa", "Concílio"],
@@ -300,7 +300,7 @@
   {
     "nome": "São Paulo da Cruz",
     "slug": "sao-paulo-da-cruz",
-    "imagem": "/images/sao-paulo-da-cruz.jpg",
+    "imagem": "/images/santos/sao-paulo-da-cruz.jpg",
     "descricao": "Nascido Paolo Francesco Danei em 3 de janeiro de 1694, em Ovada, Itália, São Paulo da Cruz teve uma profunda experiência mística aos 19 anos que o levou a dedicar sua vida à meditação da Paixão de Cristo. Em 1720, fundou a Congregação dos Clérigos Descalços da Santa Cruz e Paixão de Nosso Senhor Jesus Cristo (Passionistas), ordem religiosa centrada na pregação da Paixão de Cristo e na vida de oração. Foi um grande diretor espiritual e místico, conhecido por suas visões e dons sobrenaturais. Fundou diversos retiros e conventos na Itália. Faleceu em 18 de outubro de 1775, em Roma, e foi canonizado pelo Papa Pio IX em 1867. É padroeiro da juventude católica italiana.",
     "oracao": "Ó glorioso São Paulo da Cruz, que meditastes com tanto amor a Paixão de Jesus Cristo, fazei que também nós amemos profundamente nosso Salvador e que vivamos sempre unidos à Cruz...",
     "tags": ["Paixão de Cristo", "Mística"],
@@ -363,7 +363,7 @@
   {
     "nome": "São Pedro",
     "slug": "sao-pedro",
-    "imagem": "/images/sao-pedro.jpg",
+    "imagem": "/images/santos/sao-pedro.jpg",
     "descricao": "Simão Pedro, filho de Jonas, era pescador em Betsaida quando Jesus o chamou para ser 'pescador de homens'. Tornou-se o líder dos doze apóstolos e recebeu de Cristo as 'chaves do Reino dos Céus' (Mt 16,19), tornando-se o primeiro papa da Igreja Católica. Após negar Cristo três vezes durante a Paixão, arrependeu-se profundamente e foi reabilitado pelo Ressuscitado à beira do Mar da Galileia. Pregou em Jerusalém, Antioquia e Roma, onde fundou a comunidade cristã com São Paulo. Sofreu martírio crucificado de cabeça para baixo, por não se considerar digno de morrer como Cristo, por volta do ano 64-68 d.C. sob o imperador Nero. Sua tumba está sob a Basílica de São Pedro no Vaticano.",
     "oracao": "São Pedro, príncipe dos apóstolos e pedra sobre a qual Cristo edificou sua Igreja, intercedei por nós junto ao Senhor. Que possamos, como vós, reconhecer em Jesus o Cristo, o Filho de Deus vivo, e permanecer firmes na fé mesmo diante das tempestades da vida. Amém.",
     "tags": ["Apóstolos", "Papa", "Pescadores"],
@@ -387,7 +387,7 @@
   {
     "nome": "São Sebastião",
     "slug": "sao-sebastiao",
-    "imagem": "/images/sao-sebastiao.jpg",
+    "imagem": "/images/santos/sao-sebastiao.jpg",
     "descricao": "Sebastião nasceu por volta de 256 d.C. em Narbona, na Gália (atual França), e foi educado em Milão. Tornou-se oficial da Guarda Pretoriana do imperador Diocleciano sem revelar sua fé cristã, usando sua posição para confortar e converter prisioneiros cristãos. Descoberto, foi condenado à morte e crivado de flechas, mas sobreviveu graças ao cuidado de Santa Irene. Ao se apresentar novamente ao imperador para denunciar a perseguição, foi morto a pauladas em 288 d.C. e seu corpo lançado no esgoto de Roma. É um dos santos mais venerados no Brasil, padroeiro da cidade do Rio de Janeiro desde o período colonial. Sua festa é celebrada em 20 de janeiro.",
     "oracao": "São Sebastião, mártir corajoso que preferiu a morte a renegar a Cristo, intercedei por nós. Defendei-nos contra as epidemias, as perseguições e todos os males do corpo e da alma. Que possamos, como vós, permanecer fiéis a Deus em todas as provações da vida. Amém.",
     "tags": ["Mártires", "Militares", "Brasil"],
@@ -411,7 +411,7 @@
   {
     "nome": "São João Bosco",
     "slug": "sao-joao-bosco",
-    "imagem": "/images/sao-joao-bosco.jpg",
+    "imagem": "/images/santos/sao-joao-bosco.jpg",
     "descricao": "João Bosco nasceu em 16 de agosto de 1815 em Becchi, no Piemonte, Itália, em uma família humilde. Desde criança sonhou com sua missão de educar jovens abandonados. Ordenado sacerdote em 1841, dedicou-se integralmente à juventude pobre e desamparada de Turim, fundando o Oratório de São Francisco de Sales. Em 1859, fundou a Congregação Salesiana, nomeada em homenagem a São Francisco de Sales, que hoje está presente em mais de 130 países. Criou um método educativo revolucionário baseado no amor, na razão e na religião — o Sistema Preventivo —, que influencia a pedagogia até hoje. Faleceu em 31 de janeiro de 1888 e foi canonizado pelo Papa Pio XI em 1934. É padroeiro dos jovens, dos aprendizes e dos editores.",
     "oracao": "São João Bosco, pai e mestre da juventude, intercedei por todos os jovens do mundo. Que possamos encontrar, como vós, a vocação que Deus preparou para cada um de nós e dedicar nossa vida com alegria ao serviço dos irmãos. Amém.",
     "tags": ["Educação", "Juventude", "Salesianos"],
