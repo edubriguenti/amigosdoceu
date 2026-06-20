@@ -4,7 +4,6 @@
     "nome": "Santos Modernos",
     "slug": "santos-modernos",
     "descricao": "Santos canonizados nos últimos séculos, testemunhas da fé no mundo contemporâneo.",
-    "imagem": "/images/colecao-modernos.jpg",
     "totalFigurinhas": 6,
     "cor": "accent",
     "icone": "✨"
@@ -14,7 +13,6 @@
     "nome": "Fundadores e Doutores",
     "slug": "fundadores-doutores",
     "descricao": "Grandes mestres da fé que fundaram ordens religiosas e iluminaram a Igreja com sua sabedoria.",
-    "imagem": "/images/colecao-fundadores.jpg",
     "totalFigurinhas": 6,
     "cor": "secondary",
     "icone": "📚"
