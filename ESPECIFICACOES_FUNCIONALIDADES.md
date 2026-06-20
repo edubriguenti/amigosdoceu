@@ -16,7 +16,7 @@ Sistema completo de busca e filtragem para santos e igrejas, permitindo encontra
 {
   "nome": "São Francisco de Assis",
   "slug": "sao-francisco-de-assis",
-  "imagem": "/images/francisco_de_assis.jpg",
+  "imagem": "/images/santos/francisco_de_assis.jpg",
   "descricao": "...",
   "oracao": "...",
   "tags": ["Pobreza", "Natureza"],

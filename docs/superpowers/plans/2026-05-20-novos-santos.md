@@ -31,7 +31,7 @@ Switched to a new branch 'feature/novos-santos'
 ### Task 2: Buscar imagem de São Pedro
 
 **Files:**
-- Create: `public/images/sao-pedro.jpg` (ou `.webp`)
+- Create: `public/images/santos/sao-pedro.jpg` (ou `.webp`)
 
 - [ ] **Step 1: Usar o skill `wikimedia-image`**
 
@@ -41,16 +41,16 @@ Buscar uma imagem clássica — idealmente a pintura de El Greco, Rubens, ou fot
 
 - [ ] **Step 2: Salvar a imagem**
 
-Salvar o arquivo em `public/images/sao-pedro.jpg` (ou `.webp`, conforme o formato retornado).
+Salvar o arquivo em `public/images/santos/sao-pedro.jpg` (ou `.webp`, conforme o formato retornado).
 
-Anotar o caminho exato para usar no JSON: `/images/sao-pedro.jpg`
+Anotar o caminho exato para usar no JSON: `/images/santos/sao-pedro.jpg`
 
 ---
 
 ### Task 3: Buscar imagem de São Sebastião
 
 **Files:**
-- Create: `public/images/sao-sebastiao.jpg` (ou `.webp`)
+- Create: `public/images/santos/sao-sebastiao.jpg` (ou `.webp`)
 
 - [ ] **Step 1: Usar o skill `wikimedia-image`**
 
@@ -60,16 +60,16 @@ Preferir a pintura clássica de Guido Reni ou Andrea Mantegna — obras bem conh
 
 - [ ] **Step 2: Salvar a imagem**
 
-Salvar o arquivo em `public/images/sao-sebastiao.jpg`.
+Salvar o arquivo em `public/images/santos/sao-sebastiao.jpg`.
 
-Anotar o caminho exato: `/images/sao-sebastiao.jpg`
+Anotar o caminho exato: `/images/santos/sao-sebastiao.jpg`
 
 ---
 
 ### Task 4: Buscar imagem de São João Bosco
 
 **Files:**
-- Create: `public/images/sao-joao-bosco.jpg` (ou `.webp`)
+- Create: `public/images/santos/sao-joao-bosco.jpg` (ou `.webp`)
 
 - [ ] **Step 1: Usar o skill `wikimedia-image`**
 
@@ -79,9 +79,9 @@ Preferir foto ou retrato oficial — Dom Bosco foi canonizado em 1934, então h�
 
 - [ ] **Step 2: Salvar a imagem**
 
-Salvar o arquivo em `public/images/sao-joao-bosco.jpg`.
+Salvar o arquivo em `public/images/santos/sao-joao-bosco.jpg`.
 
-Anotar o caminho exato: `/images/sao-joao-bosco.jpg`
+Anotar o caminho exato: `/images/santos/sao-joao-bosco.jpg`
 
 ---
 
@@ -102,7 +102,7 @@ Após o `}` que fecha o objeto de São Miguel Arcanjo (linha com `"popularidade"
   {
     "nome": "São Pedro",
     "slug": "sao-pedro",
-    "imagem": "/images/sao-pedro.jpg",
+    "imagem": "/images/santos/sao-pedro.jpg",
     "descricao": "Simão Pedro, filho de Jonas, era pescador em Betsaida quando Jesus o chamou para ser 'pescador de homens'. Tornou-se o líder dos doze apóstolos e recebeu de Cristo as 'chaves do Reino dos Céus' (Mt 16,19), tornando-se o primeiro papa da Igreja Católica. Após negar Cristo três vezes durante a Paixão, arrependeu-se profundamente e foi reabilitado pelo Ressuscitado à beira do Mar da Galileia. Pregou em Jerusalém, Antioquia e Roma, onde fundou a comunidade cristã com São Paulo. Sofreu martírio crucificado de cabeça para baixo, por não se considerar digno de morrer como Cristo, por volta do ano 64-68 d.C. sob o imperador Nero. Sua tumba está sob a Basílica de São Pedro no Vaticano.",
     "oracao": "São Pedro, príncipe dos apóstolos e pedra sobre a qual Cristo edificou sua Igreja, intercedei por nós junto ao Senhor. Que possamos, como vós, reconhecer em Jesus o Cristo, o Filho de Deus vivo, e permanecer firmes na fé mesmo diante das tempestades da vida. Amém.",
     "tags": ["Apóstolos", "Papa", "Pescadores"],
@@ -148,7 +148,7 @@ Após o `}` que fecha o objeto de São Pedro, adicionar vírgula e o seguinte ob
   {
     "nome": "São Sebastião",
     "slug": "sao-sebastiao",
-    "imagem": "/images/sao-sebastiao.jpg",
+    "imagem": "/images/santos/sao-sebastiao.jpg",
     "descricao": "Sebastião nasceu por volta de 256 d.C. em Narbona, na Gália (atual França), e foi educado em Milão. Tornou-se oficial da Guarda Pretoriana do imperador Diocleciano sem revelar sua fé cristã, usando sua posição para confortar e converter prisioneiros cristãos. Descoberto, foi condenado à morte e crivado de flechas, mas sobreviveu graças ao cuidado de Santa Irene. Ao se apresentar novamente ao imperador para denunciar a perseguição, foi morto a pauladas em 288 d.C. e seu corpo lançado no esgoto de Roma. É um dos santos mais venerados no Brasil, padroeiro da cidade do Rio de Janeiro desde o período colonial. Sua festa é celebrada em 20 de janeiro.",
     "oracao": "São Sebastião, mártir corajoso que preferiu a morte a renegar a Cristo, intercedei por nós. Defendei-nos contra as epidemias, as perseguições e todos os males do corpo e da alma. Que possamos, como vós, permanecer fiéis a Deus em todas as provações da vida. Amém.",
     "tags": ["Mártires", "Militares", "Brasil"],
@@ -194,7 +194,7 @@ Após o `}` que fecha o objeto de São Sebastião, adicionar vírgula e o seguin
   {
     "nome": "São João Bosco",
     "slug": "sao-joao-bosco",
-    "imagem": "/images/sao-joao-bosco.jpg",
+    "imagem": "/images/santos/sao-joao-bosco.jpg",
     "descricao": "João Bosco nasceu em 16 de agosto de 1815 em Becchi, no Piemonte, Itália, em uma família humilde. Desde criança sonhou com sua missão de educar jovens abandonados. Ordenado sacerdote em 1841, dedicou-se integralmente à juventude pobre e desamparada de Turim, fundando o Oratório de São Francisco de Sales. Em 1859, fundou a Congregação Salesiana, nomeada em homenagem a São Francisco de Sales, que hoje está presente em mais de 130 países. Criou um método educativo revolucionário baseado no amor, na razão e na religião — o Sistema Preventivo —, que influencia a pedagogia até hoje. Faleceu em 31 de janeiro de 1888 e foi canonizado pelo Papa Pio XI em 1934. É padroeiro dos jovens, dos aprendizes e dos editores.",
     "oracao": "São João Bosco, pai e mestre da juventude, intercedei por todos os jovens do mundo. Que possamos encontrar, como vós, a vocação que Deus preparou para cada um de nós e dedicar nossa vida com alegria ao serviço dos irmãos. Amém.",
     "tags": ["Educação", "Juventude", "Salesianos"],
@@ -266,7 +266,7 @@ Abrir `http://localhost:3000/santos` e confirmar que os 3 novos santos aparecem 
 - [ ] **Step 1: Adicionar arquivos ao stage**
 
 ```bash
-git add data/santos.json public/images/sao-pedro.jpg public/images/sao-sebastiao.jpg public/images/sao-joao-bosco.jpg
+git add data/santos.json public/images/santos/sao-pedro.jpg public/images/santos/sao-sebastiao.jpg public/images/santos/sao-joao-bosco.jpg
 ```
 
 (Ajustar extensões `.jpg`/`.webp` conforme o formato real das imagens baixadas.)
@@ -296,9 +296,9 @@ gh pr create --title "feat: adicionar 3 novos santos (São Pedro, São Sebastiã
 ## Arquivos alterados
 
 - `data/santos.json` — 3 novos objetos
-- `public/images/sao-pedro.jpg`
-- `public/images/sao-sebastiao.jpg`
-- `public/images/sao-joao-bosco.jpg`
+- `public/images/santos/sao-pedro.jpg`
+- `public/images/santos/sao-sebastiao.jpg`
+- `public/images/santos/sao-joao-bosco.jpg`
 
 ## Como testar
 

@@ -22,9 +22,9 @@ export default function App({ Component, pageProps }) {
     <div className={`${inter.variable} ${playfair.variable} font-sans`}>
       <Head>
         {/* Title, description, viewport e canonical são responsabilidade do <SEO> de cada página. */}
-        <link rel="icon" href="/images/rosario_icon2.png" />
-        <link rel="shortcut icon" href="/images/rosario_icon2.png" />
-        <link rel="apple-touch-icon" href="/images/rosario_icon2.png" />
+        <link rel="icon" href="/images/site/rosario_icon2.png" />
+        <link rel="shortcut icon" href="/images/site/rosario_icon2.png" />
+        <link rel="apple-touch-icon" href="/images/site/rosario_icon2.png" />
       </Head>
       <Component {...pageProps} />
       <NotificacoesLiturgicas />
