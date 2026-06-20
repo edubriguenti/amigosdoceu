@@ -431,5 +431,22 @@
         "descricao": "Dom Bosco admirava profundamente São Francisco de Assis pela humildade e pelo amor aos pobres, valores que nortearam sua missão educativa"
       }
     ]
+  },
+  {
+    "nome": "Santa Rita de Cássia",
+    "slug": "santa-rita-de-cassia",
+    "imagem": "/images/santos/santa-rita-de-cassia.jpg",
+    "descricao": "Margherita Lotti nasceu por volta de 1381 em Roccaporena, na região da Úmbria, Itália. Desde jovem desejava a vida religiosa, mas, obedecendo aos pais, casou-se com Paolo Mancini, homem de temperamento violento. Com paciência e oração, converteu o marido ao longo de dezoito anos de casamento, até que ele foi assassinado em uma rixa. Para evitar a vingança de seus dois filhos, Rita rezou para que Deus os levasse antes que cometessem o pecado do homicídio, e ambos faleceram de doença pouco depois. Viúva e sem filhos, ingressou no mosteiro agostiniano de Cássia. Recebeu o estigma de um espinho da coroa de Cristo na testa, ferida que a acompanhou pelo resto da vida. Conhecida como a 'Santa das Causas Impossíveis', faleceu em 22 de maio de 1457 e foi canonizada pelo Papa Leão XIII em 1900. É uma das santas mais populares e veneradas do mundo.",
+    "oracao": "Ó gloriosa Santa Rita, advogada das causas impossíveis e desesperadas, vós que em toda a vossa vida destes exemplo admirável de paciência, humildade e amor a Deus, alcançai-nos a graça que com confiança vos pedimos. Consolai os aflitos, fortalecei os fracos e intercedei por nós junto ao Senhor, para que, seguindo o vosso exemplo, possamos um dia gozar da glória eterna. Amém.",
+    "tags": ["Causas Impossíveis", "Agostinianos", "Místicos"],
+    "dataNascimento": "1381",
+    "dataFalecimento": "1457",
+    "dataCanonizacao": "1900",
+    "pais": "Itália",
+    "ordemReligiosa": "Agostinianos",
+    "padroeiro": ["Causas Impossíveis", "Causas Desesperadas", "Mulheres"],
+    "periodo": "Medieval",
+    "doutorIgreja": false,
+    "popularidade": 90
   }
 ]
