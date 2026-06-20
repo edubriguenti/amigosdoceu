@@ -1,48 +1,78 @@
+---
+name: wikimedia-image
+description: Use when you need to find and download images from Wikimedia Commons for saints, churches, artworks, or religious subjects. Use this skill to discover file names, fetch direct image URLs, and save images locally to the project.
+---
+
 # Wikimedia Image Fetcher
 
-Busca URLs de imagens em alta resolução do Wikimedia Commons usando a API oficial.
+Busca e baixa imagens do Wikimedia Commons via API oficial.
 
-## Como usar
+## Problemas comuns (e por que o curl simples falha)
 
-Quando precisar buscar uma imagem do Wikimedia Commons:
-
-1. **Encontre o nome do arquivo** na página do Commons (geralmente no formato "File:Nome_do_arquivo.jpg")
-2. **Use a API do Wikimedia** para obter a URL direta da imagem
-
-## Método
-
-Use este comando Bash para buscar a URL da imagem:
-
-```bash
-curl -s "https://commons.wikimedia.org/w/api.php?action=query&titles=File:NOME_DO_ARQUIVO&prop=imageinfo&iiprop=url&format=json" | python3 -c "import sys, json; data = json.load(sys.stdin); pages = data['query']['pages']; print(list(pages.values())[0]['imageinfo'][0]['url'])"
-```
-
-**Substitua `NOME_DO_ARQUIVO`** pelo nome real do arquivo (ex: `Duomo_di_Milano.JPG`)
-
-## Exemplo
-
-Para buscar a imagem da Catedral de Milão:
-
-```bash
-curl -s "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Duomo_di_Milano.JPG&prop=imageinfo&iiprop=url&format=json" | python3 -c "import sys, json; data = json.load(sys.stdin); pages = data['query']['pages']; print(list(pages.values())[0]['imageinfo'][0]['url'])"
-```
-
-Retorna:
-```
-https://upload.wikimedia.org/wikipedia/commons/5/57/Duomo_di_Milano.JPG
-```
+- **Wikimedia bloqueia requests sem User-Agent** — sempre inclua `-H "User-Agent: Mozilla/5.0"`
+- **Nomes de arquivo com acentos/espaços quebram a URL** — use Python com `urllib.parse.quote`
+- **Você raramente sabe o nome exato do arquivo** — faça uma busca primeiro
 
 ## Workflow completo
 
-1. Usuário fornece o nome da igreja/monumento
-2. Busque no Wikimedia Commons a página correspondente (ex: `https://commons.wikimedia.org/wiki/Category:Nome_da_Igreja`)
-3. Identifique o nome do arquivo de uma boa imagem (ex: `File:Nome.jpg`)
-4. Use o comando acima para obter a URL direta
-5. Use a URL no projeto
+### Passo 1 — Buscar nomes de arquivo
+
+```bash
+python3 -c "
+import urllib.request, json, urllib.parse
+
+query = 'TERMOS DE BUSCA'  # ex: 'Murillo Inmaculada Concepcion'
+encoded = urllib.parse.quote(query)
+url = f'https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch={encoded}&srnamespace=6&srlimit=5&format=json'
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req, timeout=10) as r:
+    data = json.load(r)
+for result in data['query']['search']:
+    print(result['title'])
+"
+```
+
+### Passo 2 — Obter URL direta do arquivo
+
+```bash
+python3 -c "
+import urllib.request, json, urllib.parse
+
+filename = 'NOME_DO_ARQUIVO_AQUI.jpg'  # exato, incluindo extensão
+title = urllib.parse.quote('File:' + filename)
+url = f'https://commons.wikimedia.org/w/api.php?action=query&titles={title}&prop=imageinfo&iiprop=url&format=json'
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req, timeout=10) as r:
+    data = json.load(r)
+page = list(data['query']['pages'].values())[0]
+if 'imageinfo' in page:
+    print(page['imageinfo'][0]['url'])
+else:
+    print('Arquivo não encontrado:', page.get('title'))
+"
+```
+
+### Passo 3 — Baixar e salvar
+
+```bash
+python3 -c "
+import urllib.request
+
+url = 'URL_OBTIDA_NO_PASSO_2'
+destino = '/caminho/para/public/images/nome.jpg'
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req, timeout=30) as r:
+    data = r.read()
+with open(destino, 'wb') as f:
+    f.write(data)
+print(f'Salvo: {destino} ({len(data)//1024} KB)')
+"
+```
 
 ## Notas importantes
 
-- A API do Wikimedia é pública e não tem bloqueios como o site principal
-- Sempre use URLs do tipo `https://upload.wikimedia.org/wikipedia/commons/...`
-- Evite URLs com `/thumb/` pois são versões redimensionadas
-- Certifique-se de usar o nome correto do arquivo (case-sensitive)
+- **Sempre use User-Agent** — sem ele, a API retorna resposta vazia ou erro
+- **Nomes de arquivo são case-sensitive** — `Duomo_di_Milano.JPG` ≠ `duomo_di_milano.jpg`
+- **Prefira arquivos `.jpg` e `.png`** — evite `.svg` para fotos (qualidade variável)
+- **Evite URLs com `/thumb/`** — são versões redimensionadas; use a URL principal
+- **Para este projeto** — salve em `public/images/` e use o caminho relativo `/images/nome.jpg` no JSON
