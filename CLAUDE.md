@@ -6,6 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 "Amigos do Céu" is a Catholic faith portal showcasing saints, churches, Marian apparitions, the liturgical calendar, prayers/novenas/rosary, the Life of Christ, and an interactive Bible Connections section (`/conexoes`) that gamifies the discovery of Old↔New Testament parallels. Built with Next.js 14, React 18, Tailwind CSS, Framer Motion, and Leaflet for interactive maps. Fully static (no `pages/api/`) — all user state persists via `localStorage`.
 
+## Agentes especializados (orquestração paralela)
+
+Este projeto suporta múltiplos agentes Claude Code trabalhando simultaneamente, cada um com escopo isolado por domínio. Antes de adicionar conteúdo, leia o arquivo de regras correspondente ao seu domínio — ele define ownership, zonas proibidas e qual skill executar:
+
+- Adicionando santo → leia `.claude/rules/agent-santos.md`
+- Adicionando aparição mariana → leia `.claude/rules/agent-aparicoes.md`
+
+Cada agente deve respeitar estritamente o ownership e as zonas proibidas definidas no seu arquivo de regras, mesmo que a tarefa pareça simples o suficiente para tocar em outro domínio. Em caso de dúvida sobre limites, pare e pergunte em vez de presumir.
+
+**Zona de conflito conhecida**: `public/images/` é compartilhada entre domínios. Cada agente só escreve na sua subpasta (`public/images/santos/`, `public/images/aparicoes/`, `public/images/igrejas/`) — nunca na raiz de `public/images/`.
+
 ## Development Commands
 
 - `npm install` - Install dependencies
@@ -193,25 +204,32 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 ## Adding New Content
 
 ### Adding a Saint
-1. Add image to `/public/images/` (or use Wikimedia Image Fetcher)
+Use the `add-santo` skill (`.claude/skills/add-santo/SKILL.md`). It handles research, slug generation, image fetching via `wikimedia-image`, and writing the entry to `data/santos.json`. If working as part of parallel agent orchestration, also read `.claude/rules/agent-santos.md` first.
+
+Manual steps for reference:
+1. Add image to `/public/images/santos/` (or use the `wikimedia-image` skill)
 2. Add entry to `data/santos.json` with all required fields
 3. Ensure `slug` is unique and URL-safe
 4. Dynamic route automatically generates `/santos/[slug]` page
 
 ### Adding a Church
-1. Find Wikimedia Commons image or add to `/public/images/`
+1. Find Wikimedia Commons image or add to `/public/images/igrejas/`
 2. Add entry to `data/igrejas.json` with coordinates for map display
 3. Ensure `slug` is unique
 4. Church appears in gallery and map automatically
 
 ### Adding an Apparition
+Use the `add-aparicao` skill (`.claude/skills/add-aparicao/SKILL.md`). It handles research, coordinate lookup, slug generation, image fetching via `wikimedia-image`, and writing the entry to `data/aparicoes.json`. If working as part of parallel agent orchestration, also read `.claude/rules/agent-aparicoes.md` first.
+
+Manual steps for reference:
 1. Add entry to `data/aparicoes.json` with location coordinates
 2. Include `linkGoogleMaps` for external navigation
 3. Location markers automatically appear on `/mapa`
 
 ### Image Resources
-- Use Wikimedia Image Fetcher skill when searching for images of new saints or churches
+- Use the `wikimedia-image` skill (`.claude/skills/wikimedia-image/SKILL.md`) when searching for images of new saints, churches, or apparitions
 - Wikimedia Commons is the preferred source for historical/religious imagery
+- Images are organized by domain: `public/images/santos/`, `public/images/aparicoes/`, `public/images/igrejas/` — never write to the root of `public/images/`
 
 ### Adding a Bible Connection
 1. Pick the trail (`messias-prometido`, `sacrificio-redencao`, `reino-deus`, `lei-graca`) and append the new connection object to `data/conexoes/conexoes/<trail>.json`. Required fields: `id`, `slug`, `tema`, `trilhaId`, `eventoId`, `antigoTestamento` ({ referencia, texto }), `novoTestamento` (same), `explicacao`.
