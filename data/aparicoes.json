@@ -94,5 +94,21 @@
     ],
     "latitude": 53.7950,
     "longitude": -8.9153
+  },
+  {
+    "nome": "Nossa Senhora de Beauraing",
+    "slug": "nossa-senhora-de-beauraing",
+    "imagem": "/images/aparicoes/nossa-senhora-de-beauraing.jpg",
+    "local": "Beauraing, Província de Namur, Bélgica",
+    "data": "29 de novembro de 1932 a 3 de janeiro de 1933",
+    "linkGoogleMaps": "https://maps.google.com/?q=Sanctuaires+de+Beauraing+Belgique",
+    "historia": "Entre 29 de novembro de 1932 e 3 de janeiro de 1933, cinco crianças - Fernande, Gilberte e Albert Voisin, e Andrée e Gilberte Degeimbre - testemunharam trinta e três aparições de Nossa Senhora na pequena cidade de Beauraing, no sul da Bélgica. A Virgem Maria apareceu sob um arco de espinheiro, próximo a um viaduto ferroviário, vestida de branco e com um coração de ouro radiante a brilhar em seu peito. Ela identificou-se como a 'Imaculada Virgem' e a 'Mãe de Deus, Rainha dos Céus', pedindo oração constante e a conversão dos pecadores. Em suas mensagens, perguntou às crianças se sempre seriam boas e prometeu converter os pecadores. A imagem do coração dourado tornou-se o símbolo característico desta aparição. Após anos de rigorosa investigação canônica, o bispo de Namur reconheceu oficialmente a autenticidade das aparições em 1949, autorizando o culto a Nossa Senhora de Beauraing, invocada como 'Virgem do Coração de Ouro'. O santuário tornou-se importante centro de peregrinação na Bélgica.",
+    "tags": [
+      "Bélgica",
+      "Século XX",
+      "Coração de Ouro"
+    ],
+    "latitude": 50.1108,
+    "longitude": 4.9556
   }
 ]
