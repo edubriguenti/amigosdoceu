@@ -2,7 +2,14 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import HomeHeroButton from '../components/HomeHeroButton'
 import HomeSecondaryCard from '../components/HomeSecondaryCard'
+import HojeNoCeu from '../components/HojeNoCeu'
 import { motion } from 'framer-motion'
+import { janelaDeDias, REVALIDATE_HOJE } from '../lib/hoje'
+
+// O bloco "Hoje" vem pronto do servidor (ISR); o cliente só escolhe o dia local.
+export async function getStaticProps() {
+  return { props: janelaDeDias(), revalidate: REVALIDATE_HOJE }
+}
 
 const HERO_SECTIONS = [
   {
@@ -42,10 +49,10 @@ const SECONDARY_SECTIONS = [
   { href: '/novenas', icon: '🕯️', title: 'Novenas', description: 'Nove dias de oração' },
   { href: '/mapa', icon: '🗺️', title: 'Mapa', description: 'Lugares sagrados' },
   { href: '/intencoes', icon: '🙏', title: 'Minhas intenções', description: 'Seu caderno de oração' },
-  { href: '/favoritos', icon: '⭐', title: 'Favoritos', description: 'Seu caminho devocional' },
+  { href: '/minha-jornada', icon: '🧭', title: 'Minha Jornada', description: 'Continue de onde parou' },
 ]
 
-export default function Home() {
+export default function Home({ dias, hojeServidor }) {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -86,6 +93,8 @@ export default function Home() {
           Uma jornada contemplativa pela fé católica. Escolha por onde começar.
         </p>
       </motion.section>
+
+      <HojeNoCeu dias={dias} hojeServidor={hojeServidor} />
 
       <section className="px-4 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-6xl mx-auto">
