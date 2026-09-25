@@ -4,6 +4,8 @@ import SEO from '../../components/SEO'
 import FavoritoButton from '../../components/FavoritoButton'
 import churches from '../../data/igrejas.json'
 import { motion } from 'framer-motion'
+import FigurinhaNoSite from '../../components/album/FigurinhaNoSite'
+import { resumoFigurinha } from '../../lib/albumData'
 
 const SITE_URL = 'https://amigosdoceu.vercel.app'
 
@@ -19,7 +21,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const church = churches.find((c) => c.slug === params.slug) || null
   if (!church) return { notFound: true }
-  return { props: { church } }
+  return { props: { church, figurinha: resumoFigurinha('igreja', church.slug) } }
 }
 
 function buildSchema(church) {
@@ -72,7 +74,7 @@ function buildSchema(church) {
   return [place, breadcrumb]
 }
 
-export default function ChurchPage({ church }) {
+export default function ChurchPage({ church, figurinha }) {
   const url = `${SITE_URL}/igrejas/${church.slug}`
   const description = (church.descricao || `Conheça ${church.nome}.`).slice(0, 160)
   const keywords = [
@@ -144,6 +146,7 @@ export default function ChurchPage({ church }) {
             </div>
           </div>
         </motion.div>
+        <FigurinhaNoSite figurinha={figurinha} />
       </article>
     </Layout>
   )

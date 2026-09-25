@@ -4,6 +4,8 @@ import SEO from '../../components/SEO'
 import FavoritoButton from '../../components/FavoritoButton'
 import aparicoes from '../../data/aparicoes.json'
 import { motion } from 'framer-motion'
+import FigurinhaNoSite from '../../components/album/FigurinhaNoSite'
+import { resumoFigurinha } from '../../lib/albumData'
 
 const SITE_URL = 'https://amigosdoceu.vercel.app'
 
@@ -19,7 +21,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const aparicao = aparicoes.find((a) => a.slug === params.slug) || null
   if (!aparicao) return { notFound: true }
-  return { props: { aparicao } }
+  return { props: { aparicao, figurinha: resumoFigurinha('aparicao', aparicao.slug) } }
 }
 
 // Tenta extrair uma data ISO de strings como "1917", "13 de maio de 1917" ou "1858-02-11".
@@ -79,7 +81,7 @@ function buildSchema(aparicao) {
   return [event, breadcrumb]
 }
 
-export default function AparicaoPage({ aparicao }) {
+export default function AparicaoPage({ aparicao, figurinha }) {
   const url = `${SITE_URL}/aparicoes/${aparicao.slug}`
   const description = (aparicao.historia || `Aparição mariana em ${aparicao.local}.`).slice(0, 160)
   const keywords = [
@@ -164,6 +166,7 @@ export default function AparicaoPage({ aparicao }) {
             )}
           </div>
         </motion.div>
+        <FigurinhaNoSite figurinha={figurinha} />
       </article>
     </Layout>
   )

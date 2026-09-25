@@ -24,6 +24,7 @@ Cada agente deve respeitar estritamente o ownership e as zonas proibidas definid
 - `npm run build` - Build for production
 - `npm start` - Start production server
 - `npm run lint` - Run Next.js linter
+- `npm run validate:album` - Validate the Álbum Sagrado catalog (coverage, duplicates, rarities, images). Run after changing `data/album/album.json` or adding content.
 
 ## Git Workflow
 
@@ -103,7 +104,7 @@ The application is driven by multiple JSON data sources in the `data/` directory
 - `/oracoes`, `/oracoes/[slug]` - Prayers
 - `/novenas`, `/novenas/[slug]` - Novenas
 - `/rosario` - Rosary (mysteries, meditations)
-- `/album-sagrado`, `/album-sagrado/[colecaoId]` - Interactive saints album
+- `/album-sagrado`, `/album-sagrado/[pagina]` - **Álbum Sagrado**: digital sticker album (cover + daily sticker + table of contents; one physical-looking page per theme). Deep-link a sticker via `?figurinha=<id>` (always build it with `hrefFigurinha()`). See "Álbum Sagrado" section below.
 - `/conexoes` - **Bible Connections** (immersive dark theme, Phase 1): hero, interactive timeline, AT↔NT featured pair, daily quiz, XP/level/streak progress, themed trails. Deep-link via `?ref=<conexao-slug>`. See "Conexões da Bíblia" section below.
 - `/intencoes`, `/favoritos` - Personal areas
 
@@ -166,6 +167,7 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 - `useFavoritos.js` — localStorage CRUD for favorites and lists (santos/igrejas/aparições). Exposes `loaded` to gate hydration.
 - `useProgresso.js` — Conexões progress (XP, level, title-by-tier, daily streak, discovered connections, completed trails, daily challenges). Storage key: `amigos-do-ceu:progresso-conexoes`. XP rules: +10 first-view, +25 correct quiz, +50 trail completion. Streak increments only when previous activity was yesterday.
 - `useTTS.js` — Web Speech API wrapper: `{ isSupported, isSpeaking, speak(text), stop() }`. Cancels previous utterance and on unmount. UI must hide controls when `!isSupported`.
+- `useAlbum.js` — Álbum Sagrado progress. Storage key `amigos-do-ceu:album` (`coletadas`, `novas`, `figurinhaDoDiaResgatada`). Mutations (`coletar`, `marcarVista`, `resgatarFigurinhaDoDia`) read/write localStorage **synchronously** so they are idempotent under React Strict Mode and across pages/tabs. Migrates the old `album-sagrado-desbloqueios` once (old keys are kept).
 - All localStorage hooks wait for `loaded` to avoid SSR/hydration mismatches.
 
 ### Contexts (`contexts/`)
@@ -200,6 +202,17 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 
 **`next.config.js`** includes image domain allowlist:
 - `upload.wikimedia.org` - For Wikimedia Commons images used in churches
+
+## Álbum Sagrado
+
+Sticker album built **from the existing JSONs** (santos, aparições, igrejas, vida-cristo) plus a small manifest, `data/album/album.json` (volume, ordered `paginas`, `raridades` overrides).
+
+- **Entity ≠ sticker.** In Volume I every entity yields exactly one sticker, id `tipo:slug` (`santo`, `aparicao`, `igreja`, `cristo`). The **id is the only persistence key**; `numero` (#001…) is computed from page order and is presentation only — never key anything by it.
+- **Page resolution (deterministic):** (1) refs listed explicitly in any page are reserved for that page; (2) remaining entities go to the first page (array order) whose `auto: { tipo }` matches; (3) anything left is an error in the validator. New saints/apparitions/churches therefore join the album automatically.
+- **Rarity** is visual only (liturgical colours: comum sépia, incomum verde, rara azul, muito-rara roxo, especial vermelho, lendária dourado). Defaults: `aparicao` = rara, everything else comum; override in `raridades`. It never affects how a sticker is obtained.
+- **Obtaining stickers:** visiting `/santos|aparicoes|igrejas/[slug]` (`components/album/FigurinhaNoSite.js`) or opening an event in `/vida-de-cristo` (not in presentation mode; deep-link `?evento=<slug>`), praying (stickers with `verso.oracao`), and the daily sticker (saint of the day from the calendar, else a modular sequence that cycles through all N stickers before repeating).
+- **Code:** `lib/albumCatalogo.js` (pure catalog builder, shared with `scripts/validate-album.mjs`), `lib/albumData.js` (singleton, frozen catalog + O(1) lookups, `resumoFigurinha()` for `getStaticProps` of pages outside the album), `components/album/` (sticker, page sheet, flip modal, reveal, etc.).
+- Adding an album page: append to `paginas` in `data/album/album.json`, then run `npm run validate:album`.
 
 ## Adding New Content
 

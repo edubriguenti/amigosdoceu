@@ -1,0 +1,191 @@
+{
+  "volume": {
+    "titulo": "Álbum Sagrado",
+    "edicao": "Volume I",
+    "subtitulo": "Cristo, Nossa Senhora, os santos e os lugares sagrados — uma figurinha de cada vez."
+  },
+  "paginas": [
+    {
+      "slug": "infancia-de-jesus",
+      "titulo": "A Infância de Jesus",
+      "icone": "⭐",
+      "descricao": "Da Anunciação ao Menino entre os doutores do Templo.",
+      "figurinhas": [
+        "cristo:anunciacao",
+        "cristo:sonho-sao-jose",
+        "cristo:visitacao",
+        "cristo:nascimento",
+        "cristo:anuncio-pastores",
+        "cristo:adoracao-magos",
+        "cristo:apresentacao-templo",
+        "cristo:fuga-egito",
+        "cristo:retorno-egito",
+        "cristo:jesus-doutores"
+      ]
+    },
+    {
+      "slug": "vida-publica",
+      "titulo": "A Vida Pública",
+      "icone": "🌊",
+      "descricao": "O Batismo, os milagres, os ensinamentos e a entrada em Jerusalém.",
+      "figurinhas": [
+        "cristo:batismo-jordao",
+        "cristo:tentacao-deserto",
+        "cristo:chamado-apostolos",
+        "cristo:bodas-cana",
+        "cristo:sermao-montanha",
+        "cristo:multiplicacao-paes",
+        "cristo:milagres-curas",
+        "cristo:tempestade-acalmada",
+        "cristo:transfiguracao",
+        "cristo:ressurreicao-lazaro",
+        "cristo:entrada-jerusalem"
+      ]
+    },
+    {
+      "slug": "paixao",
+      "titulo": "A Paixão",
+      "icone": "✝️",
+      "descricao": "Da Última Ceia ao sepultamento: o amor levado até o fim.",
+      "figurinhas": [
+        "cristo:ultima-ceia",
+        "cristo:lavagem-pes",
+        "cristo:agonia-horto",
+        "cristo:prisao-jesus",
+        "cristo:flagelacao",
+        "cristo:coroacao-espinhos",
+        "cristo:ecce-homo",
+        "cristo:via-sacra",
+        "cristo:crucificacao",
+        "cristo:morte-jesus",
+        "cristo:descida-cruz",
+        "cristo:sepultamento"
+      ]
+    },
+    {
+      "slug": "ressurreicao-e-gloria",
+      "titulo": "Ressurreição e Glória",
+      "icone": "☀️",
+      "descricao": "O túmulo vazio, a Ascensão e a vinda do Espírito Santo.",
+      "figurinhas": [
+        "cristo:descida-infernos",
+        "cristo:ressurreicao",
+        "cristo:aparicoes",
+        "cristo:ascensao",
+        "cristo:pentecostes"
+      ]
+    },
+    {
+      "slug": "nossa-senhora",
+      "titulo": "Nossa Senhora",
+      "icone": "👑",
+      "descricao": "As aparições em que a Mãe de Deus visitou seus filhos.",
+      "figurinhas": [
+        "aparicao:nossa-senhora-aparecida",
+        "aparicao:nossa-senhora-de-guadalupe",
+        "aparicao:nossa-senhora-de-fatima",
+        "aparicao:nossa-senhora-de-lourdes"
+      ],
+      "auto": { "tipo": "aparicao" }
+    },
+    {
+      "slug": "os-pilares",
+      "titulo": "Os Pilares",
+      "icone": "🗝️",
+      "descricao": "O guardião da Sagrada Família, o primeiro Papa e o príncipe da milícia celeste.",
+      "figurinhas": [
+        "santo:sao-jose",
+        "santo:sao-pedro",
+        "santo:sao-miguel-arcanjo"
+      ]
+    },
+    {
+      "slug": "doutores-da-igreja",
+      "titulo": "Doutores da Igreja",
+      "icone": "📜",
+      "descricao": "Mestres cuja doutrina iluminou a fé de toda a Igreja.",
+      "figurinhas": [
+        "santo:santo-agostinho",
+        "santo:sao-tomas-de-aquino",
+        "santo:santa-catarina-de-sena",
+        "santo:santa-teresa-de-avila",
+        "santo:santa-teresinha-do-menino-jesus"
+      ]
+    },
+    {
+      "slug": "misticos",
+      "titulo": "Místicos e Estigmatizados",
+      "icone": "🔥",
+      "descricao": "Almas que carregaram no corpo e no coração as marcas da Paixão.",
+      "figurinhas": [
+        "santo:sao-francisco-de-assis",
+        "santo:sao-padre-pio",
+        "santo:sao-paulo-da-cruz",
+        "santo:santa-rita-de-cassia"
+      ]
+    },
+    {
+      "slug": "santos-do-brasil",
+      "titulo": "Santos do Brasil",
+      "icone": "🇧🇷",
+      "descricao": "Os santos que floresceram em terra brasileira.",
+      "figurinhas": [
+        "santo:frei-galvao",
+        "santo:santa-paulina"
+      ]
+    },
+    {
+      "slug": "testemunhas-da-fe",
+      "titulo": "Testemunhas da Fé",
+      "icone": "🕊️",
+      "descricao": "Monges, pregadores, mártires, educadores e pastores de todos os tempos.",
+      "figurinhas": [],
+      "auto": { "tipo": "santo" }
+    },
+    {
+      "slug": "lugares-sagrados",
+      "titulo": "Lugares Sagrados",
+      "icone": "⛪",
+      "descricao": "Basílicas, catedrais e santuários onde a fé se fez pedra.",
+      "figurinhas": [
+        "igreja:basilica-sao-pedro",
+        "igreja:basilica-aparecida"
+      ],
+      "auto": { "tipo": "igreja" }
+    }
+  ],
+  "raridades": {
+    "cristo:nascimento": "lendaria",
+    "cristo:ressurreicao": "lendaria",
+    "cristo:crucificacao": "especial",
+    "cristo:ultima-ceia": "especial",
+    "cristo:pentecostes": "especial",
+    "cristo:transfiguracao": "muito-rara",
+    "cristo:anunciacao": "rara",
+    "cristo:batismo-jordao": "rara",
+    "cristo:ascensao": "rara",
+    "cristo:adoracao-magos": "incomum",
+    "cristo:bodas-cana": "incomum",
+    "cristo:sermao-montanha": "incomum",
+    "aparicao:nossa-senhora-aparecida": "especial",
+    "aparicao:nossa-senhora-de-guadalupe": "muito-rara",
+    "aparicao:nossa-senhora-de-fatima": "muito-rara",
+    "santo:sao-jose": "lendaria",
+    "santo:sao-pedro": "especial",
+    "santo:sao-miguel-arcanjo": "muito-rara",
+    "santo:santo-agostinho": "rara",
+    "santo:sao-tomas-de-aquino": "rara",
+    "santo:santa-catarina-de-sena": "incomum",
+    "santo:santa-teresa-de-avila": "incomum",
+    "santo:santa-teresinha-do-menino-jesus": "incomum",
+    "santo:sao-francisco-de-assis": "rara",
+    "santo:sao-padre-pio": "rara",
+    "santo:frei-galvao": "incomum",
+    "santo:santa-paulina": "incomum",
+    "igreja:basilica-sao-pedro": "especial",
+    "igreja:basilica-aparecida": "rara",
+    "igreja:sao-joao-laterano": "incomum",
+    "igreja:santa-maria-maggiore": "incomum",
+    "igreja:sagrada-familia": "incomum"
+  }
+}
