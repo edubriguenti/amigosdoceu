@@ -23,9 +23,10 @@ Cada agente deve respeitar estritamente o ownership e as zonas proibidas definid
 - `npm run dev` - Start development server at http://localhost:3000
 - `npm run build` - Build for production
 - `npm start` - Start production server
-- `npm run lint` - Run Next.js linter
+- `npm run lint` - ESLint (`eslint.config.mjs`, `next/core-web-vitals`). Must pass with **0 errors** before a PR.
 - `npm run validate:album` - Validate the Álbum Sagrado catalog (coverage, duplicates, rarities, images). Run after changing `data/album/album.json` or adding content.
 - `npm run validate:relacoes` - Validate the relations graph (`data/relacoes.json` + `santoRelacionado` + `santos.relacionamentos`): refs exist, no self-loops, no duplicates in either direction, no duplicating santo↔santo or derived relations; for `santos.relacionamentos`: known `tipo`, each pair on one saint only, `contemporaneo` only with overlapping lifespans. Run after changing any of those.
+- `npm run validate:imagens` - Every local `/images/...` path in `data/**/*.json` must exist in `public/`. Use `"imagem": null` when there is no image (cards show a themed placeholder, `components/PlaceholderSagrado.js`).
 
 ## Git Workflow
 
@@ -93,7 +94,7 @@ The application is driven by multiple JSON data sources in the `data/` directory
   - All aggregation goes through `lib/conexoesData.js`
 
 ### Routing Structure
-- `/` - Modernized home: "Hoje" block (`HojeNoCeu`: celebration, daily sticker, prayer of the day) + 4 large hero buttons + "Explore também" grid. ISR (`revalidate: 3600`). **Renders without the global header** (`<Layout hideHeader fullBleed>`).
+- `/` - Modernized home: "Hoje" block (`HojeNoCeu`: celebration, prayer of the day prayed in place via `OracaoDoDiaModal`, daily sticker unlocked by that prayer, "Continuar minha jornada →") + 4 large hero buttons + "Explore também" grid. ISR (`revalidate: 3600`). **Renders without the global header** (`<Layout hideHeader fullBleed>`).
 - `/santos` - Saints gallery with search/filter
 - `/santos/[slug]` - Individual saint detail page
 - `/igrejas` - Churches gallery with search/filter
@@ -167,6 +168,8 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 
 **`lib/relacoesGrafo.js` / `lib/relacoes.js`** - Relations graph (pure logic shared with the validator / JSON-bound singleton). `getRelacionadas(tipo, slug, { excluirTipos })` returns connections grouped by type for `components/EntidadesRelacionadas.js`; `getFestaDoSanto(slug)` reads the calendar.
 
+**`lib/oracoesRezadas.js`** - Pure rules for prayed prayers (no React/localStorage): `registrarOracaoNoEstado`, `resumirOracoes` → `{ diasRezados, sequencia, total, rezouHoje }`. **Streak definition:** prayed today → streak ends today; not today but yesterday → streak continues (ends yesterday); neither → 0; several prayers on the same day count as 1 day.
+
 **`lib/jornada.js`** - Pure, React-free readers of other features' localStorage for Minha Jornada (rosário, intenções, Vida de Cristo progress). Each one tolerates missing/corrupt data and returns defaults.
 
 **`lib/conexoesData.js`** - Aggregation layer for `data/conexoes/`:
@@ -179,6 +182,7 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 - `useFavoritos.js` — localStorage CRUD for favorites and lists (santos/igrejas/aparições). Exposes `loaded` to gate hydration.
 - `useProgresso.js` — Conexões progress (XP, level, title-by-tier, daily streak, discovered connections, completed trails, daily challenges). Storage key: `amigos-do-ceu:progresso-conexoes`. XP rules: +10 first-view, +25 correct quiz, +50 trail completion. Streak increments only when previous activity was yesterday.
 - `useTTS.js` — Web Speech API wrapper: `{ isSupported, isSpeaking, speak(text), stop() }`. Cancels previous utterance and on unmount. UI must hide controls when `!isSupported`.
+- `useOracoes.js` — Prayed prayers (`amigos-do-ceu:oracoes`, `{ dias: { 'YYYY-MM-DD': [ref] } }`, refs `oracao:<slug>` / `santo:<slug>`). `registrarOracaoHoje(ref)` always uses `diaLocal()` (no retroactive dates); `oracaoRegistradaHoje(ref)` is a sync getter. Same sync-localStorage pattern as `useAlbum`. `components/BotaoRezei.js` ("🙏 Rezei") only records progress — it never gives stickers.
 - `useAlbum.js` — Álbum Sagrado progress. Storage key `amigos-do-ceu:album` (`coletadas`, `novas`, `figurinhaDoDiaResgatada`). Mutations (`coletar`, `marcarVista`, `resgatarFigurinhaDoDia`) read/write localStorage **synchronously** so they are idempotent under React Strict Mode and across pages/tabs. Migrates the old `album-sagrado-desbloqueios` once (old keys are kept).
 - All localStorage hooks wait for `loaded` to avoid SSR/hydration mismatches.
 
@@ -223,6 +227,7 @@ Sticker album built **from the existing JSONs** (santos, aparições, igrejas, v
 - **Page resolution (deterministic):** (1) refs listed explicitly in any page are reserved for that page; (2) remaining entities go to the first page (array order) whose `auto: { tipo }` matches; (3) anything left is an error in the validator. New saints/apparitions/churches therefore join the album automatically.
 - **Rarity** is visual only (liturgical colours: comum sépia, incomum verde, rara azul, muito-rara roxo, especial vermelho, lendária dourado). Defaults: `aparicao` = rara, everything else comum; override in `raridades`. It never affects how a sticker is obtained.
 - **Obtaining stickers:** visiting `/santos|aparicoes|igrejas/[slug]` (`components/album/FigurinhaNoSite.js`) or opening an event in `/vida-de-cristo` (not in presentation mode; deep-link `?evento=<slug>`), praying (stickers with `verso.oracao`), and the daily sticker (saint of the day from the calendar, else a modular sequence that cycles through all N stickers before repeating).
+- **Daily sticker = praying the prayer of the day.** `resgatarFigurinhaDoDia({ id, data, oracaoRef })` refuses unless `data` is today and the prayer of the day (`oracaoRef`, from `lib/hoje.js`) was registered today. Only `components/OracaoDoDiaModal.js` orchestrates it (reading → `registrarOracaoHoje` → `resgatarFigurinhaDoDia`); `OracaoDesbloqueio` stays a dumb reader. There is no free "Receber" click.
 - **Code:** `lib/albumCatalogo.js` (pure catalog builder, shared with `scripts/validate-album.mjs`), `lib/albumData.js` (singleton, frozen catalog + O(1) lookups, `resumoFigurinha()` for `getStaticProps` of pages outside the album), `components/album/` (sticker, page sheet, flip modal, reveal, etc.).
 - Adding an album page: append to `paginas` in `data/album/album.json`, then run `npm run validate:album`.
 

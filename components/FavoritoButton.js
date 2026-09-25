@@ -45,7 +45,7 @@ export default function FavoritoButton({ tipo, item, variant = 'icon', size = 'm
           flex items-center gap-2 px-4 py-2 rounded-lg
           transition-all duration-300
           ${isFav
-            ? 'bg-accent-500 text-white hover:bg-accent-600'
+            ? 'bg-accent-600 text-white hover:bg-accent-700'
             : 'bg-white border border-neutral-300 text-neutral-700 hover:border-accent-500 hover:text-accent-500'
           }
           ${isAnimating ? 'scale-95' : 'scale-100'}
@@ -80,7 +80,7 @@ export default function FavoritoButton({ tipo, item, variant = 'icon', size = 'm
         rounded-full
         transition-all duration-300
         ${isFav
-          ? 'bg-accent-500 text-white shadow-md hover:bg-accent-600'
+          ? 'bg-accent-600 text-white shadow-md hover:bg-accent-700'
           : 'bg-white/90 backdrop-blur-sm text-neutral-600 hover:bg-white hover:text-accent-500 shadow-sm'
         }
         ${isAnimating ? 'scale-110' : 'scale-100'}

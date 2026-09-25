@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FavoritoButton from './FavoritoButton';
+import PlaceholderSagrado from './PlaceholderSagrado';
 
 /**
  * Card para exibição de uma oração
@@ -23,7 +24,7 @@ export default function OracaoCard({ oracao, index = 0 }) {
     >
       {/* Imagem */}
       <div className="relative h-48 bg-gradient-to-br from-accent-100 to-accent-200">
-        {oracao.imagem && (
+        {oracao.imagem ? (
           <img
             src={oracao.imagem}
             alt={oracao.nome}
@@ -32,6 +33,8 @@ export default function OracaoCard({ oracao, index = 0 }) {
               e.target.style.display = 'none';
             }}
           />
+        ) : (
+          <PlaceholderSagrado categoria={oracao.categoria} />
         )}
 
         {/* Badge da categoria */}

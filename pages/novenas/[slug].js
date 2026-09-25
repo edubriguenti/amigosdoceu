@@ -229,7 +229,7 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
                 <div className="text-center">
                   <button
                     onClick={handleIniciarNovena}
-                    className="bg-accent-500 text-white px-8 py-3 rounded-lg hover:bg-accent-600 transition-colors font-medium text-lg"
+                    className="bg-accent-600 text-white px-8 py-3 rounded-lg hover:bg-accent-700 transition-colors font-medium text-lg"
                   >
                     Iniciar Novena
                   </button>
@@ -257,7 +257,7 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
                   <div className="flex gap-3">
                     <button
                       onClick={handleSalvarIntencao}
-                      className="bg-accent-500 text-white px-4 py-2 rounded-lg hover:bg-accent-600 transition-colors font-medium text-sm"
+                      className="bg-accent-600 text-white px-4 py-2 rounded-lg hover:bg-accent-700 transition-colors font-medium text-sm"
                     >
                       Salvar Intenção
                     </button>

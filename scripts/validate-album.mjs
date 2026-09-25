@@ -70,6 +70,17 @@ catalogo.figurinhas.forEach((f) => (porRaridade[f.raridade] = (porRaridade[f.rar
 console.log('\nRaridades')
 Object.entries(porRaridade).forEach(([r, n]) => console.log(`  ${r.padEnd(11)} ${n}`))
 
+// Cobertura do fluxo diário completo: dias do ano com celebração ligada a um santo
+// cadastrado (é o que dá santo do dia e figurinha de santo no painel "Hoje").
+const slugsSantos = new Set(fontes.santos.map((s) => s.slug))
+let diasCobertos = 0
+Object.values(fontes.calendario).forEach((dias) =>
+  Object.values(dias).forEach((cel) => {
+    if ((cel.santos || []).some((slug) => slugsSantos.has(slug))) diasCobertos++
+  })
+)
+console.log(`\nCobertura do fluxo diário: ${diasCobertos}/365 dias com santo do dia cadastrado (${Math.round((diasCobertos / 365) * 100)}%)`)
+
 if (avisos.length) {
   console.log(`\nAvisos (${avisos.length})`)
   avisos.forEach((a) => console.log(`  ${a}`))

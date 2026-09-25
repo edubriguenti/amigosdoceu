@@ -180,7 +180,7 @@ export default function Header() {
                 <span className="flex items-center gap-1">
                   ❤️
                   {favoritosCount > 0 && (
-                    <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-semibold text-white bg-accent-500 rounded-full">
+                    <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-semibold text-white bg-accent-600 rounded-full">
                       {favoritosCount > 99 ? '99+' : favoritosCount}
                     </span>
                   )}
@@ -314,7 +314,7 @@ export default function Header() {
                     ❤️ Meus Favoritos
                   </span>
                   {favoritosCount > 0 && (
-                    <span className="inline-flex items-center justify-center min-w-[24px] h-6 px-2 text-xs font-semibold text-white bg-accent-500 rounded-full">
+                    <span className="inline-flex items-center justify-center min-w-[24px] h-6 px-2 text-xs font-semibold text-white bg-accent-600 rounded-full">
                       {favoritosCount > 99 ? '99+' : favoritosCount}
                     </span>
                   )}

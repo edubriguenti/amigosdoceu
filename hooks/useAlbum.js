@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react'
 import { LEGACY_MAP } from '../lib/albumCatalogo'
 import { diaLocal } from '../lib/datas'
+import { oracaoRegistradaHoje } from './useOracoes'
 
 /**
  * Progresso do Álbum Sagrado.
@@ -139,18 +140,22 @@ export function marcarVista(id) {
 
 /**
  * Resgata a figurinha do dia: no máximo uma vez por data local.
- * Recebe a figurinha oficial do dia `{ id, data }` como veio da camada de dados
- * (lib/hoje.js no servidor ou getFigurinhaDoDia no álbum) — nunca um id escolhido
- * pela UI. Se `data` não for o dia local de hoje, o resgate é recusado.
+ *
+ * Regra: a figurinha do dia só vem de rezar a oração do dia. Recebe a figurinha oficial
+ * `{ id, data, oracaoRef }` como veio do servidor (lib/hoje.js → montarDia) e recusa se:
+ * - `data` não é o dia local de hoje                      → motivo 'outro-dia'
+ * - a oração do dia (`oracaoRef`) não foi registrada hoje  → motivo 'sem-oracao'
+ * - a figurinha de hoje já foi recebida                    → motivo 'ja-resgatada'
+ * Quem orquestra o fluxo é components/OracaoDoDiaModal.js.
  */
 export function resgatarFigurinhaDoDia(figurinhaDoDia, date = new Date()) {
   const hoje = diaLocal(date)
-  if (!figurinhaDoDia?.id || figurinhaDoDia.data !== hoje) return { ok: false, nova: false }
-  const { id } = figurinhaDoDia
+  if (!figurinhaDoDia?.id || figurinhaDoDia.data !== hoje) return { ok: false, nova: false, motivo: 'outro-dia' }
+  if (!oracaoRegistradaHoje(figurinhaDoDia.oracaoRef)) return { ok: false, nova: false, motivo: 'sem-oracao' }
   const atual = getEstado()
-  if (atual.figurinhaDoDiaResgatada === hoje) return { ok: false, nova: false }
+  if (atual.figurinhaDoDiaResgatada === hoje) return { ok: false, nova: false, motivo: 'ja-resgatada' }
   setEstado({ ...atual, figurinhaDoDiaResgatada: hoje })
-  const { nova } = coletar(id, 'dia')
+  const { nova } = coletar(figurinhaDoDia.id, 'dia')
   return { ok: true, nova }
 }
 

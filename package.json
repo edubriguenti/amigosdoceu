@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "validate:album": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-album.mjs",
-    "validate:relacoes": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-relacoes.mjs"
+    "validate:relacoes": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-relacoes.mjs",
+    "validate:imagens": "node scripts/validate-imagens.mjs"
   },
   "dependencies": {
     "framer-motion": "^10.12.16",
@@ -19,7 +20,10 @@
     "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
     "autoprefixer": "^10.4.14",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.7",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.4.8"
   }

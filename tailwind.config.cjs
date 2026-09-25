@@ -13,17 +13,27 @@ module.exports = {
           100: '#f7f3ee',  // parchment
           200: '#e8dfd2',
           300: '#d4c4ab',
+          // Tons escuros para texto sobre os tons claros (ex.: tags bg-primary-100 text-primary-700).
+          400: '#b8a383',
+          500: '#9a8262',
+          600: '#7a6549',
+          700: '#5c4b36',
+          800: '#3e3224',
+          900: '#231c14',
         },
 
         // Accent - Call to Action (azul mariano)
         accent: {
           50: '#eff6ff',
           100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
           400: '#60a5fa',
           500: '#3b82f6',
           600: '#2563eb',
           700: '#1d4ed8',
           800: '#1e40af',
+          900: '#1e3a8a',
         },
 
         // Secondary - Litúrgico (ouro/âmbar)
@@ -35,6 +45,9 @@ module.exports = {
           400: '#f4c542',
           500: '#eab308',
           600: '#ca8a04',
+          700: '#a16207',
+          800: '#854d0e',
+          900: '#713f12',
         },
 
         // Neutral - Texto e backgrounds (contraste otimizado)

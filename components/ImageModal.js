@@ -166,7 +166,7 @@ export default function ImageModal({ event, isOpen, onClose, onPrev, onNext, cur
                 <span className="text-sm text-gray-600 mr-2">Compartilhar:</span>
                 <button
                   onClick={() => handleShare('whatsapp')}
-                  className="px-3 py-1.5 bg-green-500 hover:bg-green-600 text-white text-sm rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center gap-2"
+                  className="px-3 py-1.5 bg-green-700 hover:bg-green-800 text-white text-sm rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center gap-2"
                   aria-label="Compartilhar no WhatsApp"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

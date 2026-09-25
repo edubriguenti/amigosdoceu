@@ -72,7 +72,7 @@ export default function IgrejasPage() {
         <section className="py-12">
           <div className="max-w-3xl mb-8">
             <h1 className="text-4xl font-serif mb-4">Igrejas e Paróquias</h1>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-neutral-300">
               Descubra os templos mais importantes e sagrados do cristianismo ao redor do mundo.
               Desde basílicas milenares até santuários de peregrinação, cada igreja conta uma
               história única de fé, arte e devoção que atravessou gerações.

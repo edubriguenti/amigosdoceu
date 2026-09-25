@@ -8,6 +8,7 @@ import saints from '../../data/santos.json'
 import { motion } from 'framer-motion'
 import FigurinhaNoSite from '../../components/album/FigurinhaNoSite'
 import EntidadesRelacionadas from '../../components/EntidadesRelacionadas'
+import BotaoRezei from '../../components/BotaoRezei'
 import { resumoFigurinha } from '../../lib/albumData'
 import { getRelacionadas, getFestaDoSanto } from '../../lib/relacoes'
 
@@ -148,8 +149,9 @@ export default function SaintPage({ saint, figurinha, festa, relacionadas }) {
               <section id="oracao" aria-labelledby="oracao-titulo" className="mt-6 rounded-2xl border border-cosmic-border bg-cosmic-surface/50 p-5 scroll-mt-20">
                 <h2 id="oracao-titulo" className="text-xs font-semibold uppercase tracking-widest text-cosmic-gold mb-2">🙏 Oração</h2>
                 <blockquote className="italic text-neutral-200 leading-relaxed">{saint.oracao}</blockquote>
+                <BotaoRezei oracaoRef={`santo:${saint.slug}`} className="mt-5" />
                 {oracaoCompleta && (
-                  <Link href={oracaoCompleta.href} className="mt-3 inline-block text-sm text-cosmic-blue-light hover:underline">
+                  <Link href={oracaoCompleta.href} className="mt-3 block text-center text-sm text-cosmic-blue-light hover:underline">
                     Rezar a {oracaoCompleta.nome} →
                   </Link>
                 )}

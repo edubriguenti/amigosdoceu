@@ -142,7 +142,7 @@ export default function RosarioVirtual() {
                   style={{ backgroundColor: dados.cor + '15', borderLeft: `6px solid ${dados.cor}` }}
                 >
                   {ehDoDia && (
-                    <span className="absolute top-4 right-4 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    <span className="absolute top-4 right-4 bg-accent-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                       Hoje
                     </span>
                   )}

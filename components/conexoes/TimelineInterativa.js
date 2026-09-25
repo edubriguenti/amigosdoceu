@@ -90,13 +90,13 @@ export default function TimelineInterativa() {
                 <span className={`mt-3 font-serif text-sm md:text-base ${ativo ? 'text-white' : 'text-neutral-300'}`}>
                   {ev.nome}
                 </span>
-                <span className="text-xs text-neutral-500 mt-0.5">{ev.referencia}</span>
+                <span className="text-xs text-neutral-400 mt-0.5">{ev.referencia}</span>
               </button>
             )
           })}
         </div>
 
-        <p className="text-center text-xs text-neutral-500 mt-4">
+        <p className="text-center text-xs text-neutral-400 mt-4">
           {eventoAtivo ? 'Clique novamente para ver todas as conexões' : '✨ Clique em um evento para explorar suas conexões'}
         </p>
       </div>

@@ -102,7 +102,7 @@ export default function NovenaTracker({ novena }) {
                     onClick={() => handleToggleDia(numeroDia)}
                     className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all ${
                       completo
-                        ? 'bg-accent-500 border-accent-500'
+                        ? 'bg-accent-600 border-accent-500'
                         : 'bg-white border-neutral-300 hover:border-accent-400'
                     }`}
                   >

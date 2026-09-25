@@ -8,6 +8,7 @@ import oracoes from '../../data/oracoes.json';
 import santos from '../../data/santos.json';
 import Link from 'next/link';
 import EntidadesRelacionadas from '../../components/EntidadesRelacionadas';
+import BotaoRezei from '../../components/BotaoRezei';
 import { getRelacionadas } from '../../lib/relacoes';
 import { resumoFigurinha } from '../../lib/albumData';
 
@@ -178,6 +179,7 @@ export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionad
               <p className="text-lg md:text-xl text-neutral-800 leading-relaxed whitespace-pre-line font-serif text-center">
                 {oracao.texto}
               </p>
+              <BotaoRezei oracaoRef={`oracao:${oracao.slug}`} tema="claro" className="mt-8" />
             </motion.div>
 
             {/* Player de Vídeo da Oração */}
@@ -221,7 +223,7 @@ export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionad
                 onClick={handleCopiar}
                 className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
                   copiado
-                    ? 'bg-green-500 text-white'
+                    ? 'bg-green-700 text-white'
                     : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300'
                 }`}
               >
@@ -246,7 +248,7 @@ export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionad
               <div className="relative">
                 <button
                   onClick={() => handleCompartilhar('whatsapp')}
-                  className="flex items-center gap-2 px-6 py-3 rounded-lg font-medium bg-green-500 text-white hover:bg-green-600 transition-colors"
+                  className="flex items-center gap-2 px-6 py-3 rounded-lg font-medium bg-green-700 text-white hover:bg-green-800 transition-colors"
                   title="Compartilhar no WhatsApp"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

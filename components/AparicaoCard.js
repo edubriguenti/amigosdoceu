@@ -20,7 +20,7 @@ export default function AparicaoCard({ aparicao }) {
         <div className="mt-3">
           <h3 className="font-serif text-lg">{aparicao.nome}</h3>
           <p className="text-sm text-neutral-400 mt-1">{aparicao.local}</p>
-          <p className="text-xs text-neutral-500 mt-1">{aparicao.data}</p>
+          <p className="text-xs text-neutral-400 mt-1">{aparicao.data}</p>
         </div>
       </Link>
       <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">

@@ -87,7 +87,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-cosmic-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-400">
             <p>&copy; {currentYear} Amigos do Céu. Todos os direitos reservados.</p>
             <p className="italic text-center">"Que os santos intercedam por nós."</p>
           </div>

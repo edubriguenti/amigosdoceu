@@ -154,10 +154,10 @@ export default function VidaDeCristo({ figurinhas = {}, conexoes = {} }) {
               <span className="text-4xl">✝️</span>
             </div>
           </motion.div>
-          <h1 className="text-4xl md:text-5xl font-serif mb-6 text-gray-900">
+          <h1 className="text-4xl md:text-5xl font-serif mb-6 text-neutral-100">
             Vida de Cristo em Imagens
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-neutral-300 mb-8 leading-relaxed">
             Contemple toda a vida de Jesus Cristo através de uma jornada visual inspirada no estilo sacro
             das pinturas barrocas brasileiras. De Belém ao Calvário, da manjedoura à glória da Ressurreição.
           </p>
@@ -166,7 +166,7 @@ export default function VidaDeCristo({ figurinhas = {}, conexoes = {} }) {
           <div className="flex flex-wrap gap-4 justify-center">
             <button
               onClick={startPresentation}
-              className="px-6 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-medium rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 flex items-center gap-2"
+              className="px-6 py-3 bg-secondary-500 hover:bg-secondary-400 text-[#1b1406] font-medium rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 flex items-center gap-2"
               aria-label="Iniciar modo apresentação"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -199,7 +199,7 @@ export default function VidaDeCristo({ figurinhas = {}, conexoes = {} }) {
                 transition={{ duration: 0.5 }}
               />
             </div>
-            <span className="text-sm font-medium text-secondary-600 whitespace-nowrap">
+            <span className="text-sm font-medium text-secondary-800 whitespace-nowrap">
               {Math.round(progress)}%
             </span>
           </div>
@@ -226,7 +226,7 @@ export default function VidaDeCristo({ figurinhas = {}, conexoes = {} }) {
       {/* Quick Navigation - Collapsed by default */}
       <div className="fixed right-0 top-32 z-40 hidden lg:block group">
         {/* Tab/Handle - sempre visível */}
-        <div className="absolute right-0 top-0 bg-secondary-500 text-white px-2 py-3 rounded-l-lg shadow-lg cursor-pointer group-hover:bg-secondary-600 transition-colors">
+        <div className="absolute right-0 top-0 bg-secondary-500 text-[#1b1406] px-2 py-3 rounded-l-lg shadow-lg cursor-pointer group-hover:bg-secondary-600 transition-colors">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -245,7 +245,7 @@ export default function VidaDeCristo({ figurinhas = {}, conexoes = {} }) {
                   onClick={() => scrollToEvent(index)}
                   className="w-full text-left px-2 py-1.5 text-xs text-gray-700 hover:bg-secondary-50 hover:text-secondary-700 rounded transition-colors focus:outline-none focus:ring-1 focus:ring-secondary-400"
                 >
-                  <span className="font-semibold text-secondary-600">{event.id}.</span> {event.title}
+                  <span className="font-semibold text-secondary-800">{event.id}.</span> {event.title}
                 </button>
               ))}
             </div>
@@ -312,12 +312,12 @@ export default function VidaDeCristo({ figurinhas = {}, conexoes = {} }) {
       <AvisoNovaFigurinha figurinha={aviso} onFechar={fecharAviso} />
 
       {/* Bottom Quote */}
-      <section className="py-12 text-center bg-gradient-to-b from-transparent to-secondary-50">
+      <section className="py-12 text-center">
         <div className="max-w-2xl mx-auto px-4">
-          <p className="text-gray-700 italic text-lg leading-relaxed">
+          <p className="text-neutral-300 italic text-lg font-serif leading-relaxed">
             "Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai senão por mim."
             <br />
-            <span className="font-semibold text-secondary-700">— João 14:6</span>
+            <span className="font-semibold not-italic text-sm tracking-wider text-cosmic-gold">— JOÃO 14:6</span>
           </p>
         </div>
       </section>
