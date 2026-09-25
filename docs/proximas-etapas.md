@@ -9,7 +9,7 @@ e **conteúdo suficiente para alimentá-lo**. As etapas abaixo seguem essa ordem
 | # | Etapa | Por quê | Tamanho |
 |---|---|---|---|
 | 0 | Confirmar produção | Parte das avaliações externas ainda vê a versão anterior | minutos |
-| 1 | Rodada 1.1: polimento do fluxo | Hoje → rezar → figurinha → álbum → conexão → jornada precisa fechar | 1–2 dias |
+| 1 | ✅ Rodada 1.1: polimento do fluxo | Hoje → rezar → figurinha → álbum → conexão → jornada precisa fechar | feito (`improve/fluxo-diario`) |
 | 2 | Conteúdo: calendário e santos | Na maior parte do ano o "Hoje" mostra "Um dia comum" | 3–5 dias (paralelizável) |
 | 3 | Rosário e Novenas como experiência | Loop diário de oração, recompensado pelo Álbum | 2–3 dias |
 | 4 | Navegação mobile e design system | O site precisa parecer um produto só no celular | 2–3 dias |
@@ -36,7 +36,12 @@ merge `24104f0`.
 
 ---
 
-## Etapa 1: rodada 1.1, polimento do fluxo
+## Etapa 1: rodada 1.1, polimento do fluxo ✅
+
+> Concluída na branch `improve/fluxo-diario`. Detalhes em `docs/auditoria-fluxo-diario.md`.
+> A oração do dia é rezada no próprio painel Hoje e libera a figurinha do dia; "Rezei"
+> registra as demais orações; imagens ausentes viram placeholder; contraste corrigido;
+> ESLint como gate. Os itens abaixo ficam como registro.
 
 Branch sugerida: `improve/fluxo-diario`
 
@@ -86,6 +91,9 @@ nas páginas principais e `npm run lint` passa.
 ## Etapa 2: conteúdo (calendário, santos e relações)
 
 Branches sugeridas: `feature/calendario-completo` e uma por lote de santos.
+
+**Métrica da etapa:** `npm run validate:album` imprime a cobertura do fluxo diário:
+quantos dias do ano têm santo do dia cadastrado. Ponto de partida: **21/365 (6%)**.
 
 Hoje o calendário tem **31 celebrações no ano**, só 21 delas ligadas a um santo, e o site
 tem **19 santos**. O "Hoje", o Santos do Dia, a figurinha do dia e as Conexões dependem
