@@ -67,7 +67,7 @@ export default function Footer() {
               <li><Link href="/oracoes" className={linkClass}>Orações Católicas</Link></li>
               <li><Link href="/novenas" className={linkClass}>Novenas</Link></li>
               <li><Link href="/rosario" className={linkClass}>Rosário</Link></li>
-              <li><Link href="/intencoes" className={linkClass}>Intenções de Oração</Link></li>
+              <li><Link href="/intencoes" className={linkClass}>Minhas Intenções</Link></li>
             </ul>
           </div>
 

@@ -242,7 +242,7 @@ export default function NovenasPage() {
               Explore Mais Recursos de Oração
             </h2>
             <p className="text-neutral-600 mb-8">
-              Fortaleça sua vida espiritual com orações tradicionais e intenções compartilhadas.
+              Fortaleça sua vida espiritual com orações tradicionais e com o seu caderno de intenções.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -255,7 +255,7 @@ export default function NovenasPage() {
                 href="/intencoes"
                 className="bg-white text-accent-600 border-2 border-accent-500 px-8 py-3 rounded-lg hover:bg-accent-50 transition-colors font-medium"
               >
-                Intenções de Oração
+                Minhas Intenções
               </Link>
             </div>
           </div>

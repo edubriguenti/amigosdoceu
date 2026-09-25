@@ -9,6 +9,7 @@ import FigurinhaModal from '../../components/album/FigurinhaModal'
 import RevelacaoNovas from '../../components/album/RevelacaoNovas'
 import { useAlbum } from '../../hooks/useAlbum'
 import { getCelebracaoDoDia } from '../../lib/calendarUtils'
+import { diaLocal } from '../../lib/datas'
 import {
   calcularStats,
   getFigurinhaById,
@@ -36,11 +37,11 @@ export default function AlbumSagradoIndex() {
     const hoje = new Date()
     const figurinha = getFigurinhaDoDia(hoje)
     const santos = getCelebracaoDoDia(hoje)?.santos || []
-    setDoDia({ figurinha, santoDoDia: figurinha?.tipo === 'santo' && santos.includes(figurinha.slug) })
+    setDoDia({ figurinha, data: diaLocal(hoje), santoDoDia: figurinha?.tipo === 'santo' && santos.includes(figurinha.slug) })
   }, [])
 
   const receberDoDia = () => {
-    const { nova } = resgatarFigurinhaDoDia(doDia.figurinha.id)
+    const { nova } = resgatarFigurinhaDoDia({ id: doDia.figurinha.id, data: doDia.data })
     if (nova) setRevelando([comPagina(doDia.figurinha)])
   }
 

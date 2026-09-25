@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react'
 import { LEGACY_MAP } from '../lib/albumCatalogo'
+import { diaLocal } from '../lib/datas'
 
 /**
  * Progresso do Álbum Sagrado.
@@ -24,13 +25,6 @@ const ESTADO_INICIAL = Object.freeze({
 
 let cache = null
 const listeners = new Set()
-
-function hojeLocal(date = new Date()) {
-  const y = date.getFullYear()
-  const m = String(date.getMonth() + 1).padStart(2, '0')
-  const d = String(date.getDate()).padStart(2, '0')
-  return `${y}-${m}-${d}`
-}
 
 /** Garante o formato e a invariante novas ⊆ coletadas (sem duplicatas). */
 function normalizar(bruto) {
@@ -143,9 +137,16 @@ export function marcarVista(id) {
   setEstado({ ...atual, novas: atual.novas.filter((n) => n !== id) })
 }
 
-/** Resgata a figurinha do dia: no máximo uma vez por data local. */
-export function resgatarFigurinhaDoDia(id, date = new Date()) {
-  const hoje = hojeLocal(date)
+/**
+ * Resgata a figurinha do dia: no máximo uma vez por data local.
+ * Recebe a figurinha oficial do dia `{ id, data }` como veio da camada de dados
+ * (lib/hoje.js no servidor ou getFigurinhaDoDia no álbum) — nunca um id escolhido
+ * pela UI. Se `data` não for o dia local de hoje, o resgate é recusado.
+ */
+export function resgatarFigurinhaDoDia(figurinhaDoDia, date = new Date()) {
+  const hoje = diaLocal(date)
+  if (!figurinhaDoDia?.id || figurinhaDoDia.data !== hoje) return { ok: false, nova: false }
+  const { id } = figurinhaDoDia
   const atual = getEstado()
   if (atual.figurinhaDoDiaResgatada === hoje) return { ok: false, nova: false }
   setEstado({ ...atual, figurinhaDoDiaResgatada: hoje })
@@ -170,6 +171,6 @@ export function useAlbum() {
     coletar,
     marcarVista,
     resgatarFigurinhaDoDia,
-    figurinhaDoDiaJaResgatada: estado.figurinhaDoDiaResgatada === hojeLocal(),
+    figurinhaDoDiaJaResgatada: estado.figurinhaDoDiaResgatada === diaLocal(),
   }
 }

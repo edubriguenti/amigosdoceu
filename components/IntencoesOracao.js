@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { diaLocal } from '../lib/datas';
 
 const CATEGORIAS = [
   'Todas',
@@ -13,25 +14,40 @@ const CATEGORIAS = [
   'Outras'
 ];
 
+// Intenções são pessoais e ficam só neste navegador (lidas também por lib/jornada.js).
 const STORAGE_KEY = 'amigos-do-ceu-intencoes';
+
+/**
+ * Formato atual: { id, texto, categoria, data, vezes, ultimaVez, atendida }.
+ * Dados antigos (versão "comunitária") tinham `oracoes`/`nome`/`anonima`: `oracoes`
+ * vira `vezes`; nome/anônimo são ignorados.
+ */
+function normalizarIntencao(i) {
+  return {
+    id: i.id,
+    texto: i.texto,
+    categoria: i.categoria || 'Outras',
+    data: i.data,
+    vezes: Number.isFinite(i.vezes) ? i.vezes : Number(i.oracoes) || 0,
+    ultimaVez: i.ultimaVez || null,
+    atendida: Boolean(i.atendida),
+  };
+}
 
 export default function IntencoesOracao() {
   const [intencoes, setIntencoes] = useState([]);
   const [categoriaFiltro, setCategoriaFiltro] = useState('Todas');
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  const [removendo, setRemovendo] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const [novaIntencao, setNovaIntencao] = useState({
-    texto: '',
-    categoria: 'Saúde',
-    anonima: false,
-    nome: ''
-  });
+  const [novaIntencao, setNovaIntencao] = useState({ texto: '', categoria: 'Saúde' });
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setIntencoes(JSON.parse(saved));
+      const lista = saved ? JSON.parse(saved) : [];
+      if (Array.isArray(lista)) setIntencoes(lista.filter((i) => i && i.texto).map(normalizarIntencao));
     } catch {}
     finally { setIsLoaded(true); }
   }, []);
@@ -44,34 +60,44 @@ export default function IntencoesOracao() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!novaIntencao.texto.trim()) { alert('Por favor, escreva sua intenção de oração.'); return; }
+    if (!novaIntencao.texto.trim()) return;
 
     setIntencoes(prev => [{
       id: Date.now(),
       texto: novaIntencao.texto.trim(),
       categoria: novaIntencao.categoria,
-      anonima: novaIntencao.anonima,
-      nome: novaIntencao.anonima ? 'Anônimo' : novaIntencao.nome.trim() || 'Anônimo',
       data: new Date().toISOString(),
-      oracoes: 0,
-      minhasOracoes: []
+      vezes: 0,
+      ultimaVez: null,
+      atendida: false,
     }, ...prev]);
 
-    setNovaIntencao({ texto: '', categoria: 'Saúde', anonima: false, nome: '' });
+    setNovaIntencao({ texto: '', categoria: 'Saúde' });
     setMostrarFormulario(false);
   };
 
-  const handleOrar = (id) => {
-    setIntencoes(prev => prev.map(intencao => {
-      if (intencao.id !== id) return intencao;
-      const jaOrou = intencao.minhasOracoes?.includes('user');
-      return jaOrou
-        ? { ...intencao, oracoes: Math.max(0, intencao.oracoes - 1), minhasOracoes: intencao.minhasOracoes.filter(u => u !== 'user') }
-        : { ...intencao, oracoes: intencao.oracoes + 1, minhasOracoes: [...(intencao.minhasOracoes || []), 'user'] };
+  // Um registro por dia: "Rezei por isto" hoje. Tocar de novo no mesmo dia desfaz.
+  const handleRezei = (id) => {
+    const hoje = diaLocal();
+    setIntencoes(prev => prev.map(i => {
+      if (i.id !== id) return i;
+      return i.ultimaVez === hoje
+        ? { ...i, vezes: Math.max(0, i.vezes - 1), ultimaVez: null }
+        : { ...i, vezes: i.vezes + 1, ultimaVez: hoje };
     }));
   };
 
+  const handleAtendida = (id) => {
+    setIntencoes(prev => prev.map(i => (i.id === id ? { ...i, atendida: !i.atendida } : i)));
+  };
+
+  const handleRemover = (id) => {
+    setIntencoes(prev => prev.filter(i => i.id !== id));
+    setRemovendo(null);
+  };
+
   const intencoesFiltradas = intencoes.filter(i => categoriaFiltro === 'Todas' || i.categoria === categoriaFiltro);
+  const hoje = isLoaded ? diaLocal() : null;
 
   const formatarData = (isoString) => {
     const diff = Date.now() - new Date(isoString).getTime();
@@ -92,16 +118,16 @@ export default function IntencoesOracao() {
       {/* Cabeçalho */}
       <div className="bg-cosmic-surface/60 border border-cosmic-border rounded-xl p-6 mb-6">
         <h2 className="text-3xl font-serif font-bold text-neutral-100 mb-3">
-          Intenções de Oração
+          Minhas intenções
         </h2>
         <p className="text-neutral-400 mb-4">
-          Compartilhe suas intenções de oração e una-se em oração pelos pedidos dos outros.
+          Anote pelo que você está rezando e marque cada dia em que rezou por isso.
         </p>
         <button
           onClick={() => setMostrarFormulario(!mostrarFormulario)}
           className="bg-cosmic-blue text-white px-6 py-2 rounded-lg hover:bg-cosmic-blue/80 transition-colors font-medium"
         >
-          {mostrarFormulario ? 'Cancelar' : '+ Adicionar Intenção'}
+          {mostrarFormulario ? 'Cancelar' : '+ Nova intenção'}
         </button>
       </div>
 
@@ -115,27 +141,29 @@ export default function IntencoesOracao() {
             className="bg-cosmic-surface/60 border border-cosmic-border rounded-xl p-6 mb-6 overflow-hidden"
           >
             <h3 className="text-xl font-serif font-bold text-neutral-100 mb-4">
-              Nova Intenção
+              Nova intenção
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-300 mb-2">
-                  Sua Intenção de Oração *
+                <label htmlFor="intencao-texto" className="block text-sm font-medium text-neutral-300 mb-2">
+                  Pelo que você quer rezar? *
                 </label>
                 <textarea
+                  id="intencao-texto"
                   value={novaIntencao.texto}
                   onChange={(e) => setNovaIntencao({ ...novaIntencao, texto: e.target.value })}
-                  placeholder="Escreva sua intenção de oração..."
+                  placeholder="Ex.: pela saúde da minha mãe"
                   rows={4}
                   className={inputClass + " resize-none"}
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-300 mb-2">
+                <label htmlFor="intencao-categoria" className="block text-sm font-medium text-neutral-300 mb-2">
                   Categoria
                 </label>
                 <select
+                  id="intencao-categoria"
                   value={novaIntencao.categoria}
                   onChange={(e) => setNovaIntencao({ ...novaIntencao, categoria: e.target.value })}
                   className={inputClass}
@@ -147,37 +175,15 @@ export default function IntencoesOracao() {
                   ))}
                 </select>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-neutral-300 mb-2">
-                  Seu Nome (opcional)
-                </label>
-                <input
-                  type="text"
-                  value={novaIntencao.nome}
-                  onChange={(e) => setNovaIntencao({ ...novaIntencao, nome: e.target.value })}
-                  placeholder="Digite seu nome"
-                  disabled={novaIntencao.anonima}
-                  className={inputClass + " disabled:opacity-40 disabled:cursor-not-allowed"}
-                />
-              </div>
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="anonima"
-                  checked={novaIntencao.anonima}
-                  onChange={(e) => setNovaIntencao({ ...novaIntencao, anonima: e.target.checked })}
-                  className="w-4 h-4 accent-cosmic-blue border-cosmic-border rounded"
-                />
-                <label htmlFor="anonima" className="ml-2 text-sm text-neutral-300">
-                  Publicar como anônimo
-                </label>
-              </div>
+              <p className="text-xs text-neutral-500">
+                🔒 Fica guardada só neste navegador. Ninguém mais vê.
+              </p>
               <div className="flex gap-3">
                 <button
                   type="submit"
                   className="bg-cosmic-blue text-white px-6 py-2 rounded-lg hover:bg-cosmic-blue/80 transition-colors font-medium"
                 >
-                  Publicar Intenção
+                  Guardar intenção
                 </button>
                 <button
                   type="button"
@@ -217,54 +223,76 @@ export default function IntencoesOracao() {
           <div className="bg-cosmic-surface/60 border border-cosmic-border rounded-xl p-8 text-center">
             <p className="text-neutral-400">
               {categoriaFiltro === 'Todas'
-                ? 'Nenhuma intenção de oração publicada ainda. Seja o primeiro!'
+                ? 'Você ainda não anotou nenhuma intenção. Comece por aquilo que está no seu coração hoje.'
                 : `Nenhuma intenção na categoria "${categoriaFiltro}".`}
             </p>
           </div>
         ) : (
           intencoesFiltradas.map((intencao, index) => {
-            const jaOrou = intencao.minhasOracoes?.includes('user');
+            const rezouHoje = intencao.ultimaVez === hoje;
             return (
               <motion.div
                 key={intencao.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-cosmic-surface/60 border border-cosmic-border rounded-xl p-6 hover:border-cosmic-blue/30 transition-colors"
+                className={`bg-cosmic-surface/60 border rounded-xl p-6 transition-colors ${
+                  intencao.atendida ? 'border-cosmic-gold/40' : 'border-cosmic-border hover:border-cosmic-blue/30'
+                }`}
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-medium text-neutral-100">{intencao.nome}</span>
-                      <span className="text-xs text-neutral-500">• {formatarData(intencao.data)}</span>
-                    </div>
-                    <span className="inline-block bg-cosmic-blue/20 text-cosmic-blue-light text-xs px-2 py-1 rounded border border-cosmic-blue/20">
-                      {intencao.categoria}
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <span className="inline-block bg-cosmic-blue/20 text-cosmic-blue-light text-xs px-2 py-1 rounded border border-cosmic-blue/20">
+                    {intencao.categoria}
+                  </span>
+                  {intencao.atendida && (
+                    <span className="inline-block bg-cosmic-gold/15 text-cosmic-gold text-xs px-2 py-1 rounded border border-cosmic-gold/30">
+                      🙌 Graça alcançada
                     </span>
-                  </div>
+                  )}
+                  <span className="text-xs text-neutral-500">{formatarData(intencao.data)}</span>
                 </div>
 
-                <p className="text-neutral-300 leading-relaxed mb-4">{intencao.texto}</p>
+                <p className="text-neutral-200 leading-relaxed mb-4">{intencao.texto}</p>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <button
-                    onClick={() => handleOrar(intencao.id)}
+                    onClick={() => handleRezei(intencao.id)}
+                    aria-pressed={rezouHoje}
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
-                      jaOrou
+                      rezouHoje
                         ? 'bg-cosmic-gold text-cosmic-bg hover:bg-cosmic-gold/80'
                         : 'bg-cosmic-surface-2 text-neutral-300 hover:bg-cosmic-surface border border-cosmic-border'
                     }`}
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {jaOrou ? 'Estou orando' : 'Orar por isso'}
+                    🙏 {rezouHoje ? 'Rezei hoje' : 'Rezei por isto'}
                   </button>
-                  {intencao.oracoes > 0 && (
+                  {intencao.vezes > 0 && (
                     <span className="text-sm text-neutral-500">
-                      {intencao.oracoes} {intencao.oracoes === 1 ? 'pessoa está' : 'pessoas estão'} orando
+                      {intencao.vezes} {intencao.vezes === 1 ? 'vez' : 'vezes'}
                     </span>
                   )}
+                  <div className="ml-auto flex items-center gap-3 text-sm">
+                    <button
+                      onClick={() => handleAtendida(intencao.id)}
+                      className="text-neutral-400 hover:text-cosmic-gold transition-colors"
+                    >
+                      {intencao.atendida ? 'Desmarcar graça' : 'Graça alcançada'}
+                    </button>
+                    {removendo === intencao.id ? (
+                      <span className="flex items-center gap-2">
+                        <span className="text-neutral-400">Remover?</span>
+                        <button onClick={() => handleRemover(intencao.id)} className="text-red-400 hover:text-red-300 font-medium">Sim</button>
+                        <button onClick={() => setRemovendo(null)} className="text-neutral-400 hover:text-neutral-200">Não</button>
+                      </span>
+                    ) : (
+                      <button
+                        onClick={() => setRemovendo(intencao.id)}
+                        className="text-neutral-500 hover:text-red-400 transition-colors"
+                      >
+                        Remover
+                      </button>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             );

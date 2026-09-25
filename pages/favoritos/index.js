@@ -115,12 +115,18 @@ export default function FavoritosPage() {
     />
   );
 
+  // Antes de ler o localStorage: cabeçalho real + esqueleto (nada de "Carregando…").
   if (!loaded) {
     return (
       <Layout>
         {seoBlock}
-        <div className="py-12 text-center">
-          <p className="text-neutral-600">Carregando favoritos...</p>
+        <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <FavoritosHeader />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" aria-hidden="true">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div key={i} className="aspect-[4/5] rounded-lg bg-cosmic-surface animate-pulse" />
+            ))}
+          </div>
         </div>
       </Layout>
     );
@@ -132,16 +138,9 @@ export default function FavoritosPage() {
     <Layout>
       {seoBlock}
       <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-serif text-neutral-900 mb-2">Meus Favoritos</h1>
-          <p className="text-neutral-600">
-            {totalFavorites === 0
-              ? 'Você ainda não tem favoritos. Explore o site e favorite seus santos, igrejas e aparições preferidos!'
-              : `Você tem ${totalFavorites} ${totalFavorites === 1 ? 'favorito' : 'favoritos'} salvos`
-            }
-          </p>
-        </div>
+        <FavoritosHeader
+          contagem={totalFavorites > 0 ? `Você tem ${totalFavorites} ${totalFavorites === 1 ? 'favorito salvo' : 'favoritos salvos'}.` : null}
+        />
 
         {/* Actions */}
         {totalFavorites > 0 && (
@@ -608,16 +607,41 @@ function Section({ title, icon, children }) {
 }
 
 // Componente auxiliar: Empty State
+function FavoritosHeader({ contagem }) {
+  return (
+    <div className="mb-8">
+      <h1 className="text-3xl md:text-4xl font-serif text-neutral-100 mb-2">❤️ Meus Favoritos</h1>
+      <p className="text-neutral-300">Seus santos, igrejas e aparições favoritos em um só lugar.</p>
+      {contagem && <p className="text-sm text-neutral-400 mt-1">{contagem}</p>}
+    </div>
+  );
+}
+
+const EXPLORAR = [
+  { href: '/santos', label: 'Explorar Santos' },
+  { href: '/igrejas', label: 'Explorar Igrejas' },
+  { href: '/aparicoes', label: 'Explorar Aparições' },
+];
+
 function EmptyState({ message }) {
   return (
-    <div className="text-center py-16">
-      <div className="text-6xl mb-4">🤍</div>
-      <p className="text-neutral-600 mb-6">
-        {message || 'Você ainda não tem favoritos.'}
+    <div className="text-center py-16 px-4 rounded-2xl border border-cosmic-border bg-cosmic-surface/40">
+      <div className="text-5xl mb-4" aria-hidden="true">🤍</div>
+      <p className="font-serif text-xl text-neutral-100 mb-2">Ainda não há favoritos.</p>
+      <p className="text-neutral-400 mb-6 max-w-md mx-auto">
+        {message || 'Toque no coração em um santo, igreja ou aparição para guardá-lo aqui.'}
       </p>
-      <Link href="/santos" className="inline-block px-6 py-3 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors font-medium">
-        Explorar Santos
-      </Link>
+      <div className="flex flex-wrap justify-center gap-3">
+        {EXPLORAR.map((e) => (
+          <Link
+            key={e.href}
+            href={e.href}
+            className="inline-block px-5 py-2.5 rounded-full border border-cosmic-border bg-cosmic-surface-2 text-neutral-100 hover:border-cosmic-gold/60 transition-colors font-medium"
+          >
+            {e.label}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

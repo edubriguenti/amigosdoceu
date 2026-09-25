@@ -7,10 +7,11 @@ export default function IntencoesPage() {
   return (
     <Layout>
       <SEO
-        title="Intenções de Oração"
-        description="Compartilhe suas intenções e una-se em oração pelos pedidos da comunidade. Espaço de comunhão espiritual."
+        title="Minhas Intenções"
+        description="Guarde suas intenções de oração e acompanhe cada dia em que rezou por elas. Tudo fica só no seu navegador."
         url="https://amigosdoceu.vercel.app/intencoes"
-        keywords="intenções de oração, pedidos de oração, comunidade católica, intercessão"
+        keywords="intenções de oração, caderno de oração, pedidos de oração, vida de oração"
+        noindex
       />
 
       {/* Hero Section */}
@@ -24,10 +25,10 @@ export default function IntencoesPage() {
               <span className="text-3xl">🙏</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-neutral-100 mb-4">
-              Intenções de Oração
+              Minhas Intenções
             </h1>
             <p className="text-xl text-neutral-300 mb-2">
-              Compartilhe suas necessidades e una-se em oração pelos outros
+              Guarde suas intenções e acompanhe suas orações
             </p>
           </div>
         </div>
@@ -44,9 +45,9 @@ export default function IntencoesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-neutral-100 mb-2">Compartilhe</h3>
+                <h3 className="font-semibold text-neutral-100 mb-2">Anote</h3>
                 <p className="text-sm text-neutral-400">
-                  Publique suas intenções de oração de forma anônima ou com seu nome
+                  Escreva pelo que você quer rezar. Só você vê.
                 </p>
               </div>
               <div className="text-center">
@@ -55,9 +56,9 @@ export default function IntencoesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-neutral-100 mb-2">Una-se</h3>
+                <h3 className="font-semibold text-neutral-100 mb-2">Reze</h3>
                 <p className="text-sm text-neutral-400">
-                  Veja as intenções compartilhadas por outros e ore por elas
+                  Marque cada dia em que rezou por uma intenção
                 </p>
               </div>
               <div className="text-center">
@@ -66,9 +67,9 @@ export default function IntencoesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-neutral-100 mb-2">Fortaleça</h3>
+                <h3 className="font-semibold text-neutral-100 mb-2">Agradeça</h3>
                 <p className="text-sm text-neutral-400">
-                  Construa uma comunidade de fé e intercessão
+                  Registre as graças alcançadas
                 </p>
               </div>
             </div>
@@ -118,8 +119,7 @@ export default function IntencoesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm text-neutral-500">
-              <strong className="text-neutral-400">Nota:</strong> As intenções de oração são armazenadas localmente em seu navegador.
-              Para compartilhar publicamente, seria necessário implementar um backend com moderação.
+              🔒 Suas intenções ficam guardadas apenas neste navegador e não são enviadas a ninguém.
             </p>
           </div>
         </div>
