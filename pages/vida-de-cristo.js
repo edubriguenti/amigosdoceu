@@ -10,18 +10,23 @@ import vidaCristoData from '../data/vida-cristo.json';
 import { AvisoNovaFigurinha } from '../components/album/FigurinhaNoSite';
 import { coletar } from '../hooks/useAlbum';
 import { resumoFigurinha } from '../lib/albumData';
+import { getRelacionadas } from '../lib/relacoes';
 
 export async function getStaticProps() {
   // Resumo das figurinhas dos eventos, para colar no álbum sem carregar o catálogo inteiro.
   const figurinhas = {};
+  // Santos, igrejas etc. ligados a cada evento (lib/relacoes.js), só os eventos que têm conexões.
+  const conexoes = {};
   vidaCristoData.forEach((e) => {
     const f = resumoFigurinha('cristo', e.slug);
     if (f) figurinhas[e.slug] = f;
+    const itens = getRelacionadas('cristo', e.slug).flatMap((g) => g.itens);
+    if (itens.length) conexoes[e.slug] = itens.map(({ nome, href, rotulo }) => ({ nome, href, rotulo }));
   });
-  return { props: { figurinhas } };
+  return { props: { figurinhas, conexoes } };
 }
 
-export default function VidaDeCristo({ figurinhas = {} }) {
+export default function VidaDeCristo({ figurinhas = {}, conexoes = {} }) {
   const router = useRouter();
   const [aviso, setAviso] = useState(null);
   const fecharAviso = useCallback(() => setAviso(null), []);
@@ -278,12 +283,29 @@ export default function VidaDeCristo({ figurinhas = {} }) {
         currentIndex={currentEventIndex}
         total={vidaCristoData.length}
         extra={
-          selectedEvent && figurinhas[selectedEvent.slug] && !isPresentationMode ? (
-            <p className="text-sm mb-4">
-              <Link href={figurinhas[selectedEvent.slug].href} className="font-medium text-accent-700 underline underline-offset-2 hover:text-accent-800">
-                Ver a figurinha no Álbum Sagrado
-              </Link>
-            </p>
+          selectedEvent && !isPresentationMode ? (
+            <>
+              {conexoes[selectedEvent.slug] && (
+                <p className="text-sm mb-2">
+                  <span className="text-gray-600">🔗 Neste evento: </span>
+                  {conexoes[selectedEvent.slug].map((c, i) => (
+                    <span key={c.href}>
+                      {i > 0 && ' · '}
+                      <Link href={c.href} className="font-medium text-accent-700 underline underline-offset-2 hover:text-accent-800" title={c.rotulo}>
+                        {c.nome}
+                      </Link>
+                    </span>
+                  ))}
+                </p>
+              )}
+              {figurinhas[selectedEvent.slug] && (
+                <p className="text-sm mb-4">
+                  <Link href={figurinhas[selectedEvent.slug].href} className="font-medium text-accent-700 underline underline-offset-2 hover:text-accent-800">
+                    Ver a figurinha no Álbum Sagrado
+                  </Link>
+                </p>
+              )}
+            </>
           ) : null
         }
       />

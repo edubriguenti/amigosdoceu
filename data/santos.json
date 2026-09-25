@@ -376,13 +376,7 @@
     "periodo": "Antiguidade",
     "doutorIgreja": false,
     "popularidade": 97,
-    "relacionamentos": [
-      {
-        "santoSlug": "sao-paulo-da-cruz",
-        "tipo": "contemporaneo",
-        "descricao": "São Pedro e São Paulo foram os principais apóstolos e fundadores da Igreja em Roma, morrendo mártires durante a perseguição de Nero"
-      }
-    ]
+    "relacionamentos": []
   },
   {
     "nome": "São Sebastião",

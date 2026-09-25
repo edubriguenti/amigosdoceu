@@ -1,0 +1,19 @@
+{
+  "_doc": "Relações editoriais entre entidades (arestas NÃO direcionadas). Refs no formato tipo:slug (santo, aparicao, igreja, cristo, oracao, novena). 'rotulo' descreve a relação, não o sentido da aresta. A ordem do array é a ordem de exibição. Santo↔santo fica em santos.json (relacionamentos); oração/novena ↔ santo vem de santoRelacionado. Valide com npm run validate:relacoes.",
+  "relacoes": [
+    { "a": "aparicao:nossa-senhora-de-fatima", "b": "igreja:santuario-fatima", "rotulo": "Santuário" },
+    { "a": "aparicao:nossa-senhora-de-lourdes", "b": "igreja:santuario-lourdes", "rotulo": "Santuário" },
+    { "a": "aparicao:nossa-senhora-de-guadalupe", "b": "igreja:basilica-guadalupe", "rotulo": "Basílica" },
+    { "a": "aparicao:nossa-senhora-aparecida", "b": "igreja:basilica-aparecida", "rotulo": "Basílica" },
+    { "a": "aparicao:nossa-senhora-aparecida", "b": "novena:novena-nossa-senhora-aparecida", "rotulo": "Novena" },
+
+    { "a": "santo:sao-pedro", "b": "igreja:basilica-sao-pedro", "rotulo": "Túmulo do apóstolo" },
+    { "a": "santo:sao-pedro", "b": "cristo:chamado-apostolos", "rotulo": "Chamado por Jesus" },
+    { "a": "santo:sao-pedro", "b": "cristo:transfiguracao", "rotulo": "Testemunha" },
+    { "a": "santo:sao-pedro", "b": "cristo:ultima-ceia", "rotulo": "Na Última Ceia" },
+    { "a": "santo:sao-pedro", "b": "cristo:prisao-jesus", "rotulo": "Na prisão de Jesus" },
+
+    { "a": "santo:sao-jose", "b": "cristo:sonho-sao-jose", "rotulo": "O sonho de José" },
+    { "a": "santo:sao-jose", "b": "cristo:fuga-egito", "rotulo": "Guardião da Sagrada Família" }
+  ]
+}

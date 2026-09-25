@@ -7,6 +7,9 @@ import useNovena from '../../hooks/useNovena';
 import novenas from '../../data/novenas.json';
 import santos from '../../data/santos.json';
 import Link from 'next/link';
+import EntidadesRelacionadas from '../../components/EntidadesRelacionadas';
+import { getRelacionadas } from '../../lib/relacoes';
+import { resumoFigurinha } from '../../lib/albumData';
 
 export async function getStaticPaths() {
   const paths = novenas.map((novena) => ({
@@ -28,12 +31,15 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       novena,
-      santoRelacionado
+      santoRelacionado,
+      // o santo já aparece no card acima; aqui entram as demais conexões
+      relacionadas: getRelacionadas('novena', novena.slug, { excluirTipos: ['santo'] }),
+      figurinhaSanto: santoRelacionado ? resumoFigurinha('santo', santoRelacionado.slug) : null,
     },
   };
 }
 
-export default function NovenaPage({ novena, santoRelacionado }) {
+export default function NovenaPage({ novena, santoRelacionado, relacionadas, figurinhaSanto }) {
   const router = useRouter();
   const {
     iniciarNovena,
@@ -316,6 +322,14 @@ export default function NovenaPage({ novena, santoRelacionado }) {
           </div>
         </div>
       </div>
+      <EntidadesRelacionadas grupos={relacionadas} titulo="Relacionada a" />
+      {figurinhaSanto && (
+        <p className="max-w-4xl mx-auto px-4 mt-6 pb-4">
+          <Link href={figurinhaSanto.href} className="text-sm text-cosmic-blue-light hover:underline">
+            🃏 Ver a figurinha de {santoRelacionado.nome} no Álbum Sagrado →
+          </Link>
+        </p>
+      )}
     </Layout>
   );
 }
