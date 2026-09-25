@@ -1,10 +1,10 @@
 import { FaceFigurinha, VersoFechado } from './Figurinha'
 
 /**
- * Figurinha de hoje. Antes de receber: verso fechado + botão.
- * Depois: a figurinha aberta. Só pode ser recebida uma vez por dia.
+ * Figurinha de hoje. Antes: verso fechado + "Rezar para receber" (a figurinha do dia vem
+ * de rezar a oração do dia — ver OracaoDoDiaModal). Depois: a figurinha aberta.
  */
-export default function FigurinhaDoDia({ figurinha, santoDoDia, jaResgatada, jaTinha, onReceber, onAbrir }) {
+export default function FigurinhaDoDia({ figurinha, santoDoDia, jaResgatada, jaTinha, onRezar, onAbrir }) {
   if (!figurinha) return null
 
   return (
@@ -40,14 +40,15 @@ export default function FigurinhaDoDia({ figurinha, santoDoDia, jaResgatada, jaT
         ) : (
           <>
             <p className="mt-2 text-neutral-300 leading-relaxed">
-              {santoDoDia ? 'Hoje a Igreja celebra um santo que está no álbum.' : 'Todo dia uma figurinha diferente espera por você.'}
+              {santoDoDia ? 'Hoje a Igreja celebra um santo que está no álbum. ' : 'Todo dia uma figurinha diferente espera por você. '}
+              Reze a oração de hoje para receber.
             </p>
             <button
               type="button"
-              onClick={onReceber}
+              onClick={onRezar}
               className="mt-4 px-5 py-2.5 rounded-full bg-[#c9a227] text-[#1b1406] font-medium hover:bg-[#dcb53a] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-              Receber figurinha
+              Rezar para receber
             </button>
           </>
         )}

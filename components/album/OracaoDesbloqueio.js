@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
  * Leitura orante da oração com tempo mínimo (~20 caracteres por segundo, mínimo 10s).
  * Ao concluir, chama `onCompletar` — quem coleta a figurinha é o chamador.
  */
-export default function OracaoDesbloqueio({ oracao, onCompletar }) {
+export default function OracaoDesbloqueio({ oracao, onCompletar, rotuloConcluir = 'Amém. Colar a figurinha' }) {
   const tempoMinimo = Math.max(10, Math.ceil(oracao.length / 20))
   const [rezando, setRezando] = useState(false)
   const [segundos, setSegundos] = useState(0)
@@ -37,7 +37,7 @@ export default function OracaoDesbloqueio({ oracao, onCompletar }) {
             onClick={onCompletar}
             className="w-full py-3 rounded-full bg-[#c9a227] text-[#1b1406] font-medium hover:bg-[#dcb53a] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8a6a14] focus-visible:ring-offset-[#ece2cb]"
           >
-            Amém. Colar a figurinha
+            {rotuloConcluir}
           </button>
         ) : (
           <div role="status" aria-live="polite">
