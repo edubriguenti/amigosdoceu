@@ -121,7 +121,7 @@ export default function DesafioDoDia() {
           type="button"
           onClick={confirmar}
           disabled={!escolhida}
-          className="w-full py-3 bg-accent-600 hover:bg-accent-700 disabled:bg-white/5 disabled:text-neutral-500 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
+          className="w-full py-3 bg-accent-600 hover:bg-accent-700 disabled:bg-white/5 disabled:text-neutral-400 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
         >
           Confirmar resposta
         </button>
