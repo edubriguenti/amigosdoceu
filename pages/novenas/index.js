@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import useNovena from '../../hooks/useNovena';
+import PlaceholderSagrado from '../../components/PlaceholderSagrado';
 import novenas from '../../data/novenas.json';
 
 export default function NovenasPage() {
@@ -129,7 +130,7 @@ export default function NovenasPage() {
                   >
                     {/* Imagem */}
                     <div className="relative h-48 bg-gradient-to-br from-accent-100 to-accent-200">
-                      {novena.imagem && (
+                      {novena.imagem ? (
                         <img
                           src={novena.imagem}
                           alt={novena.nome}
@@ -138,6 +139,8 @@ export default function NovenasPage() {
                             e.target.style.display = 'none';
                           }}
                         />
+                      ) : (
+                        <PlaceholderSagrado categoria={novena.categoria} />
                       )}
 
                       {/* Badge de status */}

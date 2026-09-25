@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "validate:album": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-album.mjs",
-    "validate:relacoes": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-relacoes.mjs"
+    "validate:relacoes": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-relacoes.mjs",
+    "validate:imagens": "node scripts/validate-imagens.mjs"
   },
   "dependencies": {
     "framer-motion": "^10.12.16",
