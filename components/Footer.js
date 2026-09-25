@@ -78,6 +78,7 @@ export default function Footer() {
               <li><Link href="/santos-do-dia" className={linkClass}>Santos do Dia</Link></li>
               <li><Link href="/calendario" className={linkClass}>Calendário Litúrgico</Link></li>
               <li><Link href="/album-sagrado" className={linkClass}>Álbum Sagrado</Link></li>
+              <li><Link href="/minha-jornada" className={linkClass}>Minha Jornada</Link></li>
               <li><Link href="/favoritos" className={linkClass}>Meus Favoritos</Link></li>
               <li><a href="#creditos" className={linkClass}>Créditos de Imagens</a></li>
             </ul>

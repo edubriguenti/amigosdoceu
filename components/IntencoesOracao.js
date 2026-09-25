@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { diaLocal } from '../lib/datas';
+// Intenções são pessoais e ficam só neste navegador (lidas também por Minha Jornada).
+import { INTENCOES_KEY as STORAGE_KEY } from '../lib/jornada';
 
 const CATEGORIAS = [
   'Todas',
@@ -13,9 +15,6 @@ const CATEGORIAS = [
   'Agradecimento',
   'Outras'
 ];
-
-// Intenções são pessoais e ficam só neste navegador (lidas também por lib/jornada.js).
-const STORAGE_KEY = 'amigos-do-ceu-intencoes';
 
 /**
  * Formato atual: { id, texto, categoria, data, vezes, ultimaVez, atendida }.

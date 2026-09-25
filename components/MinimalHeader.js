@@ -21,6 +21,14 @@ export default function MinimalHeader() {
             </svg>
             <span>Amigos do Céu</span>
           </Link>
+          <Link
+            href="/minha-jornada"
+            className="ml-auto inline-flex items-center gap-1.5 text-sm text-neutral-300 hover:text-cosmic-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue rounded px-2 py-1"
+          >
+            <span aria-hidden="true">🧭</span>
+            <span className="hidden sm:inline">Minha Jornada</span>
+            <span className="sr-only sm:hidden">Minha Jornada</span>
+          </Link>
         </div>
       </div>
     </header>
