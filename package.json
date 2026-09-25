@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate:album": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-album.mjs"
   },
   "dependencies": {
     "framer-motion": "^10.12.16",

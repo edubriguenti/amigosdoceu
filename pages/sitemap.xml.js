@@ -130,12 +130,12 @@ function generateAllUrls() {
     }
   });
 
-  // Coleções do Álbum Sagrado
-  const colecoes = readJsonFile('data/album-colecoes.json');
-  colecoes.forEach(colecao => {
-    if (colecao.slug) {
+  // Páginas do Álbum Sagrado
+  const album = readJsonFile('data/album/album.json');
+  (album.paginas || []).forEach(pagina => {
+    if (pagina.slug) {
       urls.push({
-        url: `/album-sagrado/${colecao.slug}`,
+        url: `/album-sagrado/${pagina.slug}`,
         changefreq: 'weekly',
         priority: '0.6',
         lastmod: today

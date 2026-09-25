@@ -5,6 +5,8 @@ import FavoritoButton from '../../components/FavoritoButton'
 import RelacionamentosSanto from '../../components/RelacionamentosSanto'
 import saints from '../../data/santos.json'
 import { motion } from 'framer-motion'
+import FigurinhaNoSite from '../../components/album/FigurinhaNoSite'
+import { resumoFigurinha } from '../../lib/albumData'
 
 const SITE_URL = 'https://amigosdoceu.vercel.app'
 
@@ -20,7 +22,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const saint = saints.find((s) => s.slug === params.slug) || null
   if (!saint) return { notFound: true }
-  return { props: { saint } }
+  return { props: { saint, figurinha: resumoFigurinha('santo', saint.slug) } }
 }
 
 function buildSchema(saint) {
@@ -76,7 +78,7 @@ function buildSchema(saint) {
   return [person, breadcrumb]
 }
 
-export default function SaintPage({ saint }) {
+export default function SaintPage({ saint, figurinha }) {
   const url = `${SITE_URL}/santos/${saint.slug}`
   const description = (saint.descricao || `Vida e devoção de ${saint.nome}.`).slice(0, 160)
   const keywords = [
@@ -137,6 +139,7 @@ export default function SaintPage({ saint }) {
           </div>
         </motion.div>
 
+        <FigurinhaNoSite figurinha={figurinha} />
         <RelacionamentosSanto santoSlug={saint.slug} santosData={saints} />
       </article>
     </Layout>

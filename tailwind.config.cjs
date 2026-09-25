@@ -83,6 +83,11 @@ module.exports = {
           '25%': { transform: 'translateX(-4px)' },
           '75%': { transform: 'translateX(4px)' },
         },
+        // Álbum Sagrado — reflexo que atravessa a moldura das figurinhas lendárias
+        'brilho-lendario': {
+          '0%, 55%': { transform: 'translateX(-120%) skewX(-18deg)' },
+          '100%': { transform: 'translateX(220%) skewX(-18deg)' },
+        },
       },
 
       animation: {
@@ -90,6 +95,7 @@ module.exports = {
         'flow-line': 'flow-line 4s linear infinite',
         'pulse-scale': 'pulse-scale 2s ease-in-out infinite',
         'shake-soft': 'shake-soft 0.4s ease-in-out',
+        'brilho-lendario': 'brilho-lendario 4.5s ease-in-out infinite',
       },
 
       fontFamily: {

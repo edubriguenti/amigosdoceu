@@ -11,8 +11,9 @@ import { useEffect } from 'react';
  * @param {Function} onNext - Callback para próxima imagem
  * @param {number} currentIndex - Índice atual
  * @param {number} total - Total de eventos
+ * @param {React.ReactNode} extra - Conteúdo opcional exibido antes dos botões de compartilhar
  */
-export default function ImageModal({ event, isOpen, onClose, onPrev, onNext, currentIndex, total }) {
+export default function ImageModal({ event, isOpen, onClose, onPrev, onNext, currentIndex, total, extra }) {
   // Prevenir scroll quando modal está aberto
   useEffect(() => {
     if (isOpen) {
@@ -157,6 +158,8 @@ export default function ImageModal({ event, isOpen, onClose, onPrev, onNext, cur
                   </span>
                 </p>
               )}
+
+              {extra}
 
               {/* Share Buttons */}
               <div className="flex flex-wrap gap-2 items-center">

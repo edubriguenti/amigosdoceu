@@ -1,12 +1,30 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import TimelineCard from '../components/TimelineCard';
 import ImageModal from '../components/ImageModal';
 import { motion } from 'framer-motion';
 import vidaCristoData from '../data/vida-cristo.json';
+import { AvisoNovaFigurinha } from '../components/album/FigurinhaNoSite';
+import { coletar } from '../hooks/useAlbum';
+import { resumoFigurinha } from '../lib/albumData';
 
-export default function VidaDeCristo() {
+export async function getStaticProps() {
+  // Resumo das figurinhas dos eventos, para colar no álbum sem carregar o catálogo inteiro.
+  const figurinhas = {};
+  vidaCristoData.forEach((e) => {
+    const f = resumoFigurinha('cristo', e.slug);
+    if (f) figurinhas[e.slug] = f;
+  });
+  return { props: { figurinhas } };
+}
+
+export default function VidaDeCristo({ figurinhas = {} }) {
+  const router = useRouter();
+  const [aviso, setAviso] = useState(null);
+  const fecharAviso = useCallback(() => setAviso(null), []);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [isPresentationMode, setIsPresentationMode] = useState(false);
@@ -38,11 +56,32 @@ export default function VidaDeCristo() {
     }
   }, [presentationIndex, isPresentationMode]);
 
+  // Abrir um evento manualmente cola a figurinha dele (o modo apresentação não cola).
+  const colarFigurinha = (event) => {
+    const figurinha = figurinhas[event.slug];
+    if (!figurinha) return;
+    const { nova } = coletar(figurinha.id, 'visita');
+    if (nova) setAviso(figurinha);
+  };
+
   const handleImageClick = (event) => {
     setSelectedEvent(event);
     setModalOpen(true);
     setIsPresentationMode(false);
+    colarFigurinha(event);
   };
+
+  // Deep-link: /vida-de-cristo?evento=<slug> abre o evento (usado pelo Álbum Sagrado).
+  useEffect(() => {
+    if (!router.isReady) return;
+    const slug = router.query.evento;
+    const event = slug && vidaCristoData.find((e) => e.slug === slug);
+    if (event) {
+      handleImageClick(event);
+      document.getElementById(`event-${vidaCristoData.indexOf(event)}`)?.scrollIntoView({ block: 'center' });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router.isReady, router.query.evento]);
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -53,6 +92,7 @@ export default function VidaDeCristo() {
     const currentIndex = vidaCristoData.findIndex(e => e.id === selectedEvent.id);
     if (currentIndex > 0) {
       setSelectedEvent(vidaCristoData[currentIndex - 1]);
+      if (!isPresentationMode) colarFigurinha(vidaCristoData[currentIndex - 1]);
     }
   };
 
@@ -60,6 +100,7 @@ export default function VidaDeCristo() {
     const currentIndex = vidaCristoData.findIndex(e => e.id === selectedEvent.id);
     if (currentIndex < vidaCristoData.length - 1) {
       setSelectedEvent(vidaCristoData[currentIndex + 1]);
+      if (!isPresentationMode) colarFigurinha(vidaCristoData[currentIndex + 1]);
     }
   };
 
@@ -236,7 +277,17 @@ export default function VidaDeCristo() {
         onNext={handleNextImage}
         currentIndex={currentEventIndex}
         total={vidaCristoData.length}
+        extra={
+          selectedEvent && figurinhas[selectedEvent.slug] && !isPresentationMode ? (
+            <p className="text-sm mb-4">
+              <Link href={figurinhas[selectedEvent.slug].href} className="font-medium text-accent-700 underline underline-offset-2 hover:text-accent-800">
+                Ver a figurinha no Álbum Sagrado
+              </Link>
+            </p>
+          ) : null
+        }
       />
+      <AvisoNovaFigurinha figurinha={aviso} onFechar={fecharAviso} />
 
       {/* Bottom Quote */}
       <section className="py-12 text-center bg-gradient-to-b from-transparent to-secondary-50">

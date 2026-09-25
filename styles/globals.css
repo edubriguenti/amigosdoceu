@@ -79,3 +79,46 @@ h1, h2, h3 {
     content: none !important;
   }
 }
+
+/* ---------- Álbum Sagrado ---------- */
+
+/* Folha de papel envelhecido: granulação + leve escurecimento nas bordas */
+.album-papel {
+  background-color: #ece2cb;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .27 0 0 0 0 .16 0 0 0 .10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 40%, rgba(255, 252, 240, 0.55) 0%, rgba(255, 252, 240, 0) 60%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(110, 78, 38, 0.22) 100%);
+  color: #3b2f24;
+}
+
+/* Capa do álbum: couro azul-mariano */
+.album-capa {
+  background-color: #1b2a5c;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 30% 20%, rgba(96, 125, 210, 0.35) 0%, rgba(27, 42, 92, 0) 55%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0) 50%, rgba(5, 10, 30, 0.55) 100%);
+}
+
+/* Slot impresso na folha: parece afundado no papel */
+.album-slot {
+  background-color: rgba(120, 92, 55, 0.07);
+  box-shadow: inset 0 1px 3px rgba(59, 47, 36, 0.28), inset 0 0 0 1px rgba(122, 98, 66, 0.35);
+}
+
+/* Flip 3D — cada face precisa de um transform próprio (ex.: rotateY(0deg)); sem ele o
+   Chrome deixa de pintar imagens dentro de faces com backface-visibility: hidden. */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-brilho-lendario {
+    animation: none;
+  }
+}
