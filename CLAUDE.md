@@ -25,7 +25,7 @@ Cada agente deve respeitar estritamente o ownership e as zonas proibidas definid
 - `npm start` - Start production server
 - `npm run lint` - Run Next.js linter
 - `npm run validate:album` - Validate the Álbum Sagrado catalog (coverage, duplicates, rarities, images). Run after changing `data/album/album.json` or adding content.
-- `npm run validate:relacoes` - Validate the relations graph (`data/relacoes.json` + `santoRelacionado` + `santos.relacionamentos`): refs exist, no self-loops, no duplicates in either direction, no duplicating santo↔santo or derived relations. Run after changing any of those.
+- `npm run validate:relacoes` - Validate the relations graph (`data/relacoes.json` + `santoRelacionado` + `santos.relacionamentos`): refs exist, no self-loops, no duplicates in either direction, no duplicating santo↔santo or derived relations; for `santos.relacionamentos`: known `tipo`, each pair on one saint only, `contemporaneo` only with overlapping lifespans. Run after changing any of those.
 
 ## Git Workflow
 
@@ -232,7 +232,7 @@ Connections between saints, apparitions, churches, Life of Christ events, prayer
 
 **Each relation lives in exactly one place:**
 - `data/relacoes.json` — editorial relations (undirected edges `{ a, b, rotulo }`). `rotulo` describes the relation, not the edge direction. Array order is display order (never sorted alphabetically). Only add relations that are direct and verifiable.
-- `santos.json` → `relacionamentos` — legacy santo↔santo, rendered by `RelacionamentosSanto`. Don't repeat them in `relacoes.json`.
+- `santos.json` → `relacionamentos` — santo↔santo, rendered by `RelacionamentosSanto`. Register each pair on **one** saint only (the other page shows the inverse label automatically, e.g. "Canonizou"); put it on the saint the label reads from (`canonizadoPor` goes on the canonized saint). Only use `contemporaneo` when lifespans overlap. Don't repeat them in `relacoes.json`.
 - `oracoes.json` / `novenas.json` → `santoRelacionado` — derived automatically; don't repeat them in `relacoes.json`.
 
 Run `npm run validate:relacoes` after editing any of these.
