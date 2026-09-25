@@ -124,7 +124,7 @@ export default function IntencoesOracao() {
         </p>
         <button
           onClick={() => setMostrarFormulario(!mostrarFormulario)}
-          className="bg-cosmic-blue text-white px-6 py-2 rounded-lg hover:bg-cosmic-blue/80 transition-colors font-medium"
+          className="bg-accent-600 text-white px-6 py-2 rounded-lg hover:bg-accent-700 transition-colors font-medium"
         >
           {mostrarFormulario ? 'Cancelar' : '+ Nova intenção'}
         </button>
@@ -180,7 +180,7 @@ export default function IntencoesOracao() {
               <div className="flex gap-3">
                 <button
                   type="submit"
-                  className="bg-cosmic-blue text-white px-6 py-2 rounded-lg hover:bg-cosmic-blue/80 transition-colors font-medium"
+                  className="bg-accent-600 text-white px-6 py-2 rounded-lg hover:bg-accent-700 transition-colors font-medium"
                 >
                   Guardar intenção
                 </button>
@@ -206,7 +206,7 @@ export default function IntencoesOracao() {
               onClick={() => setCategoriaFiltro(categoria)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 categoriaFiltro === categoria
-                  ? 'bg-cosmic-blue text-white'
+                  ? 'bg-accent-600 text-white'
                   : 'bg-cosmic-surface-2 text-neutral-300 hover:bg-cosmic-surface border border-cosmic-border'
               }`}
             >

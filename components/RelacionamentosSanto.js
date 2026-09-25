@@ -50,7 +50,7 @@ export default function RelacionamentosSanto({ santoSlug, santosData }) {
               onClick={() => setVisualizacao('lista')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                 visualizacao === 'lista'
-                  ? 'bg-accent-500 text-white'
+                  ? 'bg-accent-600 text-white'
                   : 'text-neutral-600 hover:bg-neutral-100'
               }`}
             >
@@ -60,7 +60,7 @@ export default function RelacionamentosSanto({ santoSlug, santosData }) {
               onClick={() => setVisualizacao('agrupado')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                 visualizacao === 'agrupado'
-                  ? 'bg-accent-500 text-white'
+                  ? 'bg-accent-600 text-white'
                   : 'text-neutral-600 hover:bg-neutral-100'
               }`}
             >

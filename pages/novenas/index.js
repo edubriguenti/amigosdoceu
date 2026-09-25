@@ -101,7 +101,7 @@ export default function NovenasPage() {
                 onClick={() => setCategoriaFiltro(categoria)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                   categoriaFiltro === categoria
-                    ? 'bg-accent-500 text-white shadow-md'
+                    ? 'bg-accent-600 text-white shadow-md'
                     : 'bg-white text-neutral-700 hover:bg-primary-100'
                 }`}
               >
@@ -147,11 +147,11 @@ export default function NovenasPage() {
                       {status.tipo !== 'nao_iniciada' && (
                         <div className="absolute top-3 right-3">
                           {status.tipo === 'em_progresso' ? (
-                            <span className="inline-block bg-accent-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                            <span className="inline-block bg-accent-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
                               {status.progresso}% completo
                             </span>
                           ) : (
-                            <span className="inline-block bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                            <span className="inline-block bg-green-700 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
                               ✓ Completada {status.vezes}x
                             </span>
                           )}
@@ -250,7 +250,7 @@ export default function NovenasPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/oracoes"
-                className="bg-accent-500 text-white px-8 py-3 rounded-lg hover:bg-accent-600 transition-colors font-medium"
+                className="bg-accent-600 text-white px-8 py-3 rounded-lg hover:bg-accent-700 transition-colors font-medium"
               >
                 Ver Orações
               </Link>

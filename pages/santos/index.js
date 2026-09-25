@@ -77,7 +77,7 @@ export default function SantosPage() {
         <section className="py-12">
           <div className="max-w-3xl mb-8">
             <h1 className="text-4xl font-serif mb-4">Santos</h1>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-neutral-300">
               Conheça as vidas inspiradoras dos santos — homens e mulheres que dedicaram suas vidas a Deus
               e ao próximo. Cada história é um testemunho de fé, coragem e amor que continua a inspirar
               milhões de pessoas ao redor do mundo.

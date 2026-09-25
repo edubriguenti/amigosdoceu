@@ -1,10 +1,19 @@
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
+import { diaLocal } from '../lib/datas'
 import { getCelebracaoDoDia, getProximasCelebracoes } from '../lib/calendarUtils'
 
+// Data (dia local) da primeira visita. O convite só aparece a partir de outro dia:
+// recarregar várias vezes no mesmo dia não conta como visita nova.
+const PRIMEIRA_VISITA_KEY = 'amigos-do-ceu-primeira-visita'
+
 export default function NotificacoesLiturgicas() {
+  const router = useRouter()
   const [permissao, setPermissao] = useState(null)
-  const [mostrarPrompt, setMostrarPrompt] = useState(false)
+  const [promptElegivel, setPromptElegivel] = useState(false)
+  // Nunca na home: o painel "Hoje" é a porta de entrada e não pode ficar encoberto.
+  const mostrarPrompt = promptElegivel && router.pathname !== '/'
   const [notificacoesAtivadas, setNotificacoesAtivadas] = useState(false)
 
   useEffect(() => {
@@ -17,6 +26,14 @@ export default function NotificacoesLiturgicas() {
     // Verificar permissão atual
     setPermissao(Notification.permission)
 
+    // Registrar a primeira visita (só depois que a página montou)
+    const hoje = diaLocal()
+    let primeiraVisita = hoje
+    try {
+      primeiraVisita = localStorage.getItem(PRIMEIRA_VISITA_KEY) || hoje
+      if (primeiraVisita === hoje) localStorage.setItem(PRIMEIRA_VISITA_KEY, hoje)
+    } catch {}
+
     // Verificar se o usuário já viu o prompt
     const jaViuPrompt = localStorage.getItem('amigos-do-ceu-notificacoes-prompt')
     const notificacoesHabilitadas = localStorage.getItem('amigos-do-ceu-notificacoes-ativadas')
@@ -24,11 +41,10 @@ export default function NotificacoesLiturgicas() {
     if (notificacoesHabilitadas === 'true') {
       setNotificacoesAtivadas(true)
       iniciarVerificacoes()
-    } else if (!jaViuPrompt && Notification.permission === 'default') {
-      // Mostrar prompt após 3 segundos
-      setTimeout(() => {
-        setMostrarPrompt(true)
-      }, 3000)
+    } else if (!jaViuPrompt && Notification.permission === 'default' && primeiraVisita !== hoje) {
+      // A partir do segundo dia de visita, após 3 segundos
+      const timer = setTimeout(() => setPromptElegivel(true), 3000)
+      return () => clearTimeout(timer)
     }
   }, [])
 
@@ -45,7 +61,7 @@ export default function NotificacoesLiturgicas() {
         iniciarVerificacoes()
       }
 
-      setMostrarPrompt(false)
+      setPromptElegivel(false)
     } catch (erro) {
       console.error('Erro ao solicitar permissão:', erro)
     }
@@ -54,7 +70,7 @@ export default function NotificacoesLiturgicas() {
   const desativarNotificacoes = () => {
     setNotificacoesAtivadas(false)
     localStorage.setItem('amigos-do-ceu-notificacoes-ativadas', 'false')
-    setMostrarPrompt(false)
+    setPromptElegivel(false)
   }
 
   const mostrarNotificacaoTeste = () => {
@@ -132,7 +148,7 @@ export default function NotificacoesLiturgicas() {
   }
 
   const fecharPrompt = () => {
-    setMostrarPrompt(false)
+    setPromptElegivel(false)
     localStorage.setItem('amigos-do-ceu-notificacoes-prompt', 'true')
   }
 
@@ -143,20 +159,20 @@ export default function NotificacoesLiturgicas() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
-          className="fixed bottom-6 right-6 z-50 max-w-md"
+          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:bottom-6 sm:right-6 z-40 sm:max-w-md"
         >
           <div className="bg-white rounded-lg shadow-2xl border-2 border-amber-400 p-6">
             <div className="flex items-start gap-4">
               <div className="text-3xl">🔔</div>
               <div className="flex-1">
-                <h3 className="font-serif text-xl mb-2">Receber Lembretes?</h3>
-                <p className="text-sm text-gray-600 mb-4">
+                <h3 className="font-serif text-xl mb-2 text-neutral-800">Receber lembretes?</h3>
+                <p className="text-sm text-neutral-600 mb-4">
                   Ative as notificações para ser lembrado das celebrações litúrgicas importantes e festas dos santos.
                 </p>
                 <div className="flex gap-2">
                   <button
                     onClick={solicitarPermissao}
-                    className="px-4 py-2 bg-amber-500 text-white rounded hover:bg-amber-600 transition text-sm font-semibold"
+                    className="px-4 py-2 bg-amber-700 text-white rounded hover:bg-amber-800 transition text-sm font-semibold"
                   >
                     Ativar Notificações
                   </button>
@@ -170,7 +186,8 @@ export default function NotificacoesLiturgicas() {
               </div>
               <button
                 onClick={fecharPrompt}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-neutral-500 hover:text-neutral-700"
+                aria-label="Fechar"
               >
                 ✕
               </button>

@@ -159,7 +159,7 @@ export default function FavoritosPage() {
             </button>
             <button
               onClick={() => setShowCreateListModal(true)}
-              className="px-4 py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors text-sm font-medium"
+              className="px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm font-medium"
             >
               ➕ Criar Lista
             </button>
@@ -183,8 +183,8 @@ export default function FavoritosPage() {
               onClick={() => setActiveTab('todos')}
               className={`py-3 px-1 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
                 activeTab === 'todos'
-                  ? 'border-accent-500 text-accent-600'
-                  : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'
+                  ? 'border-cosmic-blue-light text-cosmic-blue-light'
+                  : 'border-transparent text-neutral-300 hover:text-white hover:border-neutral-500'
               }`}
             >
               Todos ({totalFavorites})
@@ -193,8 +193,8 @@ export default function FavoritosPage() {
               onClick={() => setActiveTab('santos')}
               className={`py-3 px-1 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
                 activeTab === 'santos'
-                  ? 'border-accent-500 text-accent-600'
-                  : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'
+                  ? 'border-cosmic-blue-light text-cosmic-blue-light'
+                  : 'border-transparent text-neutral-300 hover:text-white hover:border-neutral-500'
               }`}
             >
               📿 Santos ({favoritos.santos?.length || 0})
@@ -203,8 +203,8 @@ export default function FavoritosPage() {
               onClick={() => setActiveTab('igrejas')}
               className={`py-3 px-1 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
                 activeTab === 'igrejas'
-                  ? 'border-accent-500 text-accent-600'
-                  : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'
+                  ? 'border-cosmic-blue-light text-cosmic-blue-light'
+                  : 'border-transparent text-neutral-300 hover:text-white hover:border-neutral-500'
               }`}
             >
               ⛪ Igrejas ({favoritos.igrejas?.length || 0})
@@ -213,8 +213,8 @@ export default function FavoritosPage() {
               onClick={() => setActiveTab('aparicoes')}
               className={`py-3 px-1 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
                 activeTab === 'aparicoes'
-                  ? 'border-accent-500 text-accent-600'
-                  : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'
+                  ? 'border-cosmic-blue-light text-cosmic-blue-light'
+                  : 'border-transparent text-neutral-300 hover:text-white hover:border-neutral-500'
               }`}
             >
               ✨ Aparições ({favoritos.aparicoes?.length || 0})
@@ -223,8 +223,8 @@ export default function FavoritosPage() {
               onClick={() => setActiveTab('listas')}
               className={`py-3 px-1 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
                 activeTab === 'listas'
-                  ? 'border-accent-500 text-accent-600'
-                  : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'
+                  ? 'border-cosmic-blue-light text-cosmic-blue-light'
+                  : 'border-transparent text-neutral-300 hover:text-white hover:border-neutral-500'
               }`}
             >
               📋 Minhas Listas ({listas?.length || 0})
@@ -402,7 +402,7 @@ export default function FavoritosPage() {
                   <p className="text-neutral-600 mb-4">Você ainda não criou nenhuma lista personalizada.</p>
                   <button
                     onClick={() => setShowCreateListModal(true)}
-                    className="px-6 py-3 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors font-medium"
+                    className="px-6 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-medium"
                   >
                     ➕ Criar Minha Primeira Lista
                   </button>
@@ -524,7 +524,7 @@ export default function FavoritosPage() {
                 <button
                   onClick={editingLista ? handleUpdateList : handleCreateList}
                   disabled={!newListName.trim()}
-                  className="px-6 py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {editingLista ? 'Salvar Alterações' : 'Criar Lista'}
                 </button>
@@ -552,7 +552,7 @@ export default function FavoritosPage() {
                     setShowAddToListModal(false);
                     setShowCreateListModal(true);
                   }}
-                  className="px-6 py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors"
+                  className="px-6 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors"
                 >
                   Criar Lista
                 </button>

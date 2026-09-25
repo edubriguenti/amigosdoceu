@@ -27,7 +27,7 @@ export default function ProgressoUsuario() {
           className="h-full bg-gradient-to-r from-cosmic-blue to-cosmic-blue-light rounded-full"
         />
       </div>
-      <p className="text-xs text-neutral-500 mb-6 text-right">
+      <p className="text-xs text-neutral-400 mb-6 text-right">
         {progresso.xpAtualNoNivel} / {progresso.xpProximoNivel} XP
       </p>
 

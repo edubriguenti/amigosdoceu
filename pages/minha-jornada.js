@@ -232,7 +232,7 @@ function CartaoConexoes({ progresso, totalTrilhas }) {
         </Link>
       }
     >
-      <p className="mt-2 text-xs text-neutral-500">
+      <p className="mt-2 text-xs text-neutral-400">
         {progresso.trilhasConcluidas.length} de {totalTrilhas} trilhas concluídas
       </p>
     </Cartao>
@@ -275,7 +275,7 @@ export default function MinhaJornada({ paginas, eventos, totalTrilhas, dias, hoj
         <header className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-serif mb-3">✨ Minha Jornada</h1>
           <p className="text-lg text-neutral-300">Seu caminho pelo Amigos do Céu. Continue de onde parou.</p>
-          <p className="mt-2 text-xs text-neutral-500">🔒 Tudo aqui fica salvo só neste navegador.</p>
+          <p className="mt-2 text-xs text-neutral-400">🔒 Tudo aqui fica salvo só neste navegador.</p>
         </header>
 
         {pronto ? (

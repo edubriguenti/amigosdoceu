@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import OracaoCard from '../../components/OracaoCard';
@@ -80,7 +81,7 @@ export default function OracoesPage() {
                 onClick={() => setCategoriaFiltro(categoria)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                   categoriaFiltro === categoria
-                    ? 'bg-accent-500 text-white shadow-md'
+                    ? 'bg-accent-600 text-white shadow-md'
                     : 'bg-primary-100 text-neutral-700 hover:bg-primary-200'
                 }`}
               >
@@ -133,7 +134,7 @@ export default function OracoesPage() {
                     setBusca('');
                     setCategoriaFiltro('Todas');
                   }}
-                  className="bg-accent-500 text-white px-6 py-2 rounded-lg hover:bg-accent-600 transition-colors"
+                  className="bg-accent-600 text-white px-6 py-2 rounded-lg hover:bg-accent-700 transition-colors"
                 >
                   Limpar filtros
                 </button>
@@ -160,18 +161,18 @@ export default function OracoesPage() {
               Fortaleça sua vida de oração com novenas e com o seu caderno de intenções.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
+              <Link
                 href="/novenas"
-                className="bg-accent-500 text-white px-8 py-3 rounded-lg hover:bg-accent-600 transition-colors font-medium"
+                className="bg-accent-600 text-white px-8 py-3 rounded-lg hover:bg-accent-700 transition-colors font-medium"
               >
                 Ver Novenas
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/intencoes"
                 className="bg-white text-accent-600 border-2 border-accent-500 px-8 py-3 rounded-lg hover:bg-accent-50 transition-colors font-medium"
               >
                 Minhas Intenções
-              </a>
+              </Link>
             </div>
           </div>
         </div>

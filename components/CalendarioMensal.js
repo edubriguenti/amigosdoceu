@@ -82,7 +82,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
       <div className="flex items-center justify-between mb-6">
         <button
           onClick={mesAnterior}
-          className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition"
+          className="px-4 py-2 bg-cosmic-surface-2 border border-cosmic-border text-neutral-100 hover:border-cosmic-gold/60 rounded transition"
         >
           ← Anterior
         </button>
@@ -91,7 +91,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
           <h2 className="text-3xl font-serif">{calendario.mesNome} {ano}</h2>
           <button
             onClick={mesAtual}
-            className="text-sm text-gray-600 hover:text-gray-900 mt-1"
+            className="text-sm text-neutral-300 hover:text-white mt-1"
           >
             Voltar para hoje
           </button>
@@ -99,7 +99,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
 
         <button
           onClick={mesSeguinte}
-          className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition"
+          className="px-4 py-2 bg-cosmic-surface-2 border border-cosmic-border text-neutral-100 hover:border-cosmic-gold/60 rounded transition"
         >
           Próximo →
         </button>
@@ -142,7 +142,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
                 } ${ehHoje ? 'ring-2 ring-amber-500' : ''}`}
               >
                 <div className="flex flex-col h-full">
-                  <div className={`text-sm font-semibold mb-1 ${ehHoje ? 'text-amber-600' : 'text-gray-700'}`}>
+                  <div className={`text-sm font-semibold mb-1 ${ehHoje ? 'text-amber-700' : 'text-gray-700'}`}>
                     {dia}
                   </div>
 
@@ -158,7 +158,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
                       {celebracao.santos && celebracao.santos.length > 0 && (
                         <Link
                           href={`/santos/${celebracao.santos[0]}`}
-                          className="text-xs text-blue-600 hover:underline mt-1 inline-block"
+                          className="text-xs text-blue-800 hover:underline mt-1 inline-block"
                         >
                           Ver santo
                         </Link>
@@ -222,7 +222,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
                   <div className="mt-2">
                     <Link
                       href={`/santos/${celebracao.santos[0]}`}
-                      className="text-sm text-blue-600 hover:underline"
+                      className="text-sm text-blue-800 hover:underline"
                     >
                       Ver biografia do santo →
                     </Link>

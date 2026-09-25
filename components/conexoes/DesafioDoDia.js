@@ -87,7 +87,7 @@ export default function DesafioDoDia() {
               <span className={`w-6 h-6 flex-shrink-0 rounded flex items-center justify-center text-xs font-bold uppercase ${
                 showCorreta ? 'bg-emerald-400 text-cosmic-bg' :
                 showErrada ? 'bg-amber-400 text-cosmic-bg' :
-                selecionada ? 'bg-cosmic-blue text-white' : 'bg-white/10 text-neutral-400'
+                selecionada ? 'bg-accent-600 text-white' : 'bg-white/10 text-neutral-400'
               }`}>
                 {alt.id}
               </span>
@@ -121,7 +121,7 @@ export default function DesafioDoDia() {
           type="button"
           onClick={confirmar}
           disabled={!escolhida}
-          className="w-full py-3 bg-cosmic-blue hover:bg-blue-600 disabled:bg-white/5 disabled:text-neutral-500 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
+          className="w-full py-3 bg-accent-600 hover:bg-accent-700 disabled:bg-white/5 disabled:text-neutral-500 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
         >
           Confirmar resposta
         </button>

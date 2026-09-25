@@ -98,7 +98,7 @@ export default function IntencoesPage() {
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   href="/oracoes"
-                  className="bg-cosmic-blue text-white px-8 py-3 rounded-lg hover:bg-cosmic-blue/80 transition-colors font-medium"
+                  className="bg-accent-600 text-white px-8 py-3 rounded-lg hover:bg-accent-700 transition-colors font-medium"
                 >
                   Ver Orações
                 </Link>
@@ -118,7 +118,7 @@ export default function IntencoesPage() {
       <section className="bg-cosmic-surface/30 border-t border-cosmic-border py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm text-neutral-500">
+            <p className="text-sm text-neutral-400">
               🔒 Suas intenções ficam guardadas apenas neste navegador e não são enviadas a ninguém.
             </p>
           </div>
