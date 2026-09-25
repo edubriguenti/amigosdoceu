@@ -20,6 +20,21 @@ const ESTADO_INICIAL = {
   streak: 0,
 }
 
+/** Garante tipos válidos mesmo com localStorage antigo ou corrompido. */
+function normalizar(bruto) {
+  const e = bruto && typeof bruto === 'object' && !Array.isArray(bruto) ? bruto : {}
+  const num = (v) => (Number.isFinite(Number(v)) && Number(v) >= 0 ? Number(v) : 0)
+  const lista = (v) => (Array.isArray(v) ? v : [])
+  return {
+    xp: num(e.xp),
+    conexoesDescobertas: lista(e.conexoesDescobertas),
+    trilhasConcluidas: lista(e.trilhasConcluidas),
+    desafiosRespondidos: e.desafiosRespondidos && typeof e.desafiosRespondidos === 'object' ? e.desafiosRespondidos : {},
+    ultimaAtividade: typeof e.ultimaAtividade === 'string' ? e.ultimaAtividade : null,
+    streak: num(e.streak),
+  }
+}
+
 function tituloPorNivel(nivel) {
   const faixa = TITULOS.find((t) => nivel >= t.min && nivel <= t.max)
   return faixa ? faixa.nome : 'Peregrino'
@@ -43,7 +58,7 @@ export function useProgresso() {
     if (typeof window === 'undefined') return
     try {
       const raw = localStorage.getItem(STORAGE_KEY)
-      if (raw) setEstado({ ...ESTADO_INICIAL, ...JSON.parse(raw) })
+      if (raw) setEstado(normalizar(JSON.parse(raw)))
     } catch (e) {
       console.error('Erro ao carregar progresso:', e)
     }

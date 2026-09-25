@@ -191,14 +191,13 @@ function CartaoNovenas({ novenas }) {
 }
 
 function CartaoConexoes({ progresso, totalTrilhas }) {
-  const xp = Number(progresso.xp) || 0
-  const comecou = xp > 0
+  const comecou = progresso.xp > 0
   return (
     <Cartao
       icone="🧭"
       titulo="Conexões da Bíblia"
       numero={`Nível ${progresso.nivel}`}
-      contexto={`${progresso.titulo} · ${xp} XP${progresso.streak ? ` · 🔥 ${progresso.streak} dia${progresso.streak > 1 ? 's' : ''}` : ''}`}
+      contexto={`${progresso.titulo} · ${progresso.xp} XP${progresso.streak ? ` · 🔥 ${progresso.streak} dia${progresso.streak > 1 ? 's' : ''}` : ''}`}
       acao={
         <Link href="/conexoes" className={comecou ? botaoPrimario : botaoSecundario}>
           {comecou ? 'Continuar trilha' : 'Começar a explorar'} →
@@ -206,7 +205,7 @@ function CartaoConexoes({ progresso, totalTrilhas }) {
       }
     >
       <p className="mt-2 text-xs text-neutral-500">
-        {Array.isArray(progresso.trilhasConcluidas) ? progresso.trilhasConcluidas.length : 0} de {totalTrilhas} trilhas concluídas
+        {progresso.trilhasConcluidas.length} de {totalTrilhas} trilhas concluídas
       </p>
     </Cartao>
   )

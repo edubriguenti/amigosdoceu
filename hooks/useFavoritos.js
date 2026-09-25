@@ -20,11 +20,20 @@ export function useFavoritos() {
         const savedListas = localStorage.getItem(LISTS_KEY);
 
         if (savedFavoritos) {
-          setFavoritos(JSON.parse(savedFavoritos));
+          // Tolera formato antigo/corrompido: cada tipo precisa ser uma lista
+          const data = JSON.parse(savedFavoritos) || {};
+          const lista = (v) => (Array.isArray(v) ? v : []);
+          setFavoritos({
+            santos: lista(data.santos),
+            igrejas: lista(data.igrejas),
+            aparicoes: lista(data.aparicoes),
+            conexoes: lista(data.conexoes)
+          });
         }
 
         if (savedListas) {
-          setListas(JSON.parse(savedListas));
+          const data = JSON.parse(savedListas);
+          if (Array.isArray(data)) setListas(data);
         }
       } catch (error) {
         console.error('Erro ao carregar favoritos:', error);

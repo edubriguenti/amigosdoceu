@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { miniaturaWikimedia } from './album/Figurinha'
 
 /**
  * Seção "🔗 Conexões": entidades relacionadas, agrupadas por tipo.
@@ -24,7 +25,8 @@ function ItemConexao({ item }) {
       >
         <span className="relative w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-cosmic-surface-2 flex items-center justify-center text-xl">
           {imagem ? (
-            <Image src={imagem} alt="" fill sizes="48px" className="object-cover" />
+            // Miniatura da Commons: os originais (até 10.000px) fazem o Wikimedia responder 429
+            <Image src={miniaturaWikimedia(imagem)} alt="" fill sizes="48px" className="object-cover" />
           ) : (
             <span aria-hidden="true">{ICONE[item.tipo]}</span>
           )}
