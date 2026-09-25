@@ -6,15 +6,20 @@ import { useAlbum } from '../hooks/useAlbum'
 import useNovena from '../hooks/useNovena'
 import { useProgresso } from '../hooks/useProgresso'
 import { useFavoritos } from '../hooks/useFavoritos'
+import { useOracoes } from '../hooks/useOracoes'
+import useDiaAtual from '../hooks/useDiaAtual'
 import { getPaginas } from '../lib/albumData'
 import { getTrilhas } from '../lib/conexoesData'
+import { janelaDeDias, REVALIDATE_HOJE } from '../lib/hoje'
 import { getIntencoesResumo, getProgressoCristo, getRosarioStats, INTENCOES_PADRAO, ROSARIO_PADRAO } from '../lib/jornada'
 import vidaCristo from '../data/vida-cristo.json'
 
-// Só os totais estáticos vêm do build; o progresso é lido do navegador após o mount.
+// Totais estáticos + o dia (ISR, para saber a oração de hoje); o progresso é lido do navegador após o mount.
 export async function getStaticProps() {
   return {
+    revalidate: REVALIDATE_HOJE,
     props: {
+      ...janelaDeDias(),
       paginas: getPaginas().map((p) => ({ slug: p.slug, titulo: p.titulo, icone: p.icone || null, ids: [...p.figurinhaIds] })),
       eventos: vidaCristo.map((e) => ({ slug: e.slug, titulo: e.title })),
       totalTrilhas: getTrilhas().length,
@@ -116,6 +121,29 @@ function CartaoAlbum({ paginas, coletadas }) {
   )
 }
 
+function CartaoOracoes({ resumo, oracaoDeHoje, rezouAOracaoDeHoje }) {
+  const { diasRezados, sequencia } = resumo
+  return (
+    <section className="rounded-2xl border border-cosmic-border bg-cosmic-surface/60 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div className="flex-1 min-w-0">
+        <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+          <span aria-hidden="true">🙏</span> Orações
+        </h2>
+        <p className="mt-3 font-serif text-3xl text-neutral-100">
+          {diasRezados === 0 ? 'Nenhum dia ainda' : diasRezados === 1 ? '1 dia de oração' : `${diasRezados} dias de oração`}
+        </p>
+        <p className="mt-1 text-sm text-neutral-400">
+          {sequencia > 1 ? `🔥 ${sequencia} dias seguidos` : sequencia === 1 ? 'Sequência começou' : 'Comece sua sequência hoje'}
+          {oracaoDeHoje && (rezouAOracaoDeHoje ? ' · ✓ Oração de hoje rezada' : ` · Hoje: ${oracaoDeHoje.titulo}`)}
+        </p>
+      </div>
+      <Link href={rezouAOracaoDeHoje ? '/oracoes' : '/#hoje'} className={rezouAOracaoDeHoje ? botaoSecundario : botaoPrimario}>
+        {rezouAOracaoDeHoje ? 'Ver orações' : 'Rezar a oração de hoje'} →
+      </Link>
+    </section>
+  )
+}
+
 function CartaoCristo({ progresso }) {
   const { vistos, total, proximo } = progresso
   return (
@@ -211,8 +239,10 @@ function CartaoConexoes({ progresso, totalTrilhas }) {
   )
 }
 
-export default function MinhaJornada({ paginas, eventos, totalTrilhas }) {
+export default function MinhaJornada({ paginas, eventos, totalTrilhas, dias, hojeServidor }) {
   const album = useAlbum()
+  const oracoes = useOracoes()
+  const dia = useDiaAtual(dias, hojeServidor)
   const { novenas, isLoaded: novenasLoaded } = useNovena()
   const progresso = useProgresso()
   const { favoritos, loaded: favoritosLoaded } = useFavoritos()
@@ -231,7 +261,7 @@ export default function MinhaJornada({ paginas, eventos, totalTrilhas }) {
 
   const cristo = useMemo(() => getProgressoCristo(album.estado.coletadas, eventos), [album.estado.coletadas, eventos])
   const totalFavoritos = (favoritos?.santos?.length || 0) + (favoritos?.igrejas?.length || 0) + (favoritos?.aparicoes?.length || 0)
-  const pronto = lido && album.loaded && novenasLoaded && progresso.loaded && favoritosLoaded
+  const pronto = lido && album.loaded && oracoes.loaded && novenasLoaded && progresso.loaded && favoritosLoaded
 
   return (
     <Layout>
@@ -251,6 +281,12 @@ export default function MinhaJornada({ paginas, eventos, totalTrilhas }) {
         {pronto ? (
           <div className="space-y-6">
             <CartaoAlbum paginas={paginas} coletadas={album.estado.coletadas} />
+
+            <CartaoOracoes
+              resumo={oracoes.resumo}
+              oracaoDeHoje={dia?.oracao}
+              rezouAOracaoDeHoje={Boolean(dia?.oracao && oracoes.rezouHoje(dia.oracao.ref))}
+            />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <CartaoCristo progresso={cristo} />
@@ -276,6 +312,7 @@ export default function MinhaJornada({ paginas, eventos, totalTrilhas }) {
         ) : (
           <div className="space-y-6">
             <Esqueleto className="h-56" />
+            <Esqueleto className="h-28" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[0, 1, 2, 3].map((i) => (
                 <Esqueleto key={i} className="h-48" />

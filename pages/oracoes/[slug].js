@@ -8,6 +8,7 @@ import oracoes from '../../data/oracoes.json';
 import santos from '../../data/santos.json';
 import Link from 'next/link';
 import EntidadesRelacionadas from '../../components/EntidadesRelacionadas';
+import BotaoRezei from '../../components/BotaoRezei';
 import { getRelacionadas } from '../../lib/relacoes';
 import { resumoFigurinha } from '../../lib/albumData';
 
@@ -178,6 +179,7 @@ export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionad
               <p className="text-lg md:text-xl text-neutral-800 leading-relaxed whitespace-pre-line font-serif text-center">
                 {oracao.texto}
               </p>
+              <BotaoRezei oracaoRef={`oracao:${oracao.slug}`} tema="claro" className="mt-8" />
             </motion.div>
 
             {/* Player de Vídeo da Oração */}
