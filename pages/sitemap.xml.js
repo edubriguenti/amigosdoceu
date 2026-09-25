@@ -33,8 +33,6 @@ const staticPages = [
   { url: '/oracoes', changefreq: 'weekly', priority: '0.7' },
   { url: '/album-sagrado', changefreq: 'weekly', priority: '0.7' },
   { url: '/conexoes', changefreq: 'weekly', priority: '0.8' },
-  { url: '/favoritos', changefreq: 'monthly', priority: '0.5' },
-  { url: '/intencoes', changefreq: 'monthly', priority: '0.6' },
 ];
 
 // Gerar todas as URLs dinâmicas

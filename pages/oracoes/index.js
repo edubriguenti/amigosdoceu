@@ -157,7 +157,7 @@ export default function OracoesPage() {
               Explore Mais Recursos Devocionais
             </h2>
             <p className="text-neutral-600 mb-8">
-              Fortaleça sua vida de oração com novenas e intenções de oração compartilhadas.
+              Fortaleça sua vida de oração com novenas e com o seu caderno de intenções.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
@@ -170,7 +170,7 @@ export default function OracoesPage() {
                 href="/intencoes"
                 className="bg-white text-accent-600 border-2 border-accent-500 px-8 py-3 rounded-lg hover:bg-accent-50 transition-colors font-medium"
               >
-                Intenções de Oração
+                Minhas Intenções
               </a>
             </div>
           </div>

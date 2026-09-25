@@ -52,8 +52,8 @@
       },
       {
         "santoSlug": "santo-agostinho",
-        "tipo": "contemporaneo",
-        "descricao": "Ambos são Doutores da Igreja, reconhecidos por suas profundas contribuições à teologia mística e espiritual"
+        "tipo": "influenciadoPor",
+        "descricao": "A leitura das Confissões de Santo Agostinho marcou a conversão de Santa Teresa, como ela mesma conta no Livro da Vida"
       }
     ]
   },
@@ -73,23 +73,7 @@
     "periodo": "Contemporâneo",
     "doutorIgreja": false,
     "popularidade": 98,
-    "relacionamentos": [
-      {
-        "santoSlug": "sao-padre-pio",
-        "tipo": "canonizadoPor",
-        "descricao": "São João Paulo II canonizou Padre Pio em 2002, reconhecendo sua santidade e dons místicos"
-      },
-      {
-        "santoSlug": "santa-paulina",
-        "tipo": "canonizadoPor",
-        "descricao": "São João Paulo II canonizou Santa Paulina em 2002, tornando-a a primeira santa brasileira"
-      },
-      {
-        "santoSlug": "santa-teresinha-do-menino-jesus",
-        "tipo": "proclamadoPor",
-        "descricao": "São João Paulo II proclamou Santa Teresinha como Doutora da Igreja em 1997"
-      }
-    ]
+    "relacionamentos": []
   },
   {
     "nome": "Santo Agostinho",
@@ -123,7 +107,14 @@
     "padroeiro": ["Missões", "França"],
     "periodo": "Contemporâneo",
     "doutorIgreja": true,
-    "popularidade": 96
+    "popularidade": 96,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-joao-paulo-ii",
+        "tipo": "proclamadoPor",
+        "descricao": "Santa Teresinha foi proclamada Doutora da Igreja por São João Paulo II em 1997"
+      }
+    ]
   },
   {
     "nome": "São Padre Pio de Pietrelcina",
@@ -140,7 +131,14 @@
     "padroeiro": ["Doentes", "Confessores"],
     "periodo": "Contemporâneo",
     "doutorIgreja": false,
-    "popularidade": 97
+    "popularidade": 97,
+    "relacionamentos": [
+      {
+        "santoSlug": "sao-joao-paulo-ii",
+        "tipo": "canonizadoPor",
+        "descricao": "Padre Pio foi canonizado por São João Paulo II em 16 de junho de 2002"
+      }
+    ]
   },
   {
     "nome": "São Bento de Núrsia",
@@ -180,11 +178,6 @@
         "santoSlug": "sao-tomas-de-aquino",
         "tipo": "mesmaOrdem",
         "descricao": "Ambos pertenceram à Ordem Dominicana e são Doutores da Igreja, reconhecidos por suas contribuições teológicas"
-      },
-      {
-        "santoSlug": "sao-bento-de-nursia",
-        "tipo": "contemporaneo",
-        "descricao": "Ambos são padroeiros da Europa, reconhecidos por suas contribuições à fé cristã no continente"
       }
     ]
   },
@@ -223,11 +216,6 @@
     "popularidade": 96,
     "relacionamentos": [
       {
-        "santoSlug": "sao-francisco-de-assis",
-        "tipo": "discipulo",
-        "descricao": "Santo Antônio foi discípulo de São Francisco de Assis e tornou-se um dos mais eloquentes pregadores da Ordem Franciscana"
-      },
-      {
         "santoSlug": "frei-galvao",
         "tipo": "mesmaOrdem",
         "descricao": "Ambos pertenceram à Ordem Franciscana, seguindo o ideal de pobreza e serviço de São Francisco"
@@ -255,11 +243,6 @@
         "santoSlug": "sao-joao-paulo-ii",
         "tipo": "canonizadoPor",
         "descricao": "Santa Paulina foi canonizada por São João Paulo II em 2002, tornando-se a primeira santa brasileira"
-      },
-      {
-        "santoSlug": "frei-galvao",
-        "tipo": "contemporaneo",
-        "descricao": "Ambos são santos brasileiros, padroeiros do Brasil e símbolos da fé católica no país"
       }
     ]
   },
@@ -279,23 +262,7 @@
     "periodo": "Idade Moderna",
     "doutorIgreja": false,
     "popularidade": 88,
-    "relacionamentos": [
-      {
-        "santoSlug": "sao-francisco-de-assis",
-        "tipo": "discipulo",
-        "descricao": "Frei Galvão pertenceu à Ordem Franciscana fundada por São Francisco de Assis, seguindo seus ideais de pobreza e caridade"
-      },
-      {
-        "santoSlug": "santo-antonio-de-padua",
-        "tipo": "mesmaOrdem",
-        "descricao": "Ambos foram membros da Ordem Franciscana e são reconhecidos por seus milagres e devoção"
-      },
-      {
-        "santoSlug": "santa-paulina",
-        "tipo": "contemporaneo",
-        "descricao": "Ambos são santos brasileiros, padroeiros do Brasil e símbolos da fé católica no país"
-      }
-    ]
+    "relacionamentos": []
   },
   {
     "nome": "São Paulo da Cruz",
@@ -331,11 +298,6 @@
     "doutorIgreja": true,
     "popularidade": 90,
     "relacionamentos": [
-      {
-        "santoSlug": "santa-catarina-de-sena",
-        "tipo": "mesmaOrdem",
-        "descricao": "Ambos pertenceram à Ordem Dominicana e são Doutores da Igreja, contribuindo profundamente para a teologia católica"
-      },
       {
         "santoSlug": "santo-agostinho",
         "tipo": "influenciadoPor",
@@ -376,13 +338,7 @@
     "periodo": "Antiguidade",
     "doutorIgreja": false,
     "popularidade": 97,
-    "relacionamentos": [
-      {
-        "santoSlug": "sao-paulo-da-cruz",
-        "tipo": "contemporaneo",
-        "descricao": "São Pedro e São Paulo foram os principais apóstolos e fundadores da Igreja em Roma, morrendo mártires durante a perseguição de Nero"
-      }
-    ]
+    "relacionamentos": []
   },
   {
     "nome": "São Sebastião",
@@ -400,13 +356,7 @@
     "periodo": "Antiguidade",
     "doutorIgreja": false,
     "popularidade": 90,
-    "relacionamentos": [
-      {
-        "santoSlug": "sao-miguel-arcanjo",
-        "tipo": "contemporaneo",
-        "descricao": "Ambos são intercessores da proteção divina — São Miguel no plano espiritual e São Sebastião como mártir militar que protegeu os cristãos com sua vida"
-      }
-    ]
+    "relacionamentos": []
   },
   {
     "nome": "São João Bosco",
@@ -424,13 +374,7 @@
     "periodo": "Contemporâneo",
     "doutorIgreja": false,
     "popularidade": 85,
-    "relacionamentos": [
-      {
-        "santoSlug": "sao-francisco-de-assis",
-        "tipo": "inspiracao",
-        "descricao": "Dom Bosco admirava profundamente São Francisco de Assis pela humildade e pelo amor aos pobres, valores que nortearam sua missão educativa"
-      }
-    ]
+    "relacionamentos": []
   },
   {
     "nome": "Santa Rita de Cássia",

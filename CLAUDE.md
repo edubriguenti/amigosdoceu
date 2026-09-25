@@ -25,6 +25,7 @@ Cada agente deve respeitar estritamente o ownership e as zonas proibidas definid
 - `npm start` - Start production server
 - `npm run lint` - Run Next.js linter
 - `npm run validate:album` - Validate the Álbum Sagrado catalog (coverage, duplicates, rarities, images). Run after changing `data/album/album.json` or adding content.
+- `npm run validate:relacoes` - Validate the relations graph (`data/relacoes.json` + `santoRelacionado` + `santos.relacionamentos`): refs exist, no self-loops, no duplicates in either direction, no duplicating santo↔santo or derived relations; for `santos.relacionamentos`: known `tipo`, each pair on one saint only, `contemporaneo` only with overlapping lifespans. Run after changing any of those.
 
 ## Git Workflow
 
@@ -80,7 +81,9 @@ The application is driven by multiple JSON data sources in the `data/` directory
   - Core: `nome`, `slug`, `imagem`, `local`, `data`, `historia`
   - Location: `latitude`, `longitude`, `linkGoogleMaps`, `tags[]`
 
-- **`calendario-liturgico.json`** - Liturgical calendar with daily celebrations
+- **`calendario-liturgico.json`** - Liturgical calendar with daily celebrations (`santos: [slug]` links a celebration to saints — feeds Santos do Dia, the home "Hoje" block, the daily sticker and the saint's "Festa" chip)
+
+- **`relacoes.json`** - Editorial relations graph (see "Relações entre entidades" below)
 
 - **`data/conexoes/`** - Bible Connections (split for scalability):
   - `eventos.json` — 7 timeline events (Criação, Aliança, Lei, Profetas, Jesus, Igreja, Eternidade)
@@ -90,14 +93,14 @@ The application is driven by multiple JSON data sources in the `data/` directory
   - All aggregation goes through `lib/conexoesData.js`
 
 ### Routing Structure
-- `/` - Modernized home: 4 large hero buttons (Vida de Cristo, Santos, Igrejas, Orações) + "Explore também" grid with 9 secondary cards. **Renders without the global header** (`<Layout hideHeader fullBleed>`).
+- `/` - Modernized home: "Hoje" block (`HojeNoCeu`: celebration, daily sticker, prayer of the day) + 4 large hero buttons + "Explore também" grid. ISR (`revalidate: 3600`). **Renders without the global header** (`<Layout hideHeader fullBleed>`).
 - `/santos` - Saints gallery with search/filter
 - `/santos/[slug]` - Individual saint detail page
 - `/igrejas` - Churches gallery with search/filter
 - `/igrejas/[slug]` - Individual church detail page
 - `/aparicoes` - Marian apparitions gallery
 - `/aparicoes/[slug]` - Individual apparition detail page
-- `/santos-do-dia` - Saints celebrated today
+- `/santos-do-dia` - Saints celebrated today (ISR, server-rendered via `lib/hoje.js`)
 - `/calendario` - Full liturgical calendar view
 - `/mapa` - Interactive map showing churches and apparition locations
 - `/vida-de-cristo` - Visual timeline of Christ's life
@@ -106,7 +109,8 @@ The application is driven by multiple JSON data sources in the `data/` directory
 - `/rosario` - Rosary (mysteries, meditations)
 - `/album-sagrado`, `/album-sagrado/[pagina]` - **Álbum Sagrado**: digital sticker album (cover + daily sticker + table of contents; one physical-looking page per theme). Deep-link a sticker via `?figurinha=<id>` (always build it with `hrefFigurinha()`). See "Álbum Sagrado" section below.
 - `/conexoes` - **Bible Connections** (immersive dark theme, Phase 1): hero, interactive timeline, AT↔NT featured pair, daily quiz, XP/level/streak progress, themed trails. Deep-link via `?ref=<conexao-slug>`. See "Conexões da Bíblia" section below.
-- `/intencoes`, `/favoritos` - Personal areas
+- `/intencoes` ("Minhas Intenções", private/local), `/favoritos` - Personal areas (`noindex`, not in the sitemap)
+- `/minha-jornada` - **Minha Jornada**: aggregates the user's local progress (Álbum, Vida de Cristo, Rosário, Novenas, Conexões, Favoritos, Intenções); every card leads to the next action. `noindex`.
 
 All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 
@@ -156,6 +160,14 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 - `getUniqueValues()` - Extracts unique filter options from data
 
 **`lib/calendarUtils.js`** - Liturgical calendar utilities
+
+**`lib/datas.js`** - Civil dates as `YYYY-MM-DD`. `dataBrasil()` = date in São Paulo (the server/ISR "today"); `diaLocal()` = date in the user's environment. Client-safe (no JSON imports).
+
+**`lib/hoje.js`** - **Server-only** "Hoje" layer, the single source of the day's rules: `montarDia(iso)` (celebration, saints, daily sticker, prayer of the day), `janelaDeDias()` (yesterday/today/tomorrow in BR time), `proximasCelebracoes()`. Use only in `getStaticProps`; pages pass the window to `hooks/useDiaAtual.js`, which renders the server day on SSR and switches to the user's local day after mount. Never import it (or `lib/albumData.js`) from components rendered on the home — it pulls every JSON into the bundle.
+
+**`lib/relacoesGrafo.js` / `lib/relacoes.js`** - Relations graph (pure logic shared with the validator / JSON-bound singleton). `getRelacionadas(tipo, slug, { excluirTipos })` returns connections grouped by type for `components/EntidadesRelacionadas.js`; `getFestaDoSanto(slug)` reads the calendar.
+
+**`lib/jornada.js`** - Pure, React-free readers of other features' localStorage for Minha Jornada (rosário, intenções, Vida de Cristo progress). Each one tolerates missing/corrupt data and returns defaults.
 
 **`lib/conexoesData.js`** - Aggregation layer for `data/conexoes/`:
 - `getEventos()`, `getTrilhas()`, `getAllConexoes()`
@@ -213,6 +225,17 @@ Sticker album built **from the existing JSONs** (santos, aparições, igrejas, v
 - **Obtaining stickers:** visiting `/santos|aparicoes|igrejas/[slug]` (`components/album/FigurinhaNoSite.js`) or opening an event in `/vida-de-cristo` (not in presentation mode; deep-link `?evento=<slug>`), praying (stickers with `verso.oracao`), and the daily sticker (saint of the day from the calendar, else a modular sequence that cycles through all N stickers before repeating).
 - **Code:** `lib/albumCatalogo.js` (pure catalog builder, shared with `scripts/validate-album.mjs`), `lib/albumData.js` (singleton, frozen catalog + O(1) lookups, `resumoFigurinha()` for `getStaticProps` of pages outside the album), `components/album/` (sticker, page sheet, flip modal, reveal, etc.).
 - Adding an album page: append to `paginas` in `data/album/album.json`, then run `npm run validate:album`.
+
+## Relações entre entidades
+
+Connections between saints, apparitions, churches, Life of Christ events, prayers and novenas, shown as "🔗 Conexões" on detail pages. Refs use the album id format `tipo:slug` (`santo`, `aparicao`, `igreja`, `cristo`, `oracao`, `novena`).
+
+**Each relation lives in exactly one place:**
+- `data/relacoes.json` — editorial relations (undirected edges `{ a, b, rotulo }`). `rotulo` describes the relation, not the edge direction. Array order is display order (never sorted alphabetically). Only add relations that are direct and verifiable.
+- `santos.json` → `relacionamentos` — santo↔santo, rendered by `RelacionamentosSanto`. Register each pair on **one** saint only (the other page shows the inverse label automatically, e.g. "Canonizou"); put it on the saint the label reads from (`canonizadoPor` goes on the canonized saint). Only use `contemporaneo` when lifespans overlap. Don't repeat them in `relacoes.json`.
+- `oracoes.json` / `novenas.json` → `santoRelacionado` — derived automatically; don't repeat them in `relacoes.json`.
+
+Run `npm run validate:relacoes` after editing any of these.
 
 ## Adding New Content
 

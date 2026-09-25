@@ -20,7 +20,11 @@ export default function useNovena() {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved) {
           const data = JSON.parse(saved);
-          setNovenas(data);
+          // Tolera formato antigo/corrompido
+          setNovenas({
+            emProgresso: Array.isArray(data?.emProgresso) ? data.emProgresso : [],
+            completadas: Array.isArray(data?.completadas) ? data.completadas : []
+          });
         }
       } catch (error) {
         console.error('Erro ao carregar novenas:', error);

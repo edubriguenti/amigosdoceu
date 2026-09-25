@@ -77,7 +77,8 @@ export default function RelacionamentosSanto({ santoSlug, santosData }) {
             >
               <option value="todos">Todos os tipos ({todosRelacionamentos.length})</option>
               {tiposDisponiveis.map(tipo => {
-                const tipoInfo = TIPOS_RELACIONAMENTO[tipo];
+                // tipoInfo do próprio relacionamento: nas relações inversas o rótulo é o inverso ("Canonizou")
+                const tipoInfo = todosRelacionamentos.find(rel => rel.tipo === tipo)?.tipoInfo || TIPOS_RELACIONAMENTO[tipo];
                 const count = todosRelacionamentos.filter(rel => rel.tipo === tipo).length;
                 return (
                   <option key={tipo} value={tipo}>

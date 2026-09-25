@@ -5,7 +5,9 @@ import FavoritoButton from '../../components/FavoritoButton'
 import churches from '../../data/igrejas.json'
 import { motion } from 'framer-motion'
 import FigurinhaNoSite from '../../components/album/FigurinhaNoSite'
+import EntidadesRelacionadas from '../../components/EntidadesRelacionadas'
 import { resumoFigurinha } from '../../lib/albumData'
+import { getRelacionadas } from '../../lib/relacoes'
 
 const SITE_URL = 'https://amigosdoceu.vercel.app'
 
@@ -21,7 +23,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const church = churches.find((c) => c.slug === params.slug) || null
   if (!church) return { notFound: true }
-  return { props: { church, figurinha: resumoFigurinha('igreja', church.slug) } }
+  return {
+    props: {
+      church,
+      figurinha: resumoFigurinha('igreja', church.slug),
+      relacionadas: getRelacionadas('igreja', church.slug),
+    },
+  }
 }
 
 function buildSchema(church) {
@@ -74,7 +82,7 @@ function buildSchema(church) {
   return [place, breadcrumb]
 }
 
-export default function ChurchPage({ church, figurinha }) {
+export default function ChurchPage({ church, figurinha, relacionadas }) {
   const url = `${SITE_URL}/igrejas/${church.slug}`
   const description = (church.descricao || `Conheça ${church.nome}.`).slice(0, 160)
   const keywords = [
@@ -147,6 +155,7 @@ export default function ChurchPage({ church, figurinha }) {
           </div>
         </motion.div>
         <FigurinhaNoSite figurinha={figurinha} />
+        <EntidadesRelacionadas grupos={relacionadas} />
       </article>
     </Layout>
   )

@@ -7,6 +7,9 @@ import YouTubePlayer from '../../components/YouTubePlayer';
 import oracoes from '../../data/oracoes.json';
 import santos from '../../data/santos.json';
 import Link from 'next/link';
+import EntidadesRelacionadas from '../../components/EntidadesRelacionadas';
+import { getRelacionadas } from '../../lib/relacoes';
+import { resumoFigurinha } from '../../lib/albumData';
 
 export async function getStaticPaths() {
   const paths = oracoes.map((oracao) => ({
@@ -34,12 +37,15 @@ export async function getStaticProps({ params }) {
     props: {
       oracao,
       santoRelacionado,
-      oracoesRelacionadas
+      oracoesRelacionadas,
+      // o santo já aparece no card acima; aqui entram as demais conexões
+      relacionadas: getRelacionadas('oracao', oracao.slug, { excluirTipos: ['santo'] }),
+      figurinhaSanto: santoRelacionado ? resumoFigurinha('santo', santoRelacionado.slug) : null,
     },
   };
 }
 
-export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionadas }) {
+export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionadas, relacionadas, figurinhaSanto }) {
   const router = useRouter();
   const [copiado, setCopiado] = useState(false);
   const [compartilhandoVia, setCompartilhandoVia] = useState(null);
@@ -316,6 +322,14 @@ export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionad
           </div>
         </div>
       </article>
+        <EntidadesRelacionadas grupos={relacionadas} titulo="Relacionada a" />
+        {figurinhaSanto && (
+          <p className="max-w-4xl mx-auto px-4 mt-6 pb-4">
+            <Link href={figurinhaSanto.href} className="text-sm text-cosmic-blue-light hover:underline">
+              🃏 Ver a figurinha de {santoRelacionado.nome} no Álbum Sagrado →
+            </Link>
+          </p>
+        )}
     </Layout>
   );
 }

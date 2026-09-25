@@ -5,7 +5,9 @@ import FavoritoButton from '../../components/FavoritoButton'
 import aparicoes from '../../data/aparicoes.json'
 import { motion } from 'framer-motion'
 import FigurinhaNoSite from '../../components/album/FigurinhaNoSite'
+import EntidadesRelacionadas from '../../components/EntidadesRelacionadas'
 import { resumoFigurinha } from '../../lib/albumData'
+import { getRelacionadas } from '../../lib/relacoes'
 
 const SITE_URL = 'https://amigosdoceu.vercel.app'
 
@@ -21,7 +23,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const aparicao = aparicoes.find((a) => a.slug === params.slug) || null
   if (!aparicao) return { notFound: true }
-  return { props: { aparicao, figurinha: resumoFigurinha('aparicao', aparicao.slug) } }
+  return {
+    props: {
+      aparicao,
+      figurinha: resumoFigurinha('aparicao', aparicao.slug),
+      relacionadas: getRelacionadas('aparicao', aparicao.slug),
+    },
+  }
 }
 
 // Tenta extrair uma data ISO de strings como "1917", "13 de maio de 1917" ou "1858-02-11".
@@ -81,7 +89,7 @@ function buildSchema(aparicao) {
   return [event, breadcrumb]
 }
 
-export default function AparicaoPage({ aparicao, figurinha }) {
+export default function AparicaoPage({ aparicao, figurinha, relacionadas }) {
   const url = `${SITE_URL}/aparicoes/${aparicao.slug}`
   const description = (aparicao.historia || `Aparição mariana em ${aparicao.local}.`).slice(0, 160)
   const keywords = [
@@ -154,7 +162,7 @@ export default function AparicaoPage({ aparicao, figurinha }) {
 
             <div className="prose max-w-none">
               <h2 className="text-2xl font-serif mb-3">História da Aparição</h2>
-              <p className="text-gray-700 leading-relaxed">{aparicao.historia}</p>
+              <p className="text-neutral-200 leading-relaxed">{aparicao.historia}</p>
             </div>
 
             {aparicao.tags && (
@@ -167,6 +175,7 @@ export default function AparicaoPage({ aparicao, figurinha }) {
           </div>
         </motion.div>
         <FigurinhaNoSite figurinha={figurinha} />
+        <EntidadesRelacionadas grupos={relacionadas} />
       </article>
     </Layout>
   )

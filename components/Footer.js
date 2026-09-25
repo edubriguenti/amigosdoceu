@@ -67,7 +67,7 @@ export default function Footer() {
               <li><Link href="/oracoes" className={linkClass}>Orações Católicas</Link></li>
               <li><Link href="/novenas" className={linkClass}>Novenas</Link></li>
               <li><Link href="/rosario" className={linkClass}>Rosário</Link></li>
-              <li><Link href="/intencoes" className={linkClass}>Intenções de Oração</Link></li>
+              <li><Link href="/intencoes" className={linkClass}>Minhas Intenções</Link></li>
             </ul>
           </div>
 
@@ -78,6 +78,7 @@ export default function Footer() {
               <li><Link href="/santos-do-dia" className={linkClass}>Santos do Dia</Link></li>
               <li><Link href="/calendario" className={linkClass}>Calendário Litúrgico</Link></li>
               <li><Link href="/album-sagrado" className={linkClass}>Álbum Sagrado</Link></li>
+              <li><Link href="/minha-jornada" className={linkClass}>Minha Jornada</Link></li>
               <li><Link href="/favoritos" className={linkClass}>Meus Favoritos</Link></li>
               <li><a href="#creditos" className={linkClass}>Créditos de Imagens</a></li>
             </ul>
