@@ -14,6 +14,13 @@
       "cor": "branco",
       "santos": []
     },
+    "20": {
+      "nome": "São Sebastião",
+      "tipo": "Memória",
+      "descricao": "Mártir romano, padroeiro dos atletas e da cidade do Rio de Janeiro",
+      "cor": "vermelho",
+      "santos": ["sao-sebastiao"]
+    },
     "25": {
       "nome": "Conversão de São Paulo",
       "tipo": "Festa",
@@ -27,6 +34,13 @@
       "descricao": "Doutor da Igreja, teólogo e filósofo",
       "cor": "branco",
       "santos": ["sao-tomas-de-aquino"]
+    },
+    "31": {
+      "nome": "São João Bosco",
+      "tipo": "Memória",
+      "descricao": "Sacerdote, pai e mestre da juventude, fundador dos salesianos",
+      "cor": "branco",
+      "santos": ["sao-joao-bosco"]
     }
   },
   "fevereiro": {
@@ -36,6 +50,13 @@
       "descricao": "Apresentação de Jesus no Templo",
       "cor": "branco",
       "santos": []
+    },
+    "22": {
+      "nome": "Cátedra de São Pedro, Apóstolo",
+      "tipo": "Festa",
+      "descricao": "Festa da unidade da Igreja em torno de Pedro e de seus sucessores",
+      "cor": "branco",
+      "santos": ["sao-pedro"]
     }
   },
   "marco": {
@@ -59,13 +80,6 @@
       "descricao": "O Anjo Gabriel anuncia à Maria que ela será a Mãe de Deus",
       "cor": "branco",
       "santos": []
-    },
-    "25": {
-      "nome": "Santa Catarina de Sena",
-      "tipo": "Memória",
-      "descricao": "Doutora da Igreja, mística e patrona da Europa (nascimento)",
-      "cor": "branco",
-      "santos": ["santa-catarina-de-sena"]
     }
   },
   "abril": {
@@ -91,6 +105,13 @@
       "descricao": "Primeiro santo nascido no Brasil (nascimento)",
       "cor": "branco",
       "santos": ["frei-galvao"]
+    },
+    "22": {
+      "nome": "Santa Rita de Cássia",
+      "tipo": "Memória",
+      "descricao": "Esposa, mãe, viúva e religiosa agostiniana, advogada das causas impossíveis",
+      "cor": "branco",
+      "santos": ["santa-rita-de-cassia"]
     }
   },
   "junho": {
@@ -123,6 +144,13 @@
       "descricao": "Primeira santa brasileira",
       "cor": "branco",
       "santos": ["santa-paulina"]
+    },
+    "11": {
+      "nome": "São Bento de Núrsia",
+      "tipo": "Festa",
+      "descricao": "Abade, pai do monaquismo ocidental e padroeiro da Europa",
+      "cor": "branco",
+      "santos": ["sao-bento-de-nursia"]
     }
   },
   "agosto": {

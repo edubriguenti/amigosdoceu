@@ -11,7 +11,8 @@ import { fileURLToPath } from 'node:url'
 import { construirCatalogo, LEGACY_MAP, TIPOS, formatarNumero } from '../lib/albumCatalogo.js'
 
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const lerJson = (rel) => JSON.parse(fs.readFileSync(path.join(raiz, rel), 'utf8'))
+const lerTexto = (rel) => fs.readFileSync(path.join(raiz, rel), 'utf8')
+const lerJson = (rel) => JSON.parse(lerTexto(rel))
 
 const fontes = {
   album: lerJson('data/album/album.json'),
@@ -79,6 +80,31 @@ Object.values(fontes.calendario).forEach((dias) =>
     if ((cel.santos || []).some((slug) => slugsSantos.has(slug))) diasCobertos++
   })
 )
+// JSON.parse descarta em silêncio chaves repetidas num mês; detecta olhando o texto bruto.
+const brutoCalendario = lerTexto('data/calendario-liturgico.json')
+for (const [, mes, corpo] of brutoCalendario.matchAll(/"([a-zç]+)": \{([\s\S]*?)\n  \}/g)) {
+  const vistos = new Set()
+  for (const [, dia] of corpo.matchAll(/\n    "(\d+)": \{/g)) {
+    if (vistos.has(dia)) erros.push(`calendário ${dia}/${mes}: dia repetido (a celebração anterior é descartada)`)
+    vistos.add(dia)
+  }
+}
+
+// Integridade do calendário: toda celebração deve citar santos que existem, e todo santo
+// cadastrado deve ter ao menos uma festa (senão nunca aparece como santo do dia).
+const slugsNoCalendario = new Set()
+Object.entries(fontes.calendario).forEach(([mes, dias]) =>
+  Object.entries(dias).forEach(([dia, cel]) =>
+    (cel.santos || []).forEach((slug) => {
+      slugsNoCalendario.add(slug)
+      if (!slugsSantos.has(slug)) erros.push(`calendário ${dia}/${mes}: santo inexistente "${slug}"`)
+    })
+  )
+)
+fontes.santos
+  .filter((s) => !slugsNoCalendario.has(s.slug))
+  .forEach((s) => avisos.push(`santo sem festa no calendário: ${s.slug}`))
+
 console.log(`\nCobertura do fluxo diário: ${diasCobertos}/365 dias com santo do dia cadastrado (${Math.round((diasCobertos / 365) * 100)}%)`)
 
 if (avisos.length) {

@@ -93,19 +93,20 @@ nas páginas principais e `npm run lint` passa.
 Branches sugeridas: `feature/calendario-completo` e uma por lote de santos.
 
 **Métrica da etapa:** `npm run validate:album` imprime a cobertura do fluxo diário:
-quantos dias do ano têm santo do dia cadastrado. Ponto de partida: **21/365 (6%)**.
+quantos dias do ano têm santo do dia cadastrado. Ponto de partida: **21/365 (6%)**; em 13/10/2026: **25/365 (7%)**.
 
 Hoje o calendário tem **31 celebrações no ano**, só 21 delas ligadas a um santo, e o site
 tem **19 santos**. O "Hoje", o Santos do Dia, a figurinha do dia e as Conexões dependem
 desses dados.
 
 ### 2.1 Calendário
+0. [x] Santos já cadastrados sem festa ligados ao calendário (São Sebastião 20/01, Dom Bosco 31/01, Cátedra de São Pedro 22/02, Santa Rita 22/05, São Bento 11/07) e removida a Santa Catarina duplicada em 25/03, que escondia a Anunciação.
 1. [ ] Completar `data/calendario-liturgico.json` com as solenidades, festas e memórias
    obrigatórias do calendário romano geral e as próprias do Brasil.
 2. [ ] Ligar cada celebração aos slugs dos santos já cadastrados (`santos: [...]`).
    Faltam, por exemplo: São Sebastião (20/01), Dom Bosco (31/01) e Santa Rita (22/05).
-3. [ ] Fazer o `validate:album` avisar sobre santo sem festa no calendário e sobre
-   celebração que cita um slug inexistente.
+3. [x] `validate:album` avisa sobre santo sem festa no calendário, e dá erro para slug
+   inexistente e para dia repetido no mesmo mês (o `JSON.parse` descartava o primeiro em silêncio).
 
 ### 2.2 Santos (19 → 60–100)
 1. [ ] Priorizar quem tem festa no calendário e alta devoção no Brasil.
