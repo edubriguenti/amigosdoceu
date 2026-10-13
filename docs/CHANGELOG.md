@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-13: Rosário não apaga mais o progresso salvo ao carregar
+
+- **Problema:** `hooks/useRosario.js` gravava no `localStorage` no primeiro render, antes de ler os dados salvos. Reproduzido no navegador (dev, Strict Mode): com 3 rosários e 30 min salvos, recarregar `/rosario` zerava as estatísticas. Estatísticas parciais/corrompidas também podiam quebrar a tela.
+- **Solução:** a gravação só começa depois da leitura (`carregado`); estatísticas salvas são mescladas com os valores padrão; falha ao gravar não derruba a página.
+- **Arquivos:** `hooks/useRosario.js`, `docs/proximas-etapas.md`.
+- **Testes:** reprodução no Chromium (Playwright) antes e depois: estatísticas preservadas ao recarregar; rosário em andamento retomado; JSON corrompido sem erro de página. `lint` (0 erros, 19 avisos preexistentes), `validate:album`, `validate:relacoes`, `validate:imagens` e `build` passaram.
+- **Pendências:** modo contemplativo e tela de conclusão com figurinha (Etapa 3.1) seguem abertos; sem teste automatizado do hook (o projeto não tem runner de testes).
+
 ## 2026-10-13: calendário litúrgico mais completo e validado
 
 - **Problema:** só 21/365 dias tinham santo do dia; 3 santos cadastrados (São Sebastião, Dom Bosco, Santa Rita) nunca apareciam no "Hoje". Além disso, março tinha a chave `"25"` repetida: Santa Catarina de Sena (duplicada, a memória real é 29/04) escondia a Anunciação do Senhor.
