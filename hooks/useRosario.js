@@ -2,6 +2,23 @@ import { useState, useEffect, useCallback } from 'react';
 
 const STORAGE_KEY = 'rosario-data';
 
+const ESTATISTICAS_INICIAIS = {
+  rosariosCompletos: 0,
+  tempoTotal: 0, // em segundos
+  ultimoRosario: null,
+  porMisterio: { gozosos: 0, dolorosos: 0, gloriosos: 0, luminosos: 0 }
+};
+
+/** Completa estatísticas salvas parciais/corrompidas com os valores padrão. */
+function normalizarEstatisticas(bruto) {
+  if (!bruto || typeof bruto !== 'object') return ESTATISTICAS_INICIAIS;
+  return {
+    ...ESTATISTICAS_INICIAIS,
+    ...bruto,
+    porMisterio: { ...ESTATISTICAS_INICIAIS.porMisterio, ...(bruto.porMisterio || {}) }
+  };
+}
+
 export default function useRosario() {
   // Estado principal
   const [misterioAtual, setMisterioAtual] = useState(null); // gozosos, dolorosos, gloriosos, luminosos
@@ -15,17 +32,11 @@ export default function useRosario() {
   const [tempoDecorrido, setTempoDecorrido] = useState(0);
 
   // Estatísticas
-  const [estatisticas, setEstatisticas] = useState({
-    rosariosCompletos: 0,
-    tempoTotal: 0, // em segundos
-    ultimoRosario: null,
-    porMisterio: {
-      gozosos: 0,
-      dolorosos: 0,
-      gloriosos: 0,
-      luminosos: 0
-    }
-  });
+  const [estatisticas, setEstatisticas] = useState(ESTATISTICAS_INICIAIS);
+
+  // Só grava depois de ler: sem isso, a gravação do primeiro render (e a do Strict Mode)
+  // sobrescreve os dados salvos com o estado inicial vazio.
+  const [carregado, setCarregado] = useState(false);
 
   // Carregar dados salvos do localStorage
   useEffect(() => {
@@ -34,7 +45,7 @@ export default function useRosario() {
       try {
         const parsed = JSON.parse(dados);
         if (parsed.estatisticas) {
-          setEstatisticas(parsed.estatisticas);
+          setEstatisticas(normalizarEstatisticas(parsed.estatisticas));
         }
         if (parsed.emProgresso) {
           setEmProgresso(parsed.emProgresso);
@@ -50,10 +61,12 @@ export default function useRosario() {
         console.error('Erro ao carregar dados do rosário:', e);
       }
     }
+    setCarregado(true);
   }, []);
 
   // Salvar progresso no localStorage
   useEffect(() => {
+    if (!carregado) return;
     const dados = {
       estatisticas,
       emProgresso,
@@ -63,8 +76,12 @@ export default function useRosario() {
       tempoDecorrido,
       pausado
     };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
-  }, [estatisticas, emProgresso, misterioAtual, decadaAtual, passoAtual, tempoDecorrido, pausado]);
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
+    } catch (e) {
+      console.error('Erro ao salvar dados do rosário:', e);
+    }
+  }, [carregado, estatisticas, emProgresso, misterioAtual, decadaAtual, passoAtual, tempoDecorrido, pausado]);
 
   // Timer
   useEffect(() => {
@@ -159,17 +176,7 @@ export default function useRosario() {
 
   // Resetar estatísticas
   const resetarEstatisticas = useCallback(() => {
-    setEstatisticas({
-      rosariosCompletos: 0,
-      tempoTotal: 0,
-      ultimoRosario: null,
-      porMisterio: {
-        gozosos: 0,
-        dolorosos: 0,
-        gloriosos: 0,
-        luminosos: 0
-      }
-    });
+    setEstatisticas(ESTATISTICAS_INICIAIS);
   }, []);
 
   // Obter mistério do dia baseado no dia da semana
