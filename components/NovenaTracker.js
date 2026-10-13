@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import useNovena from '../hooks/useNovena';
 
 /**
  * Componente de acompanhamento de novena com progresso e dias
  * @param {Object} novena - Dados completos da novena
+ * @param {Object} api - Retorno de useNovena(), compartilhado com a página (uma única fonte de estado)
+ * @param {Function} onFinalizar - Chamada depois que a novena vai para o histórico
  */
-export default function NovenaTracker({ novena }) {
+export default function NovenaTracker({ novena, api, onFinalizar }) {
   const {
     getNovenaEmProgresso,
     marcarDiaCompleto,
@@ -15,7 +16,7 @@ export default function NovenaTracker({ novena }) {
     isDiaCompleto,
     completarNovena,
     isNovenaCompleta
-  } = useNovena();
+  } = api;
 
   const [diaExpandido, setDiaExpandido] = useState(null);
   const novenaEmProgresso = getNovenaEmProgresso(novena.slug);
@@ -34,9 +35,8 @@ export default function NovenaTracker({ novena }) {
   };
 
   const handleCompletarNovena = () => {
-    if (confirm('Parabéns por completar a novena! Deseja movê-la para o histórico de completadas?')) {
-      completarNovena(novena.slug);
-    }
+    completarNovena(novena.slug);
+    onFinalizar?.();
   };
 
   return (

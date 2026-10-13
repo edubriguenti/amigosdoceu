@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-13: Novenas: progresso não se perde mais e conclusão com figurinha
+
+- **Problema:** a página da novena e o `NovenaTracker` usavam duas instâncias de `useNovena`, cada uma com cópia própria do estado. Reproduzido no Chromium: marcar 3 dias e clicar em "Salvar Intenção" apagava os dias marcados (a instância da página regravava o `localStorage` com a cópia velha). Além disso, "Finalizar Novena" deixava a tela com "Cancelar Novena" de uma novena já encerrada, sem confirmação nem contagem no histórico até recarregar.
+- **Solução:** uma única instância do hook, criada na página e passada ao tracker; tela "Novena concluída" com próximo passo (Ver no Álbum, Minha Jornada); a figurinha do santo relacionado é colada ao concluir (Etapa 3.2.3); removido o `confirm()` ao finalizar.
+- **Arquivos:** `pages/novenas/[slug].js`, `components/NovenaTracker.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px): antes da correção o progresso era perdido (0 de 3 dias após recarregar), depois foi preservado; fluxo iniciar → 9 dias → finalizar mostra a conclusão, a figurinha nova e o histórico "1 vez" sem recarregar. `lint` (0 erros, 19 avisos preexistentes), `validate:album`, `validate:relacoes`, `validate:imagens` e `build` passaram.
+- **Pendências:** linha do tempo "Dia X de 9" e novena em andamento no bloco "Hoje" (3.2.1, 3.2.2); novenas sem santo relacionado não dão figurinha; imagem do santo na página da novena segue quebrada (404); sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-13: Rosário não apaga mais o progresso salvo ao carregar
 
 - **Problema:** `hooks/useRosario.js` gravava no `localStorage` no primeiro render, antes de ler os dados salvos. Reproduzido no navegador (dev, Strict Mode): com 3 rosários e 30 min salvos, recarregar `/rosario` zerava as estatísticas. Estatísticas parciais/corrompidas também podiam quebrar a tela.
