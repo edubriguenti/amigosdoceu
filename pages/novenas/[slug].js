@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import { coletar } from '../../hooks/useAlbum';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
 import NovenaTracker from '../../components/NovenaTracker';
@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function NovenaPage({ novena, santoRelacionado, relacionadas, figurinhaSanto }) {
-  const router = useRouter();
+  const api = useNovena();
   const {
     iniciarNovena,
     getNovenaEmProgresso,
@@ -48,40 +48,40 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
     atualizarIntencao,
     getHistoricoNovena,
     isLoaded
-  } = useNovena();
+  } = api;
 
-  const [mostrarFormularioInicio, setMostrarFormularioInicio] = useState(false);
   const [intencaoTexto, setIntencaoTexto] = useState('');
-  const [novenaEmProgresso, setNovenaEmProgresso] = useState(null);
-  const [historico, setHistorico] = useState([]);
+  const [concluidaAgora, setConcluidaAgora] = useState(false);
+  const [figurinhaNova, setFigurinhaNova] = useState(false);
+
+  // Única fonte de estado: o mesmo hook alimenta a página e o tracker
+  const novenaEmProgresso = isLoaded ? getNovenaEmProgresso(novena.slug) : null;
+  const historico = isLoaded ? getHistoricoNovena(novena.slug) : [];
 
   useEffect(() => {
     if (isLoaded) {
-      const emProgresso = getNovenaEmProgresso(novena.slug);
-      setNovenaEmProgresso(emProgresso);
-
-      const hist = getHistoricoNovena(novena.slug);
-      setHistorico(hist);
-
-      if (emProgresso) {
-        setIntencaoTexto(emProgresso.intencao || '');
-      }
+      setIntencaoTexto(getNovenaEmProgresso(novena.slug)?.intencao || '');
     }
   }, [isLoaded, novena.slug]);
 
+  const handleFinalizada = () => {
+    setConcluidaAgora(true);
+    if (santoRelacionado) {
+      setFigurinhaNova(coletar(`santo:${santoRelacionado.slug}`, 'novena').nova);
+    }
+  };
+
   const handleIniciarNovena = () => {
-    const novaNovenaSalva = iniciarNovena(novena);
+    iniciarNovena(novena);
     if (intencaoTexto.trim()) {
       atualizarIntencao(novena.slug, intencaoTexto.trim());
     }
-    setNovenaEmProgresso(novaNovenaSalva);
-    setMostrarFormularioInicio(false);
+    setConcluidaAgora(false);
   };
 
   const handleCancelarNovena = () => {
     if (confirm('Tem certeza que deseja cancelar esta novena? Seu progresso será perdido.')) {
       cancelarNovena(novena.slug);
-      setNovenaEmProgresso(null);
       setIntencaoTexto('');
     }
   };
@@ -197,6 +197,39 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
               )}
             </motion.div>
 
+            {/* Conclusão: aparece logo depois de finalizar */}
+            {concluidaAgora && !novenaEmProgresso && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                role="status"
+                className="bg-white rounded-lg shadow-md p-8 mb-8 text-center border border-secondary-300"
+              >
+                <p className="text-4xl mb-2" aria-hidden="true">🙏</p>
+                <h2 className="text-2xl font-serif font-bold text-neutral-800 mb-2">
+                  Novena concluída
+                </h2>
+                <p className="text-neutral-600 mb-4">
+                  Você rezou os {novena.duracao} dias. Que sua intenção seja ouvida.
+                </p>
+                {figurinhaNova && santoRelacionado && (
+                  <p className="mb-4 text-secondary-700 font-medium">
+                    🃏 Nova figurinha no álbum: {santoRelacionado.nome}
+                  </p>
+                )}
+                <div className="flex flex-wrap justify-center gap-3">
+                  {figurinhaSanto && (
+                    <Link href={figurinhaSanto.href} className="bg-accent-600 text-white px-5 py-2 rounded-lg hover:bg-accent-700 transition-colors font-medium">
+                      Ver no Álbum
+                    </Link>
+                  )}
+                  <Link href="/minha-jornada" className="bg-neutral-200 text-neutral-700 px-5 py-2 rounded-lg hover:bg-neutral-300 transition-colors font-medium">
+                    Minha Jornada
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+
             {/* Botão de iniciar/cancelar novena */}
             {!novenaEmProgresso ? (
               <motion.div
@@ -276,7 +309,7 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  <NovenaTracker novena={novena} />
+                  <NovenaTracker novena={novena} api={api} onFinalizar={handleFinalizada} />
                 </motion.div>
               </>
             )}

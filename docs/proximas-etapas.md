@@ -143,7 +143,8 @@ Branch sugerida: `feature/oracao-guiada`
 ### 3.2 Novenas
 1. [ ] Linha do tempo "Dia 4 de 9" com os dias marcados (✓ / ● / ○) e "Volte amanhã".
 2. [ ] Mostrar a novena em andamento no bloco "Hoje" da home, quando houver.
-3. [ ] Ao concluir a novena, colar a figurinha do santo relacionado.
+3. [x] Ao concluir a novena, colar a figurinha do santo relacionado (novenas sem santo relacionado não dão figurinha).
+4. [x] Página e tracker compartilham uma única instância de `useNovena` (antes salvar a intenção apagava os dias marcados).
 
 **Pronto quando:** rezar um terço ou um dia de novena termina com uma tela de conclusão e
 um próximo passo, e isso se reflete em Minha Jornada.
