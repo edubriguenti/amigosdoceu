@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-14: novena em andamento aparece no bloco "Hoje" da home
+
+- **Problema:** quem iniciava uma novena não via nada dela na home (sem header, o bloco "Hoje" só mostrava celebração, figurinha e oração). Reproduzido no Chromium (390px) com uma novena no dia 4 de 9: nenhuma menção. O único caminho de volta era Novenas ou Minha Jornada.
+- **Solução:** faixa "Novena em andamento" no painel Hoje, com nome, "Dia X de 9" e botão contextual (Rezar o dia de hoje / Ver novena se já rezou hoje / Finalizar se todos os dias estão marcados); com mais de uma, mostra a tocada mais recentemente e "+N em andamento". Leitor puro `getNovenasEmAndamento` em `lib/jornada.js` (tolera dado ausente ou corrompido; sem `useNovena`, para não gravar no mount da home).
+- **Arquivos:** `components/HojeNoCeu.js`, `lib/jornada.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px) em 6 estados: dia pendente, rezado hoje, pronta, duas novenas, sem novenas, JSON corrompido e itens inválidos; faixa correta em cada um e 0 erros de console/página. `lint` (0 erros, 19 avisos preexistentes), `validate:album`, `validate:relacoes`, `validate:imagens` e `build` passaram.
+- **Pendências:** linha do tempo "Dia X de 9" na página da novena (3.2.1); sem teste automatizado (o projeto não tem runner). PR: ver lista de PRs do repositório.
+
 ## 2026-10-13: Novenas: progresso não se perde mais e conclusão com figurinha
 
 - **Problema:** a página da novena e o `NovenaTracker` usavam duas instâncias de `useNovena`, cada uma com cópia própria do estado. Reproduzido no Chromium: marcar 3 dias e clicar em "Salvar Intenção" apagava os dias marcados (a instância da página regravava o `localStorage` com a cópia velha). Além disso, "Finalizar Novena" deixava a tela com "Cancelar Novena" de uma novena já encerrada, sem confirmação nem contagem no histórico até recarregar.
