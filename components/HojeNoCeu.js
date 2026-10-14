@@ -7,6 +7,7 @@ import { useAlbum } from '../hooks/useAlbum'
 import { useOracoes } from '../hooks/useOracoes'
 import useDiaAtual from '../hooks/useDiaAtual'
 import { dataPorExtenso } from '../lib/datas'
+import { getNovenasEmAndamento } from '../lib/jornada'
 
 /**
  * "Hoje no Amigos do Céu" — o ritual diário da home: a celebração, a oração e a figurinha.
@@ -151,6 +152,33 @@ function OracaoDeHoje({ oracao, onRezar }) {
   )
 }
 
+function NovenaEmAndamento({ hoje }) {
+  const [novenas, setNovenas] = useState([])
+  useEffect(() => setNovenas(getNovenasEmAndamento(hoje)), [hoje])
+  const n = novenas[0]
+  if (!n) return null
+  const status = n.pronta
+    ? 'Todos os dias rezados. Falta só finalizar.'
+    : n.rezouHoje
+      ? `Dia ${n.marcados} de ${n.duracao} rezado hoje. Volte amanhã.`
+      : `Dia ${n.diaAtual} de ${n.duracao}`
+  return (
+    <div className="px-6 py-4 border-t border-cosmic-border flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+      <div className="min-w-0">
+        <h3 className={rotulo}>🕯️ Novena em andamento</h3>
+        <p className="mt-1 text-sm text-neutral-100">
+          {n.nome}
+          {novenas.length > 1 ? <span className="text-neutral-400"> · +{novenas.length - 1} em andamento</span> : null}
+        </p>
+        <p className="text-sm text-neutral-400">{status}</p>
+      </div>
+      <Link href={`/novenas/${n.slug}`} className={n.rezouHoje && !n.pronta ? botaoSecundario : botaoPrimario}>
+        {n.pronta ? 'Finalizar' : n.rezouHoje ? 'Ver novena' : 'Rezar o dia de hoje'}
+      </Link>
+    </div>
+  )
+}
+
 export default function HojeNoCeu({ dias, hojeServidor }) {
   const dia = useDiaAtual(dias, hojeServidor)
   const [ola, setOla] = useState(null)
@@ -182,6 +210,7 @@ export default function HojeNoCeu({ dias, hojeServidor }) {
           />
           <OracaoDeHoje oracao={dia.oracao} onRezar={abrirOracao} />
         </div>
+        <NovenaEmAndamento hoje={dia.data} />
         <footer className="px-6 py-3 border-t border-cosmic-border text-right">
           <Link href="/minha-jornada" className="text-sm text-cosmic-blue-light hover:underline">
             Continuar minha jornada →
