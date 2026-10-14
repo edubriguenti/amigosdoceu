@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useRosario from '../hooks/useRosario';
 import rosarioData from '../data/rosario.json';
@@ -8,6 +8,7 @@ export default function RosarioVirtual() {
     misterioAtual,
     decadaAtual,
     passoAtual,
+    passos,
     emProgresso,
     pausado,
     tempoDecorrido,
@@ -27,82 +28,11 @@ export default function RosarioVirtual() {
   } = useRosario();
 
   const [mostrarEstatisticas, setMostrarEstatisticas] = useState(false);
-  const [oracaoAtual, setOracaoAtual] = useState(null);
 
-  // Calcular oração atual baseado no passo
-  useEffect(() => {
-    if (!emProgresso || !misterioAtual) return;
-
-    const { oracoes, misterios, estruturaRosario } = rosarioData;
-    const misteriosLista = misterios[misterioAtual].lista;
-
-    // Estrutura completa do rosário
-    let passos = [];
-
-    // Início
-    estruturaRosario.inicio.forEach(item => {
-      if (item.tipo === 'oracao') {
-        passos.push({
-          tipo: 'oracao',
-          oracao: oracoes[item.nome],
-          conta: item.conta,
-          intencao: item.intencao
-        });
-      }
-    });
-
-    // 5 Décadas
-    for (let d = 0; d < 5; d++) {
-      estruturaRosario.decada.forEach(item => {
-        if (item.tipo === 'misterio') {
-          passos.push({
-            tipo: 'misterio',
-            misterio: misteriosLista[d],
-            decada: d
-          });
-        } else if (item.tipo === 'oracao') {
-          if (item.repeticoes) {
-            // 10 Ave Marias
-            for (let i = 0; i < item.repeticoes; i++) {
-              passos.push({
-                tipo: 'oracao',
-                oracao: oracoes[item.nome],
-                conta: item.conta,
-                aveMaria: i + 1,
-                decada: d
-              });
-            }
-          } else {
-            passos.push({
-              tipo: 'oracao',
-              oracao: oracoes[item.nome],
-              conta: item.conta,
-              decada: d
-            });
-          }
-        }
-      });
-    }
-
-    // Final
-    estruturaRosario.final.forEach(item => {
-      if (item.tipo === 'oracao') {
-        passos.push({
-          tipo: 'oracao',
-          oracao: oracoes[item.nome],
-          conta: item.conta
-        });
-      }
-    });
-
-    // Definir oração atual
-    if (passoAtual < passos.length) {
-      setOracaoAtual(passos[passoAtual]);
-    } else {
-      // Rosário completo
-      setOracaoAtual({ tipo: 'completo' });
-    }
-  }, [passoAtual, emProgresso, misterioAtual]);
+  // Passo atual; além do último passo, o rosário está completo
+  const oracaoAtual = emProgresso
+    ? (passoAtual < passos.length ? passos[passoAtual] : { tipo: 'completo' })
+    : null;
 
   // Tela de seleção de mistério
   if (!emProgresso) {
