@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { diaLocal } from '../lib/datas';
 
 /**
  * Componente de acompanhamento de novena com progresso e dias
@@ -25,6 +26,12 @@ export default function NovenaTracker({ novena, api, onFinalizar }) {
   if (!novenaEmProgresso) {
     return null;
   }
+
+  const toque = new Date(novenaEmProgresso.ultimaAtualizacao || novenaEmProgresso.dataInicio || NaN);
+  const rezouHoje =
+    progresso.diasCompletados > 0 && !Number.isNaN(toque.getTime()) && diaLocal(toque) === diaLocal();
+  const pronta = progresso.diasCompletados >= novena.duracao;
+  const proximoDia = novena.dias.find((d) => !isDiaCompleto(novena.slug, d.dia));
 
   const handleToggleDia = (numeroDia) => {
     if (isDiaCompleto(novena.slug, numeroDia)) {
@@ -68,12 +75,44 @@ export default function NovenaTracker({ novena, api, onFinalizar }) {
           <span>{progresso.diasRestantes} dias restantes</span>
         </div>
 
+        {/* Linha do tempo: um marco por dia */}
+        <ol className="mt-4 flex items-center justify-between gap-1" aria-label="Dias da novena">
+          {novena.dias.map((dia) => {
+            const feito = isDiaCompleto(novena.slug, dia.dia);
+            const atual = !feito && proximoDia?.dia === dia.dia;
+            const estado = feito ? 'rezado' : atual ? 'próximo' : 'pendente';
+            return (
+              <li
+                key={dia.dia}
+                aria-label={`Dia ${dia.dia}: ${estado}`}
+                aria-current={atual ? 'step' : undefined}
+                className={`flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold ${
+                  feito
+                    ? 'border-accent-600 bg-accent-600 text-white'
+                    : atual
+                      ? 'border-accent-500 bg-accent-50 text-accent-800 ring-2 ring-accent-200'
+                      : 'border-neutral-300 bg-white text-neutral-600'
+                }`}
+              >
+                <span aria-hidden="true">{feito ? '✓' : dia.dia}</span>
+              </li>
+            );
+          })}
+        </ol>
+
         {/* Dia atual sugerido */}
-        <div className="mt-4 p-3 bg-accent-50 rounded-lg border border-accent-200">
-          <p className="text-sm text-accent-800">
-            <strong>Próximo dia:</strong> Dia {progresso.diaAtual} - {novena.dias[progresso.diaAtual - 1]?.titulo}
-          </p>
-        </div>
+        {!pronta && proximoDia && (
+          <div className="mt-4 p-3 bg-accent-50 rounded-lg border border-accent-200">
+            <p className="text-sm text-accent-800">
+              <strong>Dia {proximoDia.dia} de {novena.duracao}:</strong> {proximoDia.titulo}
+            </p>
+            {rezouHoje && (
+              <p className="text-sm text-accent-800 mt-1">
+                🌙 Você já rezou hoje. Volte amanhã para o Dia {proximoDia.dia}.
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Lista de dias */}
@@ -100,6 +139,8 @@ export default function NovenaTracker({ novena, api, onFinalizar }) {
                   {/* Checkbox */}
                   <button
                     onClick={() => handleToggleDia(numeroDia)}
+                    aria-pressed={completo}
+                    aria-label={`${completo ? 'Desmarcar' : 'Marcar'} o dia ${numeroDia} como rezado`}
                     className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all ${
                       completo
                         ? 'bg-accent-600 border-accent-500'
@@ -141,6 +182,8 @@ export default function NovenaTracker({ novena, api, onFinalizar }) {
                 {/* Botão expandir */}
                 <button
                   onClick={() => setDiaExpandido(expandido ? null : numeroDia)}
+                  aria-expanded={expandido}
+                  aria-label={`${expandido ? 'Recolher' : 'Ver'} o conteúdo do dia ${numeroDia}`}
                   className="ml-4 p-2 hover:bg-primary-100 rounded-full transition-colors"
                 >
                   <motion.svg

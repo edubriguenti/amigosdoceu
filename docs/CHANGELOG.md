@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-14: linha do tempo "Dia X de 9" na novena
+
+- **Problema:** a página da novena em andamento só mostrava uma barra de % e uma lista longa de dias; no celular não dava para ver de relance em que dia a pessoa estava, e nada dizia que o dia já fora rezado. Os botões de marcar/expandir não tinham nome acessível.
+- **Solução:** fileira de marcos (✓ rezado, ● próximo, número pendente) no topo do "Seu Progresso", texto "Dia X de 9: título" e, se o último dia foi marcado hoje, "Volte amanhã para o Dia X". Botões com `aria-label`/`aria-pressed`/`aria-expanded`. Marcar dias continua livre (sem bloqueio por data).
+- **Arquivos:** `components/NovenaTracker.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px): início (marco 1 atual), 2 dias marcados (✓ ✓ ● e "Volte amanhã"), recarga preserva, 9 dias (sem bloco de próximo dia), 0 erros de página; captura de tela confirmou que os 9 marcos cabem na largura (corrigido estouro inicial). `lint` (0 erros), `validate:album`, `validate:relacoes`, `validate:imagens` e `build` passaram.
+- **Pendências:** sem teste automatizado (o projeto não tem runner); "Volte amanhã" é informativo.
+
 ## 2026-10-14: novena em andamento aparece no bloco "Hoje" da home
 
 - **Problema:** quem iniciava uma novena não via nada dela na home (sem header, o bloco "Hoje" só mostrava celebração, figurinha e oração). Reproduzido no Chromium (390px) com uma novena no dia 4 de 9: nenhuma menção. O único caminho de volta era Novenas ou Minha Jornada.
