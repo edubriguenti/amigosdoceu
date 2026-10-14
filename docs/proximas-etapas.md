@@ -141,7 +141,7 @@ Branch sugerida: `feature/oracao-guiada`
    leitura e escrita síncrona do `useAlbum`.
 
 ### 3.2 Novenas
-1. [ ] Linha do tempo "Dia 4 de 9" com os dias marcados (✓ / ● / ○) e "Volte amanhã".
+1. [x] Linha do tempo "Dia X de 9" com os dias marcados (✓ / ● / ○) e "Volte amanhã" (`components/NovenaTracker.js`).
 2. [x] Mostrar a novena em andamento no bloco "Hoje" da home, quando houver.
 3. [x] Ao concluir a novena, colar a figurinha do santo relacionado (novenas sem santo relacionado não dão figurinha).
 4. [x] Página e tracker compartilham uma única instância de `useNovena` (antes salvar a intenção apagava os dias marcados).
