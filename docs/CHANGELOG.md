@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-15: barra de navegação inferior no celular
+
+- **Problema:** nas páginas internas o único caminho de navegação era "← Amigos do Céu" (voltar à home) e o ícone da Jornada. Reproduzido no Chromium (390px): de `/oracoes` para o Álbum eram dois passos via home; nenhuma página internamente levava às outras seções.
+- **Solução:** `BottomNav` fixa no celular (Início · Santos · Rezar · Álbum · Jornada), com `aria-current` na seção ativa (Rezar cobre orações, novenas e rosário), alvos de 56px e área segura do iOS. Some a partir de `md`. A home (sem header) não a mostra. Toasts e avisos fixos (`FigurinhaNoSite`, `DescobertaToast`, `NotificacoesLiturgicas`, barra da Vida de Cristo) subiram para não ficarem atrás dela; o `Layout` reserva espaço no rodapé.
+- **Arquivos:** `components/BottomNav.js`, `components/Layout.js`, `components/album/FigurinhaNoSite.js`, `components/conexoes/DescobertaToast.js`, `components/NotificacoesLiturgicas.js`, `pages/vida-de-cristo.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium): nav visível e com item ativo correto em 390px (`/santos/sao-pedro`, `/rosario`), oculta em 1200px e na home, clique em "Álbum" navega, rodapé não fica sob a barra, sem overflow horizontal, 0 erros de página. `lint` (0 erros, 19 avisos preexistentes), `validate:album` e `build` passaram.
+- **Pendências:** header de desktop (Etapa 4.2) segue aberto; `validate:relacoes`/`validate:imagens` não rodados (sem mudança de dados); sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-14: Rosário: navegar por década cai no lugar certo e progresso chega a 100%
 
 - **Problema:** `useRosario` assumia 13 passos por década e 75 no total, mas o `data/rosario.json` gera 14 por década e 80. Reproduzido no Chromium: ir à década 5 marcava 79% e a barra da lateral não acompanhava o avanço com "próximo" (a década só mudava ao clicar na lateral); no fim a barra passava de 100%.

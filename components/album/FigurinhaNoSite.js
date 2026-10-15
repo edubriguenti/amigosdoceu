@@ -19,7 +19,7 @@ export function AvisoNovaFigurinha({ figurinha, onFechar }) {
   }, [figurinha, onFechar])
 
   return (
-    <div aria-live="polite" className="fixed z-[60] bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:w-80 pointer-events-none">
+    <div aria-live="polite" className="fixed z-[60] bottom-20 md:bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:w-80 pointer-events-none">
       <AnimatePresence>
         {figurinha && (
           <motion.div

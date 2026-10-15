@@ -1,4 +1,5 @@
 import MinimalHeader from './MinimalHeader'
+import BottomNav from './BottomNav'
 import Footer from './Footer'
 
 /**
@@ -8,7 +9,7 @@ import Footer from './Footer'
  */
 export default function Layout({ children, hideHeader = false, fullBleed = false }) {
   return (
-    <div className="min-h-screen flex flex-col bg-cosmic-bg">
+    <div className={`min-h-screen flex flex-col bg-cosmic-bg ${hideHeader ? '' : 'pb-16 md:pb-0'}`}>
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-3 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:font-medium"
@@ -26,6 +27,8 @@ export default function Layout({ children, hideHeader = false, fullBleed = false
       </main>
 
       <Footer />
+
+      {!hideHeader && <BottomNav />}
     </div>
   )
 }

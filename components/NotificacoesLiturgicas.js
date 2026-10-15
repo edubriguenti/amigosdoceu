@@ -159,7 +159,7 @@ export default function NotificacoesLiturgicas() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
-          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:bottom-6 sm:right-6 z-40 sm:max-w-md"
+          className="fixed bottom-20 md:bottom-6 left-4 right-4 sm:left-auto sm:right-6 z-40 sm:max-w-md"
         >
           <div className="bg-white rounded-lg shadow-2xl border-2 border-amber-400 p-6">
             <div className="flex items-start gap-4">
