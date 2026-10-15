@@ -155,7 +155,7 @@ um próximo passo, e isso se reflete em Minha Jornada.
 
 Branch sugerida: `improve/navegacao-mobile`
 
-1. [ ] Barra inferior no celular com 5 ações: Início · Santos · Rezar · Álbum · Jornada.
+1. [x] Barra inferior no celular com 5 ações: Início · Santos · Rezar · Álbum · Jornada.
 2. [ ] No desktop, header curto: Santos · Cristo · Bíblia · Lugares · Rezar · Álbum · ☰ Mais.
 3. [ ] Extrair componentes comuns: `SacredCard`, `EntityHero`, `PrayerBlock`,
    `ProgressBar` (hoje duplicada em Minha Jornada e na Vida de Cristo), `SectionLabel`.

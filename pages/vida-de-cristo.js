@@ -259,7 +259,7 @@ export default function VidaDeCristo({ figurinhas = {}, conexoes = {} }) {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
-          className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40 bg-white rounded-full shadow-2xl px-6 py-3 flex items-center gap-4"
+          className="fixed bottom-20 md:bottom-4 left-1/2 transform -translate-x-1/2 z-40 bg-white rounded-full shadow-2xl px-6 py-3 flex items-center gap-4"
         >
           <span className="text-sm font-medium text-gray-700">
             Modo Apresentação: {presentationIndex + 1}/{vidaCristoData.length}
