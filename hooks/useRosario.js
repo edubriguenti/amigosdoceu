@@ -1,4 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
+import rosarioData from '../data/rosario.json';
+import { montarPassos, passoInicialDaDecada, decadaDoPasso, progressoPercentual } from '../lib/rosarioPassos';
 
 const STORAGE_KEY = 'rosario-data';
 
@@ -22,10 +24,16 @@ function normalizarEstatisticas(bruto) {
 export default function useRosario() {
   // Estado principal
   const [misterioAtual, setMisterioAtual] = useState(null); // gozosos, dolorosos, gloriosos, luminosos
-  const [decadaAtual, setDecadaAtual] = useState(0); // 0-4
   const [passoAtual, setPassoAtual] = useState(0); // Posição atual no rosário
   const [emProgresso, setEmProgresso] = useState(false);
   const [pausado, setPausado] = useState(false);
+
+  // Passos do mistério escolhido; a década é derivada do passo (nunca fica desatualizada)
+  const passos = useMemo(
+    () => (misterioAtual ? montarPassos(rosarioData, misterioAtual) : []),
+    [misterioAtual]
+  );
+  const decadaAtual = decadaDoPasso(passos, passoAtual);
 
   // Timer
   const [tempoInicio, setTempoInicio] = useState(null);
@@ -50,7 +58,6 @@ export default function useRosario() {
         if (parsed.emProgresso) {
           setEmProgresso(parsed.emProgresso);
           setMisterioAtual(parsed.misterioAtual);
-          setDecadaAtual(parsed.decadaAtual || 0);
           setPassoAtual(parsed.passoAtual || 0);
           setPausado(true); // Sempre retomar como pausado
           if (parsed.tempoDecorrido) {
@@ -99,7 +106,6 @@ export default function useRosario() {
   // Iniciar rosário com um mistério específico
   const iniciarRosario = useCallback((tipoMisterio) => {
     setMisterioAtual(tipoMisterio);
-    setDecadaAtual(0);
     setPassoAtual(0);
     setEmProgresso(true);
     setPausado(false);
@@ -120,8 +126,8 @@ export default function useRosario() {
 
   // Avançar para o próximo passo
   const avancar = useCallback(() => {
-    setPassoAtual(prev => prev + 1);
-  }, []);
+    setPassoAtual(prev => Math.min(prev + 1, passos.length));
+  }, [passos.length]);
 
   // Voltar para o passo anterior
   const voltar = useCallback(() => {
@@ -130,13 +136,8 @@ export default function useRosario() {
 
   // Ir para uma década específica
   const irParaDecada = useCallback((numeroDecada) => {
-    setDecadaAtual(numeroDecada);
-    // Calcular o passo inicial da década
-    // Início: 7 passos (sinal, credo, pai nosso, 3 aves, glória)
-    // Cada década: 13 passos (mistério, pai nosso, 10 aves, glória, fátima)
-    const passoInicial = 7 + (numeroDecada * 13);
-    setPassoAtual(passoInicial);
-  }, []);
+    setPassoAtual(passoInicialDaDecada(passos, numeroDecada));
+  }, [passos]);
 
   // Completar rosário
   const completarRosario = useCallback(() => {
@@ -157,7 +158,6 @@ export default function useRosario() {
     setEmProgresso(false);
     setPausado(false);
     setMisterioAtual(null);
-    setDecadaAtual(0);
     setPassoAtual(0);
     setTempoInicio(null);
     setTempoDecorrido(0);
@@ -168,7 +168,6 @@ export default function useRosario() {
     setEmProgresso(false);
     setPausado(false);
     setMisterioAtual(null);
-    setDecadaAtual(0);
     setPassoAtual(0);
     setTempoInicio(null);
     setTempoDecorrido(0);
@@ -202,17 +201,17 @@ export default function useRosario() {
   }, []);
 
   // Calcular porcentagem de progresso
-  const calcularProgresso = useCallback(() => {
-    // Total de passos: 7 (início) + 65 (5 décadas de 13) + 3 (final) = 75
-    const totalPassos = 75;
-    return Math.round((passoAtual / totalPassos) * 100);
-  }, [passoAtual]);
+  const calcularProgresso = useCallback(
+    () => progressoPercentual(passos, passoAtual),
+    [passos, passoAtual]
+  );
 
   return {
     // Estado
     misterioAtual,
     decadaAtual,
     passoAtual,
+    passos,
     emProgresso,
     pausado,
     tempoDecorrido,
