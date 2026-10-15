@@ -10,6 +10,14 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 - **Testes:** Playwright (Chromium): nav visível e com item ativo correto em 390px (`/santos/sao-pedro`, `/rosario`), oculta em 1200px e na home, clique em "Álbum" navega, rodapé não fica sob a barra, sem overflow horizontal, 0 erros de página. `lint` (0 erros, 19 avisos preexistentes), `validate:album` e `build` passaram.
 - **Pendências:** header de desktop (Etapa 4.2) segue aberto; `validate:relacoes`/`validate:imagens` não rodados (sem mudança de dados); sem teste automatizado (o projeto não tem runner).
 
+## 2026-10-14: Rosário: navegar por década cai no lugar certo e progresso chega a 100%
+
+- **Problema:** `useRosario` assumia 13 passos por década e 75 no total, mas o `data/rosario.json` gera 14 por década e 80. Reproduzido no Chromium: ir à década 5 marcava 79% e a barra da lateral não acompanhava o avanço com "próximo" (a década só mudava ao clicar na lateral); no fim a barra passava de 100%.
+- **Solução:** novo `lib/rosarioPassos.js` (puro) monta a lista de passos a partir do JSON e é a fonte única da posição das décadas e do progresso; a década atual passa a ser derivada do passo; "próximo" não passa do passo final.
+- **Arquivos:** `lib/rosarioPassos.js`, `hooks/useRosario.js`, `components/RosarioVirtual.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 1100px): décadas 2/5/1 → 26%/79%/9% (= 21, 63, 7 de 80 passos) com a lateral destacando a década certa; +14 passos a partir da década 1 move o destaque para a década 2; da década 5 ao fim são 17 passos, 100% e tela "Rosário Completo!"; 0 erros de página. `lint` (0 erros, 19 avisos preexistentes), `validate:album` e `build` passaram.
+- **Pendências:** modo contemplativo e figurinha ligada à conclusão (3.1) seguem abertos; sem teste automatizado (o projeto não tem runner). `npm ci` falha: `package-lock.json` fora de sincronia com `package.json` (@emnapi); usei `npm install --no-save`.
+
 ## 2026-10-14: linha do tempo "Dia X de 9" na novena
 
 - **Problema:** a página da novena em andamento só mostrava uma barra de % e uma lista longa de dias; no celular não dava para ver de relance em que dia a pessoa estava, e nada dizia que o dia já fora rezado. Os botões de marcar/expandir não tinham nome acessível.

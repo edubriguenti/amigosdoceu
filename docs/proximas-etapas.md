@@ -136,7 +136,8 @@ Branch sugerida: `feature/oracao-guiada`
    ("Ave-Maria 3/10"), botões Anterior/Próximo e suporte a teclado.
 2. [ ] Tela de conclusão com tempo, mistérios e número de Ave-Marias, e uma figurinha de
    Cristo ligada ao mistério rezado (ex.: Luminosos → `cristo:batismo-jordao`).
-3. [x] Corrigir o `hooks/useRosario.js`: hoje ele grava no mount antes de ler os dados
+3. [x] Passos/décadas do Rosário vindos de `lib/rosarioPassos.js` (antes 13 por década em vez de 14; navegar por década errava o ponto).
+4. [x] Corrigir o `hooks/useRosario.js`: hoje ele grava no mount antes de ler os dados
    salvos (no Strict Mode as estatísticas podem voltar a zero). Usar o mesmo padrão de
    leitura e escrita síncrona do `useAlbum`.
 
