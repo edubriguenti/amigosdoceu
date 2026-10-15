@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { coletar } from '../hooks/useAlbum';
 import { motion, AnimatePresence } from 'framer-motion';
 import useRosario from '../hooks/useRosario';
 import rosarioData from '../data/rosario.json';
 
-export default function RosarioVirtual() {
+export default function RosarioVirtual({ figurinhas = {} }) {
   const {
     misterioAtual,
     decadaAtual,
@@ -28,11 +30,25 @@ export default function RosarioVirtual() {
   } = useRosario();
 
   const [mostrarEstatisticas, setMostrarEstatisticas] = useState(false);
+  const [figurinhaNova, setFigurinhaNova] = useState(false);
 
   // Passo atual; além do último passo, o rosário está completo
   const oracaoAtual = emProgresso
     ? (passoAtual < passos.length ? passos[passoAtual] : { tipo: 'completo' })
     : null;
+
+  const figurinhaConclusao = misterioAtual ? figurinhas[misterioAtual] : null;
+  const chegouAoFim = oracaoAtual?.tipo === 'completo';
+
+  // Ao terminar a última Ave-Maria, cola a figurinha de Cristo do mistério (idempotente:
+  // coletar() lê/grava o localStorage de forma síncrona, então o Strict Mode não duplica).
+  useEffect(() => {
+    if (!chegouAoFim || !figurinhaConclusao) {
+      setFigurinhaNova(false);
+      return;
+    }
+    if (coletar(figurinhaConclusao.id, 'rosario').nova) setFigurinhaNova(true);
+  }, [chegouAoFim, figurinhaConclusao]);
 
   // Tela de seleção de mistério
   if (!emProgresso) {
@@ -226,16 +242,30 @@ export default function RosarioVirtual() {
                   <p className="text-lg text-neutral-700 mb-2">
                     Você completou os {misterioInfo.nome}
                   </p>
-                  <p className="text-neutral-600 mb-8">
+                  <p className="text-neutral-600 mb-6">
                     Tempo total: {formatarTempo(tempoDecorrido)}
                   </p>
-                  <div className="flex gap-4 justify-center">
+                  {figurinhaConclusao && (
+                    <p role="status" className="mb-6 text-secondary-700 font-medium">
+                      {figurinhaNova ? '🃏 Nova figurinha no álbum: ' : '🃏 Figurinha deste mistério: '}
+                      <Link href={figurinhaConclusao.href} className="underline">
+                        {figurinhaConclusao.nome}
+                      </Link>
+                    </p>
+                  )}
+                  <div className="flex flex-wrap gap-4 justify-center">
                     <button
                       onClick={completarRosario}
                       className="px-8 py-3 bg-accent-600 text-white rounded-xl font-semibold hover:bg-accent-700 transition-colors"
                     >
                       Finalizar
                     </button>
+                    <Link
+                      href="/minha-jornada"
+                      className="px-8 py-3 bg-neutral-200 text-neutral-700 rounded-xl font-semibold hover:bg-neutral-300 transition-colors"
+                    >
+                      Minha Jornada
+                    </Link>
                     <button
                       onClick={cancelar}
                       className="px-8 py-3 bg-neutral-200 text-neutral-700 rounded-xl font-semibold hover:bg-neutral-300 transition-colors"
@@ -322,6 +352,7 @@ export default function RosarioVirtual() {
                 <div className="flex items-center justify-center gap-4">
                   <button
                     onClick={voltar}
+                    aria-label="Passo anterior"
                     disabled={passoAtual === 0}
                     className="p-4 rounded-xl bg-neutral-100 hover:bg-neutral-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
@@ -332,6 +363,7 @@ export default function RosarioVirtual() {
 
                   <button
                     onClick={pausado ? retomar : pausar}
+                    aria-label={pausado ? 'Retomar' : 'Pausar'}
                     className="p-4 rounded-xl bg-accent-600 hover:bg-accent-700 text-white transition-colors"
                   >
                     {pausado ? (
@@ -347,6 +379,7 @@ export default function RosarioVirtual() {
 
                   <button
                     onClick={avancar}
+                    aria-label="Próximo passo"
                     className="p-4 rounded-xl bg-accent-600 hover:bg-accent-700 text-white transition-colors"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -355,6 +388,7 @@ export default function RosarioVirtual() {
                   </button>
 
                   <button
+                    aria-label="Cancelar rosário"
                     onClick={() => {
                       if (confirm('Deseja realmente cancelar este rosário?')) {
                         cancelar();
