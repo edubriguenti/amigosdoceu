@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { coletar } from '../hooks/useAlbum';
+import { registrarOracaoHoje, useOracoes } from '../hooks/useOracoes';
+import { refOracaoRosario } from '../lib/rosarioConclusao';
 import { motion, AnimatePresence } from 'framer-motion';
 import useRosario from '../hooks/useRosario';
 import rosarioData from '../data/rosario.json';
@@ -31,6 +33,7 @@ export default function RosarioVirtual({ figurinhas = {} }) {
 
   const [mostrarEstatisticas, setMostrarEstatisticas] = useState(false);
   const [figurinhaNova, setFigurinhaNova] = useState(false);
+  const { loaded: oracoesCarregadas, resumo: resumoOracoes } = useOracoes();
 
   // Passo atual; além do último passo, o rosário está completo
   const oracaoAtual = emProgresso
@@ -42,6 +45,12 @@ export default function RosarioVirtual({ figurinhas = {} }) {
 
   // Ao terminar a última Ave-Maria, cola a figurinha de Cristo do mistério (idempotente:
   // coletar() lê/grava o localStorage de forma síncrona, então o Strict Mode não duplica).
+  // O terço também conta como oração do dia na sequência (registrarOracaoHoje é idempotente).
+  useEffect(() => {
+    const ref = chegouAoFim ? refOracaoRosario(misterioAtual) : null;
+    if (ref) registrarOracaoHoje(ref);
+  }, [chegouAoFim, misterioAtual]);
+
   useEffect(() => {
     if (!chegouAoFim || !figurinhaConclusao) {
       setFigurinhaNova(false);
@@ -245,6 +254,13 @@ export default function RosarioVirtual({ figurinhas = {} }) {
                   <p className="text-neutral-600 mb-6">
                     Tempo total: {formatarTempo(tempoDecorrido)}
                   </p>
+                  {oracoesCarregadas && resumoOracoes.sequencia > 0 && (
+                    <p className="mb-2 text-neutral-700">
+                      🔥 {resumoOracoes.sequencia === 1
+                        ? 'Oração de hoje registrada: 1 dia de sequência'
+                        : `${resumoOracoes.sequencia} dias seguidos de oração`}
+                    </p>
+                  )}
                   {figurinhaConclusao && (
                     <p role="status" className="mb-6 text-secondary-700 font-medium">
                       {figurinhaNova ? '🃏 Nova figurinha no álbum: ' : '🃏 Figurinha deste mistério: '}

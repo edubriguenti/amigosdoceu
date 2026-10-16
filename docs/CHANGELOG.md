@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-16: terço rezado conta na sequência de orações
+
+- **Problema:** concluir o Rosário dava figurinha, mas não registrava nada em `amigos-do-ceu:oracoes`; quem rezava o terço todo dia continuava com "sequência 0" em Minha Jornada e no bloco Hoje.
+- **Solução:** ao chegar ao fim, o terço é registrado como oração do dia com a ref `rosario:<misterio>` (`refOracaoRosario` em `lib/rosarioConclusao.js`; `registrarOracaoHoje` é idempotente) e a tela de conclusão mostra "N dias seguidos de oração". Não altera a figurinha do dia (que exige a oração do dia específica).
+- **Arquivos:** `components/RosarioVirtual.js`, `lib/rosarioConclusao.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px): com oração registrada ontem e rosário Luminoso no passo 79 de 80, "Próximo" mostra "2 dias seguidos de oração"; `localStorage` ganha `rosario:luminosos` no dia de hoje e permanece igual após recarregar (sem duplicar); 0 erros de página. Resultados de lint/validadores/build abaixo no PR.
+- **Pendências:** só o mistério Luminoso foi exercitado; mistérios/Ave-Marias rezadas em Minha Jornada e modo contemplativo (3.1.1) seguem abertos; sem teste automatizado (o projeto não tem runner). PR: ver lista de PRs.
+
 ## 2026-10-15: Rosário conclui com figurinha de Cristo e próximo passo
 
 - **Problema:** a tela "Rosário Completo!" não dava recompensa nem caminho: rezar um terço inteiro não tinha ligação com o Álbum (diferente da novena, que já cola a figurinha ao concluir) e os botões de controle (anterior, pausar, próximo, cancelar) eram só ícones, sem nome acessível.
