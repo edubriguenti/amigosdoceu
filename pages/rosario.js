@@ -1,8 +1,18 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import RosarioVirtual from '../components/RosarioVirtual';
+import { resumoFigurinha } from '../lib/albumData';
+import { CRISTO_POR_MISTERIO } from '../lib/rosarioConclusao';
 
-export default function RosarioPage() {
+export async function getStaticProps() {
+  const figurinhas = {};
+  Object.entries(CRISTO_POR_MISTERIO).forEach(([tipo, slug]) => {
+    figurinhas[tipo] = resumoFigurinha('cristo', slug);
+  });
+  return { props: { figurinhas } };
+}
+
+export default function RosarioPage({ figurinhas }) {
   return (
     <Layout>
       <Head>
@@ -24,7 +34,7 @@ export default function RosarioPage() {
         <meta name="twitter:description" content="Reze o Santo Rosário online com nosso guia interativo. Mistérios Gozosos, Dolorosos, Gloriosos e Luminosos." />
       </Head>
 
-      <RosarioVirtual />
+      <RosarioVirtual figurinhas={figurinhas} />
     </Layout>
   );
 }

@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-15: Rosário conclui com figurinha de Cristo e próximo passo
+
+- **Problema:** a tela "Rosário Completo!" não dava recompensa nem caminho: rezar um terço inteiro não tinha ligação com o Álbum (diferente da novena, que já cola a figurinha ao concluir) e os botões de controle (anterior, pausar, próximo, cancelar) eram só ícones, sem nome acessível.
+- **Solução:** ao chegar ao fim, a figurinha de Cristo do mistério é colada no Álbum (Gozosos → Nascimento, Luminosos → Batismo no Jordão, Dolorosos → Agonia no Horto, Gloriosos → Ressurreição; `lib/rosarioConclusao.js`), com aviso "Nova figurinha" (ou "Figurinha deste mistério" se já a tinha) e link direto para ela; novo botão "Minha Jornada". Controles com `aria-label`.
+- **Arquivos:** `lib/rosarioConclusao.js`, `pages/rosario.js` (`getStaticProps` com `resumoFigurinha`), `components/RosarioVirtual.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px): rosário Luminoso no passo 79 de 80 → "Próximo passo" → tela de conclusão com "Nova figurinha: Batismo no Rio Jordão", `localStorage` grava `cristo:batismo-jordao` com origem `rosario`; recarga mostra "Figurinha deste mistério" (sem duplicar); o link abre `/album-sagrado/vida-publica?figurinha=cristo:batismo-jordao`; 0 erros de página/console. `lint` (0 erros, 19 avisos preexistentes), `validate:album`, `validate:relacoes`, `validate:imagens` e `build` passaram.
+- **Pendências:** só o mistério Luminoso foi exercitado no navegador (os demais usam o mesmo código, mapeamento conferido só pelo build/catálogo); rezar o terço ainda não conta na sequência de orações (não há `oracao:` para o terço); modo contemplativo (3.1.1) segue aberto; sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-15: barra de navegação inferior no celular
 
 - **Problema:** nas páginas internas o único caminho de navegação era "← Amigos do Céu" (voltar à home) e o ícone da Jornada. Reproduzido no Chromium (390px): de `/oracoes` para o Álbum eram dois passos via home; nenhuma página internamente levava às outras seções.
