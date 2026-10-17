@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-17: header de desktop com as seções do site
+
+- **Problema:** em telas largas as páginas internas só tinham "← Amigos do Céu" e "Minha Jornada" no topo (a barra inferior some a partir de `md`). Reproduzido no Chromium (1280px) em `/santos`: nenhum caminho direto para outras seções; Cristo, Bíblia, Lugares, Calendário, Favoritos etc. exigiam voltar à home.
+- **Solução:** `MinimalHeader` ganha, a partir de `md`, a navegação Santos · Cristo · Bíblia · Lugares · Rezar · Álbum · Mais ▾ (Santos do dia, Calendário, Igrejas, Aparições, Favoritos, Intenções), com `aria-current` na seção ativa. O menu "Mais" fecha com Esc, clique fora e ao navegar. Itens e regra de seção ativa ficam em `lib/navegacao.js` (compartilhada com `BottomNav`).
+- **Arquivos:** `components/MinimalHeader.js`, `components/BottomNav.js`, `lib/navegacao.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium): em 1280px a seção ativa é "Rezar" em `/rosario` e "Santos" em `/santos`; "Mais" abre 6 links, fecha com Esc e ao navegar para `/calendario`; em 390px a nav do header fica oculta; 0 erros de página. `lint` (0 erros, 19 avisos preexistentes), `validate:album` e `build` passaram. Captura de tela conferida.
+- **Pendências:** entre 768 e ~900px o header não foi inspecionado visualmente; menu "Mais" sem navegação por setas (Tab funciona); sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-16: terço rezado conta na sequência de orações
 
 - **Problema:** concluir o Rosário dava figurinha, mas não registrava nada em `amigos-do-ceu:oracoes`; quem rezava o terço todo dia continuava com "sequência 0" em Minha Jornada e no bloco Hoje.
