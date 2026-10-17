@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { secaoAtiva } from '../lib/navegacao'
 
 const ITENS = [
   { href: '/', rotulo: 'Início', icone: '🏠', prefixos: [] },
@@ -11,7 +12,7 @@ const ITENS = [
 
 function ativo(item, pathname) {
   if (item.href === '/') return pathname === '/'
-  return item.prefixos.some((p) => pathname === p || pathname.startsWith(p + '/'))
+  return secaoAtiva(item.prefixos, pathname)
 }
 
 /** Navegação principal no celular (some a partir de md). Só nas páginas internas. */

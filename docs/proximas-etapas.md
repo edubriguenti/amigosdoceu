@@ -156,7 +156,7 @@ um próximo passo, e isso se reflete em Minha Jornada.
 Branch sugerida: `improve/navegacao-mobile`
 
 1. [x] Barra inferior no celular com 5 ações: Início · Santos · Rezar · Álbum · Jornada.
-2. [ ] No desktop, header curto: Santos · Cristo · Bíblia · Lugares · Rezar · Álbum · ☰ Mais.
+2. [x] No desktop, header curto: Santos · Cristo · Bíblia · Lugares · Rezar · Álbum · Mais (`components/MinimalHeader.js`, `lib/navegacao.js`).
 3. [ ] Extrair componentes comuns: `SacredCard`, `EntityHero`, `PrayerBlock`,
    `ProgressBar` (hoje duplicada em Minha Jornada e na Vida de Cristo), `SectionLabel`.
 4. [ ] Unificar os tokens de cor: o tema escuro `cosmic` já virou o padrão do site todo,
