@@ -83,6 +83,13 @@
     }
   },
   "abril": {
+    "25": {
+      "nome": "São Marcos, Evangelista",
+      "tipo": "Festa",
+      "descricao": "Autor do segundo Evangelho, companheiro de São Pedro e de São Paulo",
+      "cor": "vermelho",
+      "santos": []
+    },
     "29": {
       "nome": "Santa Catarina de Sena",
       "tipo": "Festa",
@@ -99,6 +106,13 @@
       "cor": "branco",
       "santos": ["sao-jose"]
     },
+    "3": {
+      "nome": "São Filipe e São Tiago, Apóstolos",
+      "tipo": "Festa",
+      "descricao": "Dois dos Doze Apóstolos de Jesus",
+      "cor": "vermelho",
+      "santos": []
+    },
     "10": {
       "nome": "Frei Galvão",
       "tipo": "Memória",
@@ -106,15 +120,36 @@
       "cor": "branco",
       "santos": ["frei-galvao"]
     },
+    "14": {
+      "nome": "São Matias, Apóstolo",
+      "tipo": "Festa",
+      "descricao": "Escolhido por sorte para ocupar o lugar de Judas entre os Doze",
+      "cor": "vermelho",
+      "santos": []
+    },
     "22": {
       "nome": "Santa Rita de Cássia",
       "tipo": "Memória",
       "descricao": "Esposa, mãe, viúva e religiosa agostiniana, advogada das causas impossíveis",
       "cor": "branco",
       "santos": ["santa-rita-de-cassia"]
+    },
+    "31": {
+      "nome": "Visitação de Nossa Senhora",
+      "tipo": "Festa",
+      "descricao": "Maria visita sua prima Isabel e proclama o Magnificat",
+      "cor": "branco",
+      "santos": []
     }
   },
   "junho": {
+    "11": {
+      "nome": "São Barnabé, Apóstolo",
+      "tipo": "Memória",
+      "descricao": "Companheiro de São Paulo nas primeiras viagens missionárias",
+      "cor": "vermelho",
+      "santos": []
+    },
     "13": {
       "nome": "Santo Antônio de Pádua",
       "tipo": "Memória",
@@ -138,6 +173,13 @@
     }
   },
   "julho": {
+    "3": {
+      "nome": "São Tomé, Apóstolo",
+      "tipo": "Festa",
+      "descricao": "O apóstolo que proclamou: \"Meu Senhor e meu Deus!\"",
+      "cor": "vermelho",
+      "santos": []
+    },
     "9": {
       "nome": "Santa Paulina do Coração Agonizante de Jesus",
       "tipo": "Memória",
@@ -151,18 +193,116 @@
       "descricao": "Abade, pai do monaquismo ocidental e padroeiro da Europa",
       "cor": "branco",
       "santos": ["sao-bento-de-nursia"]
+    },
+    "22": {
+      "nome": "Santa Maria Madalena",
+      "tipo": "Festa",
+      "descricao": "A primeira testemunha da Ressurreição do Senhor",
+      "cor": "branco",
+      "santos": []
+    },
+    "25": {
+      "nome": "São Tiago, Apóstolo",
+      "tipo": "Festa",
+      "descricao": "Irmão de São João, apóstolo e primeiro dos Doze a dar a vida por Cristo",
+      "cor": "vermelho",
+      "santos": []
+    },
+    "26": {
+      "nome": "São Joaquim e Santa Ana",
+      "tipo": "Memória",
+      "descricao": "Pais de Nossa Senhora e avós de Jesus",
+      "cor": "branco",
+      "santos": []
+    },
+    "31": {
+      "nome": "Santo Inácio de Loyola",
+      "tipo": "Memória",
+      "descricao": "Fundador da Companhia de Jesus (jesuítas)",
+      "cor": "branco",
+      "santos": []
     }
   },
   "agosto": {
+    "6": {
+      "nome": "Transfiguração do Senhor",
+      "tipo": "Festa",
+      "descricao": "Jesus se revela glorioso no monte a Pedro, Tiago e João",
+      "cor": "branco",
+      "santos": []
+    },
+    "8": {
+      "nome": "São Domingos de Gusmão",
+      "tipo": "Memória",
+      "descricao": "Fundador da Ordem dos Pregadores (dominicanos)",
+      "cor": "branco",
+      "santos": []
+    },
+    "10": {
+      "nome": "São Lourenço",
+      "tipo": "Festa",
+      "descricao": "Diácono e mártir de Roma",
+      "cor": "vermelho",
+      "santos": []
+    },
+    "15": {
+      "nome": "Assunção de Nossa Senhora",
+      "tipo": "Solenidade",
+      "descricao": "Maria, ao fim de sua vida, é elevada de corpo e alma à glória do Céu",
+      "cor": "branco",
+      "santos": []
+    },
+    "24": {
+      "nome": "São Bartolomeu, Apóstolo",
+      "tipo": "Festa",
+      "descricao": "Um dos Doze Apóstolos, identificado com Natanael",
+      "cor": "vermelho",
+      "santos": []
+    },
     "28": {
       "nome": "Santo Agostinho",
       "tipo": "Memória",
       "descricao": "Bispo, Doutor da Igreja e filósofo",
       "cor": "branco",
       "santos": ["santo-agostinho"]
+    },
+    "29": {
+      "nome": "Martírio de São João Batista",
+      "tipo": "Memória",
+      "descricao": "O precursor de Jesus morre por testemunhar a verdade",
+      "cor": "vermelho",
+      "santos": []
     }
   },
   "setembro": {
+    "8": {
+      "nome": "Natividade de Nossa Senhora",
+      "tipo": "Festa",
+      "descricao": "Nascimento da Virgem Maria",
+      "cor": "branco",
+      "santos": []
+    },
+    "14": {
+      "nome": "Exaltação da Santa Cruz",
+      "tipo": "Festa",
+      "descricao": "A Cruz de Cristo, sinal de salvação e de vitória",
+      "cor": "vermelho",
+      "santos": []
+    },
+    "15": {
+      "nome": "Nossa Senhora das Dores",
+      "tipo": "Memória",
+      "descricao": "Maria ao pé da Cruz, associada à Paixão de seu Filho",
+      "cor": "branco",
+      "santos": []
+    },
+    "21": {
+      "nome": "São Mateus, Apóstolo e Evangelista",
+      "tipo": "Festa",
+      "descricao": "Cobrador de impostos chamado por Jesus, autor do primeiro Evangelho",
+      "cor": "vermelho",
+      "santos": []
+    },
     "23": {
       "nome": "São Padre Pio de Pietrelcina",
       "tipo": "Memória",
@@ -207,6 +347,20 @@
       "cor": "branco",
       "santos": ["sao-francisco-de-assis"]
     },
+    "7": {
+      "nome": "Nossa Senhora do Rosário",
+      "tipo": "Memória",
+      "descricao": "Memória instituída em ação de graças pela vitória de Lepanto (1571)",
+      "cor": "branco",
+      "santos": []
+    },
+    "12": {
+      "nome": "Nossa Senhora Aparecida",
+      "tipo": "Solenidade",
+      "descricao": "Padroeira do Brasil, venerada no Santuário Nacional de Aparecida (SP)",
+      "cor": "branco",
+      "santos": []
+    },
     "15": {
       "nome": "Santa Teresa de Ávila",
       "tipo": "Memória",
@@ -215,6 +369,13 @@
       "santos": ["santa-teresa-de-avila"]
     },
     "18": {
+      "nome": "São Lucas, Evangelista",
+      "tipo": "Festa",
+      "descricao": "Autor do terceiro Evangelho e dos Atos dos Apóstolos",
+      "cor": "vermelho",
+      "santos": []
+    },
+    "20": {
       "nome": "São Paulo da Cruz",
       "tipo": "Memória",
       "descricao": "Fundador dos Passionistas",
@@ -227,6 +388,13 @@
       "descricao": "Papa e Pastor da Igreja Universal",
       "cor": "branco",
       "santos": ["sao-joao-paulo-ii"]
+    },
+    "28": {
+      "nome": "São Simão e São Judas Tadeu, Apóstolos",
+      "tipo": "Festa",
+      "descricao": "Dois dos Doze Apóstolos; São Judas é invocado nas causas difíceis",
+      "cor": "vermelho",
+      "santos": []
     }
   },
   "novembro": {
@@ -243,14 +411,56 @@
       "descricao": "Oração pelos fiéis defuntos",
       "cor": "roxo",
       "santos": []
+    },
+    "9": {
+      "nome": "Dedicação da Basílica de Latrão",
+      "tipo": "Festa",
+      "descricao": "Catedral do Papa em Roma, \"mãe de todas as igrejas\"",
+      "cor": "branco",
+      "santos": []
+    },
+    "21": {
+      "nome": "Apresentação de Nossa Senhora",
+      "tipo": "Memória",
+      "descricao": "Maria é oferecida a Deus desde a infância",
+      "cor": "branco",
+      "santos": []
+    },
+    "30": {
+      "nome": "Santo André, Apóstolo",
+      "tipo": "Festa",
+      "descricao": "Irmão de São Pedro e primeiro chamado por Jesus",
+      "cor": "vermelho",
+      "santos": []
     }
   },
   "dezembro": {
+    "3": {
+      "nome": "São Francisco Xavier",
+      "tipo": "Memória",
+      "descricao": "Missionário jesuíta, padroeiro das missões",
+      "cor": "branco",
+      "santos": []
+    },
     "8": {
       "nome": "Imaculada Conceição",
       "tipo": "Solenidade",
       "descricao": "Nossa Senhora concebida sem pecado original",
       "cor": "branco",
+      "santos": []
+    },
+    "12": {
+      "nome": "Nossa Senhora de Guadalupe",
+      "tipo": "Festa",
+      "descricao": "Padroeira das Américas",
+      "cor": "branco",
+      "santos": []
+    },
+    "13": {
+      "nome": "Santa Luzia",
+      "tipo": "Memória",
+      "descricao": "Virgem e mártir de Siracusa, invocada pela saúde dos olhos",
+      "cor": "vermelho",
       "santos": []
     },
     "16": {
@@ -272,6 +482,27 @@
       "tipo": "Solenidade",
       "descricao": "Nascimento de Jesus",
       "cor": "branco",
+      "santos": []
+    },
+    "26": {
+      "nome": "Santo Estêvão",
+      "tipo": "Festa",
+      "descricao": "O primeiro mártir da Igreja",
+      "cor": "vermelho",
+      "santos": []
+    },
+    "27": {
+      "nome": "São João, Apóstolo e Evangelista",
+      "tipo": "Festa",
+      "descricao": "O discípulo amado, autor do quarto Evangelho",
+      "cor": "branco",
+      "santos": []
+    },
+    "28": {
+      "nome": "Santos Inocentes",
+      "tipo": "Festa",
+      "descricao": "Crianças mártires de Belém",
+      "cor": "vermelho",
       "santos": []
     }
   }

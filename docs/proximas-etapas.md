@@ -101,6 +101,7 @@ desses dados.
 
 ### 2.1 Calendário
 0. [x] Santos já cadastrados sem festa ligados ao calendário (São Sebastião 20/01, Dom Bosco 31/01, Cátedra de São Pedro 22/02, Santa Rita 22/05, São Bento 11/07) e removida a Santa Catarina duplicada em 25/03, que escondia a Anunciação.
+0b. [x] 18/10/2026: +33 celebrações universais (Apóstolos, Evangelistas, festas de Maria, Aparecida) e São Paulo da Cruz movido para 20/10; São Lucas volta a aparecer em 18/10.
 1. [ ] Completar `data/calendario-liturgico.json` com as solenidades, festas e memórias
    obrigatórias do calendário romano geral e as próprias do Brasil.
 2. [ ] Ligar cada celebração aos slugs dos santos já cadastrados (`santos: [...]`).
