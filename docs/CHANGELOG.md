@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-18: calendário litúrgico: celebrações que faltavam e data errada de hoje
+
+- **Problema:** o calendário tinha só 36 dias preenchidos, sem Nossa Senhora Aparecida (12/10, padroeira do Brasil), Assunção, Natividade de Maria, os apóstolos e evangelistas etc. Pior: em 18/10 o "Hoje" da home e `/santos-do-dia` mostravam São Paulo da Cruz (data de sua morte), escondendo a festa de São Lucas. Reproduzido no Chromium (390px) em `/`, `/santos-do-dia` e `/calendario`.
+- **Solução:** São Paulo da Cruz movido para 20/10 (calendário romano geral) e 33 celebrações universais de data certa adicionadas (festas dos Apóstolos e Evangelistas, Assunção, Aparecida, Guadalupe, Santa Luzia, Rosário, Santos Inocentes etc.), com `santos: []` quando o santo ainda não está cadastrado. Sem mudança de código.
+- **Arquivos:** `data/calendario-liturgico.json`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album` e `validate:relacoes` sem erros, `lint` 0 erros (19 avisos preexistentes), `build` ok. Chromium após o build: home e `/santos-do-dia` mostram "São Lucas, Evangelista · Festa" em 18/10, `/calendario` lista 7/10 e 12/10; 0 erros de página.
+- **Pendências:** datas de Frei Galvão (10/05 e 23/12) e Santa Teresinha (30/09 e 01/10) parecem divergir do calendário brasileiro e não foram alteradas por falta de fonte; memórias facultativas e próprias do Brasil seguem em aberto (Etapa 2.1). Datas conferidas de memória, sem fonte oficial consultada: vale revisão.
+
 ## 2026-10-17: header de desktop com as seções do site
 
 - **Problema:** em telas largas as páginas internas só tinham "← Amigos do Céu" e "Minha Jornada" no topo (a barra inferior some a partir de `md`). Reproduzido no Chromium (1280px) em `/santos`: nenhum caminho direto para outras seções; Cristo, Bíblia, Lugares, Calendário, Favoritos etc. exigiam voltar à home.
