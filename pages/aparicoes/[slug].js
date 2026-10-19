@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ImagemSagrada from '../../components/ImagemSagrada'
 import Layout from '../../components/Layout'
 import SEO from '../../components/SEO'
 import FavoritoButton from '../../components/FavoritoButton'
@@ -117,16 +117,14 @@ export default function AparicaoPage({ aparicao, figurinha, relacionadas }) {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-4xl mx-auto px-4">
             <div className="relative img-hero rounded-lg shadow-lg mb-6 overflow-hidden">
-              {aparicao.imagem && (
-                <Image
+              <ImagemSagrada
                   src={aparicao.imagem}
+                  icone="🌹"
                   alt={`Imagem da aparição mariana em ${aparicao.local}`}
-                  fill
                   sizes="(max-width: 768px) 100vw, 1024px"
                   className="object-cover"
                   priority
                 />
-              )}
               <div className="absolute top-4 right-4 z-10">
                 <FavoritoButton tipo="aparicoes" item={aparicao} variant="button" size="md" />
               </div>

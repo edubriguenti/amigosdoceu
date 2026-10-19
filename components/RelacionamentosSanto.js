@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import ImagemSagrada from './ImagemSagrada';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getTodosRelacionamentos, getRelacionamentosAgrupados, TIPOS_RELACIONAMENTO } from '../lib/relacionamentosUtils';
 
@@ -217,10 +217,11 @@ function SantoRelacionadoCard({ relacionamento }) {
         <div className="flex h-full">
           {/* Image */}
           <div className="relative w-24 h-24 flex-shrink-0">
-            <Image
+            <ImagemSagrada
               src={santo.imagem}
+              icone="✨"
+              compacto
               alt={santo.nome}
-              fill
               className="object-cover group-hover:scale-110 transition-transform duration-300"
             />
           </div>
@@ -272,10 +273,11 @@ function SantoMiniCard({ santo }) {
     <Link href={`/santos/${santo.slug}`}>
       <div className="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg hover:bg-white hover:shadow-md transition-all duration-300 cursor-pointer group border border-neutral-100">
         <div className="relative w-12 h-12 flex-shrink-0 rounded-full overflow-hidden">
-          <Image
+          <ImagemSagrada
             src={santo.imagem}
+            icone="✨"
+            compacto
             alt={santo.nome}
-            fill
             className="object-cover group-hover:scale-110 transition-transform duration-300"
           />
         </div>

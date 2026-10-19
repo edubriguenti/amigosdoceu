@@ -1,15 +1,18 @@
 import Link from 'next/link'
+import ImagemSagrada from './ImagemSagrada'
 import FavoritoButton from './FavoritoButton'
 
 export default function ChurchCard({ church }) {
   return (
     <div className="relative group">
       <Link href={`/igrejas/${church.slug}`} className="block overflow-hidden rounded-lg">
-        <div className="aspect-[4/3] bg-cosmic-surface overflow-hidden">
-          <img
+        <div className="relative aspect-[4/3] bg-cosmic-surface overflow-hidden">
+          <ImagemSagrada
             src={church.imagem}
+            icone="⛪"
             alt={church.nome}
-            className="w-full h-full object-cover transform group-hover:scale-105 transition"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transform group-hover:scale-105 transition"
           />
         </div>
         <div className="mt-3">

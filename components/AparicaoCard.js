@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import ImagemSagrada from './ImagemSagrada'
 import FavoritoButton from './FavoritoButton'
 
 export default function AparicaoCard({ aparicao }) {
@@ -7,15 +7,13 @@ export default function AparicaoCard({ aparicao }) {
     <div className="relative group">
       <Link href={`/aparicoes/${aparicao.slug}`} className="block overflow-hidden rounded-lg">
         <div className="relative aspect-[4/5] bg-cosmic-surface overflow-hidden">
-          {aparicao.imagem && (
-            <Image
+          <ImagemSagrada
               src={aparicao.imagem}
+              icone="🌹"
               alt={`Aparição mariana em ${aparicao.local}${aparicao.data ? ' — ' + aparicao.data : ''}`}
-              fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transform group-hover:scale-105 transition"
             />
-          )}
         </div>
         <div className="mt-3">
           <h3 className="font-serif text-lg">{aparicao.nome}</h3>

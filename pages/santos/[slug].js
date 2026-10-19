@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ImagemSagrada from '../../components/ImagemSagrada'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import SEO from '../../components/SEO'
@@ -120,16 +120,14 @@ export default function SaintPage({ saint, figurinha, festa, relacionadas }) {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-4xl mx-auto px-4">
             <div className="relative img-hero rounded-lg shadow-lg mb-6 overflow-hidden">
-              {saint.imagem && (
-                <Image
+              <ImagemSagrada
                   src={saint.imagem}
+                  icone="✨"
                   alt={`Imagem de ${saint.nome}${saint.periodo ? ' — ' + saint.periodo : ''}`}
-                  fill
                   sizes="(max-width: 768px) 100vw, 1024px"
                   className="object-cover"
                   priority
                 />
-              )}
               <div className="absolute top-4 right-4 z-10">
                 <FavoritoButton tipo="santos" item={saint} variant="button" size="md" />
               </div>
