@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-19: imagem que falha vira placeholder temático em santos, aparições e igrejas
+
+- **Problema:** as imagens remotas do Wikimedia (11 dos 19 santos) respondem 429/500 com frequência. Reproduzido no Chromium (390px): em `/santos` os cards mostravam só o texto alternativo ("Imagem de Frei Galvão — …") sobre um bloco escuro, e o mesmo na página do santo e nos santos relacionados. `SaintCard`/`AparicaoCard` também não tinham fallback quando `imagem` era `null`, e `ChurchCard` usava `<img>` sem fallback.
+- **Solução:** novo `components/ImagemSagrada.js` (`next/image` + `onError` → `PlaceholderSagrado` com o ícone da categoria; sem `src` também cai no placeholder). Usado nos cards e páginas de detalhe de santos, aparições e igrejas e em `RelacionamentosSanto`. `PlaceholderSagrado` ganha as props `icone` e `compacto`.
+- **Arquivos:** `components/ImagemSagrada.js`, `components/PlaceholderSagrado.js`, `SaintCard.js`, `AparicaoCard.js`, `ChurchCard.js`, `RelacionamentosSanto.js`, `pages/{santos,igrejas,aparicoes}/[slug].js`, `docs/proximas-etapas.md`.
+- **Testes:** no ambiente da rotina o Wikimedia é inacessível (ENOTFOUND), o que reproduz a falha: antes, 11 imagens quebradas em `/santos`; depois, 0 imagens quebradas e 11 placeholders em `/santos`, 13 em `/igrejas`, 2 em `/santos/santo-agostinho`; 0 erros de página. `lint` (0 erros, 18 avisos; um a menos que antes), `validate:album`, `validate:imagens` e `build` passaram. Captura de tela conferida.
+- **Pendências:** o caminho em que a imagem carrega com sucesso não foi exercitado no navegador (sem acesso ao Wikimedia); `EntidadesRelacionadas`, `TimelineCard` e Conexões ainda não usam o fallback; o placeholder claro destoa um pouco do tema escuro; sem teste automatizado (o projeto não tem runner). A raiz do problema (hospedar localmente as imagens mais usadas) segue na Etapa 1.2.
+
 ## 2026-10-18: calendário litúrgico: celebrações que faltavam e data errada de hoje
 
 - **Problema:** o calendário tinha só 36 dias preenchidos, sem Nossa Senhora Aparecida (12/10, padroeira do Brasil), Assunção, Natividade de Maria, os apóstolos e evangelistas etc. Pior: em 18/10 o "Hoje" da home e `/santos-do-dia` mostravam São Paulo da Cruz (data de sua morte), escondendo a festa de São Lucas. Reproduzido no Chromium (390px) em `/`, `/santos-do-dia` e `/calendario`.
