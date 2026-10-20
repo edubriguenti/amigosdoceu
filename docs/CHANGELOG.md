@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-20: página 404 em português com atalhos
+
+- **Problema:** qualquer endereço inexistente (ex.: `/xyz`, `/busca`) mostrava o 404 padrão do Next: fundo branco, "This page could not be found" em inglês, sem cabeçalho, rodapé nem caminho de volta. Reproduzido no Chromium (390px).
+- **Solução:** `pages/404.js` com o `Layout` do site (header/barra inferior), mensagem em português, botão "Voltar ao início" e grade de atalhos (Santos, Orações, Álbum, Conexões, Calendário, Lugares). `noindex`.
+- **Arquivos:** `pages/404.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px e 1280px): `/xyz` responde 404 com título "Página não encontrada", `noindex,nofollow`, sem overflow horizontal e 0 erros de página; clicar em "Santos" navega para `/santos`. `lint` (0 erros, 18 avisos preexistentes), `validate:album`, `validate:imagens` e `build` passaram. Captura de tela conferida.
+- **Limitações:** não há busca global (`/busca` não existe) — oportunidade para uma próxima rodada; sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-19: imagem que falha vira placeholder temático em santos, aparições e igrejas
 
 - **Problema:** as imagens remotas do Wikimedia (11 dos 19 santos) respondem 429/500 com frequência. Reproduzido no Chromium (390px): em `/santos` os cards mostravam só o texto alternativo ("Imagem de Frei Galvão — …") sobre um bloco escuro, e o mesmo na página do santo e nos santos relacionados. `SaintCard`/`AparicaoCard` também não tinham fallback quando `imagem` era `null`, e `ChurchCard` usava `<img>` sem fallback.
