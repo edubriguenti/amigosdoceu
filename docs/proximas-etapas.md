@@ -161,6 +161,7 @@ Branch sugerida: `improve/navegacao-mobile`
 2. [x] No desktop, header curto: Santos · Cristo · Bíblia · Lugares · Rezar · Álbum · Mais (`components/MinimalHeader.js`, `lib/navegacao.js`).
 3. [ ] Extrair componentes comuns: `SacredCard`, `EntityHero`, `PrayerBlock`,
    `ProgressBar` (hoje duplicada em Minha Jornada e na Vida de Cristo), `SectionLabel`.
+3b. [x] Página 404 em português com atalhos para as seções (`pages/404.js`); antes era o 404 padrão do Next, em inglês e sem navegação.
 4. [ ] Unificar os tokens de cor: o tema escuro `cosmic` já virou o padrão do site todo,
    então documentar isso e remover os restos do tema claro antigo.
 
