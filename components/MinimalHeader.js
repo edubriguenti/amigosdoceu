@@ -109,8 +109,19 @@ export default function MinimalHeader() {
           </nav>
 
           <Link
+            href="/busca"
+            aria-label="Buscar"
+            aria-current={pathname === '/busca' ? 'page' : undefined}
+            className={`ml-auto inline-flex items-center justify-center min-w-[44px] min-h-[44px] text-neutral-300 hover:text-cosmic-gold transition-colors ${FOCO}`}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
+            </svg>
+          </Link>
+
+          <Link
             href="/minha-jornada"
-            className={`ml-auto inline-flex items-center gap-1.5 text-sm text-neutral-300 hover:text-cosmic-gold transition-colors px-2 py-1 ${FOCO}`}
+            className={`inline-flex items-center gap-1.5 text-sm text-neutral-300 hover:text-cosmic-gold transition-colors px-2 py-1 ${FOCO}`}
           >
             <span aria-hidden="true">🧭</span>
             <span className="hidden sm:inline">Minha Jornada</span>

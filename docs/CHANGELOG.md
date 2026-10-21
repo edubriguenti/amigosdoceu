@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-21: busca global em `/busca`
+
+- **Problema:** não havia como procurar nada fora das listas de cada seção (`/busca` caía no 404). Quem queria "Fátima" ou "Ave Maria" tinha de adivinhar a seção. Apontado como oportunidade na rodada do 404.
+- **Solução:** nova página `/busca` (noindex) com campo de busca, filtro por tipo com contagem e resultados com ícone, tipo e resumo. Cobre santos, orações, novenas, aparições, igrejas, eventos da Vida de Cristo e conexões bíblicas (126 itens), sem acento e sem diferenciar maiúsculas; todos os termos precisam casar, título pesa mais. Estado em `?q=` (compartilhável). Ícone de lupa no header (celular e desktop) e link no 404.
+- **Arquivos:** `lib/busca.js` (lógica pura), `pages/busca.js`, `components/MinimalHeader.js`, `pages/404.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px e 1280px): lupa do header leva a `/busca`; "fátima" → 2 resultados (aparição e santuário), filtro "Igrejas" → 1; termo sem resultado mostra mensagem; `?q=ave maria` abre preenchido e o resultado leva a `/oracoes/ave-maria`; sem overflow, 0 erros de página. Lógica conferida em Node. `lint` 0 erros (18 avisos preexistentes) e `build` passaram. Captura conferida.
+- **Limitações:** não busca o texto integral das orações; busca por substring (sem tolerância a erros de digitação); a home não tem header, então não mostra a lupa; sem teste automatizado (o projeto não tem runner). `validate:*` não rodados (sem mudança de dados). `package-lock.json` está fora de sincronia com `package.json` (`npm ci` falha; usei `npm install --no-save`).
+
 ## 2026-10-20: página 404 em português com atalhos
 
 - **Problema:** qualquer endereço inexistente (ex.: `/xyz`, `/busca`) mostrava o 404 padrão do Next: fundo branco, "This page could not be found" em inglês, sem cabeçalho, rodapé nem caminho de volta. Reproduzido no Chromium (390px).
