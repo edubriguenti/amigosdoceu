@@ -169,6 +169,8 @@ Branch sugerida: `improve/navegacao-mobile`
 
 ## Etapa 5: descoberta (depois)
 
+- [x] Busca global em `/busca` (2026-10-21). Próximo: lupa/atalho na home, busca no texto das orações e tolerância a erros de digitação.
+
 - Filtros e categorias de santos: apóstolos, mártires, doutores, papas, fundadores,
   santos do Brasil, padroeiro de… (`lib/searchUtils.js` já tem a base).
 - Conexões da Bíblia como rede: passagem ↔ evento de Cristo ↔ santo ↔ igreja, usando o

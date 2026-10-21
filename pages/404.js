@@ -31,7 +31,11 @@ export default function NaoEncontrada() {
         >
           Voltar ao início
         </Link>
-        <ul className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3 text-left">
+        <p className="mt-6 text-neutral-300">
+          Procurando algo específico?{' '}
+          <Link href="/busca" className="text-cosmic-gold underline">Use a busca</Link>.
+        </p>
+        <ul className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3 text-left">
           {DESTINOS.map((d) => (
             <li key={d.href}>
               <Link
