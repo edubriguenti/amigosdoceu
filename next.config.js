@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: ['upload.wikimedia.org', 'ldsblogs.com', 'www.turismoroma.it'].map((hostname) => ({
+    remotePatterns: ['upload.wikimedia.org', 'www.turismoroma.it'].map((hostname) => ({
       protocol: 'https',
       hostname,
     })),
