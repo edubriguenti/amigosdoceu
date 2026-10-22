@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-22: oração com imagem de outra tradição e card sem fallback
+
+- **Problema:** `/oracoes` tinha 1 imagem quebrada. O Pai Nosso apontava para uma pintura de um blog externo de outra tradição cristã (`ldsblogs.com`), fora do Wikimedia e sem licença conhecida; ao falhar, o `OracaoCard` só escondia a `<img>` e deixava um bloco de gradiente vazio. Reproduzido no Chromium (390px): 1 imagem quebrada em `/oracoes`.
+- **Solução:** `imagem: null` no Pai Nosso (o card mostra o placeholder temático), `ldsblogs.com` removido de `remotePatterns` e `OracaoCard` passa a cair no `PlaceholderSagrado` quando uma imagem remota falha.
+- **Arquivos:** `data/oracoes.json`, `next.config.js`, `components/OracaoCard.js`.
+- **Testes:** `lint` (0 erros, 18 avisos preexistentes), `validate:imagens` e `build` passaram. Chromium (390px) após o build: 0 imagens quebradas em `/oracoes` (antes 1), 17 cards, sem `ldsblogs` no HTML, `/oracoes/pai-nosso` abre sem erro de página.
+- **Limitações:** o Pai Nosso fica sem imagem própria; as páginas de detalhe de orações/novenas ainda usam `<img>` que apenas se oculta em caso de falha. Sem teste automatizado (o projeto não tem runner). PR: #53.
+
 ## 2026-10-20: página 404 em português com atalhos
 
 - **Problema:** qualquer endereço inexistente (ex.: `/xyz`, `/busca`) mostrava o 404 padrão do Next: fundo branco, "This page could not be found" em inglês, sem cabeçalho, rodapé nem caminho de volta. Reproduzido no Chromium (390px).
