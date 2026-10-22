@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FavoritoButton from './FavoritoButton';
@@ -9,6 +10,8 @@ import PlaceholderSagrado from './PlaceholderSagrado';
  * @param {number} index - Índice para animação
  */
 export default function OracaoCard({ oracao, index = 0 }) {
+  // Imagem remota que falha cai no placeholder temático (em vez de um bloco vazio)
+  const [imagemFalhou, setImagemFalhou] = useState(false);
   const truncateText = (text, maxLength = 150) => {
     if (!text) return '';
     if (text.length <= maxLength) return text;
@@ -24,14 +27,12 @@ export default function OracaoCard({ oracao, index = 0 }) {
     >
       {/* Imagem */}
       <div className="relative h-48 bg-gradient-to-br from-accent-100 to-accent-200">
-        {oracao.imagem ? (
+        {oracao.imagem && !imagemFalhou ? (
           <img
             src={oracao.imagem}
             alt={oracao.nome}
             className="w-full h-full object-cover"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
+            onError={() => setImagemFalhou(true)}
           />
         ) : (
           <PlaceholderSagrado categoria={oracao.categoria} />
