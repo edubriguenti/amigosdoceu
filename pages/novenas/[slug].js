@@ -247,10 +247,11 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
 
                 {/* Formulário de intenção */}
                 <div className="max-w-2xl mx-auto mb-6">
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="novena-intencao-inicio" className="block text-sm font-medium text-neutral-700 mb-2">
                     Sua Intenção (opcional)
                   </label>
                   <textarea
+                    id="novena-intencao-inicio"
                     value={intencaoTexto}
                     onChange={(e) => setIntencaoTexto(e.target.value)}
                     placeholder="Escreva a intenção pela qual você está rezando esta novena..."
@@ -281,6 +282,7 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
                     Sua Intenção
                   </h3>
                   <textarea
+                    aria-label="Sua intenção de oração"
                     value={intencaoTexto}
                     onChange={(e) => setIntencaoTexto(e.target.value)}
                     placeholder="Escreva sua intenção de oração..."

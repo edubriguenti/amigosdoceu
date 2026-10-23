@@ -484,10 +484,11 @@ export default function FavoritosPage() {
             </h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">
+                <label htmlFor="lista-nome" className="block text-sm font-medium text-neutral-700 mb-1">
                   Nome da Lista *
                 </label>
                 <input
+                  id="lista-nome"
                   type="text"
                   value={newListName}
                   onChange={(e) => setNewListName(e.target.value)}
@@ -497,10 +498,11 @@ export default function FavoritosPage() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">
+                <label htmlFor="lista-descricao" className="block text-sm font-medium text-neutral-700 mb-1">
                   Descrição (opcional)
                 </label>
                 <textarea
+                  id="lista-descricao"
                   value={newListDesc}
                   onChange={(e) => setNewListDesc(e.target.value)}
                   placeholder="Uma breve descrição da sua lista..."
