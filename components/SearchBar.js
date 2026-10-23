@@ -64,6 +64,7 @@ export default function SearchBar({ query, onQueryChange, placeholder = "Buscar.
         {/* Input de busca */}
         <input
           type="text"
+          aria-label={placeholder}
           value={localQuery}
           onChange={handleInputChange}
           placeholder={placeholder}

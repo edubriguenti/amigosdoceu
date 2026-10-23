@@ -71,6 +71,7 @@ export default function RelacionamentosSanto({ santoSlug, santosData }) {
           {/* Type Filter */}
           <div className="flex-1 min-w-[200px]">
             <select
+              aria-label="Filtrar relacionamentos por tipo"
               value={filtroTipo}
               onChange={(e) => setFiltroTipo(e.target.value)}
               className="w-full px-4 py-2 bg-white border border-neutral-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent-500"

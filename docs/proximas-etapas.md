@@ -66,7 +66,7 @@ Hoje (home) → Conhecer (santo) → Rezar → Receber figurinha → Álbum → 
 - [ ] **Imagens quebradas em Orações e Novenas.** 15 de 16 orações e 5 de 5 novenas
   apontam para arquivos inexistentes (`/images/oracoes/*.jpg` responde 404). Buscar as
   imagens com a skill `wikimedia-image` ou mostrar um fundo temático quando faltar.
-- [ ] **O popup de notificações cobre o bloco "Hoje" no celular.** Adiar o popup
+- [x] **O popup de notificações cobre o bloco "Hoje" no celular.** (já resolvido: não aparece na home e só a partir da segunda visita) Adiar o popup
   (`components/NotificacoesLiturgicas.js`) até a segunda visita ou até o usuário rolar a
   página, e nunca exibi-lo por cima do painel do dia.
 - [x] **Imagem remota que falha** em santos, aparições e igrejas agora cai num placeholder temático (`components/ImagemSagrada.js`). Falta aplicar em `EntidadesRelacionadas`, `TimelineCard` e Conexões e baixar localmente as imagens do Wikimedia.

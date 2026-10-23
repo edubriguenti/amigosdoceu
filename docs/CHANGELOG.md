@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-23: campos de busca, filtro e texto com nome acessível
+
+- **Problema:** rastreio no Chromium (390px e 1280px) de 18 rotas: `/santos`, `/igrejas` e `/oracoes` tinham um campo de busca sem rótulo (só `placeholder`), e o filtro de tipo em `RelacionamentosSanto`, os campos "Nome/Descrição da lista" em `/favoritos` e as caixas de intenção em `/novenas/[slug]` tinham `<label>` solto (sem `htmlFor`) ou nenhum. Leitores de tela anunciam "campo de edição" sem dizer para quê. Sem overflow horizontal, `h1` único em todas as rotas, nenhum botão/link sem nome e 0 erros de página.
+- **Solução:** `aria-label` nos campos de busca (`SearchBar`, `/oracoes`) e no filtro de relacionamentos; `id` + `htmlFor` nos campos de `/favoritos` e `/novenas/[slug]`. Sem mudança visual.
+- **Arquivos:** `components/SearchBar.js`, `components/RelacionamentosSanto.js`, `pages/oracoes/index.js`, `pages/favoritos/index.js`, `pages/novenas/[slug].js`.
+- **Testes:** `lint` (0 erros, 18 avisos preexistentes), `build`, `validate:album` e `validate:imagens` passaram. Rastreio repetido após o build (18 rotas x 2 larguras): 0 campos sem nome acessível (antes 4 rotas com 1); `/novenas/novena-nossa-senhora-aparecida` com `<textarea>` associado ao rótulo (`labels` = 1).
+- **Limitações:** inspeção por script (nome acessível dos campos), sem leitor de tela real nem axe; os formulários internos de `/favoritos` (criar lista) não foram abertos no navegador, só conferidos no código; modais e `FilterPanel` não foram auditados; sem teste automatizado (o projeto não tem runner). O PR #52 (busca global) segue aberto e não conflita com estes arquivos.
+
 ## 2026-10-22: oração com imagem de outra tradição e card sem fallback
 
 - **Problema:** `/oracoes` tinha 1 imagem quebrada. O Pai Nosso apontava para uma pintura de um blog externo de outra tradição cristã (`ldsblogs.com`), fora do Wikimedia e sem licença conhecida; ao falhar, o `OracaoCard` só escondia a `<img>` e deixava um bloco de gradiente vazio. Reproduzido no Chromium (390px): 1 imagem quebrada em `/oracoes`.

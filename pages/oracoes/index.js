@@ -47,6 +47,7 @@ export default function OracoesPage() {
               <div className="relative">
                 <input
                   type="text"
+                  aria-label="Buscar orações"
                   placeholder="Buscar orações..."
                   value={busca}
                   onChange={(e) => setBusca(e.target.value)}
