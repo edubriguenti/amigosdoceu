@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { getCalendarioMes, getCelebracaoDoDia, formatarData } from '../lib/calendarUtils'
+import { getCalendarioMes, getCelebracaoDoDia, getSantosPorSlugs } from '../lib/calendarUtils'
 
 const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 
@@ -10,9 +10,18 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
   const [mes, setMes] = useState(mesInicial || hoje.getMonth() + 1)
   const [ano, setAno] = useState(anoInicial || hoje.getFullYear())
 
+  const [diaSelecionado, setDiaSelecionado] = useState(null)
+  const painelRef = useRef(null)
+
+  // No celular o detalhe fica abaixo da grade, fora da tela: traz para a vista ao selecionar.
+  useEffect(() => {
+    if (diaSelecionado) painelRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  }, [diaSelecionado])
+
   const calendario = getCalendarioMes(mes, ano)
 
   const mesAnterior = () => {
+    setDiaSelecionado(null)
     if (mes === 1) {
       setMes(12)
       setAno(ano - 1)
@@ -22,6 +31,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
   }
 
   const mesSeguinte = () => {
+    setDiaSelecionado(null)
     if (mes === 12) {
       setMes(1)
       setAno(ano + 1)
@@ -31,9 +41,15 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
   }
 
   const mesAtual = () => {
+    setDiaSelecionado(null)
     setMes(hoje.getMonth() + 1)
     setAno(hoje.getFullYear())
   }
+
+  const celebracaoSelecionada = diaSelecionado
+    ? getCelebracaoDoDia(new Date(ano, mes - 1, diaSelecionado))
+    : null
+  const santosSelecionados = getSantosPorSlugs(celebracaoSelecionada?.santos)
 
   // Criar array de dias do calendário
   const dias = []
@@ -133,44 +149,50 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
 
             const { dia, celebracao, ehHoje } = item
 
-            return (
-              <motion.div
-                key={dia}
-                whileHover={{ scale: 1.02 }}
-                className={`aspect-square border-r border-b last:border-r-0 p-2 relative overflow-hidden ${
-                  celebracao ? getCorCelebracao(celebracao.tipo) : 'bg-white border-gray-200'
-                } ${ehHoje ? 'ring-2 ring-amber-500' : ''}`}
-              >
-                <div className="flex flex-col h-full">
-                  <div className={`text-sm font-semibold mb-1 ${ehHoje ? 'text-amber-700' : 'text-gray-700'}`}>
-                    {dia}
-                  </div>
-
-                  {celebracao && (
-                    <div className="flex-1 overflow-hidden">
-                      <div className="text-xs font-medium text-gray-900 leading-tight mb-1">
-                        {celebracao.nome}
-                      </div>
-                      <div className="text-xs text-gray-600">
-                        {celebracao.tipo}
-                      </div>
-
-                      {celebracao.santos && celebracao.santos.length > 0 && (
-                        <Link
-                          href={`/santos/${celebracao.santos[0]}`}
-                          className="text-xs text-blue-800 hover:underline mt-1 inline-block"
-                        >
-                          Ver santo
-                        </Link>
-                      )}
-                    </div>
-                  )}
-
-                  {ehHoje && (
-                    <div className="absolute top-1 right-1 w-2 h-2 bg-amber-500 rounded-full" />
-                  )}
+            const selecionado = diaSelecionado === dia
+            const classes = `aspect-square border-r border-b last:border-r-0 p-1 sm:p-2 relative overflow-hidden text-left ${
+              celebracao ? getCorCelebracao(celebracao.tipo) : 'bg-white border-gray-200'
+            } ${ehHoje ? 'ring-2 ring-amber-500' : ''} ${selecionado ? 'ring-2 ring-inset ring-blue-700' : ''}`
+            const conteudo = (
+              <div className="flex flex-col h-full">
+                <div className={`text-sm font-semibold sm:mb-1 ${ehHoje ? 'text-amber-700' : 'text-gray-700'}`}>
+                  {dia}
                 </div>
-              </motion.div>
+
+                {celebracao && (
+                  <div className="hidden sm:block flex-1 overflow-hidden">
+                    <div className="text-xs font-medium text-gray-900 leading-tight mb-1">
+                      {celebracao.nome}
+                    </div>
+                    <div className="text-xs text-gray-600">{celebracao.tipo}</div>
+                  </div>
+                )}
+
+                {ehHoje && (
+                  <div className="absolute top-1 right-1 w-2 h-2 bg-amber-500 rounded-full" />
+                )}
+              </div>
+            )
+
+            if (!celebracao) {
+              return (
+                <div key={dia} className={classes}>
+                  {conteudo}
+                </div>
+              )
+            }
+
+            return (
+              <button
+                key={dia}
+                type="button"
+                onClick={() => setDiaSelecionado(selecionado ? null : dia)}
+                aria-pressed={selecionado}
+                aria-label={`${dia} de ${calendario.mesNome}: ${celebracao.nome}, ${celebracao.tipo}`}
+                className={`${classes} hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700`}
+              >
+                {conteudo}
+              </button>
             )
           })}
         </div>
@@ -194,6 +216,37 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
           <div className="w-4 h-4 bg-purple-100 border border-purple-400 rounded" />
           <span>Comemoração</span>
         </div>
+      </div>
+
+
+      {/* Detalhe do dia selecionado */}
+      <div ref={painelRef} aria-live="polite" className="mt-4 scroll-mb-24">
+        {celebracaoSelecionada ? (
+          <div className={`p-4 rounded-lg border ${getCorCelebracao(celebracaoSelecionada.tipo)}`}>
+            <div className="text-sm font-medium text-gray-700">
+              {diaSelecionado} de {calendario.mesNome} · {celebracaoSelecionada.tipo}
+            </div>
+            <div className="text-lg font-semibold text-gray-900 mt-1">{celebracaoSelecionada.nome}</div>
+            <p className="text-sm text-gray-700 mt-1">{celebracaoSelecionada.descricao}</p>
+            {santosSelecionados.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+                {santosSelecionados.map(santo => (
+                  <Link
+                    key={santo.slug}
+                    href={`/santos/${santo.slug}`}
+                    className="text-sm text-blue-800 font-medium hover:underline"
+                  >
+                    {santo.nome} →
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <p className="text-sm text-neutral-300">
+            Toque em um dia colorido para ver a celebração e o santo do dia.
+          </p>
+        )}
       </div>
 
       {/* Lista de celebrações do mês */}
