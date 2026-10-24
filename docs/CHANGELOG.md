@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-24: calendário: dias clicáveis com detalhe da celebração
+
+- **Problema:** em `/calendario` (Chromium, 390px) os dias com celebração não eram clicáveis e o nome aparecia cortado dentro da célula ("Santa", "Sant", "São"); celebrações sem santo (Aparecida, Anjos da Guarda) não tinham nenhum detalhe além da lista longa no fim da página, e o link "Ver santo" na célula era um alvo minúsculo.
+- **Solução:** dias com celebração viram `<button>` (`aria-pressed`, `aria-label` "4 de Outubro: São Francisco de Assis, Memória"). O toque abre um painel `aria-live` com data, tipo, nome completo, descrição e links para todos os santos do dia; o painel rola para a vista no celular. No celular a célula mostra só o número e a cor do tipo; a partir de `sm` mantém o nome. Selecionar de novo ou trocar de mês limpa a seleção.
+- **Arquivos:** `components/CalendarioMensal.js`.
+- **Testes:** Chromium (390px e 1280px) após `build`: 10 botões de dia em outubro; clicar em 4/10 mostra "São Francisco de Assis" com link para o santo e `aria-pressed=true`; clicar em 12/10 mostra Aparecida sem link de santo; "Próximo" limpa o painel; painel visível na viewport de 390px após o clique; sem overflow horizontal e 0 erros de página. `lint` (0 erros, 18 avisos preexistentes), `validate:album` e `build` passaram.
+- **Limitações:** navegação por teclado conferida só pelo semântico (`button`), sem leitor de tela real; celebrações sem santo não têm link para orações/aparições relacionadas (próxima oportunidade: mini-hub do dia, Etapa 5); sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-23: campos de busca, filtro e texto com nome acessível
 
 - **Problema:** rastreio no Chromium (390px e 1280px) de 18 rotas: `/santos`, `/igrejas` e `/oracoes` tinham um campo de busca sem rótulo (só `placeholder`), e o filtro de tipo em `RelacionamentosSanto`, os campos "Nome/Descrição da lista" em `/favoritos` e as caixas de intenção em `/novenas/[slug]` tinham `<label>` solto (sem `htmlFor`) ou nenhum. Leitores de tela anunciam "campo de edição" sem dizer para quê. Sem overflow horizontal, `h1` único em todas as rotas, nenhum botão/link sem nome e 0 erros de página.

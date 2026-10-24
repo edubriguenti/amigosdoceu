@@ -173,7 +173,7 @@ Branch sugerida: `improve/navegacao-mobile`
   santos do Brasil, padroeiro de… (`lib/searchUtils.js` já tem a base).
 - Conexões da Bíblia como rede: passagem ↔ evento de Cristo ↔ santo ↔ igreja, usando o
   mesmo grafo de `lib/relacoesGrafo.js`, com os tipos novos `biblia:` e `trilha:`.
-- Página do dia no calendário: cada celebração vira um mini-hub
+- Página do dia no calendário (parcial: `/calendario` já abre um painel com o dia selecionado; falta Ver no Álbum · Rezar · Novena): cada celebração vira um mini-hub
   (Ver santo · Ver no Álbum · Rezar · Novena relacionada).
 
 ---
