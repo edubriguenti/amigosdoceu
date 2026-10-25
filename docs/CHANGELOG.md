@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-25: calendário litúrgico: 42 memórias obrigatórias que faltavam
+
+- **Problema:** o calendário tinha 69 dias preenchidos; na maior parte do ano o "Hoje" da home e `/santos-do-dia` mostravam "Um dia comum" (ex.: 25/10 e novembro com só 5 dias), mesmo havendo memórias obrigatórias do calendário romano geral (Santa Cecília 22/11, São Martinho 11/11, Santa Mônica 27/08, São Bernardo, São João da Cruz etc.).
+- **Solução:** +42 memórias obrigatórias de data fixa (de 69 para 111 dias), com cor litúrgica, `santos: []` (sem santo cadastrado ainda). Sem mudança de código.
+- **Arquivos:** `data/calendario-liturgico.json`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album` e `validate:relacoes` sem erros, `lint` 0 erros, `build` ok. Chromium (390px) após o build: `/calendario` em novembro com 12 botões de dia (antes 5); clicar em 22/11 mostra "Santa Cecília, Virgem e Mártir · Memória"; sem overflow e 0 erros de página.
+- **Limitações:** datas e títulos conferidos de memória, sem fonte oficial consultada: vale revisão. Memórias facultativas e próprias do Brasil (ex.: Cosme e Damião, 26/09) seguem em aberto; as de data móvel não entram. Sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-24: calendário: dias clicáveis com detalhe da celebração
 
 - **Problema:** em `/calendario` (Chromium, 390px) os dias com celebração não eram clicáveis e o nome aparecia cortado dentro da célula ("Santa", "Sant", "São"); celebrações sem santo (Aparecida, Anjos da Guarda) não tinham nenhum detalhe além da lista longa no fim da página, e o link "Ver santo" na célula era um alvo minúsculo.
