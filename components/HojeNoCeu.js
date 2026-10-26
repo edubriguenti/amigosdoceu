@@ -31,7 +31,11 @@ const botaoSecundario =
 const botaoPrimario =
   'inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-cosmic-gold text-[#1b1406] hover:bg-amber-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
 
-function HojeNaIgreja({ celebracao, santos, onRezar }) {
+function quando(emDias) {
+  return emDias === 1 ? 'amanhã' : `em ${emDias} dias`
+}
+
+function HojeNaIgreja({ celebracao, santos, proxima, onRezar }) {
   const santo = santos[0]
   return (
     <div className="p-6 flex flex-col">
@@ -57,6 +61,18 @@ function HojeNaIgreja({ celebracao, santos, onRezar }) {
           <p className="mt-3 text-sm text-neutral-400 leading-relaxed">
             Nenhuma celebração especial no calendário hoje. É um bom dia para conhecer um santo novo.
           </p>
+          {proxima && (
+            <p className="mt-3 text-sm text-neutral-300 leading-relaxed">
+              Próxima celebração, {quando(proxima.emDias)} ({proxima.data}):{' '}
+              <Link
+                href={proxima.santoSlug ? `/santos/${proxima.santoSlug}` : '/calendario'}
+                className="text-cosmic-blue-light hover:underline"
+              >
+                {proxima.nome}
+              </Link>{' '}
+              · {proxima.tipo}
+            </p>
+          )}
         </>
       )}
       <div className="mt-auto pt-5 flex flex-wrap gap-2">
@@ -201,7 +217,7 @@ export default function HojeNoCeu({ dias, hojeServidor }) {
           <p className="text-sm text-neutral-400 first-letter:uppercase">{dataPorExtenso(dia.data)}</p>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-cosmic-border md:min-h-[17rem]">
-          <HojeNaIgreja celebracao={dia.celebracao} santos={dia.santos} onRezar={abrirOracao} />
+          <HojeNaIgreja celebracao={dia.celebracao} santos={dia.santos} proxima={dia.proxima} onRezar={abrirOracao} />
           <FigurinhaDeHoje
             figurinha={dia.figurinha}
             ehSantoDoDia={dia.figurinhaEhSantoDoDia}

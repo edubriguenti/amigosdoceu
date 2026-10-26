@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-26: home: dia sem celebração aponta para a próxima
+
+- **Problema:** em dias sem celebração (ex.: 26/10, Chromium 390px) o bloco "Hoje na Igreja" mostrava só "Um dia comum" e uma frase genérica, sem caminho a seguir.
+- **Solução:** `montarDia` (`lib/hoje.js`) passa a devolver `proxima` (próxima celebração em até 30 dias, com `emDias`, data por extenso e santo cadastrado, se houver) quando o dia não tem celebração. `HojeNoCeu` mostra "Próxima celebração, em 2 dias (quarta-feira, 28 de outubro): São Simão e São Judas Tadeu, Apóstolos · Festa", com link para o santo ou para `/calendario`.
+- **Arquivos:** `lib/hoje.js`, `components/HojeNoCeu.js`, `docs/proximas-etapas.md`.
+- **Testes:** `lint` (0 erros, 18 avisos preexistentes), `build`, `validate:album` e `validate:relacoes` passaram. Chromium (390px e 1280px) após o build: texto da próxima celebração presente em 26/10, sem overflow horizontal, 0 erros de página; o link sem santo cadastrado leva a `/calendario`.
+- **Limitações:** o ramo com link para santo cadastrado não foi exercitado no navegador (a próxima celebração do dia do teste não tem santo); sem teste automatizado (o projeto não tem runner). Observado e não tratado: o placeholder da busca em `/santos` fica cortado a 390px ("…nome, país, ord"). PR #52 (busca global) segue aberto.
+
 ## 2026-10-25: calendário litúrgico: 42 memórias obrigatórias que faltavam
 
 - **Problema:** o calendário tinha 69 dias preenchidos; na maior parte do ano o "Hoje" da home e `/santos-do-dia` mostravam "Um dia comum" (ex.: 25/10 e novembro com só 5 dias), mesmo havendo memórias obrigatórias do calendário romano geral (Santa Cecília 22/11, São Martinho 11/11, Santa Mônica 27/08, São Bernardo, São João da Cruz etc.).
