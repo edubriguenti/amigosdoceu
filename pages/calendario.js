@@ -3,8 +3,20 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import CalendarioMensal from '../components/CalendarioMensal'
+import santos from '../data/santos.json'
+import { resumoFigurinha } from '../lib/albumData'
 
-export default function Calendario() {
+// Link direto para a figurinha de cada santo (o catálogo fica no servidor, fora do bundle).
+export async function getStaticProps() {
+  const albumHrefs = {}
+  santos.forEach((s) => {
+    const f = resumoFigurinha('santo', s.slug)
+    if (f) albumHrefs[s.slug] = f.href
+  })
+  return { props: { albumHrefs } }
+}
+
+export default function Calendario({ albumHrefs }) {
   return (
     <Layout>
       <SEO
@@ -49,7 +61,7 @@ export default function Calendario() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <CalendarioMensal />
+          <CalendarioMensal albumHrefs={albumHrefs} />
         </motion.div>
 
         {/* Informações adicionais */}

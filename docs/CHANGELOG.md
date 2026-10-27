@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-27: calendário: "Ver no Álbum" no painel do dia
+
+- **Problema:** o painel do dia em `/calendario` só levava à biografia do santo; quem queria ver ou colar a figurinha dele tinha de passar pelo Álbum e procurar a página certa.
+- **Solução:** `getStaticProps` de `pages/calendario.js` resolve o link da figurinha de cada santo (`resumoFigurinha`, catálogo fora do bundle) e `CalendarioMensal` mostra "Ver no Álbum →" ao lado do santo; o link abre o modal da figurinha.
+- **Arquivos:** `pages/calendario.js`, `components/CalendarioMensal.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px): ao selecionar um dia com santo (Santa Teresinha), "Ver no Álbum" abre `/album-sagrado/doutores-da-igreja?figurinha=santo:santa-teresinha-do-menino-jesus` com o modal aberto, 0 erros de página. Resultados de lint e build abaixo no PR.
+- **Pendências:** "Rezar" e "Novena" no painel seguem abertos (Etapa 5); imagens do Wikimedia não carregam no sandbox (500), então a validação visual de fotos não foi feita; sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-26: home: dia sem celebração aponta para a próxima
 
 - **Problema:** em dias sem celebração (ex.: 26/10, Chromium 390px) o bloco "Hoje na Igreja" mostrava só "Um dia comum" e uma frase genérica, sem caminho a seguir.

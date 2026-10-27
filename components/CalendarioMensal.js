@@ -5,7 +5,7 @@ import { getCalendarioMes, getCelebracaoDoDia, getSantosPorSlugs } from '../lib/
 
 const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 
-export default function CalendarioMensal({ mesInicial, anoInicial }) {
+export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = {} }) {
   const hoje = new Date()
   const [mes, setMes] = useState(mesInicial || hoje.getMonth() + 1)
   const [ano, setAno] = useState(anoInicial || hoje.getFullYear())
@@ -231,13 +231,22 @@ export default function CalendarioMensal({ mesInicial, anoInicial }) {
             {santosSelecionados.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
                 {santosSelecionados.map(santo => (
-                  <Link
-                    key={santo.slug}
-                    href={`/santos/${santo.slug}`}
-                    className="text-sm text-blue-800 font-medium hover:underline"
-                  >
-                    {santo.nome} →
-                  </Link>
+                  <div key={santo.slug} className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                    <Link
+                      href={`/santos/${santo.slug}`}
+                      className="text-sm text-blue-800 font-medium hover:underline"
+                    >
+                      {santo.nome} →
+                    </Link>
+                    {albumHrefs[santo.slug] && (
+                      <Link
+                        href={albumHrefs[santo.slug]}
+                        className="text-sm text-blue-800 font-medium hover:underline"
+                      >
+                        Ver no Álbum →
+                      </Link>
+                    )}
+                  </div>
                 ))}
               </div>
             )}
