@@ -392,5 +392,23 @@
     "periodo": "Medieval",
     "doutorIgreja": false,
     "popularidade": 90
+  },
+  {
+    "nome": "São Judas Tadeu",
+    "slug": "sao-judas-tadeu",
+    "imagem": null,
+    "descricao": "Judas Tadeu foi um dos Doze Apóstolos, chamado por Jesus às margens da Galileia. O Evangelho de João o distingue do traidor ao registrar a pergunta que fez na Última Ceia: \"Senhor, por que te manifestarás a nós e não ao mundo?\" (Jo 14,22). A tradição o apresenta como autor da Carta de Judas, no Novo Testamento, e como missionário na Mesopotâmia e na Pérsia, onde teria sido martirizado junto com São Simão. Por isso a Igreja celebra os dois apóstolos juntos em 28 de outubro. Muito invocado nas causas difíceis e desesperadas, tem uma das devoções mais fortes do Brasil, com multidões nas missas e procissões do dia 28 de cada mês.",
+    "oracao": "São Judas Tadeu, apóstolo fiel e amigo de Jesus, intercedei por nós nas horas de aflição. Vós que sois lembrado nas causas difíceis e desesperadas, ajudai-me a confiar em Deus quando tudo parece impossível. Alcançai-me a paz no coração e a graça de que preciso, se for para a glória de Deus e o bem de minha alma. Amém.",
+    "tags": ["Apóstolos", "Mártires", "Causas Difíceis", "Brasil"],
+    "dataNascimento": "século I",
+    "dataFalecimento": "século I",
+    "dataCanonizacao": "Pré-Congregação",
+    "pais": "Israel",
+    "ordemReligiosa": null,
+    "padroeiro": ["Causas Impossíveis", "Causas Desesperadas"],
+    "periodo": "Antiguidade",
+    "doutorIgreja": false,
+    "popularidade": 92,
+    "relacionamentos": []
   }
 ]

@@ -9,6 +9,7 @@
 
     { "a": "santo:sao-pedro", "b": "igreja:basilica-sao-pedro", "rotulo": "Túmulo do apóstolo" },
     { "a": "santo:sao-pedro", "b": "cristo:chamado-apostolos", "rotulo": "Chamado por Jesus" },
+    { "a": "santo:sao-judas-tadeu", "b": "cristo:chamado-apostolos", "rotulo": "Chamado por Jesus" },
     { "a": "santo:sao-pedro", "b": "cristo:transfiguracao", "rotulo": "Testemunha" },
     { "a": "santo:sao-pedro", "b": "cristo:ultima-ceia", "rotulo": "Na Última Ceia" },
     { "a": "santo:sao-pedro", "b": "cristo:prisao-jesus", "rotulo": "Na prisão de Jesus" },
