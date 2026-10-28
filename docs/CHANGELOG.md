@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-28: São Judas Tadeu no site, ligado à festa de hoje
+
+- **Problema:** em 28/10 (festa de São Simão e São Judas Tadeu) a home e `/santos-do-dia` mostravam a celebração, mas sem santo ligado: "Conhecer" não tinha destino útil e o santo mais devoto do Brasil nas causas difíceis não existia no site (19 santos).
+- **Solução:** novo santo `sao-judas-tadeu` (apóstolo, festa 28/10, padroeiro das causas impossíveis), ligado à celebração do dia no calendário e ao evento "Chamado dos Apóstolos" em `relacoes.json`. A figurinha #065 entra sozinha no Álbum.
+- **Arquivos:** `data/santos.json`, `data/calendario-liturgico.json`, `data/relacoes.json`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album`, `validate:relacoes` e `validate:imagens` sem erros; `lint` 0 erros (18 avisos preexistentes); `build` ok. Chromium (390px) após o build: na home de 28/10, "Conhecer" leva a `/santos/sao-judas-tadeu`; a página mostra "Festa: 28 de outubro", oração e a figurinha colada; `/santos-do-dia` lista o santo com "Ver santo"/"Ver no Álbum"; sem overflow e 0 erros de página.
+- **Limitações:** sem imagem (`imagem: null`, placeholder): o Wikimedia não é acessível do sandbox, falta salvar uma imagem em `public/images/santos/`. Texto e oração escritos de memória, vale revisão (a tradição sobre o martírio na Pérsia é incerta, por isso o texto diz "a tradição"). São Simão segue sem página. Sem teste automatizado (o projeto não tem runner). PR #52 (busca global) segue aberto.
+
 ## 2026-10-27: calendário: "Ver no Álbum" no painel do dia
 
 - **Problema:** o painel do dia em `/calendario` só levava à biografia do santo; quem queria ver ou colar a figurinha dele tinha de passar pelo Álbum e procurar a página certa.
