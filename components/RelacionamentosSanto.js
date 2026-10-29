@@ -136,10 +136,11 @@ function ListaRelacionamentos({ relacionamentos }) {
   }
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       {relacionamentos.map((rel, index) => (
         <motion.div
           key={`${rel.santo?.slug}-${index}`}
+          className="min-w-0"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.2, delay: index * 0.05 }}
@@ -228,7 +229,7 @@ function SantoRelacionadoCard({ relacionamento }) {
           </div>
 
           {/* Content */}
-          <div className="flex-1 p-3 flex flex-col justify-between">
+          <div className="flex-1 min-w-0 p-3 flex flex-col justify-between">
             <div>
               <div className="flex items-start gap-2 mb-1">
                 <span className="text-lg">{tipoInfo.icon}</span>
@@ -254,7 +255,7 @@ function SantoRelacionadoCard({ relacionamento }) {
                 </span>
               )}
               {santo.ordemReligiosa && (
-                <span className="bg-white px-2 py-0.5 rounded truncate">
+                <span className="bg-white px-2 py-0.5 rounded truncate min-w-0">
                   {santo.ordemReligiosa}
                 </span>
               )}
