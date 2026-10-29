@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-29: página de santo sem rolagem horizontal no celular
+
+- **Problema:** rastreio no Chromium (390px) de 94 rotas: `/santos/sao-joao-paulo-ii` rolava na horizontal. Na seção "Conexões" (`RelacionamentosSanto`) o card de Santa Teresinha media 437px dentro de uma grade de 294px, porque o item da grade não podia encolher abaixo do conteúdo (`min-width: auto`).
+- **Solução:** `grid-cols-1` na lista e `min-w-0` no item, no corpo do card e no chip da ordem religiosa.
+- **Arquivos:** `components/RelacionamentosSanto.js`.
+- **Testes:** `lint` 0 erros (18 avisos preexistentes) e `build` ok. Chromium após o build: `/santos/sao-joao-paulo-ii` sem overflow (antes 497px de largura); os 20 santos sem overflow em 390px e 320px.
+- **Limitações:** imagens do Wikimedia não carregam no sandbox, então a validação visual de fotos não foi feita; sem teste automatizado (o projeto não tem runner). PR #52 (busca global) segue aberto.
+
 ## 2026-10-28: São Judas Tadeu no site, ligado à festa de hoje
 
 - **Problema:** em 28/10 (festa de São Simão e São Judas Tadeu) a home e `/santos-do-dia` mostravam a celebração, mas sem santo ligado: "Conhecer" não tinha destino útil e o santo mais devoto do Brasil nas causas difíceis não existia no site (19 santos).
