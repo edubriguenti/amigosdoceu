@@ -89,7 +89,7 @@ export default function SantosPage() {
             <SearchBar
               query={query}
               onQueryChange={setQuery}
-              placeholder="Buscar santos por nome, país, ordem religiosa..."
+              placeholder="Buscar por nome, país, ordem..."
             />
           </div>
 

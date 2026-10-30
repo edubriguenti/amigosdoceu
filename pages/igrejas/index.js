@@ -84,7 +84,7 @@ export default function IgrejasPage() {
             <SearchBar
               query={query}
               onQueryChange={setQuery}
-              placeholder="Buscar igrejas por nome, país, estilo arquitetônico..."
+              placeholder="Buscar por nome, país, estilo..."
             />
           </div>
 
