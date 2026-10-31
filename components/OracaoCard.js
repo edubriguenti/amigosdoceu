@@ -92,7 +92,7 @@ export default function OracaoCard({ oracao, index = 0 }) {
         {/* Link para página completa */}
         <Link
           href={`/oracoes/${oracao.slug}`}
-          className="inline-flex items-center text-accent-600 hover:text-accent-700 font-medium text-sm transition-colors group mt-auto"
+          className="inline-flex items-center min-h-11 text-accent-600 hover:text-accent-700 font-medium text-sm transition-colors group mt-auto"
         >
           Ver oração completa
           <svg

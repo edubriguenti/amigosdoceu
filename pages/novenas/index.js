@@ -211,7 +211,7 @@ export default function NovenasPage() {
                       {/* Link */}
                       <Link
                         href={`/novenas/${novena.slug}`}
-                        className="inline-flex items-center text-accent-600 hover:text-accent-700 font-medium text-sm transition-colors group"
+                        className="inline-flex items-center min-h-11 text-accent-600 hover:text-accent-700 font-medium text-sm transition-colors group"
                       >
                         {status.tipo === 'em_progresso' ? 'Continuar novena' : 'Ver novena'}
                         <svg
