@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-31: links "Ver oração completa" e "Ver novena" com alvo de toque de 44px
+
+- **Problema:** pendência registrada em 30/10: em `/oracoes` (16 links) e `/novenas` (5 links) os links dos cards mediam 20px de altura no celular, abaixo dos 24px do WCAG 2.5.8 e dos ~44px recomendados.
+- **Solução:** `min-h-11` nos dois links (`OracaoCard`, lista de `/novenas`).
+- **Arquivos:** `components/OracaoCard.js`, `pages/novenas/index.js`.
+- **Testes:** `lint` 0 erros (18 avisos preexistentes) e `build` ok. Chromium (390px) após o build: os 16 links de `/oracoes` e os 5 de `/novenas` medem 44px; sem overflow horizontal. Sem revisão visual por captura de tela.
+- **Limitações:** botões de favorito (32px) seguem abaixo de 44px; sem teste automatizado (o projeto não tem runner). PR #52 (busca global) segue aberto.
+
 ## 2026-10-30: alvos de toque maiores e placeholders de busca sem corte no celular
 
 - **Problema:** rastreio no Chromium (390px) de 7 rotas: os placeholders da busca em `/santos` ("...ordem religiosa...", 364px num campo de 354px) e `/igrejas` (391px) ficavam cortados; o link "← Amigos do Céu" tinha 20px de altura, "Minha Jornada" 28px e os links do rodapé 17px (abaixo dos 24px do WCAG 2.5.8 e dos ~44px recomendados).
