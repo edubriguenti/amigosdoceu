@@ -74,7 +74,7 @@ export default function MinimalHeader() {
         <div className="flex items-center h-14 md:h-16">
           <Link
             href="/"
-            className={`group inline-flex items-center gap-2 text-sm md:text-base font-serif text-neutral-100 hover:text-cosmic-gold transition-colors focus-visible:ring-offset-2 px-2 -ml-2 ${FOCO}`}
+            className={`group inline-flex items-center gap-2 min-h-11 text-sm md:text-base font-serif text-neutral-100 hover:text-cosmic-gold transition-colors focus-visible:ring-offset-2 px-2 -ml-2 ${FOCO}`}
             aria-label="Voltar à página inicial"
           >
             <svg
@@ -110,7 +110,7 @@ export default function MinimalHeader() {
 
           <Link
             href="/minha-jornada"
-            className={`ml-auto inline-flex items-center gap-1.5 text-sm text-neutral-300 hover:text-cosmic-gold transition-colors px-2 py-1 ${FOCO}`}
+            className={`ml-auto inline-flex items-center justify-center gap-1.5 min-h-11 min-w-11 text-sm text-neutral-300 hover:text-cosmic-gold transition-colors px-2 py-1 ${FOCO}`}
           >
             <span aria-hidden="true">🧭</span>
             <span className="hidden sm:inline">Minha Jornada</span>

@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-10-30: alvos de toque maiores e placeholders de busca sem corte no celular
+
+- **Problema:** rastreio no Chromium (390px) de 7 rotas: os placeholders da busca em `/santos` ("...ordem religiosa...", 364px num campo de 354px) e `/igrejas` (391px) ficavam cortados; o link "← Amigos do Céu" tinha 20px de altura, "Minha Jornada" 28px e os links do rodapé 17px (abaixo dos 24px do WCAG 2.5.8 e dos ~44px recomendados).
+- **Solução:** placeholders curtos ("Buscar por nome, país, ordem..." / "...estilo..."); `min-h-11` (44px) nos dois links do `MinimalHeader` e nos links do rodapé (espaçamento vertical passou do `space-y-2` para a altura do próprio link).
+- **Arquivos:** `components/MinimalHeader.js`, `components/Footer.js`, `pages/santos/index.js`, `pages/igrejas/index.js`.
+- **Testes:** `build` ok. Chromium após o build: nas 7 rotas, os únicos alvos < 32px são o link "Pular para conteúdo" (oculto até receber foco) e, em `/oracoes` e `/novenas`, os links "Ver oração completa"/"Ver novena" (20px, não tratados); placeholders cabem (241px e 233px em 354px); sem overflow horizontal em 390px e 1280px; capturas conferidas em 390px e 1280px. `lint` 0 erros (18 avisos preexistentes) e `validate:album` sem erros.
+- **Limitações:** os links "Ver oração completa"/"Ver novena" e os botões de favorito (32px) seguem abaixo de 44px; sem teste automatizado (o projeto não tem runner). Rodapé de desktop ficou um pouco mais alto. PR #52 (busca global) segue aberto.
+
 ## 2026-10-29: página de santo sem rolagem horizontal no celular
 
 - **Problema:** rastreio no Chromium (390px) de 94 rotas: `/santos/sao-joao-paulo-ii` rolava na horizontal. Na seção "Conexões" (`RelacionamentosSanto`) o card de Santa Teresinha media 437px dentro de uma grade de 294px, porque o item da grade não podia encolher abaixo do conteúdo (`min-width: auto`).
