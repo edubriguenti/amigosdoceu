@@ -4,19 +4,31 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import CalendarioMensal from '../components/CalendarioMensal'
 import santos from '../data/santos.json'
+import oracoes from '../data/oracoes.json'
+import novenas from '../data/novenas.json'
 import { resumoFigurinha } from '../lib/albumData'
 
 // Link direto para a figurinha de cada santo (o catálogo fica no servidor, fora do bundle).
 export async function getStaticProps() {
   const albumHrefs = {}
+  const rezarHrefs = {}
   santos.forEach((s) => {
     const f = resumoFigurinha('santo', s.slug)
     if (f) albumHrefs[s.slug] = f.href
+    // Oração e novena ligadas ao santo (santoRelacionado): "Rezar" e "Novena" no painel do dia.
+    const oracao = oracoes.find((o) => o.santoRelacionado === s.slug)
+    const novena = novenas.find((n) => n.santoRelacionado === s.slug)
+    if (oracao || novena) {
+      rezarHrefs[s.slug] = {
+        oracao: oracao ? `/oracoes/${oracao.slug}` : null,
+        novena: novena ? `/novenas/${novena.slug}` : null,
+      }
+    }
   })
-  return { props: { albumHrefs } }
+  return { props: { albumHrefs, rezarHrefs } }
 }
 
-export default function Calendario({ albumHrefs }) {
+export default function Calendario({ albumHrefs, rezarHrefs }) {
   return (
     <Layout>
       <SEO
@@ -61,7 +73,7 @@ export default function Calendario({ albumHrefs }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <CalendarioMensal albumHrefs={albumHrefs} />
+          <CalendarioMensal albumHrefs={albumHrefs} rezarHrefs={rezarHrefs} />
         </motion.div>
 
         {/* Informações adicionais */}

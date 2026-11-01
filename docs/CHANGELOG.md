@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-01: calendário: "Rezar" e "Novena" no painel do dia
+
+- **Problema:** pendência da Etapa 5: o painel do dia em `/calendario` levava ao santo e à figurinha, mas não à oração nem à novena dele, mesmo existindo (ex.: São Francisco, Santo Antônio, São Bento).
+- **Solução:** `getStaticProps` de `pages/calendario.js` resolve `rezarHrefs` por santo a partir de `santoRelacionado` em `oracoes.json`/`novenas.json`; `CalendarioMensal` mostra "Rezar →" e "Novena →" quando existem. Todos os links do painel passaram a `min-h-11` (44px).
+- **Arquivos:** `pages/calendario.js`, `components/CalendarioMensal.js`, `docs/proximas-etapas.md`.
+- **Testes:** `lint` 0 erros (18 avisos preexistentes), `build` e `validate:album` ok. Chromium (390px) após o build: 04/10 mostra São Francisco com "Rezar" (`/oracoes/oracao-sao-francisco`); 13/06 mostra Santo Antônio com "Rezar" e "Novena" (`/novenas/novena-santo-antonio`); os 4 links medem 44px; sem overflow e 0 erros de página.
+- **Limitações:** só aparece para santos com oração/novena ligadas (hoje 7 santos); a lista "Celebrações do mês" segue com um link só; sem teste automatizado (o projeto não tem runner).
+
 ## 2026-10-31: links "Ver oração completa" e "Ver novena" com alvo de toque de 44px
 
 - **Problema:** pendência registrada em 30/10: em `/oracoes` (16 links) e `/novenas` (5 links) os links dos cards mediam 20px de altura no celular, abaixo dos 24px do WCAG 2.5.8 e dos ~44px recomendados.
