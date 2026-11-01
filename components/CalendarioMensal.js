@@ -5,7 +5,7 @@ import { getCalendarioMes, getCelebracaoDoDia, getSantosPorSlugs } from '../lib/
 
 const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 
-export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = {} }) {
+export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = {}, rezarHrefs = {} }) {
   const hoje = new Date()
   const [mes, setMes] = useState(mesInicial || hoje.getMonth() + 1)
   const [ano, setAno] = useState(anoInicial || hoje.getFullYear())
@@ -234,16 +234,32 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
                   <div key={santo.slug} className="flex flex-wrap items-center gap-x-4 gap-y-1">
                     <Link
                       href={`/santos/${santo.slug}`}
-                      className="text-sm text-blue-800 font-medium hover:underline"
+                      className="inline-flex items-center min-h-11 text-sm text-blue-800 font-medium hover:underline"
                     >
                       {santo.nome} →
                     </Link>
                     {albumHrefs[santo.slug] && (
                       <Link
                         href={albumHrefs[santo.slug]}
-                        className="text-sm text-blue-800 font-medium hover:underline"
+                        className="inline-flex items-center min-h-11 text-sm text-blue-800 font-medium hover:underline"
                       >
                         Ver no Álbum →
+                      </Link>
+                    )}
+                    {rezarHrefs[santo.slug]?.oracao && (
+                      <Link
+                        href={rezarHrefs[santo.slug].oracao}
+                        className="inline-flex items-center min-h-11 text-sm text-blue-800 font-medium hover:underline"
+                      >
+                        Rezar →
+                      </Link>
+                    )}
+                    {rezarHrefs[santo.slug]?.novena && (
+                      <Link
+                        href={rezarHrefs[santo.slug].novena}
+                        className="inline-flex items-center min-h-11 text-sm text-blue-800 font-medium hover:underline"
+                      >
+                        Novena →
                       </Link>
                     )}
                   </div>
