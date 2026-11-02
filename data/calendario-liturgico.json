@@ -641,7 +641,8 @@
       "tipo": "Comemoração",
       "descricao": "Oração pelos fiéis defuntos",
       "cor": "roxo",
-      "santos": []
+      "santos": [],
+      "oracao": "oracao-fieis-defuntos"
     },
     "4": {
       "nome": "São Carlos Borromeu, Bispo",
