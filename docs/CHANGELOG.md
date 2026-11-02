@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-02: Finados com oração própria na home
+
+- **Problema:** em 02/11 (Finados) o bloco "Hoje" mostrava a celebração, mas a oração do dia era sorteada por data (sem relação com o dia) e o site não tinha nenhuma oração pelos defuntos.
+- **Solução:** nova oração `oracao-fieis-defuntos` (Eterno descanso + oração pelos fiéis defuntos) e campo opcional `oracao: <slug>` nas celebrações do calendário; `oracaoDoDia` (`lib/hoje.js`) usa a oração indicada pela celebração antes das demais regras. Finados (02/11) aponta para ela. `validate:album` dá erro se o slug da oração não existir.
+- **Arquivos:** `data/oracoes.json`, `data/calendario-liturgico.json`, `lib/hoje.js`, `scripts/validate-album.mjs`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album` e `validate:relacoes` sem erros; slug inválido faz o validador falhar ("oração inexistente"); `lint` 0 erros (18 avisos preexistentes); `build` ok. Chromium (390px) após o build, com a data real de 02/11: a home mostra "Oração pelos Fiéis Defuntos" em "Uma oração para hoje", `/oracoes/oracao-fieis-defuntos` abre, sem overflow e 0 erros de página.
+- **Limitações:** só Finados usa o campo (Todos os Santos e outras datas podem usar depois); texto da oração escrito de memória, vale revisão; sem imagem; sem teste automatizado (o projeto não tem runner). PR #52 (busca global) segue aberto.
+
 ## 2026-11-01: calendário: "Rezar" e "Novena" no painel do dia
 
 - **Problema:** pendência da Etapa 5: o painel do dia em `/calendario` levava ao santo e à figurinha, mas não à oração nem à novena dele, mesmo existindo (ex.: São Francisco, Santo Antônio, São Bento).

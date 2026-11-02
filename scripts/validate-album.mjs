@@ -21,6 +21,7 @@ const fontes = {
   igrejas: lerJson('data/igrejas.json'),
   vidaCristo: lerJson('data/vida-cristo.json'),
   calendario: lerJson('data/calendario-liturgico.json'),
+  oracoes: lerJson('data/oracoes.json'),
 }
 
 const catalogo = construirCatalogo(fontes)
@@ -94,12 +95,15 @@ for (const [, mes, corpo] of brutoCalendario.matchAll(/"([a-zç]+)": \{([\s\S]*?
 // cadastrado deve ter ao menos uma festa (senão nunca aparece como santo do dia).
 const slugsNoCalendario = new Set()
 Object.entries(fontes.calendario).forEach(([mes, dias]) =>
-  Object.entries(dias).forEach(([dia, cel]) =>
-    (cel.santos || []).forEach((slug) => {
+  Object.entries(dias).forEach(([dia, cel]) => {
+    if (cel.oracao && !fontes.oracoes.some((o) => o.slug === cel.oracao)) {
+      erros.push(`calendário ${dia}/${mes}: oração inexistente "${cel.oracao}"`)
+    }
+    ;(cel.santos || []).forEach((slug) => {
       slugsNoCalendario.add(slug)
       if (!slugsSantos.has(slug)) erros.push(`calendário ${dia}/${mes}: santo inexistente "${slug}"`)
     })
-  )
+  })
 )
 fontes.santos
   .filter((s) => !slugsNoCalendario.has(s.slug))

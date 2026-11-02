@@ -207,5 +207,18 @@
     "descricao": "Oração de proteção contra o mal, inscrita na medalha de São Bento.",
     "origem": "Tradição beneditina",
     "popularidade": 7
+  },
+  {
+    "id": 17,
+    "nome": "Oração pelos Fiéis Defuntos",
+    "slug": "oracao-fieis-defuntos",
+    "categoria": "Orações de Devoção",
+    "texto": "Dai-lhes, Senhor, o eterno descanso, e brilhe para eles a luz perpétua. Descansem em paz. Amém. Ó Deus, Criador e Redentor de todos os fiéis, concedei às almas dos vossos servos e servas a remissão de todos os pecados, para que, pelas nossas orações, alcancem o perdão que sempre desejaram. Por Cristo, nosso Senhor. Amém.",
+    "tags": ["defuntos", "finados", "eterno descanso", "luto"],
+    "santoRelacionado": null,
+    "imagem": null,
+    "descricao": "Oração tradicional da Igreja pelas almas dos que partiram, rezada especialmente no Dia de Finados (2 de novembro).",
+    "origem": "Tradição litúrgica da Igreja (Requiem aeternam)",
+    "popularidade": 7
   }
 ]
