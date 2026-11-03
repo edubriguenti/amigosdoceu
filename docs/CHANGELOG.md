@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-03: São Martinho de Porres no site, ligado à memória de hoje
+
+- **Problema:** em 03/11 a home e `/santos-do-dia` mostravam "Um dia comum", embora seja a memória de São Martinho de Porres (padroeiro da justiça social e da fraternidade entre as raças, muito querido no Brasil). O santo não existia no site (20 santos) e a data não estava no calendário.
+- **Solução:** novo santo `sao-martinho-de-porres` (irmão dominicano de Lima, 1579–1639) e celebração de 03/11 no calendário, ligada a ele. A figurinha entra sozinha no Álbum e a oração dele passa a ser a oração do dia.
+- **Arquivos:** `data/santos.json`, `data/calendario-liturgico.json`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album`, `validate:relacoes` e `validate:imagens` sem erros; `lint` 0 erros (18 avisos preexistentes); `build` ok. Chromium (390px) antes: home "Um dia comum"; depois do build: home mostra "São Martinho de Porres, Religioso · Memória" e oração dele, "Conhecer" leva a `/santos/sao-martinho-de-porres` ("Festa: 3 de novembro"), `/santos-do-dia` lista o santo com "Ver santo/Ver no Álbum/Rezar"; sem overflow e 0 erros de página.
+- **Limitações:** sem imagem (`imagem: null`, placeholder; o Wikimedia não é acessível do sandbox). Texto e oração escritos de memória, vale revisão. Sem relações em `relacoes.json`. Sem teste automatizado (o projeto não tem runner). PR #52 (busca global) segue aberto.
+
 ## 2026-11-02: Finados com oração própria na home
 
 - **Problema:** em 02/11 (Finados) o bloco "Hoje" mostrava a celebração, mas a oração do dia era sorteada por data (sem relação com o dia) e o site não tinha nenhuma oração pelos defuntos.
