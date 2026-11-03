@@ -644,6 +644,13 @@
       "santos": [],
       "oracao": "oracao-fieis-defuntos"
     },
+    "3": {
+      "nome": "São Martinho de Porres, Religioso",
+      "tipo": "Memória",
+      "descricao": "Irmão dominicano peruano, servo dos pobres e doentes",
+      "cor": "branco",
+      "santos": ["sao-martinho-de-porres"]
+    },
     "4": {
       "nome": "São Carlos Borromeu, Bispo",
       "tipo": "Memória",

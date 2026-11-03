@@ -410,5 +410,23 @@
     "doutorIgreja": false,
     "popularidade": 92,
     "relacionamentos": []
+  },
+  {
+    "nome": "São Martinho de Porres",
+    "slug": "sao-martinho-de-porres",
+    "imagem": null,
+    "descricao": "Martinho nasceu em Lima, no Peru, em 1579, filho de um fidalgo espanhol e de uma mulher negra liberta. Na sociedade da época, a origem o excluía de muitas portas, e ele entrou na Ordem dos Dominicanos como irmão leigo, trabalhando na enfermaria e na portaria do convento do Rosário. Cuidava de doentes de toda condição, distribuía comida aos pobres e acolhia animais abandonados, vivendo com humildade e longas horas de oração. Muitos o procuravam por conselho e cura. Morreu em 1639 e foi canonizado por São João XXIII em 1962. É o padroeiro da justiça social e da fraternidade entre as raças, e a Igreja celebra sua memória em 3 de novembro.",
+    "oracao": "São Martinho de Porres, irmão humilde e servo dos pobres e doentes, ensinai-me a ver Cristo em cada pessoa, sem distinção de cor ou condição. Dai-me um coração manso, mãos dispostas ao serviço e paciência com os que sofrem. Intercedei por nós, para que vivamos a justiça e a fraternidade. Amém.",
+    "tags": ["Caridade", "Pobreza", "Dominicanos"],
+    "dataNascimento": "1579",
+    "dataFalecimento": "1639",
+    "dataCanonizacao": "1962",
+    "pais": "Peru",
+    "ordemReligiosa": "Dominicanos",
+    "padroeiro": ["Justiça Social", "Fraternidade Racial", "Enfermeiros"],
+    "periodo": "Idade Moderna",
+    "doutorIgreja": false,
+    "popularidade": 70,
+    "relacionamentos": []
   }
 ]
