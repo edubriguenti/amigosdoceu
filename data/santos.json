@@ -428,5 +428,30 @@
     "doutorIgreja": false,
     "popularidade": 70,
     "relacionamentos": []
+  },
+  {
+    "nome": "São Carlos Borromeu",
+    "slug": "sao-carlos-borromeu",
+    "imagem": null,
+    "descricao": "Carlos Borromeu nasceu em 1538, perto de Milão, na Itália, de família nobre. Sobrinho do papa Pio IV, foi feito cardeal e arcebispo de Milão ainda muito jovem, mas escolheu viver com simplicidade e dedicar-se por inteiro à reforma da Igreja após o Concílio de Trento, do qual foi um dos grandes executores. Criou seminários para formar bons sacerdotes, visitou paróquia por paróquia, impulsionou a catequese das crianças e cuidou da vida dos fiéis. Na peste de 1576 permaneceu em Milão, socorrendo doentes e pobres, e gastou seus bens com eles. Morreu em 1584 e foi canonizado em 1610. É o padroeiro dos seminaristas e dos catequistas, e a Igreja celebra sua memória em 4 de novembro.",
+    "oracao": "São Carlos Borromeu, pastor zeloso e pai dos pobres, ensinai-me a servir a Igreja com humildade e coragem. Intercedei pelos sacerdotes, pelos seminaristas e pelos catequistas, para que ensinem a fé com fidelidade. Dai-nos um coração generoso nos tempos de provação. Amém.",
+    "tags": [
+      "Reforma",
+      "Catequese",
+      "Caridade"
+    ],
+    "dataNascimento": "1538",
+    "dataFalecimento": "1584",
+    "dataCanonizacao": "1610",
+    "pais": "Itália",
+    "ordemReligiosa": "Clero diocesano",
+    "padroeiro": [
+      "Seminaristas",
+      "Catequistas"
+    ],
+    "periodo": "Idade Moderna",
+    "doutorIgreja": false,
+    "popularidade": 55,
+    "relacionamentos": []
   }
 ]
