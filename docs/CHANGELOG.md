@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-04: São Carlos Borromeu no site, ligado à memória de hoje
+
+- **Problema:** em 04/11 (memória de São Carlos Borromeu) a home mostrava a celebração sem santo ligado e sem oração própria; ele não existia no site (21 santos).
+- **Solução:** novo santo `sao-carlos-borromeu` (arcebispo de Milão, 1538–1584, padroeiro dos seminaristas e catequistas) ligado à celebração de 04/11. A figurinha entra sozinha no Álbum e a oração dele vira a oração do dia.
+- **Arquivos:** `data/santos.json`, `data/calendario-liturgico.json`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album`, `validate:relacoes` e `validate:imagens` sem erros; `lint` 0 erros (18 avisos preexistentes); `build` ok. Chromium (390px, data simulada em 04/11) após o build: a home mostra "São Carlos Borromeu, Bispo · Memória" e "Oração a São Carlos Borromeu"; `/santos/sao-carlos-borromeu` com "Festa"; `/santos-do-dia` e `/calendario` listam o santo; sem overflow e 0 erros de página. Não testado: clique em "Conhecer"/"Rezar" e o fluxo da figurinha.
+- **Limitações:** sem imagem (`imagem: null`, placeholder). Texto e oração escritos de memória, vale revisão. Sem relações em `relacoes.json`. Sem teste automatizado (o projeto não tem runner). PR #52 (busca global) segue aberto.
+
 ## 2026-11-03: São Martinho de Porres no site, ligado à memória de hoje
 
 - **Problema:** em 03/11 a home e `/santos-do-dia` mostravam "Um dia comum", embora seja a memória de São Martinho de Porres (padroeiro da justiça social e da fraternidade entre as raças, muito querido no Brasil). O santo não existia no site (20 santos) e a data não estava no calendário.
