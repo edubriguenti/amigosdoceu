@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-05: São Martinho de Tours no site, ligado à memória de 11/11
+
+- **Problema:** em 05/11 a home mostrava "Um dia comum" e a próxima celebração com santo era a de 11/11 (São Martinho de Tours), sem santo ligado, sem página e sem figurinha (22 santos no site).
+- **Solução:** novo santo `sao-martinho-de-tours` (bispo de Tours, c. 316–397, padroeiro dos soldados e da França) ligado à celebração de 11/11. A figurinha entra sozinha no Álbum e a oração dele vira a oração do dia.
+- **Arquivos:** `data/santos.json`, `data/calendario-liturgico.json`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album`, `validate:relacoes` e `validate:imagens` sem erros; `lint` 0 erros (18 avisos preexistentes); `build` ok (gera `/santos/sao-martinho-de-tours`). Chromium (390px) após o build: `/santos/sao-martinho-de-tours` abre com "Festa: 11 de novembro" e a oração; a figurinha `santo:sao-martinho-de-tours` é registrada na visita; sem overflow e 0 erros de página. **Não testado:** o bloco "Hoje" da home em 11/11 (a home é gerada no build; simular a data quebrou o build, então só confirmei o dado do calendário) e o clique em "Rezar".
+- **Limitações:** sem imagem (`imagem: null`, placeholder). Texto e oração escritos de memória, vale revisão. Sem teste automatizado (o projeto não tem runner). PR #52 (busca global) segue aberto.
+
 ## 2026-11-04: São Carlos Borromeu no site, ligado à memória de hoje
 
 - **Problema:** em 04/11 (memória de São Carlos Borromeu) a home mostrava a celebração sem santo ligado e sem oração própria; ele não existia no site (21 santos).

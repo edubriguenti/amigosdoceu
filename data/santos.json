@@ -453,5 +453,31 @@
     "doutorIgreja": false,
     "popularidade": 55,
     "relacionamentos": []
+  },
+  {
+    "nome": "São Martinho de Tours",
+    "slug": "sao-martinho-de-tours",
+    "imagem": null,
+    "descricao": "Martinho nasceu por volta do ano 316, em Savária, na Panônia (atual Hungria), e cresceu em Pavia, na Itália. Filho de um oficial romano, foi alistado no exército ainda jovem. Conta a tradição que, num dia de inverno rigoroso, diante da cidade de Amiens, ele dividiu com a espada o seu manto e deu metade a um pobre que tremia de frio; na noite seguinte teria visto Cristo vestido com aquela metade do manto. Batizado por volta dos 18 anos, deixou a vida militar, tornou-se discípulo de Santo Hilário de Poitiers e fundou perto dali um dos primeiros mosteiros da Gália. Aclamado pelo povo, foi eleito bispo de Tours por volta de 371, sem abandonar a vida simples de monge. Percorreu os campos evangelizando, destruiu templos pagãos e foi pai dos pobres. Morreu em Candes, em 397, e é um dos primeiros santos não mártires venerados pela Igreja. A Igreja celebra sua memória em 11 de novembro.",
+    "oracao": "São Martinho, que repartistes o vosso manto com um pobre e reconhecestes Cristo naquele que sofria, ensinai-nos a partilhar o que temos. Dai-nos olhos atentos às necessidades dos irmãos e um coração generoso e simples. Intercedei pelos soldados, pelos bispos e por todos os que servem os pobres. Amém.",
+    "tags": [
+      "Caridade",
+      "Partilha",
+      "Evangelização"
+    ],
+    "dataNascimento": "~316",
+    "dataFalecimento": "397",
+    "dataCanonizacao": "Pré-Congregação",
+    "pais": "França",
+    "ordemReligiosa": "Clero diocesano",
+    "padroeiro": [
+      "Soldados",
+      "Pobres",
+      "França"
+    ],
+    "periodo": "Antiguidade Tardia",
+    "doutorIgreja": false,
+    "popularidade": 60,
+    "relacionamentos": []
   }
 ]
