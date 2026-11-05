@@ -102,6 +102,7 @@ desses dados.
 
 ### 2.1 Calendário
 0. [x] Santos já cadastrados sem festa ligados ao calendário (São Sebastião 20/01, Dom Bosco 31/01, Cátedra de São Pedro 22/02, Santa Rita 22/05, São Bento 11/07) e removida a Santa Catarina duplicada em 25/03, que escondia a Anunciação.
+0i. [x] 05/11/2026: São Martinho de Tours cadastrado e ligado à memória de 11/11 (sem imagem ainda). Próximos dias sem santo ligado: 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília).
 0h. [x] 04/11/2026: São Carlos Borromeu cadastrado e ligado à memória de 04/11 (sem imagem ainda). Próximos dias sem santo ligado: 11/11 (São Martinho de Tours), 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília).
 0g. [x] 03/11/2026: São Martinho de Porres cadastrado e ligado à memória de 03/11 (sem imagem ainda). Próximos dias sem santo ligado: 04/11 (São Carlos Borromeu), 11/11 (São Martinho de Tours), 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília).
 0f. [x] 02/11/2026: campo `oracao` nas celebrações (oração própria do dia); Finados usa a nova "Oração pelos Fiéis Defuntos". Candidatas a usar o campo: Todos os Santos, Natal, Páscoa.
