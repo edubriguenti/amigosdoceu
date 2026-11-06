@@ -479,5 +479,27 @@
     "doutorIgreja": false,
     "popularidade": 60,
     "relacionamentos": []
+  },
+  {
+    "nome": "São Leão Magno",
+    "slug": "sao-leao-magno",
+    "imagem": null,
+    "descricao": "Leão nasceu na Toscana, na Itália, por volta do ano 400, e serviu a Igreja de Roma como diácono antes de ser eleito Papa em 440. Governou a Igreja por mais de vinte anos, num tempo de invasões e de grandes controvérsias sobre a pessoa de Cristo. Em 449 escreveu a célebre Carta a Flaviano (Tomo a Flaviano), que expunha com clareza a fé em Jesus Cristo, verdadeiro Deus e verdadeiro homem, e que serviu de base ao Concílio de Calcedônia, em 451. Em 452 foi ao encontro de Átila, rei dos hunos, e conseguiu que ele poupasse a Itália; em 455 intercedeu junto aos vândalos de Genserico para que Roma fosse poupada de maior destruição. Seus sermões e cartas são modelos de ensino claro sobre o mistério de Cristo e sobre o primado de Pedro. Morreu em Roma, em 461. Foi o primeiro papa chamado \"Magno\" e foi proclamado Doutor da Igreja em 1754. A Igreja celebra sua memória em 10 de novembro.",
+    "oracao": "São Leão Magno, pastor vigilante, que defendestes a fé em Jesus Cristo, verdadeiro Deus e verdadeiro homem, e protegestes o vosso povo nos dias de perigo, alcançai-nos a graça de confessar com firmeza e simplicidade a nossa fé. Intercedei pelo Papa, pelos bispos e por todos os que ensinam a doutrina cristã. Amém.",
+    "tags": [
+      "Papa",
+      "Doutor da Igreja",
+      "Fé"
+    ],
+    "dataNascimento": "~400",
+    "dataFalecimento": "461",
+    "dataCanonizacao": "Pré-Congregação",
+    "pais": "Itália",
+    "ordemReligiosa": "Clero diocesano",
+    "padroeiro": [],
+    "periodo": "Antiguidade Tardia",
+    "doutorIgreja": true,
+    "popularidade": 55,
+    "relacionamentos": []
   }
 ]

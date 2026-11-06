@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-06: São Leão Magno no site, ligado à memória de 10/11
+
+- **Problema:** em 06/11 a home mostrava "Um dia comum" (sem celebração no calendário até 09/11); a próxima memória litúrgica de santo, 10/11 (São Leão Magno, Papa e Doutor), não tinha santo ligado, página nem figurinha (23 santos no site).
+- **Solução:** novo santo `sao-leao-magno` (Papa, c. 400–461, Doutor da Igreja) ligado à celebração de 10/11. A figurinha entra sozinha no Álbum e a oração dele vira a oração do dia.
+- **Arquivos:** `data/santos.json`, `data/calendario-liturgico.json`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album`, `validate:relacoes` e `validate:imagens` sem erros; `lint` 0 erros (18 avisos preexistentes); `build` ok (gera `/santos/sao-leao-magno`). Chromium (390px) após o build: `/santos/sao-leao-magno` abre com "Festa: 10 de novembro"; a visita cola a figurinha (álbum passa de 81 para 82); `/busca?q=leao` lista o santo; sem overflow e 0 erros de página. **Não testado:** o bloco "Hoje" da home em 10/11 (home gerada no build, data real é 06/11) e o clique em "Rezar". Houve um timeout isolado de `networkidle` em `/busca` numa segunda carga; refeita com `domcontentloaded`, sem problema.
+- **Limitações:** sem imagem (`imagem: null`, placeholder). Texto e oração escritos de memória, vale revisão. Sem teste automatizado (o projeto não tem runner).
+
 ## 2026-11-05: São Martinho de Tours no site, ligado à memória de 11/11
 
 - **Problema:** em 05/11 a home mostrava "Um dia comum" e a próxima celebração com santo era a de 11/11 (São Martinho de Tours), sem santo ligado, sem página e sem figurinha (22 santos no site).
