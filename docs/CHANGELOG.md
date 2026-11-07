@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-07: Conexões: carrossel com alvos de toque decentes e navegação que não muda de escopo
+
+- **Problema:** em `/conexoes` (Chromium, 390px) o carrossel "Conexão em destaque" tinha 28 bolinhas de 8×8 px como botões (`role=tab`): alvos de toque minúsculos e 28 paradas de Tab. Além disso, o primeiro "Próxima" restringia silenciosamente a lista ao evento da conexão (de "28" para 13): o efeito de deep-link reagia ao próprio `?ref=` que `setConexaoAtiva` escreve, então "Próxima" nunca saía do evento e a volta ao início ocorria em 13.
+- **Solução:** acima de 7 conexões, as bolinhas dão lugar a "Conexão N de M" (`aria-live`); com 7 ou menos, as bolinhas ficam com área de toque de 44px; setas anterior/próxima com 44×44px. O contexto passa a ignorar o eco do `?ref=` que ele mesmo escreveu; deep-link externo continua selecionando o evento.
+- **Arquivos:** `components/conexoes/ConexaoEmDestaque.js`, `contexts/ConexoesContext.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px, build de produção): contador "1 de 28" → "2 de 28" → volta a "28 de 28"; setas medem 44×44px; eventos com ≤7 conexões mostram bolinhas e os maiores mostram o contador (8 e 13); `?ref=numeros-21-joao-3` abre o evento "Lei" com "2 de 8"; 0 erros de página. `lint` 0 erros (18 avisos preexistentes), `validate:album`, `validate:relacoes`, `validate:imagens` e `build` passaram. Antes da correção (mesmo ambiente) as 28 bolinhas e o salto 28 → 13 foram reproduzidos.
+- **Limitações:** navegação só por teclado nas bolinhas (≤7) não foi exercitada; as imagens remotas retornam 500 no sandbox (proxy sem acesso ao Wikimedia), então não deu para avaliar miniaturas; sem teste automatizado (o projeto não tem runner).
+
 ## 2026-11-06: São Leão Magno no site, ligado à memória de 10/11
 
 - **Problema:** em 06/11 a home mostrava "Um dia comum" (sem celebração no calendário até 09/11); a próxima memória litúrgica de santo, 10/11 (São Leão Magno, Papa e Doutor), não tinha santo ligado, página nem figurinha (23 santos no site).

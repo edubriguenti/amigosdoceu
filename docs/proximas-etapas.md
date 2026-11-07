@@ -70,6 +70,7 @@ Hoje (home) → Conhecer (santo) → Rezar → Receber figurinha → Álbum → 
   (`components/NotificacoesLiturgicas.js`) até a segunda visita ou até o usuário rolar a
   página, e nunca exibi-lo por cima do painel do dia.
 - [x] **Imagem remota que falha** em santos, aparições e igrejas agora cai num placeholder temático (`components/ImagemSagrada.js`). Falta aplicar em `EntidadesRelacionadas`, `TimelineCard` e Conexões e baixar localmente as imagens do Wikimedia.
+- [x] **Carrossel das Conexões** (2026-11-07): contador "N de M" no lugar de 28 bolinhas de 8px, alvos de 44px e navegação sem estreitar a lista ao evento.
 - [ ] **Miniaturas das Conexões.** O Wikimedia responde 429 quando muitas imagens são
   otimizadas de uma vez. Avaliar `remotePatterns` + `minimumCacheTTL` no `next.config.js`
   (o `images.domains` está obsoleto) ou salvar localmente as imagens mais usadas.

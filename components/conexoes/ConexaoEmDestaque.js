@@ -5,6 +5,9 @@ import { useFavoritos } from '../../hooks/useFavoritos'
 import LinhaLuminosa from './LinhaLuminosa'
 import EmptyState from './EmptyState'
 
+// Acima disso, bolinhas viram alvos de toque minúsculos e dezenas de paradas de Tab.
+const LIMITE_BOLINHAS = 7
+
 /**
  * Efeito heróico #3 — Transição da conexão em destaque.
  * Crossfade elegante via AnimatePresence (mode='wait'), sem piscar.
@@ -121,34 +124,44 @@ export default function ConexaoEmDestaque() {
           type="button"
           onClick={conexaoAnterior}
           aria-label="Conexão anterior"
-          className="p-2 rounded-lg hover:bg-white/5 text-neutral-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
+          className="flex items-center justify-center w-11 h-11 rounded-lg hover:bg-white/5 text-neutral-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
-        <div className="flex items-center gap-2" role="tablist" aria-label="Conexões disponíveis">
-          {conexoesFiltradas.map((c, i) => (
-            <button
-              key={c.id}
-              type="button"
-              role="tab"
-              aria-selected={i === indice}
-              aria-label={`Conexão ${i + 1}`}
-              onClick={() => setConexaoAtiva(c)}
-              className={`h-2 rounded-full transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light ${
-                i === indice ? 'w-6 bg-cosmic-blue-light' : 'w-2 bg-white/20 hover:bg-white/40'
-              }`}
-            />
-          ))}
-        </div>
+        {conexoesFiltradas.length <= LIMITE_BOLINHAS ? (
+          <div className="flex items-center" role="tablist" aria-label="Conexões disponíveis">
+            {conexoesFiltradas.map((c, i) => (
+              <button
+                key={c.id}
+                type="button"
+                role="tab"
+                aria-selected={i === indice}
+                aria-label={`Conexão ${i + 1} de ${conexoesFiltradas.length}`}
+                onClick={() => setConexaoAtiva(c)}
+                className="group flex items-center justify-center h-11 px-1.5 focus:outline-none"
+              >
+                <span
+                  className={`block h-2 rounded-full transition-all group-focus-visible:ring-2 group-focus-visible:ring-cosmic-blue-light ${
+                    i === indice ? 'w-6 bg-cosmic-blue-light' : 'w-2 bg-white/20 group-hover:bg-white/40'
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm text-neutral-300 tabular-nums" role="status" aria-live="polite">
+            Conexão <span className="font-semibold text-white">{indice + 1}</span> de {conexoesFiltradas.length}
+          </p>
+        )}
 
         <button
           type="button"
           onClick={proximaConexao}
           aria-label="Próxima conexão"
-          className="p-2 rounded-lg hover:bg-white/5 text-neutral-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
+          className="flex items-center justify-center w-11 h-11 rounded-lg hover:bg-white/5 text-neutral-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-blue-light"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

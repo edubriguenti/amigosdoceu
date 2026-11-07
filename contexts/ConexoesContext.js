@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, useEffect, useMemo } from 'react'
+import { createContext, useContext, useState, useCallback, useEffect, useMemo, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { useProgresso } from '../hooks/useProgresso'
 import { useTTS } from '../hooks/useTTS'
@@ -22,11 +22,15 @@ export function ConexoesProvider({ children }) {
     [eventoAtivo, todasConexoes]
   )
 
+  // Último ?ref= escrito por setConexaoAtiva. O efeito de deep-link o ignora: sem isso, o
+  // primeiro "Próxima" restringia a lista ao evento da conexão (28 → 13 sem aviso).
+  const slugEscritoRef = useRef(null)
+
   // Deep-link: ?ref=<slug>
   useEffect(() => {
     if (!router.isReady) return
     const ref = router.query.ref
-    if (typeof ref === 'string') {
+    if (typeof ref === 'string' && ref !== slugEscritoRef.current) {
       const c = getConexaoBySlug(ref)
       if (c) {
         setConexaoAtivaState(c)
@@ -60,6 +64,7 @@ export function ConexoesProvider({ children }) {
   const setConexaoAtiva = useCallback(
     (c) => {
       setConexaoAtivaState(c)
+      slugEscritoRef.current = c.slug
       router.replace({ pathname: '/conexoes', query: { ref: c.slug } }, undefined, { shallow: true })
     },
     [router]
