@@ -82,7 +82,7 @@ The application is driven by multiple JSON data sources in the `data/` directory
   - Core: `nome`, `slug`, `imagem`, `local`, `data`, `historia`
   - Location: `latitude`, `longitude`, `linkGoogleMaps`, `tags[]`
 
-- **`calendario-liturgico.json`** - Liturgical calendar with daily celebrations (`santos: [slug]` links a celebration to saints — feeds Santos do Dia, the home "Hoje" block, the daily sticker and the saint's "Festa" chip)
+- **`calendario-liturgico.json`** - Liturgical calendar with daily celebrations (optional `igrejas: [slug]` links a celebration to churches when there is no saint, e.g. Dedicação de Latrão — feeds the "Conhecer" button on the home, Santos do Dia and the calendar panel; `santos: [slug]` links a celebration to saints — feeds Santos do Dia, the home "Hoje" block, the daily sticker and the saint's "Festa" chip)
 
 - **`relacoes.json`** - Editorial relations graph (see "Relações entre entidades" below)
 

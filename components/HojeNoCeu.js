@@ -35,8 +35,9 @@ function quando(emDias) {
   return emDias === 1 ? 'amanhã' : `em ${emDias} dias`
 }
 
-function HojeNaIgreja({ celebracao, santos, proxima, onRezar }) {
+function HojeNaIgreja({ celebracao, santos, igrejas = [], proxima, onRezar }) {
   const santo = santos[0]
+  const igreja = igrejas[0]
   return (
     <div className="p-6 flex flex-col">
       <h3 className={rotulo}>✨ Hoje na Igreja</h3>
@@ -65,7 +66,9 @@ function HojeNaIgreja({ celebracao, santos, proxima, onRezar }) {
             <p className="mt-3 text-sm text-neutral-300 leading-relaxed">
               Próxima celebração, {quando(proxima.emDias)} ({proxima.data}):{' '}
               <Link
-                href={proxima.santoSlug ? `/santos/${proxima.santoSlug}` : '/calendario'}
+                href={
+                  proxima.santoSlug ? `/santos/${proxima.santoSlug}` : proxima.igrejaSlug ? `/igrejas/${proxima.igrejaSlug}` : '/calendario'
+                }
                 className="text-cosmic-blue-light hover:underline"
               >
                 {proxima.nome}
@@ -76,7 +79,10 @@ function HojeNaIgreja({ celebracao, santos, proxima, onRezar }) {
         </>
       )}
       <div className="mt-auto pt-5 flex flex-wrap gap-2">
-        <Link href={santo ? `/santos/${santo.slug}` : '/santos-do-dia'} className={botaoSecundario}>
+        <Link
+          href={santo ? `/santos/${santo.slug}` : igreja ? `/igrejas/${igreja.slug}` : '/santos-do-dia'}
+          className={botaoSecundario}
+        >
           Conhecer
         </Link>
         <button type="button" onClick={onRezar} className={botaoSecundario}>
@@ -217,7 +223,7 @@ export default function HojeNoCeu({ dias, hojeServidor }) {
           <p className="text-sm text-neutral-400 first-letter:uppercase">{dataPorExtenso(dia.data)}</p>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-cosmic-border md:min-h-[17rem]">
-          <HojeNaIgreja celebracao={dia.celebracao} santos={dia.santos} proxima={dia.proxima} onRezar={abrirOracao} />
+          <HojeNaIgreja celebracao={dia.celebracao} santos={dia.santos} igrejas={dia.igrejas} proxima={dia.proxima} onRezar={abrirOracao} />
           <FigurinhaDeHoje
             figurinha={dia.figurinha}
             ehSantoDoDia={dia.figurinhaEhSantoDoDia}
