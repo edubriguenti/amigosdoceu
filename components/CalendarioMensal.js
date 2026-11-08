@@ -266,6 +266,19 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
                 ))}
               </div>
             )}
+            {celebracaoSelecionada.igrejas?.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+                {celebracaoSelecionada.igrejas.map(slug => (
+                  <Link
+                    key={slug}
+                    href={`/igrejas/${slug}`}
+                    className="inline-flex items-center min-h-11 text-sm text-blue-800 font-medium hover:underline"
+                  >
+                    Conhecer a igreja →
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         ) : (
           <p className="text-sm text-neutral-300">

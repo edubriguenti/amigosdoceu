@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-08: "Conhecer" da home leva à igreja nas celebrações da Dedicação de Latrão, Aparecida e Guadalupe
+
+- **Problema:** na Festa de 09/11 (Dedicação da Basílica de Latrão) o botão "Conhecer" do bloco "Hoje" levava a `/santos-do-dia`, que repete a mesma celebração (beco sem saída), embora a igreja `sao-joao-laterano` exista no site. Em 08/11 a "próxima celebração" apontava para `/calendario`. O mesmo vale para Aparecida (12/10) e Guadalupe (12/12), que também não têm santo ligado.
+- **Solução:** campo opcional `igrejas: [slug]` nas celebrações do calendário (3 preenchidas). `lib/hoje.js` o expõe (`igrejas`, `igrejaSlug`); "Conhecer" e a "próxima celebração" da home usam santo → igreja → fallback; `/santos-do-dia` ganha "⛪ Ver igreja" (dia sem santo) e "Ver igreja →" nas próximas celebrações; o painel do dia em `/calendario` ganha "Conhecer a igreja →" (44px). `validate:album` dá erro para igreja inexistente.
+- **Arquivos:** `data/calendario-liturgico.json`, `lib/hoje.js`, `components/HojeNoCeu.js`, `components/CalendarioMensal.js`, `pages/santos-do-dia.js`, `scripts/validate-album.mjs`, `CLAUDE.md`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album` e `validate:relacoes` sem erros; slug inválido faz o validador falhar ("igreja inexistente"); `lint` 0 erros (18 avisos preexistentes); `build` ok. Chromium (390px, build de produção, relógio simulado): em 08/11 o link da próxima celebração vai a `/igrejas/sao-joao-laterano`; em 09/11 "Conhecer" abre a Basílica de Latrão; `/santos-do-dia` mostra "Ver igreja"; `/calendario` (dia 9) mostra "Conhecer a igreja →" com 44px; sem overflow. Antes da correção o "Conhecer" apontava para `/santos-do-dia` (reproduzido).
+- **Limitações:** com o relógio simulado aparecem erros de hidratação #418 (a data do cliente difere do HTML estático); sem simulação, 0 erros nas 4 páginas testadas. Não testado: "Rezar" e a figurinha em 09/11. Sem teste automatizado (o projeto não tem runner).
+
 ## 2026-11-07: Conexões: carrossel com alvos de toque decentes e navegação que não muda de escopo
 
 - **Problema:** em `/conexoes` (Chromium, 390px) o carrossel "Conexão em destaque" tinha 28 bolinhas de 8×8 px como botões (`role=tab`): alvos de toque minúsculos e 28 paradas de Tab. Além disso, o primeiro "Próxima" restringia silenciosamente a lista ao evento da conexão (de "28" para 13): o efeito de deep-link reagia ao próprio `?ref=` que `setConexaoAtiva` escreve, então "Próxima" nunca saía do evento e a volta ao início ocorria em 13.

@@ -94,11 +94,15 @@ for (const [, mes, corpo] of brutoCalendario.matchAll(/"([a-zç]+)": \{([\s\S]*?
 // Integridade do calendário: toda celebração deve citar santos que existem, e todo santo
 // cadastrado deve ter ao menos uma festa (senão nunca aparece como santo do dia).
 const slugsNoCalendario = new Set()
+const slugsIgrejas = new Set(fontes.igrejas.map((i) => i.slug))
 Object.entries(fontes.calendario).forEach(([mes, dias]) =>
   Object.entries(dias).forEach(([dia, cel]) => {
     if (cel.oracao && !fontes.oracoes.some((o) => o.slug === cel.oracao)) {
       erros.push(`calendário ${dia}/${mes}: oração inexistente "${cel.oracao}"`)
     }
+    ;(cel.igrejas || []).forEach((slug) => {
+      if (!slugsIgrejas.has(slug)) erros.push(`calendário ${dia}/${mes}: igreja inexistente "${slug}"`)
+    })
     ;(cel.santos || []).forEach((slug) => {
       slugsNoCalendario.add(slug)
       if (!slugsSantos.has(slug)) erros.push(`calendário ${dia}/${mes}: santo inexistente "${slug}"`)

@@ -27,7 +27,7 @@ const botao =
 
 export default function SantosDoDia({ dias, hojeServidor, proximas }) {
   const dia = useDiaAtual(dias, hojeServidor)
-  const { celebracao, santos, figurinha, oracao } = dia
+  const { celebracao, santos, igrejas, figurinha, oracao } = dia
   const santoPrincipal = santos[0]
 
   return (
@@ -70,6 +70,11 @@ export default function SantosDoDia({ dias, hojeServidor, proximas }) {
             {santoPrincipal && (
               <Link href={`/santos/${santoPrincipal.slug}`} className={`${botao} bg-cosmic-surface-2 border border-cosmic-border hover:border-cosmic-gold/60`}>
                 ✨ Ver santo
+              </Link>
+            )}
+            {!santoPrincipal && igrejas?.[0] && (
+              <Link href={`/igrejas/${igrejas[0].slug}`} className={`${botao} bg-cosmic-surface-2 border border-cosmic-border hover:border-cosmic-gold/60`}>
+                ⛪ Ver igreja
               </Link>
             )}
             {figurinha && (
@@ -122,10 +127,16 @@ export default function SantosDoDia({ dias, hojeServidor, proximas }) {
                       <span className="font-semibold">{prox.nome}</span>
                     </div>
                     {prox.descricao && <p className="text-sm text-neutral-400">{prox.descricao}</p>}
-                    {prox.santos.length > 0 && (
+                    {prox.santos.length > 0 ? (
                       <Link href={`/santos/${prox.santos[0]}`} className="text-sm text-cosmic-blue-light hover:underline mt-1 inline-block">
                         Ver santo →
                       </Link>
+                    ) : (
+                      prox.igrejas?.[0] && (
+                        <Link href={`/igrejas/${prox.igrejas[0].slug}`} className="text-sm text-cosmic-blue-light hover:underline mt-1 inline-block">
+                          Ver igreja →
+                        </Link>
+                      )
                     )}
                   </div>
                   <div className="text-sm font-medium text-neutral-300 whitespace-nowrap">

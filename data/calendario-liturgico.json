@@ -583,7 +583,8 @@
       "tipo": "Solenidade",
       "descricao": "Padroeira do Brasil, venerada no Santuário Nacional de Aparecida (SP)",
       "cor": "branco",
-      "santos": []
+      "santos": [],
+      "igrejas": ["basilica-aparecida"]
     },
     "15": {
       "nome": "Santa Teresa de Ávila",
@@ -663,7 +664,8 @@
       "tipo": "Festa",
       "descricao": "Catedral do Papa em Roma, \"mãe de todas as igrejas\"",
       "cor": "branco",
-      "santos": []
+      "santos": [],
+      "igrejas": ["sao-joao-laterano"]
     },
     "10": {
       "nome": "São Leão Magno, Papa e Doutor",
@@ -749,7 +751,8 @@
       "tipo": "Festa",
       "descricao": "Padroeira das Américas",
       "cor": "branco",
-      "santos": []
+      "santos": [],
+      "igrejas": ["basilica-guadalupe"]
     },
     "13": {
       "nome": "Santa Luzia",
