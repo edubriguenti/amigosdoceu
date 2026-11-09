@@ -106,7 +106,7 @@ export default function SantosDoDia({ dias, hojeServidor, proximas }) {
             <h2 className="text-sm font-semibold uppercase tracking-widest text-cosmic-gold mb-2">Uma oração para hoje</h2>
             <p className="font-serif text-xl mb-2">{oracao.titulo}</p>
             <p className="text-neutral-300 italic leading-relaxed">{oracao.trecho}</p>
-            <Link href={oracao.href} className="mt-3 inline-block text-cosmic-blue-light hover:underline">
+            <Link href={oracao.href} className="mt-1 inline-flex items-center min-h-11 text-cosmic-blue-light hover:underline">
               Rezar agora →
             </Link>
           </section>
@@ -128,12 +128,12 @@ export default function SantosDoDia({ dias, hojeServidor, proximas }) {
                     </div>
                     {prox.descricao && <p className="text-sm text-neutral-400">{prox.descricao}</p>}
                     {prox.santos.length > 0 ? (
-                      <Link href={`/santos/${prox.santos[0]}`} className="text-sm text-cosmic-blue-light hover:underline mt-1 inline-block">
+                      <Link href={`/santos/${prox.santos[0]}`} className="inline-flex items-center min-h-11 text-sm text-cosmic-blue-light hover:underline">
                         Ver santo →
                       </Link>
                     ) : (
                       prox.igrejas?.[0] && (
-                        <Link href={`/igrejas/${prox.igrejas[0].slug}`} className="text-sm text-cosmic-blue-light hover:underline mt-1 inline-block">
+                        <Link href={`/igrejas/${prox.igrejas[0].slug}`} className="inline-flex items-center min-h-11 text-sm text-cosmic-blue-light hover:underline">
                           Ver igreja →
                         </Link>
                       )

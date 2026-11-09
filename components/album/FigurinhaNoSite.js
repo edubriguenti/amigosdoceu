@@ -38,14 +38,14 @@ export function AvisoNovaFigurinha({ figurinha, onFechar }) {
               <p className="font-serif text-[#2e241b] truncate">
                 {formatarNumero(figurinha.numero)} {figurinha.nome}
               </p>
-              <Link href={figurinha.href} className="text-sm font-medium text-[#1e4fa8] underline underline-offset-2 hover:text-[#163a7d]">
+              <Link href={figurinha.href} className="inline-flex items-center min-h-11 text-sm font-medium text-[#1e4fa8] underline underline-offset-2 hover:text-[#163a7d]">
                 Ver no álbum
               </Link>
             </div>
             <button
               type="button"
               onClick={onFechar}
-              className="self-start -mt-1 -mr-1 w-7 h-7 rounded-full text-[#6b5a45] hover:bg-[#8a7556]/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8a6a14]"
+              className="self-start -mt-3 -mr-3 w-11 h-11 rounded-full text-[#6b5a45] hover:bg-[#8a7556]/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8a6a14]"
               aria-label="Fechar aviso"
             >
               ×
@@ -86,7 +86,7 @@ export default function FigurinhaNoSite({ figurinha }) {
               <p className="text-neutral-200">
                 A figurinha {formatarNumero(figurinha.numero)} já está no seu Álbum Sagrado.
               </p>
-              <Link href={figurinha.href} className="text-sm font-medium text-[#e3c565] underline underline-offset-2 hover:text-[#ecd07a]">
+              <Link href={figurinha.href} className="inline-flex items-center min-h-11 text-sm font-medium text-[#e3c565] underline underline-offset-2 hover:text-[#ecd07a]">
                 Ver no álbum
               </Link>
             </div>

@@ -234,7 +234,7 @@ export default function HojeNoCeu({ dias, hojeServidor }) {
         </div>
         <NovenaEmAndamento hoje={dia.data} />
         <footer className="px-6 py-3 border-t border-cosmic-border text-right">
-          <Link href="/minha-jornada" className="text-sm text-cosmic-blue-light hover:underline">
+          <Link href="/minha-jornada" className="inline-flex items-center min-h-11 text-sm text-cosmic-blue-light hover:underline">
             Continuar minha jornada →
           </Link>
         </footer>

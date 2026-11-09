@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-09: links de ação do fluxo diário com alvo de toque de 44px no celular
+
+- **Problema:** varredura em 24 rotas (Chromium, 390px, build de produção) mostrou links e botões de ação com 17–24px de altura nas telas que o usuário mais percorre: "Continuar minha jornada →" (home), "Rezar agora →" e "Ver igreja →" (`/santos-do-dia`), "Voltar para hoje" e "Ver biografia do santo →" (`/calendario`), "Ver no álbum" e o "×" (28px) do aviso de figurinha nova, "Ver no Google Maps", "Assistir no YouTube" e os breadcrumbs de orações/novenas. Alvos tão pequenos geram toques errados (o PR #69 já tinha corrigido o mesmo problema nas Conexões).
+- **Solução:** `inline-flex items-center min-h-11` (convenção já usada em `OracaoCard`/`novenas/index`) nesses links; "×" do aviso passou a 44×44 com margem negativa para não aumentar o card; breadcrumbs viraram `flex` com `py-1` para a faixa não crescer.
+- **Arquivos:** `components/HojeNoCeu.js`, `components/CalendarioMensal.js`, `components/YouTubePlayer.js`, `components/album/FigurinhaNoSite.js`, `pages/santos-do-dia.js`, `pages/aparicoes/[slug].js`, `pages/oracoes/[slug].js`, `pages/novenas/[slug].js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px) antes: 17–24px nos links citados; depois: nenhum deles aparece mais com altura/largura < 32px em `/`, `/santos-do-dia`, `/calendario`, `/oracoes/pai-nosso`, `/santos/sao-leao-magno`, `/mapa`, `/aparicoes/nossa-senhora-de-fatima`, `/novenas/novena-sao-jose`; aviso de figurinha: "Ver no álbum" 88×44, "×" 44×44, fecha ao clicar, sem overflow horizontal, 0 erros de página; captura do breadcrumb de `/oracoes/pai-nosso` sem quebra visual. `lint` 0 erros (18 avisos preexistentes) e `build` ok.
+- **Limitações:** `/busca` (link "os santos" no estado vazio, 20px) e botões de filtro do `/mapa` (21px) seguem pequenos; imagens remotas retornam 500 no sandbox (proxy sem acesso ao Wikimedia), sem relação com a mudança; sem teste automatizado (o projeto não tem runner). Não rodei `validate:*` (nenhum JSON alterado).
+
 ## 2026-11-08: "Conhecer" da home leva à igreja nas celebrações da Dedicação de Latrão, Aparecida e Guadalupe
 
 - **Problema:** na Festa de 09/11 (Dedicação da Basílica de Latrão) o botão "Conhecer" do bloco "Hoje" levava a `/santos-do-dia`, que repete a mesma celebração (beco sem saída), embora a igreja `sao-joao-laterano` exista no site. Em 08/11 a "próxima celebração" apontava para `/calendario`. O mesmo vale para Aparecida (12/10) e Guadalupe (12/12), que também não têm santo ligado.
