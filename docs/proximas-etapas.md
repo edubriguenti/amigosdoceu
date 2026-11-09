@@ -63,9 +63,7 @@ Hoje (home) → Conhecer (santo) → Rezar → Receber figurinha → Álbum → 
   dentro do Álbum (`components/album/OracaoDesbloqueio.js`). Proposta: um botão "Rezei 🙏"
   no fim da oração que registra o dia e, se houver figurinha ligada (santo relacionado),
   cola no álbum com o aviso `AvisoNovaFigurinha`.
-- [ ] **Imagens quebradas em Orações e Novenas.** 15 de 16 orações e 5 de 5 novenas
-  apontam para arquivos inexistentes (`/images/oracoes/*.jpg` responde 404). Buscar as
-  imagens com a skill `wikimedia-image` ou mostrar um fundo temático quando faltar.
+- [x] **Imagens quebradas em Orações e Novenas.** (verificado em 09/11/2026: todas as orações e novenas têm `imagem: null` e usam o placeholder temático; não há mais 404.)
 - [x] **O popup de notificações cobre o bloco "Hoje" no celular.** (já resolvido: não aparece na home e só a partir da segunda visita) Adiar o popup
   (`components/NotificacoesLiturgicas.js`) até a segunda visita ou até o usuário rolar a
   página, e nunca exibi-lo por cima do painel do dia.
@@ -74,6 +72,7 @@ Hoje (home) → Conhecer (santo) → Rezar → Receber figurinha → Álbum → 
 - [ ] **Miniaturas das Conexões.** O Wikimedia responde 429 quando muitas imagens são
   otimizadas de uma vez. Avaliar `remotePatterns` + `minimumCacheTTL` no `next.config.js`
   (o `images.domains` está obsoleto) ou salvar localmente as imagens mais usadas.
+- [x] **Alvos de toque pequenos no celular** (2026-11-09): links de ação do fluxo diário agora com 44px. Restam o link "os santos" do estado vazio de `/busca` (20px) e os filtros de `/mapa` (21px).
 - [ ] **Minha Jornada pouco visível.** Na home ela aparece só como card secundário (a
   home não tem header). Avaliar um link discreto no painel "Hoje" ("Continuar minha jornada →").
 - [ ] **Contraste em páginas antigas.** Ainda há texto escuro sobre o fundo escuro, por

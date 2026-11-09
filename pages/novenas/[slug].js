@@ -97,14 +97,14 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
       description={novena.descricao || `${novena.nome} - Novena católica de ${novena.duracao} dias.`}
     >
       {/* Breadcrumb */}
-      <div className="bg-primary-50 py-4">
+      <div className="bg-primary-50 py-1">
         <div className="container mx-auto px-4">
-          <nav className="text-sm">
-            <Link href="/" className="text-accent-600 hover:text-accent-700">
+          <nav className="text-sm flex flex-wrap items-center">
+            <Link href="/" className="inline-flex items-center min-h-11 text-accent-600 hover:text-accent-700">
               Início
             </Link>
             <span className="mx-2 text-neutral-400">/</span>
-            <Link href="/novenas" className="text-accent-600 hover:text-accent-700">
+            <Link href="/novenas" className="inline-flex items-center min-h-11 text-accent-600 hover:text-accent-700">
               Novenas
             </Link>
             <span className="mx-2 text-neutral-400">/</span>

@@ -107,7 +107,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
           <h2 className="text-3xl font-serif">{calendario.mesNome} {ano}</h2>
           <button
             onClick={mesAtual}
-            className="text-sm text-neutral-300 hover:text-white mt-1"
+            className="inline-flex items-center min-h-11 text-sm text-neutral-300 hover:text-white"
           >
             Voltar para hoje
           </button>
@@ -313,7 +313,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
                   <div className="mt-2">
                     <Link
                       href={`/santos/${celebracao.santos[0]}`}
-                      className="text-sm text-blue-800 hover:underline"
+                      className="inline-flex items-center min-h-11 text-sm text-blue-800 hover:underline"
                     >
                       Ver biografia do santo →
                     </Link>

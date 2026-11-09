@@ -98,14 +98,14 @@ export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionad
       description={oracao.descricao || `${oracao.nome} - Oração católica tradicional.`}
     >
       {/* Breadcrumb */}
-      <div className="bg-primary-50 py-4">
+      <div className="bg-primary-50 py-1">
         <div className="container mx-auto px-4">
-          <nav className="text-sm">
-            <Link href="/" className="text-accent-600 hover:text-accent-700">
+          <nav className="text-sm flex flex-wrap items-center">
+            <Link href="/" className="inline-flex items-center min-h-11 text-accent-600 hover:text-accent-700">
               Início
             </Link>
             <span className="mx-2 text-neutral-400">/</span>
-            <Link href="/oracoes" className="text-accent-600 hover:text-accent-700">
+            <Link href="/oracoes" className="inline-flex items-center min-h-11 text-accent-600 hover:text-accent-700">
               Orações
             </Link>
             <span className="mx-2 text-neutral-400">/</span>
