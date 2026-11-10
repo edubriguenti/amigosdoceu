@@ -72,7 +72,7 @@ Hoje (home) → Conhecer (santo) → Rezar → Receber figurinha → Álbum → 
 - [ ] **Miniaturas das Conexões.** O Wikimedia responde 429 quando muitas imagens são
   otimizadas de uma vez. Avaliar `remotePatterns` + `minimumCacheTTL` no `next.config.js`
   (o `images.domains` está obsoleto) ou salvar localmente as imagens mais usadas.
-- [x] **Alvos de toque pequenos no celular** (2026-11-09): links de ação do fluxo diário agora com 44px. Restam o link "os santos" do estado vazio de `/busca` (20px) e os filtros de `/mapa` (21px).
+- [x] **Alvos de toque pequenos no celular** (2026-11-09): links de ação do fluxo diário agora com 44px. (2026-11-10: `/busca` vazia e filtros do `/mapa` também em 44px; rodapé sem links sociais mortos.) Restam os controles de zoom do Leaflet (30px).
 - [ ] **Minha Jornada pouco visível.** Na home ela aparece só como card secundário (a
   home não tem header). Avaliar um link discreto no painel "Hoje" ("Continuar minha jornada →").
 - [ ] **Contraste em páginas antigas.** Ainda há texto escuro sobre o fundo escuro, por

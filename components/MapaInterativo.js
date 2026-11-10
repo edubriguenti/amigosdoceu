@@ -194,7 +194,8 @@ export default function MapaInterativo({ igrejas, aparicoes }) {
           <div className="flex gap-2">
             <button
               onClick={() => setLocaisVisiveis('todos')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              aria-pressed={locaisVisiveis === 'todos'}
+              className={`min-h-[44px] px-4 py-2 rounded-lg transition-colors ${
                 locaisVisiveis === 'todos'
                   ? 'bg-amber-900 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -204,7 +205,8 @@ export default function MapaInterativo({ igrejas, aparicoes }) {
             </button>
             <button
               onClick={() => setLocaisVisiveis('igrejas')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              aria-pressed={locaisVisiveis === 'igrejas'}
+              className={`min-h-[44px] px-4 py-2 rounded-lg transition-colors ${
                 locaisVisiveis === 'igrejas'
                   ? 'bg-amber-900 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -214,7 +216,8 @@ export default function MapaInterativo({ igrejas, aparicoes }) {
             </button>
             <button
               onClick={() => setLocaisVisiveis('aparicoes')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              aria-pressed={locaisVisiveis === 'aparicoes'}
+              className={`min-h-[44px] px-4 py-2 rounded-lg transition-colors ${
                 locaisVisiveis === 'aparicoes'
                   ? 'bg-amber-900 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -227,7 +230,7 @@ export default function MapaInterativo({ igrejas, aparicoes }) {
           {/* Geolocalização */}
           <button
             onClick={obterLocalizacao}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="min-h-[44px] px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             Minha Localização
           </button>
@@ -235,7 +238,8 @@ export default function MapaInterativo({ igrejas, aparicoes }) {
           {/* Rotas */}
           <button
             onClick={() => setMostrarRotas(!mostrarRotas)}
-            className={`px-4 py-2 rounded-lg transition-colors ${
+            aria-pressed={mostrarRotas}
+            className={`min-h-[44px] px-4 py-2 rounded-lg transition-colors ${
               mostrarRotas
                 ? 'bg-green-600 text-white'
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
