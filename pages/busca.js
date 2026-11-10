@@ -119,8 +119,8 @@ export default function Busca({ indice }) {
             {resultados.length === 0 ? (
               <p className="text-neutral-300">
                 Tente outra grafia ou uma palavra mais curta. Você também pode explorar{' '}
-                <Link href="/santos" className="text-cosmic-gold underline">os santos</Link> ou{' '}
-                <Link href="/oracoes" className="text-cosmic-gold underline">as orações</Link>.
+                <Link href="/santos" className="inline-block py-3 text-cosmic-gold underline">os santos</Link> ou{' '}
+                <Link href="/oracoes" className="inline-block py-3 text-cosmic-gold underline">as orações</Link>.
               </p>
             ) : (
               <ul className="space-y-3">

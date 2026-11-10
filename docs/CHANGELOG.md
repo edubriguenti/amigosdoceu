@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-10: mapa e busca com alvos de 44px; rodapé sem links de rede social mortos
+
+- **Problema:** em `/mapa` (Chromium, 390px) os cinco botões de filtro/ação tinham 40px de altura e não informavam qual filtro estava ativo a leitores de tela; o link "os santos" do estado vazio de `/busca` tinha 20px. O rodapé (todas as páginas internas) mostrava ícones de Facebook e Instagram com `href="#"`: não levavam a lugar nenhum e tinham 36px.
+- **Solução:** `min-h-[44px]` e `aria-pressed` nos botões do mapa; `py-3` nos links do estado vazio da busca; ícones sociais removidos do rodapé (o projeto não tem perfis reais cadastrados; reintroduzir com a URL oficial quando existir).
+- **Arquivos:** `components/MapaInterativo.js`, `pages/busca.js`, `components/Footer.js`, `docs/proximas-etapas.md`.
+- **Testes:** Playwright (Chromium, 390px) antes e depois: alvos < 44px em `/busca` vazia e `/mapa` caíram de {link 20px, botões 40px, 2 ícones 36px} para só o link oculto "Pular para conteúdo" e os controles do Leaflet (zoom 30px, atribuição 15px); clique em "Igrejas" muda `aria-pressed` (Igrejas true, Todos false) e "Mostrar Rotas" fica `aria-pressed=true`; rodapé com 0 links sociais; 0 erros de página. `lint` (0 erros, 18 avisos preexistentes), `validate:album`, `validate:relacoes`, `validate:imagens` e `build` passaram.
+- **Pendências:** botões de zoom (30px) e atribuição do Leaflet seguem pequenos; o mapa ainda usa `alert()` para pedir localização; sem teste automatizado (o projeto não tem runner).
+
 ## 2026-11-09: links de ação do fluxo diário com alvo de toque de 44px no celular
 
 - **Problema:** varredura em 24 rotas (Chromium, 390px, build de produção) mostrou links e botões de ação com 17–24px de altura nas telas que o usuário mais percorre: "Continuar minha jornada →" (home), "Rezar agora →" e "Ver igreja →" (`/santos-do-dia`), "Voltar para hoje" e "Ver biografia do santo →" (`/calendario`), "Ver no álbum" e o "×" (28px) do aviso de figurinha nova, "Ver no Google Maps", "Assistir no YouTube" e os breadcrumbs de orações/novenas. Alvos tão pequenos geram toques errados (o PR #69 já tinha corrigido o mesmo problema nas Conexões).
