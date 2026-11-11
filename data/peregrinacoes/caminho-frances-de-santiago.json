@@ -1,0 +1,328 @@
+[
+  {
+    "numero": 1, "origem": "Saint-Jean-Pied-de-Port", "destino": "Roncesvalles", "fim": [43.00917, -1.32017],
+    "descricao": "A travessia dos Pireneus, da França para a Espanha, é a etapa mais dura do caminho logo no primeiro dia: mais de 1.300 metros de subida. Com mau tempo ou no inverno, informe-se no escritório do peregrino sobre a variante por Valcarlos.",
+    "paradas": [
+      { "nome": "Igreja de Nossa Senhora da Assunção", "coord": [43.16239, -1.23698], "nota": "Igreja gótica de Saint-Jean-Pied-de-Port, junto à porta por onde os peregrinos deixam a vila." },
+      { "nome": "Real Colegiata de Santa María de Roncesvalles", "coord": [43.00995, -1.31949], "nota": "Acolhe peregrinos desde a Idade Média; a missa da tarde termina com a bênção do peregrino." }
+    ],
+    "oracaoRef": "oracao:oracao-da-manha",
+    "meditacao": "“Felizes os que em ti encontram a sua força e decidem no coração a santa peregrinação” (Sl 84,6). Por quem e por quê você começa este caminho?"
+  },
+  {
+    "numero": 2, "origem": "Roncesvalles", "destino": "Zubiri", "fim": [42.93058, -1.50432],
+    "descricao": "Descida entre bosques de faias e pequenas aldeias navarras, como Burguete e Espinal, até a ponte medieval de Zubiri. O trecho final, em pedra solta, pede atenção.",
+    "paradas": [
+      { "nome": "Igreja de San Nicolás de Bari, em Burguete", "coord": [42.98896, -1.33558], "nota": "Igreja da primeira aldeia depois de Roncesvalles." },
+      { "nome": "Igreja de San Esteban, em Zubiri", "coord": [42.9304, -1.5044], "nota": "Paróquia da vila onde a etapa termina." }
+    ],
+    "oracaoRef": "oracao:anjo-da-guarda",
+    "meditacao": "“Aos seus anjos ele ordenou que te guardem em todos os teus caminhos” (Sl 91,11). Agradeça pelas pernas que resistiram à montanha."
+  },
+  {
+    "numero": 3, "origem": "Zubiri", "destino": "Pamplona", "fim": [42.8182, -1.64401],
+    "descricao": "O caminho acompanha o vale do rio Arga até entrar em Pamplona pela ponte da Magdalena e pelas muralhas. É a primeira grande cidade do percurso.",
+    "paradas": [
+      { "nome": "Catedral de Santa María la Real", "coord": [42.8194, -1.64074], "nota": "Catedral gótica de Pamplona, com um dos claustros mais belos da Espanha." }
+    ],
+    "oracaoRef": "oracao:pai-nosso",
+    "meditacao": "“Tua palavra é lâmpada para os meus pés e luz para o meu caminho” (Sl 119,105). Entre na cidade sem perder o silêncio que a montanha lhe deu."
+  },
+  {
+    "numero": 4, "origem": "Pamplona", "destino": "Puente la Reina", "fim": [42.67171, -1.81553],
+    "descricao": "Sobe-se ao Alto del Perdón, com o seu monumento aos peregrinos, e desce-se até Puente la Reina, onde os caminhos vindos da França se tornam um só e uma ponte românica do século XI cruza o Arga.",
+    "paradas": [
+      { "nome": "Igreja de San Saturnino, em Pamplona", "coord": [42.81799, -1.64493], "nota": "Igreja-fortaleza do bairro antigo, à beira do traçado, na saída da cidade." },
+      { "nome": "Igreja de San Andrés, em Zariquiegui", "coord": [42.74854, -1.72249], "nota": "Igreja românica na última aldeia antes da subida ao Alto del Perdón." }
+    ],
+    "oracaoRef": "oracao:ato-de-contricao",
+    "meditacao": "No Alto del Perdón, peça e ofereça perdão. Existe alguém com quem você precisa se reconciliar antes de chegar a Santiago?"
+  },
+  {
+    "numero": 5, "origem": "Puente la Reina", "destino": "Estella", "fim": [42.67209, -2.03148],
+    "descricao": "Colinas de vinhas e oliveiras, um trecho de calçada romana em Cirauqui e a chegada a Estella, cidade nascida do próprio Caminho.",
+    "paradas": [
+      { "nome": "Igreja de San Román, em Cirauqui", "coord": [42.67575, -1.8916], "nota": "Igreja no alto da vila medieval, com portal do século XIII." },
+      { "nome": "Igreja de San Pedro de la Rúa, em Estella", "coord": [42.6689, -2.02923], "nota": "Igreja maior de Estella, com claustro românico, sobre a rua dos peregrinos." }
+    ],
+    "oracaoRef": "oracao:ave-maria",
+    "meditacao": "“Eu sou o caminho, a verdade e a vida” (Jo 14,6). Pise as pedras que tantos pisaram antes e reze pelos peregrinos de todos os séculos."
+  },
+  {
+    "numero": 6, "origem": "Estella", "destino": "Los Arcos", "fim": [42.56974, -2.19231],
+    "descricao": "Logo depois de Estella estão o mosteiro de Irache e a sua conhecida fonte para os peregrinos. O dia segue por campos abertos, com pouca sombra nos últimos quilômetros até Los Arcos.",
+    "paradas": [
+      { "nome": "Mosteiro de Santa María la Real de Irache", "coord": [42.65018, -2.04331], "nota": "Antigo mosteiro beneditino que manteve um dos primeiros hospitais de peregrinos de Navarra." },
+      { "nome": "Igreja de Santa María, em Los Arcos", "coord": [42.56894, -2.19277], "nota": "Igreja da vila, à beira do traçado, na chegada." }
+    ],
+    "oracaoRef": "oracao:oracao-sao-bento",
+    "meditacao": "“Buscai primeiro o Reino de Deus e a sua justiça, e tudo o mais vos será acrescentado” (Mt 6,33). O que é essencial na sua mochila — e na sua vida?"
+  },
+  {
+    "numero": 7, "origem": "Los Arcos", "destino": "Logroño", "fim": [42.46612, -2.43967],
+    "descricao": "Etapa longa por Torres del Río e Viana, a última cidade de Navarra, até cruzar o Ebro e entrar em Logroño, capital de La Rioja.",
+    "paradas": [
+      { "nome": "Igreja de Santa María, em Viana", "coord": [42.51525, -2.37139], "nota": "Grande igreja gótica na praça de Viana." },
+      { "nome": "Igreja de Santa María de Palacio, em Logroño", "coord": [42.46817, -2.44431], "nota": "Igreja medieval do centro antigo, junto à rua por onde entram os peregrinos." }
+    ],
+    "oracaoRef": "oracao:salve-rainha",
+    "meditacao": "“Carregai os fardos uns dos outros” (Gl 6,2). Hoje, ajude ou escute alguém que caminha ao seu lado."
+  },
+  {
+    "numero": 8, "origem": "Logroño", "destino": "Nájera", "fim": [42.41674, -2.73369],
+    "descricao": "Uma das etapas mais longas, entre vinhedos de La Rioja, passando por Navarrete até Nájera, antiga corte dos reis de Navarra.",
+    "paradas": [
+      { "nome": "Igreja de Santiago el Real, em Logroño", "coord": [42.46784, -2.44762], "nota": "Igreja dedicada ao Apóstolo, sobre o traçado, na saída da cidade." },
+      { "nome": "Igreja da Asunción, em Navarrete", "coord": [42.42966, -2.5613], "nota": "Igreja da vila de Navarrete, a meio da etapa." }
+    ],
+    "oracaoRef": "oracao:gloria-ao-pai",
+    "meditacao": "“Eu sou a videira, vós os ramos. Quem permanece em mim dá muito fruto” (Jo 15,5). Entre as vinhas, peça a graça de permanecer."
+  },
+  {
+    "numero": 9, "origem": "Nájera", "destino": "Santo Domingo de la Calzada", "fim": [42.44067, -2.95364],
+    "descricao": "Campos de cereais levam à cidade fundada por São Domingos da Calçada, o eremita que no século XI construiu ponte, hospital e estrada para os peregrinos.",
+    "paradas": [
+      { "nome": "Mosteiro de Santa María la Real, em Nájera", "coord": [42.41642, -2.73569], "nota": "Mosteiro com o panteão dos reis de Navarra, logo na saída da etapa." },
+      { "nome": "Catedral de Santo Domingo de la Calzada", "coord": [42.44107, -2.95372], "nota": "Guarda o túmulo do santo e, numa gaiola, um galo e uma galinha vivos, em memória de um milagre atribuído a ele." }
+    ],
+    "oracaoRef": "oracao:pai-nosso",
+    "meditacao": "São Domingos gastou a vida abrindo caminho para os outros. Que obra, por pequena que seja, você pode fazer por quem vem depois?"
+  },
+  {
+    "numero": 10, "origem": "Santo Domingo de la Calzada", "destino": "Belorado", "fim": [42.4197, -3.19178],
+    "descricao": "O caminho deixa La Rioja depois de Grañón e entra em Castela e Leão, seguindo por aldeias pequenas até Belorado.",
+    "paradas": [
+      { "nome": "Igreja de San Juan Bautista, em Grañón", "coord": [42.4504, -3.02689], "nota": "A paróquia mantém um albergue de acolhida dentro da própria igreja." },
+      { "nome": "Igreja de Santa María, em Belorado", "coord": [42.42073, -3.18828], "nota": "Igreja ao pé das antigas grutas de eremitas, na chegada." }
+    ],
+    "oracaoRef": "oracao:oracao-sao-francisco",
+    "meditacao": "“Há mais felicidade em dar do que em receber” (At 20,35). Agradeça por cada pessoa que o acolheu até aqui."
+  },
+  {
+    "numero": 11, "origem": "Belorado", "destino": "San Juan de Ortega", "fim": [42.37527, -3.43625],
+    "descricao": "Depois de Villafranca Montes de Oca, sobe-se aos Montes de Oca, por longos quilômetros de bosque, até o mosteiro isolado de San Juan de Ortega.",
+    "paradas": [
+      { "nome": "Igreja de Santiago Apóstol, em Villafranca Montes de Oca", "coord": [42.38866, -3.309], "nota": "Igreja da vila onde começa a subida aos montes." },
+      { "nome": "Mosteiro de San Juan de Ortega", "coord": [42.37586, -3.4366], "nota": "Fundado por São João de Ortega, discípulo de São Domingos da Calçada, para amparar os peregrinos; o santo está sepultado ali." }
+    ],
+    "oracaoRef": "oracao:credo-apostolico",
+    "meditacao": "“Parai e sabei que eu sou Deus” (Sl 46,11). No silêncio do bosque, deixe a oração ser simples: apenas esteja diante dele."
+  },
+  {
+    "numero": 12, "origem": "San Juan de Ortega", "destino": "Burgos", "fim": [42.34393, -3.69698],
+    "descricao": "Passa-se por Atapuerca e desce-se até Burgos. A entrada na cidade é longa e urbana; a recompensa é uma das grandes catedrais góticas da Europa.",
+    "paradas": [
+      { "nome": "Igreja de San Lesmes, em Burgos", "coord": [42.34315, -3.69618], "nota": "Dedicada ao padroeiro de Burgos, monge que dedicou a vida a cuidar dos peregrinos." },
+      { "nome": "Catedral de Santa María de Burgos", "coord": [42.34073, -3.70435], "nota": "Catedral gótica iniciada em 1221, Patrimônio Mundial da UNESCO." }
+    ],
+    "oracaoRef": "oracao:magnificat",
+    "meditacao": "“Que alegria quando me disseram: vamos à casa do Senhor!” (Sl 122,1). Entre na catedral como peregrino, não como turista."
+  },
+  {
+    "numero": 13, "origem": "Burgos", "destino": "Hornillos del Camino", "fim": [42.33854, -3.92595],
+    "descricao": "Começa a Meseta: o planalto de horizontes largos, trigo e céu que ocupará os próximos dias. Pouca sombra e poucas aldeias — leve água.",
+    "paradas": [
+      { "nome": "Igreja de Santa Marina, em Rabé de las Calzadas", "coord": [42.34027, -3.83457], "nota": "Igreja da última aldeia antes do planalto." },
+      { "nome": "Igreja de San Román, em Hornillos del Camino", "coord": [42.3389, -3.92603], "nota": "Igreja da rua única da vila, na chegada." }
+    ],
+    "oracaoRef": "oracao:oracao-da-manha",
+    "meditacao": "“O Senhor é o meu pastor, nada me faltará” (Sl 23,1). Na Meseta não há distrações: deixe a oração acompanhar o ritmo dos passos."
+  },
+  {
+    "numero": 14, "origem": "Hornillos del Camino", "destino": "Castrojeriz", "fim": [42.28837, -4.14064],
+    "descricao": "Planalto aberto até Hontanas e, depois, as ruínas do convento de San Antón, por cujo arco o caminho passa, antes de Castrojeriz, estendida ao pé do seu castelo.",
+    "paradas": [
+      { "nome": "Ruínas do Convento de San Antón", "coord": [42.29207, -4.0997], "nota": "Antigo convento-hospital da Ordem de Santo Antão, que cuidava dos peregrinos doentes." },
+      { "nome": "Colegiata de Santa María del Manzano, em Castrojeriz", "coord": [42.2927, -4.12784], "nota": "Igreja na entrada da vila, dedicada a Nossa Senhora." }
+    ],
+    "oracaoRef": "oracao:memorare",
+    "meditacao": "“Basta-te a minha graça, pois é na fraqueza que a força se manifesta” (2Cor 12,9). Reze pelos doentes que você conhece."
+  },
+  {
+    "numero": 15, "origem": "Castrojeriz", "destino": "Frómista", "fim": [42.26769, -4.4055],
+    "descricao": "Subida ao Alto de Mostelares logo cedo, travessia do rio Pisuerga — onde se entra na província de Palência — e um trecho final junto ao Canal de Castela.",
+    "paradas": [
+      { "nome": "Ermida de San Nicolás de Puente Fitero", "coord": [42.27889, -4.24326], "nota": "Antiga ermida, hoje albergue de acolhida tradicional, junto à ponte do Pisuerga." },
+      { "nome": "Igreja de San Martín de Tours, em Frómista", "coord": [42.26673, -4.40695], "nota": "Uma das joias do românico espanhol, do século XI." }
+    ],
+    "oracaoRef": "oracao:pai-nosso",
+    "meditacao": "São Martinho partiu o manto com um pobre. O que você pode partilhar hoje — tempo, água, uma palavra?"
+  },
+  {
+    "numero": 16, "origem": "Frómista", "destino": "Carrión de los Condes", "fim": [42.33854, -4.60171],
+    "descricao": "Etapa plana e curta, por Villalcázar de Sirga, até Carrión de los Condes, onde comunidades religiosas acolhem os peregrinos.",
+    "paradas": [
+      { "nome": "Igreja de Santa María la Blanca, em Villalcázar de Sirga", "coord": [42.31681, -4.5425], "nota": "Igreja-fortaleza ligada aos templários; a Virgem Branca é cantada nas Cantigas de Santa Maria." },
+      { "nome": "Igreja de Santa María del Camino, em Carrión", "coord": [42.33737, -4.60154], "nota": "Igreja românica à entrada da vila." }
+    ],
+    "oracaoRef": "oracao:ave-maria",
+    "meditacao": "“Eis aqui a serva do Senhor; faça-se em mim segundo a tua palavra” (Lc 1,38). Reze um terço neste dia mais leve."
+  },
+  {
+    "numero": 17, "origem": "Carrión de los Condes", "destino": "Terradillos de los Templarios", "fim": [42.36299, -4.89062],
+    "descricao": "O dia começa com cerca de 17 km sem nenhuma aldeia, pela antiga via romana. Abasteça-se de água e comida em Carrión.",
+    "paradas": [
+      { "nome": "Igreja de Santiago, em Carrión", "coord": [42.33826, -4.60339], "nota": "Conserva um friso românico com Cristo em majestade, obra-prima do século XII." },
+      { "nome": "Mosteiro de San Zoilo", "coord": [42.34026, -4.61143], "nota": "Antigo mosteiro beneditino na saída de Carrión, com claustro renascentista." }
+    ],
+    "oracaoRef": "oracao:gloria-ao-pai",
+    "meditacao": "“Tudo posso naquele que me fortalece” (Fl 4,13). Na reta longa, repita uma jaculatória a cada cem passos."
+  },
+  {
+    "numero": 18, "origem": "Terradillos de los Templarios", "destino": "Bercianos del Real Camino", "fim": [42.38768, -5.1452],
+    "descricao": "Entra-se na província de León e passa-se por Sahagún, que foi sede de uma das abadias mais poderosas da Espanha medieval e é considerada o ponto médio do Caminho Francês.",
+    "paradas": [
+      { "nome": "Igreja de San Tirso, em Sahagún", "coord": [42.37093, -5.03254], "nota": "Exemplo pioneiro do românico-mudéjar, em tijolo, do século XII." },
+      { "nome": "Ruínas do Mosteiro Real de San Benito", "coord": [42.37105, -5.03315], "nota": "Restos da grande abadia beneditina de Sahagún." }
+    ],
+    "oracaoRef": "oracao:oracao-sao-bento",
+    "meditacao": "Metade do caminho. Olhe para trás com gratidão e para a frente com confiança: “Aquele que começou em vós a boa obra há de levá-la a termo” (Fl 1,6)."
+  },
+  {
+    "numero": 19, "origem": "Bercianos del Real Camino", "destino": "Mansilla de las Mulas", "fim": [42.4991, -5.41692],
+    "descricao": "Longa reta por El Burgo Ranero e Reliegos, em trilha paralela à estrada, com árvores plantadas para dar sombra aos peregrinos, até a vila amuralhada de Mansilla.",
+    "paradas": [
+      { "nome": "Igreja de Santa María, em Mansilla de las Mulas", "coord": [42.49891, -5.41693], "nota": "Paróquia da vila, dentro das muralhas medievais." }
+    ],
+    "oracaoRef": "oracao:anjo-da-guarda",
+    "meditacao": "“Caminha humildemente com o teu Deus” (Mq 6,8). Num dia sem paisagens, a única novidade é a companhia dele."
+  },
+  {
+    "numero": 20, "origem": "Mansilla de las Mulas", "destino": "León", "fim": [42.599, -5.56824],
+    "descricao": "Etapa curta, com entrada urbana em León. Reserve a tarde para a catedral e para a basílica de San Isidoro.",
+    "paradas": [
+      { "nome": "Catedral de León", "coord": [42.59946, -5.56665], "nota": "Catedral gótica do século XIII, célebre pelos seus vitrais medievais." }
+    ],
+    "oracaoRef": "oracao:credo-apostolico",
+    "meditacao": "“O Senhor é a minha luz e a minha salvação: a quem temerei?” (Sl 27,1). Sente-se sob os vitrais e deixe a luz rezar em você."
+  },
+  {
+    "numero": 21, "origem": "León", "destino": "Villadangos del Páramo", "fim": [42.51729, -5.7668],
+    "descricao": "Saída de León por San Isidoro e pelo antigo hospital de San Marcos, e travessia do páramo leonês junto à estrada até Villadangos.",
+    "paradas": [
+      { "nome": "Basílica de San Isidoro, em León", "coord": [42.60083, -5.57084], "nota": "Guarda as relíquias de Santo Isidoro de Sevilha e o Panteão dos Reis, com pinturas românicas do século XII." },
+      { "nome": "Basílica da Virgen del Camino", "coord": [42.58004, -5.64135], "nota": "Santuário mariano da padroeira da região de León, sobre o próprio caminho." }
+    ],
+    "oracaoRef": "oracao:salve-rainha",
+    "meditacao": "Confie a Nossa Senhora do Caminho os dias que faltam. Peça que ela caminhe com você e com os seus."
+  },
+  {
+    "numero": 22, "origem": "Villadangos del Páramo", "destino": "Astorga", "fim": [42.4554, -6.05292],
+    "descricao": "Passa-se pela longa ponte medieval de Hospital de Órbigo e, depois de algumas colinas, avista-se Astorga do alto do cruzeiro de Santo Toribio.",
+    "paradas": [
+      { "nome": "Igreja de San Juan Bautista, em Hospital de Órbigo", "coord": [42.46368, -5.88238], "nota": "Igreja ligada à Ordem de São João, que mantinha ali um hospital de peregrinos." }
+    ],
+    "oracaoRef": "oracao:pai-nosso",
+    "meditacao": "“Não se perturbe o vosso coração” (Jo 14,1). Cruze a ponte devagar e deixe na outra margem uma preocupação."
+  },
+  {
+    "numero": 23, "origem": "Astorga", "destino": "Rabanal del Camino", "fim": [42.48169, -6.28427],
+    "descricao": "O caminho deixa a planície e começa a subir, suave e constante, pela Maragatería, rumo aos Montes de León.",
+    "paradas": [
+      { "nome": "Catedral de Santa María de Astorga", "coord": [42.45805, -6.0571], "nota": "Catedral ao lado do Palácio Episcopal desenhado por Gaudí, na saída da cidade." },
+      { "nome": "Igreja da Asunción, em Rabanal del Camino", "coord": [42.48227, -6.28488], "nota": "Igreja românica onde uma comunidade beneditina reza com os peregrinos." }
+    ],
+    "oracaoRef": "oracao:oracao-da-noite",
+    "meditacao": "“Ficai conosco, Senhor, pois já é tarde e a noite vem chegando” (Lc 24,29). Termine o dia rezando em comunidade, se puder."
+  },
+  {
+    "numero": 24, "origem": "Rabanal del Camino", "destino": "Molinaseca", "fim": [42.53784, -6.52046],
+    "descricao": "Sobe-se à Cruz de Ferro, um dos pontos mais altos e mais simbólicos do caminho, e desce-se longamente por El Acebo até Molinaseca. A descida é pedregosa e cansa mais do que a subida.",
+    "paradas": [
+      { "nome": "Cruz de Ferro", "coord": [42.48886, -6.36147], "nota": "Por tradição, o peregrino deixa ao pé da cruz uma pedra trazida de casa, sinal do peso que entrega." },
+      { "nome": "Santuário de Nossa Senhora das Angústias, em Molinaseca", "coord": [42.53649, -6.51719], "nota": "Santuário na entrada da vila, antes da ponte medieval." }
+    ],
+    "oracaoRef": "oracao:ato-de-contricao",
+    "meditacao": "“Lançai sobre ele todas as vossas preocupações, porque ele cuida de vós” (1Pd 5,7). Que pedra você deixa hoje aos pés da cruz?"
+  },
+  {
+    "numero": 25, "origem": "Molinaseca", "destino": "Villafranca del Bierzo", "fim": [42.60558, -6.81117],
+    "descricao": "Etapa longa pelo vale do Bierzo: Ponferrada e o seu castelo templário, Cacabelos e, entre vinhas, Villafranca del Bierzo.",
+    "paradas": [
+      { "nome": "Basílica de Nossa Senhora da Encina, em Ponferrada", "coord": [42.54421, -6.59173], "nota": "Santuário da padroeira do Bierzo." },
+      { "nome": "Igreja de Santiago, em Villafranca del Bierzo", "coord": [42.60402, -6.80775], "nota": "Na sua Porta do Perdão, os peregrinos doentes que não podiam seguir até Santiago recebiam as mesmas indulgências." }
+    ],
+    "oracaoRef": "oracao:memorare",
+    "meditacao": "Diante da Porta do Perdão, reze pelos que queriam fazer este caminho e não puderam. Leve-os com você."
+  },
+  {
+    "numero": 26, "origem": "Villafranca del Bierzo", "destino": "O Cebreiro", "fim": [42.70784, -7.04348],
+    "descricao": "Um longo vale e, nos últimos quilômetros, a subida forte que leva à Galiza e à aldeia de O Cebreiro — mais de mil metros de subida no dia.",
+    "paradas": [
+      { "nome": "Colegiata de Santa María, em Villafranca del Bierzo", "coord": [42.60949, -6.80945], "nota": "Grande igreja da vila, na saída da etapa." },
+      { "nome": "Santuário de Santa María a Real do Cebreiro", "coord": [42.70793, -7.04329], "nota": "Igreja pré-românica, das mais antigas do caminho, onde se venera um milagre eucarístico do século XIV." }
+    ],
+    "oracaoRef": "oracao:credo-apostolico",
+    "meditacao": "“Levanto os olhos para os montes: de onde me virá o auxílio? O meu auxílio vem do Senhor” (Sl 121,1-2). Se puder, participe da missa em O Cebreiro."
+  },
+  {
+    "numero": 27, "origem": "O Cebreiro", "destino": "Triacastela", "fim": [42.75634, -7.23975],
+    "descricao": "Pelas cristas da serra, passando pelo Alto de San Roque e pelo Alto do Poio, e depois em descida entre aldeias galegas de pedra até Triacastela.",
+    "paradas": [
+      { "nome": "Igreja de Santo Estevo de Liñares", "coord": [42.69836, -7.07423], "nota": "Pequena igreja de pedra na primeira aldeia depois de O Cebreiro." },
+      { "nome": "Igreja de Santiago de Triacastela", "coord": [42.75567, -7.23914], "nota": "Paróquia dedicada ao Apóstolo, na chegada." }
+    ],
+    "oracaoRef": "oracao:gloria-ao-pai",
+    "meditacao": "“Este é o dia que o Senhor fez: exultemos e alegremo-nos nele” (Sl 118,24). Louve pela beleza do que você vê."
+  },
+  {
+    "numero": 28, "origem": "Triacastela", "destino": "Sarria", "fim": [42.77842, -7.41466],
+    "descricao": "O traçado aqui segue por San Xil, a via mais curta, entre carvalhos e castanheiros. Há uma variante mais longa pelo mosteiro beneditino de Samos, que vale a visita.",
+    "paradas": [
+      { "nome": "Igreja de San Xil de Carballo", "coord": [42.76595, -7.27159], "nota": "Igreja rural da aldeia que dá nome à variante." },
+      { "nome": "Igreja de Santa Mariña de Sarria", "coord": [42.77744, -7.41435], "nota": "Paróquia de Sarria, sobre a rua dos peregrinos." }
+    ],
+    "oracaoRef": "oracao:oracao-sao-bento",
+    "meditacao": "“Mostra-me, Senhor, o teu caminho” (Sl 27,11). Diante de duas vias, lembre que o importante não é qual, mas com quem se caminha."
+  },
+  {
+    "numero": 29, "origem": "Sarria", "destino": "Portomarín", "fim": [42.80816, -7.61561],
+    "descricao": "A partir de Sarria começam os últimos 100 km, o mínimo para receber a Compostela — carimbe a credencial duas vezes por dia. O caminho fica mais cheio, entre aldeias, muros de pedra e bosques.",
+    "paradas": [
+      { "nome": "Igreja de Santa María de Ferreiros", "coord": [42.78373, -7.53672], "nota": "Igreja românica perto do marco dos 100 km." },
+      { "nome": "Igreja de San Nicolao de Portomarín", "coord": [42.80779, -7.61554], "nota": "Igreja-fortaleza transladada pedra a pedra quando a barragem alagou a vila antiga." }
+    ],
+    "oracaoRef": "oracao:pai-nosso",
+    "meditacao": "“Amai-vos uns aos outros como eu vos amei” (Jo 13,34). Acolha com alegria os que começam hoje: o caminho é de todos."
+  },
+  {
+    "numero": 30, "origem": "Portomarín", "destino": "Palas de Rei", "fim": [42.87391, -7.8698],
+    "descricao": "Subida suave e longa por Gonzar e Ligonde, com cruzeiros de pedra à beira do caminho, até Palas de Rei.",
+    "paradas": [
+      { "nome": "Cruzeiro de Lameiros", "coord": [42.85517, -7.77742], "nota": "Cruzeiro de pedra do século XVII, com a Paixão e a Virgem esculpidas." },
+      { "nome": "Igreja de San Tirso de Palas de Rei", "coord": [42.87247, -7.86789], "nota": "Paróquia da vila, com portal românico, na chegada." }
+    ],
+    "oracaoRef": "oracao:ave-maria",
+    "meditacao": "“Se alguém quer vir após mim, tome a sua cruz e siga-me” (Mt 16,24). Reze diante de um cruzeiro pelos que sofrem."
+  },
+  {
+    "numero": 31, "origem": "Palas de Rei", "destino": "Arzúa", "fim": [42.92658, -8.16345],
+    "descricao": "Etapa longa e ondulada, pela ponte medieval de Furelos e por Melide, onde o Caminho Primitivo se une ao Francês, até Arzúa.",
+    "paradas": [
+      { "nome": "Igreja de San Xoán de Furelos", "coord": [42.90896, -7.99891], "nota": "Junto à ponte medieval; guarda um crucifixo em que Cristo estende um braço para baixo." },
+      { "nome": "Igreja de Santa María de Melide", "coord": [42.91152, -8.02533], "nota": "Pequena igreja românica do século XII, na saída de Melide." },
+      { "nome": "Igreja de Santiago de Arzúa", "coord": [42.92632, -8.16324], "nota": "Paróquia dedicada ao Apóstolo, na chegada." }
+    ],
+    "oracaoRef": "oracao:magnificat",
+    "meditacao": "Cristo estende a mão a quem caiu. A quem você pode estender a sua, hoje e quando voltar para casa?"
+  },
+  {
+    "numero": 32, "origem": "Arzúa", "destino": "O Pedrouzo", "fim": [42.90468, -8.36242],
+    "descricao": "Penúltimo dia, tranquilo, entre bosques de eucalipto e pequenas aldeias. Bom para rezar com calma e preparar a chegada.",
+    "paradas": [
+      { "nome": "Capela de Santa Irene", "coord": [42.91699, -8.33066], "nota": "Capela à beira do caminho, pouco antes de O Pedrouzo." }
+    ],
+    "oracaoRef": "oracao:ato-de-contricao",
+    "meditacao": "Véspera da chegada. Faça um exame de consciência e, se puder, prepare-se para a confissão na Catedral."
+  },
+  {
+    "numero": 33, "origem": "O Pedrouzo", "destino": "Santiago de Compostela", "fim": [42.8804, -8.54463],
+    "descricao": "Do Monte do Gozo avistam-se pela primeira vez as torres da catedral. Resta descer, cruzar a cidade e entrar na Praça do Obradoiro. Com a credencial carimbada, peça a Compostela no escritório de acolhida ao peregrino.",
+    "paradas": [
+      { "nome": "Ermida de San Marcos, no Monte do Gozo", "coord": [42.88951, -8.49438], "nota": "Capela no alto de onde os peregrinos viam, com alegria, a cidade do Apóstolo." },
+      { "ref": "igreja:santiago-compostela" }
+    ],
+    "oracaoRef": "oracao:credo-apostolico",
+    "meditacao": "“Combati o bom combate, terminei a corrida, guardei a fé” (2Tm 4,7). Diante do túmulo do Apóstolo, agradeça — e peça a graça de continuar a caminhar."
+  }
+]

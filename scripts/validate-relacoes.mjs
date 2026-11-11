@@ -13,6 +13,8 @@ import { construirGrafo, GRUPOS, parseRef } from '../lib/relacoesGrafo.js'
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const lerJson = (rel) => JSON.parse(fs.readFileSync(path.resolve(raiz, rel), 'utf8'))
 
+const rotas = lerJson('data/peregrinacoes/rotas.json')
+
 const grafo = construirGrafo({
   relacoes: lerJson(process.env.RELACOES_JSON || 'data/relacoes.json'),
   santos: lerJson('data/santos.json'),
@@ -21,10 +23,11 @@ const grafo = construirGrafo({
   vidaCristo: lerJson('data/vida-cristo.json'),
   oracoes: lerJson('data/oracoes.json'),
   novenas: lerJson('data/novenas.json'),
+  peregrinacoes: rotas.map((r) => ({ slug: r.slug, nome: r.nome, imagem: r.imagem || null, etapas: lerJson(`data/peregrinacoes/${r.slug}.json`) })),
 })
 
 console.log('\nRelações')
-console.log(`  ${grafo.totalArestas} arestas (curadas + derivadas de santoRelacionado)`)
+console.log(`  ${grafo.totalArestas} arestas (curadas + derivadas de santoRelacionado e das paradas de peregrinação)`)
 
 const porTipo = {}
 grafo.adj.forEach((_, ref) => {

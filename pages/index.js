@@ -48,6 +48,7 @@ const SECONDARY_SECTIONS = [
   { href: '/rosario', icon: '📿', title: 'Rosário', description: 'Mistérios e meditações' },
   { href: '/novenas', icon: '🕯️', title: 'Novenas', description: 'Nove dias de oração' },
   { href: '/mapa', icon: '🗺️', title: 'Mapa', description: 'Lugares sagrados' },
+  { href: '/peregrinacoes', icon: '🥾', title: 'Peregrinações', description: 'Roteiros etapa por etapa' },
   { href: '/intencoes', icon: '🙏', title: 'Minhas intenções', description: 'Seu caderno de oração' },
   { href: '/minha-jornada', icon: '🧭', title: 'Minha Jornada', description: 'Continue de onde parou' },
 ]

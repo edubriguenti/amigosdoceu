@@ -12,7 +12,7 @@ import { miniaturaWikimedia } from './album/Figurinha'
 const VISIVEIS = 3
 
 // Orações e novenas não têm imagens próprias publicadas: usam um ícone.
-const ICONE = { santo: '✨', aparicao: '🌹', igreja: '⛪', cristo: '✝️', oracao: '🙏', novena: '🕯️' }
+const ICONE = { santo: '✨', aparicao: '🌹', igreja: '⛪', cristo: '✝️', oracao: '🙏', novena: '🕯️', peregrinacao: '🥾' }
 const COM_IMAGEM = new Set(['santo', 'aparicao', 'igreja', 'cristo'])
 
 function ItemConexao({ item }) {

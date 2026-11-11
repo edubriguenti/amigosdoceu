@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Amigos do Céu" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Caminho Francês de Santiago — Etapa 23: Astorga → Rabanal del Camino</name>
+    <copyright author="OpenStreetMap contributors"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://amigosdoceu.vercel.app/peregrinacoes/caminho-frances-de-santiago"><text>Amigos do Céu</text></link>
+  </metadata>
+  <trk>
+    <name>Caminho Francês de Santiago — Etapa 23: Astorga → Rabanal del Camino</name>
+    <trkseg>
+      <trkpt lat="42.454887" lon="-6.053074"/>
+      <trkpt lat="42.454778" lon="-6.053439"/>
+      <trkpt lat="42.456194" lon="-6.054429"/>
+      <trkpt lat="42.456299" lon="-6.054762"/>
+      <trkpt lat="42.456311" lon="-6.055222"/>
+      <trkpt lat="42.456497" lon="-6.055576"/>
+      <trkpt lat="42.456807" lon="-6.055839"/>
+      <trkpt lat="42.457232" lon="-6.055542"/>
+      <trkpt lat="42.457262" lon="-6.055337"/>
+      <trkpt lat="42.457412" lon="-6.056544"/>
+      <trkpt lat="42.457538" lon="-6.056766"/>
+      <trkpt lat="42.457418" lon="-6.056972"/>
+      <trkpt lat="42.457706" lon="-6.057440"/>
+      <trkpt lat="42.457530" lon="-6.057626"/>
+      <trkpt lat="42.457450" lon="-6.057572"/>
+      <trkpt lat="42.456783" lon="-6.058928"/>
+      <trkpt lat="42.458619" lon="-6.061891"/>
+      <trkpt lat="42.458911" lon="-6.062504"/>
+      <trkpt lat="42.458929" lon="-6.063123"/>
+      <trkpt lat="42.458595" lon="-6.064761"/>
+      <trkpt lat="42.458585" lon="-6.065800"/>
+      <trkpt lat="42.458672" lon="-6.068452"/>
+      <trkpt lat="42.459347" lon="-6.073361"/>
+      <trkpt lat="42.459124" lon="-6.076558"/>
+      <trkpt lat="42.459254" lon="-6.080979"/>
+      <trkpt lat="42.461551" lon="-6.091413"/>
+      <trkpt lat="42.461750" lon="-6.095726"/>
+      <trkpt lat="42.461728" lon="-6.096331"/>
+      <trkpt lat="42.461480" lon="-6.096477"/>
+      <trkpt lat="42.460406" lon="-6.098691"/>
+      <trkpt lat="42.460403" lon="-6.099358"/>
+      <trkpt lat="42.460470" lon="-6.099419"/>
+      <trkpt lat="42.460353" lon="-6.102032"/>
+      <trkpt lat="42.459363" lon="-6.106312"/>
+      <trkpt lat="42.457245" lon="-6.118914"/>
+      <trkpt lat="42.455499" lon="-6.126800"/>
+      <trkpt lat="42.454874" lon="-6.131979"/>
+      <trkpt lat="42.454992" lon="-6.142192"/>
+      <trkpt lat="42.454818" lon="-6.145035"/>
+      <trkpt lat="42.455301" lon="-6.147600"/>
+      <trkpt lat="42.455404" lon="-6.149195"/>
+      <trkpt lat="42.455238" lon="-6.154560"/>
+      <trkpt lat="42.455164" lon="-6.155714"/>
+      <trkpt lat="42.455040" lon="-6.156310"/>
+      <trkpt lat="42.455091" lon="-6.157681"/>
+      <trkpt lat="42.455561" lon="-6.161453"/>
+      <trkpt lat="42.455536" lon="-6.162392"/>
+      <trkpt lat="42.456158" lon="-6.165629"/>
+      <trkpt lat="42.456258" lon="-6.165671"/>
+      <trkpt lat="42.456368" lon="-6.166190"/>
+      <trkpt lat="42.458288" lon="-6.176085"/>
+      <trkpt lat="42.459412" lon="-6.183188"/>
+      <trkpt lat="42.460010" lon="-6.184984"/>
+      <trkpt lat="42.461068" lon="-6.192193"/>
+      <trkpt lat="42.461068" lon="-6.198558"/>
+      <trkpt lat="42.461408" lon="-6.200353"/>
+      <trkpt lat="42.461448" lon="-6.201367"/>
+      <trkpt lat="42.461703" lon="-6.202701"/>
+      <trkpt lat="42.461632" lon="-6.202905"/>
+      <trkpt lat="42.461940" lon="-6.204322"/>
+      <trkpt lat="42.462564" lon="-6.205381"/>
+      <trkpt lat="42.462776" lon="-6.206051"/>
+      <trkpt lat="42.462760" lon="-6.206851"/>
+      <trkpt lat="42.463017" lon="-6.207649"/>
+      <trkpt lat="42.463028" lon="-6.208074"/>
+      <trkpt lat="42.462831" lon="-6.208342"/>
+      <trkpt lat="42.462569" lon="-6.208397"/>
+      <trkpt lat="42.462793" lon="-6.210806"/>
+      <trkpt lat="42.462882" lon="-6.210975"/>
+      <trkpt lat="42.463166" lon="-6.215117"/>
+      <trkpt lat="42.463421" lon="-6.216478"/>
+      <trkpt lat="42.463669" lon="-6.217233"/>
+      <trkpt lat="42.464401" lon="-6.218241"/>
+      <trkpt lat="42.464533" lon="-6.218605"/>
+      <trkpt lat="42.464034" lon="-6.221917"/>
+      <trkpt lat="42.464063" lon="-6.223468"/>
+      <trkpt lat="42.464207" lon="-6.224644"/>
+      <trkpt lat="42.464440" lon="-6.225544"/>
+      <trkpt lat="42.468599" lon="-6.237067"/>
+      <trkpt lat="42.469395" lon="-6.238849"/>
+      <trkpt lat="42.471313" lon="-6.243862"/>
+      <trkpt lat="42.471602" lon="-6.244426"/>
+      <trkpt lat="42.472534" lon="-6.247654"/>
+      <trkpt lat="42.473174" lon="-6.250514"/>
+      <trkpt lat="42.474218" lon="-6.252664"/>
+      <trkpt lat="42.474194" lon="-6.254328"/>
+      <trkpt lat="42.474715" lon="-6.254953"/>
+      <trkpt lat="42.474935" lon="-6.255381"/>
+      <trkpt lat="42.475325" lon="-6.257209"/>
+      <trkpt lat="42.475479" lon="-6.257348"/>
+      <trkpt lat="42.475927" lon="-6.258319"/>
+      <trkpt lat="42.477651" lon="-6.260726"/>
+      <trkpt lat="42.477919" lon="-6.261239"/>
+      <trkpt lat="42.478539" lon="-6.265492"/>
+      <trkpt lat="42.478515" lon="-6.265923"/>
+      <trkpt lat="42.478691" lon="-6.267460"/>
+      <trkpt lat="42.479100" lon="-6.270305"/>
+      <trkpt lat="42.479128" lon="-6.270998"/>
+      <trkpt lat="42.478962" lon="-6.272878"/>
+      <trkpt lat="42.479512" lon="-6.274711"/>
+      <trkpt lat="42.480277" lon="-6.278604"/>
+      <trkpt lat="42.481574" lon="-6.281317"/>
+      <trkpt lat="42.482236" lon="-6.283923"/>
+    </trkseg>
+  </trk>
+</gpx>

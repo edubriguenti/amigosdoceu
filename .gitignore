@@ -48,3 +48,6 @@ Thumbs.db
 /public/sitemap.xml
 /public/*-sitemap.xml
 
+
+# Downloads do OpenStreetMap/elevação usados por scripts/build-rota.mjs
+/.cache/
