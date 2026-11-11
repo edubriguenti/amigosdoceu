@@ -2,6 +2,14 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-11: São Josafá no site, ligado à memória de 12/11
+
+- **Problema:** a exploração (Chromium, 390px, 18 rotas: sem overflow, sem erros de página, sem alvos < 32px) não achou defeito de UI; a lacuna era de conteúdo: amanhã (12/11) a memória de São Josafá não tinha santo ligado, página nem figurinha (24 santos no site).
+- **Solução:** novo santo `sao-josafa` (arcebispo de Polotsk, c. 1580–1623, mártir da unidade da Igreja) ligado à celebração de 12/11. A figurinha entra sozinha no Álbum e a oração dele vira a oração do dia.
+- **Arquivos:** `data/santos.json`, `data/calendario-liturgico.json`, `docs/proximas-etapas.md`.
+- **Testes:** `validate:album`, `validate:relacoes` e `validate:imagens` sem erros; `lint` 0 erros (18 avisos preexistentes); `build` ok (gera `/santos/sao-josafa`). Chromium (390px) após o build: a página abre com "Festa: 12 de novembro" e a oração; a visita registra `santo:sao-josafa` no álbum; `/busca?q=josafa` lista o santo; sem overflow e 0 erros de página. **Não testado:** o bloco "Hoje" da home em 12/11 (home gerada no build) e o clique em "Rezar".
+- **Limitações:** sem imagem (`imagem: null`, placeholder). Texto e oração escritos de memória, vale revisão (datas e título de mártir). Sem teste automatizado (o projeto não tem runner).
+
 ## 2026-11-10: mapa e busca com alvos de 44px; rodapé sem links de rede social mortos
 
 - **Problema:** em `/mapa` (Chromium, 390px) os cinco botões de filtro/ação tinham 40px de altura e não informavam qual filtro estava ativo a leitores de tela; o link "os santos" do estado vazio de `/busca` tinha 20px. O rodapé (todas as páginas internas) mostrava ícones de Facebook e Instagram com `href="#"`: não levavam a lugar nenhum e tinham 36px.

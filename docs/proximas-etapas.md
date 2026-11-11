@@ -102,6 +102,7 @@ desses dados.
 
 ### 2.1 Calendário
 0. [x] Santos já cadastrados sem festa ligados ao calendário (São Sebastião 20/01, Dom Bosco 31/01, Cátedra de São Pedro 22/02, Santa Rita 22/05, São Bento 11/07) e removida a Santa Catarina duplicada em 25/03, que escondia a Anunciação.
+0l. [x] 11/11/2026: São Josafá cadastrado e ligado à memória de 12/11 (sem imagem ainda). Próximos dias sem santo ligado: 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília).
 0k. [x] 08/11/2026: campo `igrejas` nas celebrações (Latrão, Aparecida, Guadalupe); "Conhecer" da home, Santos do Dia e Calendário levam à igreja. Candidatas: Dedicação das Basílicas de São Pedro e São Paulo (18/11, `basilica-sao-pedro`), Santa Maria Maior (05/08), Lourdes (11/02) e Fátima (13/05) se entrarem no calendário. Próximos dias sem santo: 12/11 (São Josafá), 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília).
 0j. [x] 06/11/2026: São Leão Magno cadastrado e ligado à memória de 10/11 (sem imagem ainda). Próximos dias sem santo ligado: 12/11 (São Josafá), 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília). 09/11 (Dedicação de Latrão) tem igreja `sao-joao-laterano` no site, mas o calendário ainda não liga celebração a igreja.
 0i. [x] 05/11/2026: São Martinho de Tours cadastrado e ligado à memória de 11/11 (sem imagem ainda). Próximos dias sem santo ligado: 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília).
