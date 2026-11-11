@@ -122,3 +122,133 @@ h1, h2, h3 {
     animation: none;
   }
 }
+
+/* ---------- Mapa antigo de peregrino ---------- */
+
+/* Moldura de pergaminho em volta do mapa (usa a mesma granulação do Álbum). */
+.mapa-moldura {
+  position: relative;
+  border-radius: 0.75rem;
+  padding: 6px;
+  background: linear-gradient(135deg, #c9a66b 0%, #8a6a3a 45%, #c9a66b 100%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(59, 47, 36, 0.6);
+}
+
+.mapa-antigo {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #e6d7b5;
+  isolation: isolate;
+}
+
+.mapa-antigo .leaflet-container {
+  height: 100%;
+  width: 100%;
+  background-color: #e6d7b5;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Os tiles do OpenStreetMap ganham tom de tinta sépia sobre papel. */
+.mapa-antigo .leaflet-tile-pane {
+  filter: sepia(0.62) saturate(0.7) contrast(0.92) brightness(1.03) hue-rotate(-6deg);
+}
+
+/* Granulação do papel e bordas escurecidas, por cima do mapa e abaixo dos controles. */
+.mapa-antigo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 450;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .27 0 0 0 0 .16 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0) 58%, rgba(110, 78, 38, 0.38) 100%);
+}
+
+.mapa-antigo .leaflet-control-zoom a {
+  background-color: #f1e6cb;
+  color: #3b2f24;
+  border-color: #b79a68;
+}
+.mapa-antigo .leaflet-control-zoom a:hover {
+  background-color: #e6d7b5;
+}
+.mapa-antigo .leaflet-bar {
+  border: 1px solid #8a6a3a;
+  box-shadow: 0 2px 6px rgba(59, 47, 36, 0.35);
+}
+.mapa-antigo .leaflet-control-attribution {
+  background: rgba(241, 230, 203, 0.85);
+  color: #5c4b36;
+  font-size: 10px;
+}
+.mapa-antigo .leaflet-control-attribution a {
+  color: #5c4b36;
+  text-decoration: underline;
+}
+
+.mapa-antigo .leaflet-popup-content-wrapper {
+  background: #f4ead2;
+  color: #3b2f24;
+  border: 1px solid #b79a68;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(59, 47, 36, 0.4);
+}
+.mapa-antigo .leaflet-popup-tip {
+  background: #f4ead2;
+  border: 1px solid #b79a68;
+}
+.mapa-antigo .leaflet-popup-content {
+  margin: 0.75rem 0.9rem;
+  line-height: 1.4;
+}
+.mapa-antigo .leaflet-popup-content a {
+  color: #7a1f1f;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.mapa-antigo .leaflet-tooltip {
+  background: #f4ead2;
+  color: #3b2f24;
+  border: 1px solid #b79a68;
+  box-shadow: 0 2px 8px rgba(59, 47, 36, 0.35);
+  font-family: var(--font-playfair), Georgia, serif;
+}
+.mapa-antigo .leaflet-tooltip-top::before {
+  border-top-color: #b79a68;
+}
+
+/* Selo de lacre usado pelos marcadores (components/mapa/icones.js). */
+.selo-mapa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  border: 2px solid #f4ead2;
+  color: #f4ead2;
+  box-shadow: 0 2px 5px rgba(40, 28, 14, 0.55), inset 0 -2px 3px rgba(0, 0, 0, 0.25), inset 0 2px 2px rgba(255, 255, 255, 0.18);
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+}
+.selo-mapa svg {
+  width: 62%;
+  height: 62%;
+}
+.selo-mapa--papel {
+  background: #f4ead2;
+  color: #3b2f24;
+  border-color: #5c4b36;
+}
+
+@media print {
+  .mapa-moldura {
+    display: none !important;
+  }
+}

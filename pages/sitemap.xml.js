@@ -27,6 +27,7 @@ const staticPages = [
   { url: '/calendario', changefreq: 'daily', priority: '0.8' },
   { url: '/santos-do-dia', changefreq: 'daily', priority: '0.8' },
   { url: '/mapa', changefreq: 'monthly', priority: '0.7' },
+  { url: '/peregrinacoes', changefreq: 'monthly', priority: '0.8' },
   { url: '/rosario', changefreq: 'monthly', priority: '0.7' },
   { url: '/vida-de-cristo', changefreq: 'monthly', priority: '0.7' },
   { url: '/novenas', changefreq: 'weekly', priority: '0.7' },
@@ -110,6 +111,19 @@ function generateAllUrls() {
         url: `/oracoes/${oracao.slug}`,
         changefreq: 'monthly',
         priority: '0.7',
+        lastmod: today
+      });
+    }
+  });
+
+  // Peregrinações
+  const rotasPeregrinacao = readJsonFile('data/peregrinacoes/rotas.json');
+  rotasPeregrinacao.forEach(rota => {
+    if (rota.slug) {
+      urls.push({
+        url: `/peregrinacoes/${rota.slug}`,
+        changefreq: 'monthly',
+        priority: '0.8',
         lastmod: today
       });
     }

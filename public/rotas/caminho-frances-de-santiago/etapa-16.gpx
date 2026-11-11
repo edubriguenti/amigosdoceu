@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Amigos do Céu" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Caminho Francês de Santiago — Etapa 16: Frómista → Carrión de los Condes</name>
+    <copyright author="OpenStreetMap contributors"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://amigosdoceu.vercel.app/peregrinacoes/caminho-frances-de-santiago"><text>Amigos do Céu</text></link>
+  </metadata>
+  <trk>
+    <name>Caminho Francês de Santiago — Etapa 16: Frómista → Carrión de los Condes</name>
+    <trkseg>
+      <trkpt lat="42.266169" lon="-4.405195"/>
+      <trkpt lat="42.266117" lon="-4.405861"/>
+      <trkpt lat="42.266209" lon="-4.406096"/>
+      <trkpt lat="42.266103" lon="-4.406174"/>
+      <trkpt lat="42.265969" lon="-4.406611"/>
+      <trkpt lat="42.265567" lon="-4.407131"/>
+      <trkpt lat="42.265333" lon="-4.407732"/>
+      <trkpt lat="42.265012" lon="-4.413476"/>
+      <trkpt lat="42.265079" lon="-4.413952"/>
+      <trkpt lat="42.265320" lon="-4.414481"/>
+      <trkpt lat="42.265126" lon="-4.415195"/>
+      <trkpt lat="42.265249" lon="-4.416832"/>
+      <trkpt lat="42.265383" lon="-4.417555"/>
+      <trkpt lat="42.265730" lon="-4.418128"/>
+      <trkpt lat="42.265726" lon="-4.418380"/>
+      <trkpt lat="42.265507" lon="-4.418897"/>
+      <trkpt lat="42.265528" lon="-4.419459"/>
+      <trkpt lat="42.267724" lon="-4.442238"/>
+      <trkpt lat="42.269245" lon="-4.445004"/>
+      <trkpt lat="42.269357" lon="-4.445405"/>
+      <trkpt lat="42.268673" lon="-4.448173"/>
+      <trkpt lat="42.268725" lon="-4.448560"/>
+      <trkpt lat="42.269131" lon="-4.449280"/>
+      <trkpt lat="42.268653" lon="-4.450519"/>
+      <trkpt lat="42.268678" lon="-4.451015"/>
+      <trkpt lat="42.268945" lon="-4.451837"/>
+      <trkpt lat="42.269046" lon="-4.451878"/>
+      <trkpt lat="42.269351" lon="-4.452672"/>
+      <trkpt lat="42.272786" lon="-4.461857"/>
+      <trkpt lat="42.273770" lon="-4.463793"/>
+      <trkpt lat="42.283538" lon="-4.479217"/>
+      <trkpt lat="42.283530" lon="-4.479361"/>
+      <trkpt lat="42.285040" lon="-4.481216"/>
+      <trkpt lat="42.285268" lon="-4.481639"/>
+      <trkpt lat="42.286372" lon="-4.482732"/>
+      <trkpt lat="42.287209" lon="-4.483962"/>
+      <trkpt lat="42.287481" lon="-4.484197"/>
+      <trkpt lat="42.297160" lon="-4.498289"/>
+      <trkpt lat="42.299075" lon="-4.501727"/>
+      <trkpt lat="42.311938" lon="-4.532276"/>
+      <trkpt lat="42.314850" lon="-4.541879"/>
+      <trkpt lat="42.315056" lon="-4.542238"/>
+      <trkpt lat="42.315373" lon="-4.542408"/>
+      <trkpt lat="42.315180" lon="-4.542899"/>
+      <trkpt lat="42.315202" lon="-4.543142"/>
+      <trkpt lat="42.315324" lon="-4.543257"/>
+      <trkpt lat="42.315302" lon="-4.543476"/>
+      <trkpt lat="42.315855" lon="-4.545337"/>
+      <trkpt lat="42.322496" lon="-4.566756"/>
+      <trkpt lat="42.324627" lon="-4.571617"/>
+      <trkpt lat="42.336753" lon="-4.595145"/>
+      <trkpt lat="42.337302" lon="-4.596017"/>
+      <trkpt lat="42.337212" lon="-4.596171"/>
+      <trkpt lat="42.337409" lon="-4.596655"/>
+      <trkpt lat="42.337417" lon="-4.599268"/>
+      <trkpt lat="42.337151" lon="-4.601151"/>
+      <trkpt lat="42.337262" lon="-4.601918"/>
+    </trkseg>
+  </trk>
+</gpx>

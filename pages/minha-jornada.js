@@ -7,11 +7,13 @@ import useNovena from '../hooks/useNovena'
 import { useProgresso } from '../hooks/useProgresso'
 import { useFavoritos } from '../hooks/useFavoritos'
 import { useOracoes } from '../hooks/useOracoes'
+import { usePeregrinacoes } from '../hooks/usePeregrinacoes'
 import useDiaAtual from '../hooks/useDiaAtual'
 import { getPaginas } from '../lib/albumData'
 import { getTrilhas } from '../lib/conexoesData'
+import { getRotas } from '../lib/peregrinacoesData'
 import { janelaDeDias, REVALIDATE_HOJE } from '../lib/hoje'
-import { getIntencoesResumo, getProgressoCristo, getRosarioStats, INTENCOES_PADRAO, ROSARIO_PADRAO } from '../lib/jornada'
+import { getIntencoesResumo, getPeregrinacoesResumo, getProgressoCristo, getRosarioStats, INTENCOES_PADRAO, ROSARIO_PADRAO } from '../lib/jornada'
 import vidaCristo from '../data/vida-cristo.json'
 
 // Totais estáticos + o dia (ISR, para saber a oração de hoje); o progresso é lido do navegador após o mount.
@@ -23,6 +25,7 @@ export async function getStaticProps() {
       paginas: getPaginas().map((p) => ({ slug: p.slug, titulo: p.titulo, icone: p.icone || null, ids: [...p.figurinhaIds] })),
       eventos: vidaCristo.map((e) => ({ slug: e.slug, titulo: e.title })),
       totalTrilhas: getTrilhas().length,
+      rotas: getRotas().map((r) => ({ slug: r.slug, nome: r.nome, etapas: r.etapas.map((e) => ({ numero: e.numero, origem: e.origem, destino: e.destino })) })),
     },
   }
 }
@@ -239,13 +242,53 @@ function CartaoConexoes({ progresso, totalTrilhas }) {
   )
 }
 
-export default function MinhaJornada({ paginas, eventos, totalTrilhas, dias, hojeServidor }) {
+function CartaoPeregrinacoes({ resumos }) {
+  // Mostra a rota em andamento com mais etapas feitas; sem nenhuma, convida a começar.
+  const emAndamento = resumos.filter((r) => r.feitas > 0 && r.proxima).sort((a, b) => b.feitas - a.feitas)[0]
+  const concluidas = resumos.filter((r) => r.total > 0 && !r.proxima)
+  const r = emAndamento || concluidas[0] || null
+  if (!r) {
+    return (
+      <Cartao
+        icone="🥾"
+        titulo="Peregrinações"
+        numero={`${resumos.length} rotas`}
+        contexto="Roteiros etapa por etapa para caminhar de verdade."
+        acao={
+          <Link href="/peregrinacoes" className={botaoSecundario}>
+            Escolher um caminho →
+          </Link>
+        }
+      />
+    )
+  }
+  return (
+    <Cartao
+      icone="🥾"
+      titulo="Peregrinações"
+      numero={`${r.feitas} / ${r.total}`}
+      contexto={r.proxima ? `${r.nome} · próxima: ${r.proxima.origem} → ${r.proxima.destino}` : `${r.nome} · caminho concluído`}
+      acao={
+        <Link href={r.proxima ? `/peregrinacoes/${r.slug}?etapa=${r.proxima.numero}` : `/peregrinacoes/${r.slug}`} className={r.proxima ? botaoPrimario : botaoSecundario}>
+          {r.proxima ? `Continuar na etapa ${r.proxima.numero}` : 'Rever o caminho'} →
+        </Link>
+      }
+    >
+      <div className="mt-3">
+        <Barra valor={r.feitas} total={r.total} rotulo={`Etapas feitas no ${r.nome}`} />
+      </div>
+    </Cartao>
+  )
+}
+
+export default function MinhaJornada({ paginas, eventos, totalTrilhas, rotas, dias, hojeServidor }) {
   const album = useAlbum()
   const oracoes = useOracoes()
   const dia = useDiaAtual(dias, hojeServidor)
   const { novenas, isLoaded: novenasLoaded } = useNovena()
   const progresso = useProgresso()
   const { favoritos, loaded: favoritosLoaded } = useFavoritos()
+  const peregrinacoes = usePeregrinacoes()
 
   const [rosario, setRosario] = useState(ROSARIO_PADRAO)
   const [intencoes, setIntencoes] = useState(INTENCOES_PADRAO)
@@ -260,14 +303,15 @@ export default function MinhaJornada({ paginas, eventos, totalTrilhas, dias, hoj
   }, [])
 
   const cristo = useMemo(() => getProgressoCristo(album.estado.coletadas, eventos), [album.estado.coletadas, eventos])
+  const resumosPeregrinacoes = useMemo(() => getPeregrinacoesResumo(rotas, peregrinacoes.estado), [rotas, peregrinacoes.estado])
   const totalFavoritos = (favoritos?.santos?.length || 0) + (favoritos?.igrejas?.length || 0) + (favoritos?.aparicoes?.length || 0)
-  const pronto = lido && album.loaded && oracoes.loaded && novenasLoaded && progresso.loaded && favoritosLoaded
+  const pronto = lido && album.loaded && oracoes.loaded && novenasLoaded && progresso.loaded && favoritosLoaded && peregrinacoes.loaded
 
   return (
     <Layout>
       <SEO
         title="Minha Jornada"
-        description="Seu caminho pelo Amigos do Céu: álbum, Vida de Cristo, rosário, novenas e conexões bíblicas em um só lugar."
+        description="Seu caminho pelo Amigos do Céu: álbum, Vida de Cristo, rosário, novenas, conexões bíblicas e peregrinações em um só lugar."
         url="https://amigosdoceu.vercel.app/minha-jornada"
         noindex
       />
@@ -293,6 +337,9 @@ export default function MinhaJornada({ paginas, eventos, totalTrilhas, dias, hoj
               <CartaoRosario stats={rosario} misterioDeHoje={misterioDeHoje} />
               <CartaoNovenas novenas={novenas} />
               <CartaoConexoes progresso={progresso} totalTrilhas={totalTrilhas} />
+              <div className="sm:col-span-2">
+                <CartaoPeregrinacoes resumos={resumosPeregrinacoes} />
+              </div>
             </div>
 
             <nav aria-label="Atalhos pessoais" className="flex flex-col sm:flex-row gap-3">

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Amigos do Céu" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Caminho Francês de Santiago — Etapa 17: Carrión de los Condes → Terradillos de los Templarios</name>
+    <copyright author="OpenStreetMap contributors"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://amigosdoceu.vercel.app/peregrinacoes/caminho-frances-de-santiago"><text>Amigos do Céu</text></link>
+  </metadata>
+  <trk>
+    <name>Caminho Francês de Santiago — Etapa 17: Carrión de los Condes → Terradillos de los Templarios</name>
+    <trkseg>
+      <trkpt lat="42.337262" lon="-4.601918"/>
+      <trkpt lat="42.337524" lon="-4.603199"/>
+      <trkpt lat="42.337739" lon="-4.603631"/>
+      <trkpt lat="42.338888" lon="-4.603720"/>
+      <trkpt lat="42.339998" lon="-4.604150"/>
+      <trkpt lat="42.339563" lon="-4.604841"/>
+      <trkpt lat="42.339364" lon="-4.605867"/>
+      <trkpt lat="42.339701" lon="-4.606724"/>
+      <trkpt lat="42.339608" lon="-4.608341"/>
+      <trkpt lat="42.340634" lon="-4.610192"/>
+      <trkpt lat="42.340733" lon="-4.610644"/>
+      <trkpt lat="42.340723" lon="-4.612976"/>
+      <trkpt lat="42.340493" lon="-4.613435"/>
+      <trkpt lat="42.340531" lon="-4.613618"/>
+      <trkpt lat="42.340803" lon="-4.613943"/>
+      <trkpt lat="42.340929" lon="-4.614992"/>
+      <trkpt lat="42.341147" lon="-4.619226"/>
+      <trkpt lat="42.341333" lon="-4.621090"/>
+      <trkpt lat="42.341132" lon="-4.622007"/>
+      <trkpt lat="42.341195" lon="-4.622266"/>
+      <trkpt lat="42.341455" lon="-4.622478"/>
+      <trkpt lat="42.341509" lon="-4.624011"/>
+      <trkpt lat="42.342812" lon="-4.638317"/>
+      <trkpt lat="42.343723" lon="-4.650685"/>
+      <trkpt lat="42.344026" lon="-4.653288"/>
+      <trkpt lat="42.344977" lon="-4.657015"/>
+      <trkpt lat="42.345021" lon="-4.657851"/>
+      <trkpt lat="42.344774" lon="-4.658940"/>
+      <trkpt lat="42.344404" lon="-4.659635"/>
+      <trkpt lat="42.344215" lon="-4.660308"/>
+      <trkpt lat="42.344118" lon="-4.665567"/>
+      <trkpt lat="42.344169" lon="-4.666059"/>
+      <trkpt lat="42.343816" lon="-4.671112"/>
+      <trkpt lat="42.342806" lon="-4.681495"/>
+      <trkpt lat="42.341825" lon="-4.690501"/>
+      <trkpt lat="42.340099" lon="-4.704287"/>
+      <trkpt lat="42.337154" lon="-4.725095"/>
+      <trkpt lat="42.335627" lon="-4.735234"/>
+      <trkpt lat="42.333611" lon="-4.747736"/>
+      <trkpt lat="42.332092" lon="-4.758685"/>
+      <trkpt lat="42.329618" lon="-4.771338"/>
+      <trkpt lat="42.329092" lon="-4.778286"/>
+      <trkpt lat="42.328973" lon="-4.786397"/>
+      <trkpt lat="42.329074" lon="-4.792107"/>
+      <trkpt lat="42.328852" lon="-4.799074"/>
+      <trkpt lat="42.329228" lon="-4.804468"/>
+      <trkpt lat="42.329520" lon="-4.812287"/>
+      <trkpt lat="42.329622" lon="-4.812744"/>
+      <trkpt lat="42.333205" lon="-4.818778"/>
+      <trkpt lat="42.336495" lon="-4.825094"/>
+      <trkpt lat="42.338176" lon="-4.828513"/>
+      <trkpt lat="42.340320" lon="-4.833467"/>
+      <trkpt lat="42.340470" lon="-4.834150"/>
+      <trkpt lat="42.340411" lon="-4.834264"/>
+      <trkpt lat="42.340669" lon="-4.835053"/>
+      <trkpt lat="42.342546" lon="-4.839708"/>
+      <trkpt lat="42.342776" lon="-4.840468"/>
+      <trkpt lat="42.343317" lon="-4.843383"/>
+      <trkpt lat="42.343778" lon="-4.845034"/>
+      <trkpt lat="42.344727" lon="-4.847873"/>
+      <trkpt lat="42.347956" lon="-4.856635"/>
+      <trkpt lat="42.348112" lon="-4.857506"/>
+      <trkpt lat="42.348109" lon="-4.858641"/>
+      <trkpt lat="42.347671" lon="-4.859528"/>
+      <trkpt lat="42.347705" lon="-4.860102"/>
+      <trkpt lat="42.347975" lon="-4.860498"/>
+      <trkpt lat="42.348764" lon="-4.862175"/>
+      <trkpt lat="42.350754" lon="-4.864008"/>
+      <trkpt lat="42.351282" lon="-4.864448"/>
+      <trkpt lat="42.351601" lon="-4.864396"/>
+      <trkpt lat="42.352693" lon="-4.864911"/>
+      <trkpt lat="42.353164" lon="-4.865019"/>
+      <trkpt lat="42.353642" lon="-4.865335"/>
+      <trkpt lat="42.353378" lon="-4.866398"/>
+      <trkpt lat="42.352834" lon="-4.866727"/>
+      <trkpt lat="42.352621" lon="-4.866978"/>
+      <trkpt lat="42.351672" lon="-4.869370"/>
+      <trkpt lat="42.356289" lon="-4.869863"/>
+      <trkpt lat="42.356403" lon="-4.871219"/>
+      <trkpt lat="42.357185" lon="-4.875508"/>
+      <trkpt lat="42.359393" lon="-4.884701"/>
+      <trkpt lat="42.360404" lon="-4.890149"/>
+      <trkpt lat="42.361760" lon="-4.891100"/>
+      <trkpt lat="42.362035" lon="-4.891181"/>
+      <trkpt lat="42.362502" lon="-4.890364"/>
+      <trkpt lat="42.362989" lon="-4.890328"/>
+    </trkseg>
+  </trk>
+</gpx>

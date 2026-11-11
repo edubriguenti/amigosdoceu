@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "validate:album": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-album.mjs",
     "validate:relacoes": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-relacoes.mjs",
-    "validate:imagens": "node scripts/validate-imagens.mjs"
+    "validate:imagens": "node scripts/validate-imagens.mjs",
+    "validate:peregrinacoes": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-peregrinacoes.mjs",
+    "build:rota": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-rota.mjs"
   },
   "dependencies": {
     "framer-motion": "^10.12.16",

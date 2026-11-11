@@ -1,0 +1,59 @@
+[
+  {
+    "slug": "caminho-da-fe",
+    "nome": "Caminho da Fé",
+    "subtitulo": "Ramal principal · Águas da Prata a Aparecida",
+    "resumo": "A grande peregrinação brasileira: de Águas da Prata (SP), pelo sul de Minas e pela Serra da Mantiqueira, até o Santuário Nacional de Nossa Senhora Aparecida.",
+    "historia": "O Caminho da Fé foi inaugurado em 2003, inspirado no Caminho de Santiago, para dar estrutura aos romeiros que já iam a pé a Aparecida. O ramal principal parte de Águas da Prata, atravessa pequenas cidades e bairros rurais do sul de Minas Gerais, sobe a Serra da Mantiqueira até Campos do Jordão e desce ao Vale do Paraíba. Setas amarelas marcam todo o percurso, e o peregrino carimba a credencial nas pousadas e nos pontos de apoio.",
+    "paises": [
+      "Brasil"
+    ],
+    "inicio": {
+      "nome": "Águas da Prata",
+      "coord": [
+        -21.94271,
+        -46.71206
+      ]
+    },
+    "destino": "Aparecida",
+    "osmRelacao": 15057811,
+    "fonteOficial": {
+      "nome": "Associação dos Amigos do Caminho da Fé",
+      "url": "https://caminhodafe.com.br"
+    },
+    "distanciaOficial": "cerca de 318 km",
+    "notaTracado": "O traçado vem do OpenStreetMap, onde este ramal está mapeado como rota de bicicleta; em alguns trechos o caminho a pé sinalizado pelas setas amarelas pode divergir. Depois de Campos do Jordão há mais de uma via oficial até Aparecida — aqui seguimos a que passa por Pedrinhas e Potim. Confira sempre a planilha oficial antes de partir.",
+    "notaEtapas": "O Caminho da Fé não tem etapas fixas: cada peregrino monta os seus dias. A divisão em 14 dias abaixo agrupa os trechos oficiais entre localidades com apoio ao peregrino.",
+    "imagem": null,
+    "cor": "#9b2c2c"
+  },
+  {
+    "slug": "caminho-frances-de-santiago",
+    "nome": "Caminho Francês de Santiago",
+    "subtitulo": "Saint-Jean-Pied-de-Port a Santiago de Compostela",
+    "resumo": "A rota jacobeia mais percorrida: dos Pireneus franceses, por Navarra, La Rioja, Castela e Leão e a Galiza, até o túmulo do Apóstolo São Tiago.",
+    "historia": "Desde que, no século IX, se difundiu a notícia do túmulo do Apóstolo São Tiago Maior na Galiza, peregrinos de toda a Europa caminham até Compostela. O Caminho Francês, descrito já no século XII no Códice Calixtino, tornou-se a via principal: ao longo dele nasceram pontes, hospitais, mosteiros e cidades inteiras. Patrimônio Mundial da UNESCO desde 1993, é marcado por setas amarelas e pela concha de vieira. Quem percorre a pé pelo menos os últimos 100 km, com a credencial carimbada, recebe a Compostela.",
+    "paises": [
+      "França",
+      "Espanha"
+    ],
+    "inicio": {
+      "nome": "Saint-Jean-Pied-de-Port",
+      "coord": [
+        43.16295,
+        -1.23805
+      ]
+    },
+    "destino": "Santiago de Compostela",
+    "osmRelacao": 2163573,
+    "fonteOficial": {
+      "nome": "Oficina de Acogida al Peregrino (Catedral de Santiago)",
+      "url": "https://oficinadelperegrino.com"
+    },
+    "distanciaOficial": "cerca de 780 km",
+    "notaTracado": "O traçado vem do OpenStreetMap. Onde há variantes, o mapa segue uma só: a Rota de Napoleão nos Pireneus e a via de San Xil entre Triacastela e Sarria. Informe-se sobre as condições da travessia dos Pireneus antes de partir.",
+    "notaEtapas": "A divisão em 33 etapas é a mais tradicional nos guias, mas não é obrigatória: adapte os dias ao seu ritmo e à oferta de albergues.",
+    "imagem": null,
+    "cor": "#9b2c2c"
+  }
+]

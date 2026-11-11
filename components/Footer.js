@@ -32,7 +32,8 @@ export default function Footer() {
               <li><Link href="/santos" className={linkClass}>Santos Católicos</Link></li>
               <li><Link href="/igrejas" className={linkClass}>Igrejas e Basílicas</Link></li>
               <li><Link href="/aparicoes" className={linkClass}>Aparições Marianas</Link></li>
-              <li><Link href="/mapa" className={linkClass}>Mapa Interativo</Link></li>
+              <li><Link href="/mapa" className={linkClass}>Mapa dos Lugares Sagrados</Link></li>
+              <li><Link href="/peregrinacoes" className={linkClass}>Peregrinações</Link></li>
               <li><Link href="/conexoes" className={linkClass}>Conexões da Bíblia</Link></li>
             </ul>
           </div>

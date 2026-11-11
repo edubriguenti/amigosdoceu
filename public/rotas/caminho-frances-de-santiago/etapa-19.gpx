@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Amigos do Céu" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Caminho Francês de Santiago — Etapa 19: Bercianos del Real Camino → Mansilla de las Mulas</name>
+    <copyright author="OpenStreetMap contributors"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://amigosdoceu.vercel.app/peregrinacoes/caminho-frances-de-santiago"><text>Amigos do Céu</text></link>
+  </metadata>
+  <trk>
+    <name>Caminho Francês de Santiago — Etapa 19: Bercianos del Real Camino → Mansilla de las Mulas</name>
+    <trkseg>
+      <trkpt lat="42.387819" lon="-5.145113"/>
+      <trkpt lat="42.388483" lon="-5.146366"/>
+      <trkpt lat="42.389349" lon="-5.147186"/>
+      <trkpt lat="42.390453" lon="-5.149092"/>
+      <trkpt lat="42.391552" lon="-5.151775"/>
+      <trkpt lat="42.394416" lon="-5.157094"/>
+      <trkpt lat="42.397060" lon="-5.163314"/>
+      <trkpt lat="42.397951" lon="-5.166946"/>
+      <trkpt lat="42.404834" lon="-5.184301"/>
+      <trkpt lat="42.411244" lon="-5.198073"/>
+      <trkpt lat="42.412676" lon="-5.201486"/>
+      <trkpt lat="42.415776" lon="-5.207669"/>
+      <trkpt lat="42.418135" lon="-5.211710"/>
+      <trkpt lat="42.419802" lon="-5.215097"/>
+      <trkpt lat="42.420088" lon="-5.215357"/>
+      <trkpt lat="42.420483" lon="-5.216077"/>
+      <trkpt lat="42.422316" lon="-5.219837"/>
+      <trkpt lat="42.422949" lon="-5.222352"/>
+      <trkpt lat="42.423963" lon="-5.223747"/>
+      <trkpt lat="42.425002" lon="-5.225674"/>
+      <trkpt lat="42.426574" lon="-5.227975"/>
+      <trkpt lat="42.429610" lon="-5.234280"/>
+      <trkpt lat="42.430982" lon="-5.237213"/>
+      <trkpt lat="42.433661" lon="-5.245147"/>
+      <trkpt lat="42.439328" lon="-5.254802"/>
+      <trkpt lat="42.444626" lon="-5.262458"/>
+      <trkpt lat="42.447962" lon="-5.268080"/>
+      <trkpt lat="42.452319" lon="-5.278898"/>
+      <trkpt lat="42.458397" lon="-5.293390"/>
+      <trkpt lat="42.460249" lon="-5.299747"/>
+      <trkpt lat="42.463831" lon="-5.311038"/>
+      <trkpt lat="42.465244" lon="-5.318320"/>
+      <trkpt lat="42.465258" lon="-5.319008"/>
+      <trkpt lat="42.464447" lon="-5.327448"/>
+      <trkpt lat="42.464466" lon="-5.328060"/>
+      <trkpt lat="42.464575" lon="-5.328394"/>
+      <trkpt lat="42.464842" lon="-5.328774"/>
+      <trkpt lat="42.467349" lon="-5.329745"/>
+      <trkpt lat="42.467707" lon="-5.330063"/>
+      <trkpt lat="42.467984" lon="-5.330579"/>
+      <trkpt lat="42.468296" lon="-5.331995"/>
+      <trkpt lat="42.468294" lon="-5.336663"/>
+      <trkpt lat="42.468356" lon="-5.337290"/>
+      <trkpt lat="42.468655" lon="-5.338066"/>
+      <trkpt lat="42.469166" lon="-5.338530"/>
+      <trkpt lat="42.470212" lon="-5.339767"/>
+      <trkpt lat="42.470460" lon="-5.340732"/>
+      <trkpt lat="42.470685" lon="-5.343367"/>
+      <trkpt lat="42.470548" lon="-5.346762"/>
+      <trkpt lat="42.470684" lon="-5.347869"/>
+      <trkpt lat="42.471766" lon="-5.350606"/>
+      <trkpt lat="42.472095" lon="-5.351934"/>
+      <trkpt lat="42.472432" lon="-5.352569"/>
+      <trkpt lat="42.473683" lon="-5.353492"/>
+      <trkpt lat="42.474435" lon="-5.353323"/>
+      <trkpt lat="42.474766" lon="-5.353926"/>
+      <trkpt lat="42.474916" lon="-5.353787"/>
+      <trkpt lat="42.475139" lon="-5.354102"/>
+      <trkpt lat="42.475208" lon="-5.354676"/>
+      <trkpt lat="42.475484" lon="-5.354810"/>
+      <trkpt lat="42.475438" lon="-5.355394"/>
+      <trkpt lat="42.475335" lon="-5.355639"/>
+      <trkpt lat="42.475619" lon="-5.356041"/>
+      <trkpt lat="42.475481" lon="-5.356372"/>
+      <trkpt lat="42.475808" lon="-5.358229"/>
+      <trkpt lat="42.479021" lon="-5.365208"/>
+      <trkpt lat="42.485463" lon="-5.386066"/>
+      <trkpt lat="42.492724" lon="-5.403125"/>
+      <trkpt lat="42.493716" lon="-5.405339"/>
+      <trkpt lat="42.493763" lon="-5.405291"/>
+      <trkpt lat="42.494321" lon="-5.406946"/>
+      <trkpt lat="42.494441" lon="-5.407883"/>
+      <trkpt lat="42.495281" lon="-5.408641"/>
+      <trkpt lat="42.496627" lon="-5.412130"/>
+      <trkpt lat="42.497336" lon="-5.413734"/>
+      <trkpt lat="42.497727" lon="-5.415070"/>
+      <trkpt lat="42.498123" lon="-5.415766"/>
+      <trkpt lat="42.498231" lon="-5.415671"/>
+      <trkpt lat="42.498656" lon="-5.416422"/>
+      <trkpt lat="42.498946" lon="-5.417456"/>
+      <trkpt lat="42.499129" lon="-5.417022"/>
+    </trkseg>
+  </trk>
+</gpx>

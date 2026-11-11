@@ -26,6 +26,8 @@ Cada agente deve respeitar estritamente o ownership e as zonas proibidas definid
 - `npm run lint` - ESLint (`eslint.config.mjs`, `next/core-web-vitals`). Must pass with **0 errors** before a PR.
 - `npm run validate:album` - Validate the Álbum Sagrado catalog (coverage, duplicates, rarities, images). Run after changing `data/album/album.json` or adding content.
 - `npm run validate:relacoes` - Validate the relations graph (`data/relacoes.json` + `santoRelacionado` + `santos.relacionamentos`): refs exist, no self-loops, no duplicates in either direction, no duplicating santo↔santo or derived relations; for `santos.relacionamentos`: known `tipo`, each pair on one saint only, `contemporaneo` only with overlapping lifespans. Run after changing any of those.
+- `npm run validate:peregrinacoes` - Validate the pilgrimage routes (`data/peregrinacoes/` + `public/rotas/`): contiguous numbered stages, refs exist, every stage has a prayer or meditation, generated track/GPX files present and in sync. Run after editing a route.
+- `npm run build:rota -- <slug>` - Regenerate a route's track, GPX files and measurements from OpenStreetMap (see "Peregrinações"). Needs network; downloads are cached in `.cache/rotas/` (gitignored).
 - `npm run validate:imagens` - Every local `/images/...` path in `data/**/*.json` must exist in `public/`. Use `"imagem": null` when there is no image (cards show a themed placeholder, `components/PlaceholderSagrado.js`).
 
 ## Git Workflow
@@ -84,6 +86,8 @@ The application is driven by multiple JSON data sources in the `data/` directory
 
 - **`calendario-liturgico.json`** - Liturgical calendar with daily celebrations (optional `igrejas: [slug]` links a celebration to churches when there is no saint, e.g. Dedicação de Latrão — feeds the "Conhecer" button on the home, Santos do Dia and the calendar panel; `santos: [slug]` links a celebration to saints — feeds Santos do Dia, the home "Hoje" block, the daily sticker and the saint's "Festa" chip)
 
+- **`data/peregrinacoes/`** - Pilgrimage routes (see "Peregrinações" below): `rotas.json` (route sheets), `<slug>.json` (stages, editorial) and `<slug>.medidas.json` (**generated**, never hand-edit)
+
 - **`relacoes.json`** - Editorial relations graph (see "Relações entre entidades" below)
 
 - **`data/conexoes/`** - Bible Connections (split for scalability):
@@ -103,7 +107,8 @@ The application is driven by multiple JSON data sources in the `data/` directory
 - `/aparicoes/[slug]` - Individual apparition detail page
 - `/santos-do-dia` - Saints celebrated today (ISR, server-rendered via `lib/hoje.js`)
 - `/calendario` - Full liturgical calendar view
-- `/mapa` - Interactive map showing churches and apparition locations
+- `/mapa` - Map of sacred places in the antique-pilgrim-map style: churches, apparitions and the real pilgrimage tracks (each route also has a scallop-shell seal that opens its popup)
+- `/peregrinacoes`, `/peregrinacoes/[slug]` - **Peregrinações**: stage-by-stage itineraries for people who will actually walk (sticky map + scrolling stages). Deep-link a stage via `?etapa=<n>`. See "Peregrinações" below.
 - `/vida-de-cristo` - Visual timeline of Christ's life
 - `/oracoes`, `/oracoes/[slug]` - Prayers
 - `/novenas`, `/novenas/[slug]` - Novenas
@@ -133,7 +138,9 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 - `FilterPanel.js` - Advanced filtering UI
 
 **Interactive Features:**
-- `MapaInterativo.js` - Leaflet-based map with markers (uses react-leaflet)
+- `MapaInterativo.js` - General map of sacred places (built on `components/mapa/MapaBase.js`)
+- `components/mapa/` - `MapaBase.js` (antique-style Leaflet base + `Enquadrar` to frame bounds) and `icones.js` (wax-seal `L.divIcon`s). **Client-only**: always load map components with `next/dynamic({ ssr: false })`.
+- `components/peregrinacoes/` - `RotaMapa.js` (route map: stage in focus in red, done stages in gold), `EtapaCard.js`, `RotaCard.js`
 - `CalendarioMensal.js` - Monthly liturgical calendar view
 - `NotificacoesLiturgicas.js` - Liturgical notifications
 
@@ -170,7 +177,9 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 
 **`lib/oracoesRezadas.js`** - Pure rules for prayed prayers (no React/localStorage): `registrarOracaoNoEstado`, `resumirOracoes` → `{ diasRezados, sequencia, total, rezouHoje }`. **Streak definition:** prayed today → streak ends today; not today but yesterday → streak continues (ends yesterday); neither → 0; several prayers on the same day count as 1 day.
 
-**`lib/jornada.js`** - Pure, React-free readers of other features' localStorage for Minha Jornada (rosário, intenções, Vida de Cristo progress). Each one tolerates missing/corrupt data and returns defaults.
+**`lib/geo.js`** - Pure geometry over `[lat, lng]` (Haversine distance, line length, bounds, Douglas-Peucker simplify, sampling). Shared by the maps and `scripts/build-rota.mjs`.
+
+**`lib/jornada.js`** - Pure, React-free readers of other features' localStorage for Minha Jornada (rosário, intenções, Vida de Cristo progress, peregrinações). Each one tolerates missing/corrupt data and returns defaults.
 
 **`lib/conexoesData.js`** - Aggregation layer for `data/conexoes/`:
 - `getEventos()`, `getTrilhas()`, `getAllConexoes()`
@@ -183,6 +192,7 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 - `useProgresso.js` — Conexões progress (XP, level, title-by-tier, daily streak, discovered connections, completed trails, daily challenges). Storage key: `amigos-do-ceu:progresso-conexoes`. XP rules: +10 first-view, +25 correct quiz, +50 trail completion. Streak increments only when previous activity was yesterday.
 - `useTTS.js` — Web Speech API wrapper: `{ isSupported, isSpeaking, speak(text), stop() }`. Cancels previous utterance and on unmount. UI must hide controls when `!isSupported`.
 - `useOracoes.js` — Prayed prayers (`amigos-do-ceu:oracoes`, `{ dias: { 'YYYY-MM-DD': [ref] } }`, refs `oracao:<slug>` / `santo:<slug>`). `registrarOracaoHoje(ref)` always uses `diaLocal()` (no retroactive dates); `oracaoRegistradaHoje(ref)` is a sync getter. Same sync-localStorage pattern as `useAlbum`. `components/BotaoRezei.js` ("🙏 Rezei") only records progress — it never gives stickers.
+- `usePeregrinacoes.js` — Pilgrimage progress (`amigos-do-ceu:peregrinacoes`, `{ [rotaSlug]: { feitas: { [numero]: 'YYYY-MM-DD' } } }`). `alternarEtapa(slug, numero)` toggles a stage; same sync-localStorage pattern as `useAlbum`. Marking a stage only records progress — no sticker, not a prayed prayer.
 - `useAlbum.js` — Álbum Sagrado progress. Storage key `amigos-do-ceu:album` (`coletadas`, `novas`, `figurinhaDoDiaResgatada`). Mutations (`coletar`, `marcarVista`, `resgatarFigurinhaDoDia`) read/write localStorage **synchronously** so they are idempotent under React Strict Mode and across pages/tabs. Migrates the old `album-sagrado-desbloqueios` once (old keys are kept).
 - All localStorage hooks wait for `loaded` to avoid SSR/hydration mismatches.
 
@@ -231,14 +241,27 @@ Sticker album built **from the existing JSONs** (santos, aparições, igrejas, v
 - **Code:** `lib/albumCatalogo.js` (pure catalog builder, shared with `scripts/validate-album.mjs`), `lib/albumData.js` (singleton, frozen catalog + O(1) lookups, `resumoFigurinha()` for `getStaticProps` of pages outside the album), `components/album/` (sticker, page sheet, flip modal, reveal, etc.).
 - Adding an album page: append to `paginas` in `data/album/album.json`, then run `npm run validate:album`.
 
+## Peregrinações
+
+Stage-by-stage pilgrimage itineraries (Caminho da Fé, Caminho Francês de Santiago) plus the antique-style map.
+
+- **Editorial vs generated.** You write `data/peregrinacoes/rotas.json` (route sheet: `slug`, `nome`, `resumo`, `historia`, `inicio { nome, coord }`, `destino`, `osmRelacao`, `fonteOficial`, notes) and `data/peregrinacoes/<slug>.json` (stages in order: `numero`, `origem`, `destino`, `fim: [lat, lng]`, `descricao`, `paradas[]`, `oracaoRef` and/or `meditacao`, optional `dificuldade`). `npm run build:rota -- <slug>` then generates `<slug>.medidas.json` and `public/rotas/<slug>/` (`trajeto.json` for the map, one GPX per stage and one for the whole route).
+- **Distances are measured, never typed.** The script downloads the OpenStreetMap route relation, finds the shortest path through it between consecutive stage ends, and measures km and climb (elevation from Open-Meteo). Difficulty and walking time are derived in `lib/peregrinacoesRegras.js` (`dificuldadeDe`, `tempoAPeH`). If you change a stage end (`fim`) or add/remove a stage, **rerun the build** — the validator fails when the generated files are out of sync.
+- **Stops (`paradas`)** are either `{ "ref": "igreja:slug" }` (also `aparicao`, `santo`) or `{ "nome", "coord": [lat, lng], "nota" }` for places with no page. Use names and coordinates you can verify (OpenStreetMap). Stops with `ref` automatically connect the entity to the route in "🔗 Conexões" — don't repeat that in `relacoes.json`.
+- **Out of scope on purpose:** lodging, prices, phone numbers, opening hours (they go stale). Each route links to its official source.
+- **Code:** `lib/peregrinacoesRegras.js` (pure rules + validation, shared with the validator), `lib/peregrinacoesData.js` (server-only singleton: `getRotas()`, `getRota(slug)`), `lib/peregrinacoesEsboco.js` (server-only route sketch for cards).
+- **Adding a route:** sheet in `rotas.json` → stages file → `npm run build:rota -- <slug>` → add the two imports to `FONTES` in `lib/peregrinacoesData.js` → `npm run validate:peregrinacoes` and `validate:relacoes`.
+- **Map gotcha:** `MapContainer` must have its height on first render (`MapaBase` sets `style`); otherwise Leaflet starts with size zero and mis-frames and clips the lines.
+
 ## Relações entre entidades
 
-Connections between saints, apparitions, churches, Life of Christ events, prayers and novenas, shown as "🔗 Conexões" on detail pages. Refs use the album id format `tipo:slug` (`santo`, `aparicao`, `igreja`, `cristo`, `oracao`, `novena`).
+Connections between saints, apparitions, churches, Life of Christ events, prayers and novenas, shown as "🔗 Conexões" on detail pages. Refs use the album id format `tipo:slug` (`santo`, `aparicao`, `igreja`, `cristo`, `oracao`, `novena`, `peregrinacao`).
 
 **Each relation lives in exactly one place:**
 - `data/relacoes.json` — editorial relations (undirected edges `{ a, b, rotulo }`). `rotulo` describes the relation, not the edge direction. Array order is display order (never sorted alphabetically). Only add relations that are direct and verifiable.
 - `santos.json` → `relacionamentos` — santo↔santo, rendered by `RelacionamentosSanto`. Register each pair on **one** saint only (the other page shows the inverse label automatically, e.g. "Canonizou"); put it on the saint the label reads from (`canonizadoPor` goes on the canonized saint). Only use `contemporaneo` when lifespans overlap. Don't repeat them in `relacoes.json`.
 - `oracoes.json` / `novenas.json` → `santoRelacionado` — derived automatically; don't repeat them in `relacoes.json`.
+- `data/peregrinacoes/<slug>.json` → stops with `ref` — derived automatically (entity ↔ `peregrinacao:<slug>`); don't repeat them in `relacoes.json`.
 
 Run `npm run validate:relacoes` after editing any of these.
 
