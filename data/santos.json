@@ -501,5 +501,27 @@
     "doutorIgreja": true,
     "popularidade": 55,
     "relacionamentos": []
+  },
+  {
+    "nome": "São Josafá",
+    "slug": "sao-josafa",
+    "imagem": null,
+    "descricao": "Josafá Kuntsevych nasceu por volta de 1580 em Volodímir, na Volínia (hoje Ucrânia), numa família ortodoxa, e recebeu o nome de João no batismo. Jovem comerciante em Vilnius, encantou-se com a liturgia e a vida de oração da Igreja e entrou no mosteiro da Santíssima Trindade, onde tomou o nome de Josafá. Era uma época de divisão entre os cristãos orientais da região e de tensão entre ortodoxos e católicos; Josafá dedicou a vida à unidade da Igreja, em comunhão com o Papa e fiel ao rito bizantino. Austero consigo mesmo e generoso com os pobres, foi ordenado sacerdote, tornou-se grande pregador e reformador da vida monástica e, em 1617, foi nomeado arcebispo de Polotsk. Visitava as paróquias, cuidava da formação do clero e promovia a catequese. Em 12 de novembro de 1623, durante uma visita pastoral a Vitebsk, foi morto por uma multidão e seu corpo foi lançado ao rio Dvina. Foi canonizado em 1867 pelo Papa Pio IX e é lembrado como mártir da unidade dos cristãos. A Igreja celebra sua memória em 12 de novembro.",
+    "oracao": "São Josafá, pastor e mártir, que destes a vida pela unidade do rebanho de Cristo, alcançai-nos o dom de amar a Igreja e de trabalhar com paciência e caridade pela união de todos os cristãos. Ajudai-nos a perdoar como perdoastes e a permanecer fiéis ao Evangelho nas contrariedades. Amém.",
+    "tags": [
+      "Bispo",
+      "Mártir",
+      "Unidade dos cristãos"
+    ],
+    "dataNascimento": "~1580",
+    "dataFalecimento": "1623",
+    "dataCanonizacao": "1867",
+    "pais": "Ucrânia",
+    "ordemReligiosa": "Ordem de São Basílio Magno",
+    "padroeiro": [],
+    "periodo": "Idade Moderna",
+    "doutorIgreja": false,
+    "popularidade": 45,
+    "relacionamentos": []
   }
 ]
