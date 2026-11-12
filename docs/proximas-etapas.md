@@ -180,6 +180,10 @@ Branch sugerida: `improve/navegacao-mobile`
 ## Etapa 5: descoberta (depois)
 
 - [x] Busca global em `/busca` (2026-10-21). Próximo: lupa/atalho na home, busca no texto das orações e tolerância a erros de digitação.
+- [x] Peregrinações na busca (2026-11-12): rotas, etapas (pelas cidades) e paradas sem página, com link direto para a etapa.
+- [ ] Peregrinações: alvos de toque pequenos na página da rota, medidos em 390px: "Ver no mapa" (30px), "Rezar: … →" (17px) e a trilha de navegação (17px); "Abrir o mapa" em `/peregrinacoes` (20px).
+- [ ] `package-lock.json` fora de sincronia com o `package.json`: `npm ci` falha ("Missing: @emnapi/runtime… from lock file", visto em 2026-11-12); `npm install` funciona. Regenerar o lockfile num PR próprio.
+- [ ] Testes: `npm test` (runner nativo do Node, `tests/*.test.mjs`) cobre só `lib/busca.js`. Próximos candidatos, todos lógica pura: `lib/oracoesRezadas.js`, `lib/jornada.js`, `lib/peregrinacoesRegras.js`.
 
 - Filtros e categorias de santos: apóstolos, mártires, doutores, papas, fundadores,
   santos do Brasil, padroeiro de… (`lib/searchUtils.js` já tem a base).
@@ -197,4 +201,5 @@ npm run dev                 # desenvolvimento em http://localhost:3000
 npm run build               # build de produção (confere ISR e o tamanho do bundle)
 npm run validate:album      # catálogo do Álbum Sagrado
 npm run validate:relacoes   # grafo de relações + santos.relacionamentos
+npm test                    # testes de lógica pura (node --test, tests/*.test.mjs)
 ```

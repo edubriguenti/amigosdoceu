@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-12: busca encontra as peregrinações (rotas, etapas e paradas)
+
+- **PR:** [#76](https://github.com/edubriguenti/amigosdoceu/pull/76)
+- **Problema:** as Peregrinações (PR #75) não existiam para a busca global. No Chromium (390px e 1280px, build de produção), `/busca?q=caminho da fé` não trazia a rota (só "Via Sacra" e Santa Teresinha para "caminho") e `/busca?q=santiago` trazia só a catedral. Quem procura uma cidade do percurso ("Pamplona", "Andradas") não achava nada.
+- **Solução:** o índice da busca passa a incluir cada rota, cada etapa (título "Origem → Destino", com rota, número e km) e cada parada sem página própria; etapas e paradas abrem direto em `?etapa=<n>`. Novo filtro "Peregrinações" e sugestão "Peregrinação". Na ordenação, em empate a rota vem antes das etapas, e as paradas (78) ficam sempre depois das páginas, para não afogar santos, orações e igrejas (em "maria" elas tomavam as posições 5 a 22 antes desse ajuste).
+- **Testes automatizados (novo):** `npm test` roda o runner nativo do Node sobre `tests/*.test.mjs`, sem dependência nova. Primeiro arquivo: `tests/busca.test.mjs` (10 testes de `lib/busca.js`).
+- **Arquivos:** `lib/busca.js`, `pages/busca.js`, `tests/busca.test.mjs`, `package.json`, `CLAUDE.md`, `docs/proximas-etapas.md`.
+- **Testes:** `npm test` 10/10; `lint` 0 erros (18 avisos preexistentes); `validate:album`, `validate:relacoes`, `validate:imagens`, `validate:peregrinacoes` sem erros; `build` ok. Chromium (390px e 1280px) após o build: "caminho da fé" → a rota; "santiago" → rota em 1º, catedral, etapa 33 e 6 paradas; "Pamplona" → etapas 4 e 3 e uma parada; "cruz de ferro" → parada da etapa 24; "andradas" + filtro "Peregrinações" (`aria-pressed=true`) → clicar em "Andradas → Barra" abre `?etapa=2` com a etapa em foco e Voltar retorna à busca com o termo; só com teclado (digitar, Tab, Enter) chega-se à etapa 24; "xyzabc" mantém o estado vazio; varredura de 21 rotas sem overflow e 0 erros de página.
+- **Limitações:** o HTML de `/busca` cresceu de 64 KB para 108 KB sem compressão (o índice ganhou 127 itens); não medi o tamanho comprimido. A busca continua sem tolerância a erro de digitação. Não testado com leitor de tela.
+
 ## 2026-11-11: São Josafá no site, ligado à memória de 12/11
 
 - **Problema:** a exploração (Chromium, 390px, 18 rotas: sem overflow, sem erros de página, sem alvos < 32px) não achou defeito de UI; a lacuna era de conteúdo: amanhã (12/11) a memória de São Josafá não tinha santo ligado, página nem figurinha (24 santos no site).
