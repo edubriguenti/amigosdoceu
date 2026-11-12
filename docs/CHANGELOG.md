@@ -4,6 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-12: busca encontra as peregrinações (rotas, etapas e paradas)
 
+- **PR:** [#76](https://github.com/edubriguenti/amigosdoceu/pull/76)
 - **Problema:** as Peregrinações (PR #75) não existiam para a busca global. No Chromium (390px e 1280px, build de produção), `/busca?q=caminho da fé` não trazia a rota (só "Via Sacra" e Santa Teresinha para "caminho") e `/busca?q=santiago` trazia só a catedral. Quem procura uma cidade do percurso ("Pamplona", "Andradas") não achava nada.
 - **Solução:** o índice da busca passa a incluir cada rota, cada etapa (título "Origem → Destino", com rota, número e km) e cada parada sem página própria; etapas e paradas abrem direto em `?etapa=<n>`. Novo filtro "Peregrinações" e sugestão "Peregrinação". Na ordenação, em empate a rota vem antes das etapas, e as paradas (78) ficam sempre depois das páginas, para não afogar santos, orações e igrejas (em "maria" elas tomavam as posições 5 a 22 antes desse ajuste).
 - **Testes automatizados (novo):** `npm test` roda o runner nativo do Node sobre `tests/*.test.mjs`, sem dependência nova. Primeiro arquivo: `tests/busca.test.mjs` (10 testes de `lib/busca.js`).
