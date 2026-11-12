@@ -11,15 +11,16 @@ import aparicoes from '../data/aparicoes.json'
 import igrejas from '../data/igrejas.json'
 import vidaCristo from '../data/vida-cristo.json'
 import { getAllConexoes } from '../lib/conexoesData'
+import { getRotasCompletas } from '../lib/peregrinacoesData'
 
 export async function getStaticProps() {
   const indice = montarIndice({
-    santos, oracoes, novenas, aparicoes, igrejas, vidaCristo, conexoes: getAllConexoes(),
+    santos, oracoes, novenas, aparicoes, igrejas, vidaCristo, conexoes: getAllConexoes(), peregrinacoes: getRotasCompletas(),
   })
   return { props: { indice } }
 }
 
-const SUGESTOES = ['Maria', 'Rosário', 'Fátima', 'Roma', 'Páscoa', 'Padroeiro']
+const SUGESTOES = ['Maria', 'Rosário', 'Fátima', 'Roma', 'Páscoa', 'Padroeiro', 'Peregrinação']
 
 export default function Busca({ indice }) {
   const router = useRouter()
@@ -50,7 +51,7 @@ export default function Busca({ indice }) {
     <Layout>
       <SEO
         title="Buscar"
-        description="Busque santos, orações, novenas, aparições, igrejas, eventos da vida de Cristo e conexões bíblicas."
+        description="Busque santos, orações, novenas, aparições, igrejas, eventos da vida de Cristo, conexões bíblicas e peregrinações."
         url="https://amigosdoceu.vercel.app/busca"
         noindex={true}
       />

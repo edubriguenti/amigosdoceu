@@ -24,6 +24,7 @@ Cada agente deve respeitar estritamente o ownership e as zonas proibidas definid
 - `npm run build` - Build for production
 - `npm start` - Start production server
 - `npm run lint` - ESLint (`eslint.config.mjs`, `next/core-web-vitals`). Must pass with **0 errors** before a PR.
+- `npm test` - Unit tests for pure logic in `lib/` (Node's built-in runner, `tests/*.test.mjs`, no extra dependency). Currently covers `lib/busca.js`.
 - `npm run validate:album` - Validate the Álbum Sagrado catalog (coverage, duplicates, rarities, images). Run after changing `data/album/album.json` or adding content.
 - `npm run validate:relacoes` - Validate the relations graph (`data/relacoes.json` + `santoRelacionado` + `santos.relacionamentos`): refs exist, no self-loops, no duplicates in either direction, no duplicating santo↔santo or derived relations; for `santos.relacionamentos`: known `tipo`, each pair on one saint only, `contemporaneo` only with overlapping lifespans. Run after changing any of those.
 - `npm run validate:peregrinacoes` - Validate the pilgrimage routes (`data/peregrinacoes/` + `public/rotas/`): contiguous numbered stages, refs exist, every stage has a prayer or meditation, generated track/GPX files present and in sync. Run after editing a route.
@@ -166,6 +167,8 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 - `filterSaints()` / `filterChurches()` - Multi-criteria filtering (countries, tags, periods, orders, architectural styles)
 - `sortSaints()` / `sortChurches()` - Sorting by name, date, popularity, capacity
 - `getUniqueValues()` - Extracts unique filter options from data
+
+**`lib/busca.js`** - Global search (`/busca`), pure logic: `montarIndice({ santos, oracoes, novenas, aparicoes, igrejas, vidaCristo, conexoes, peregrinacoes })` builds the index in `getStaticProps`; `buscar(indice, consulta)` ranks it (title start > title > other fields). Pilgrimage routes add three kinds of items: the route, each stage (by its towns) and each stop without its own page, the last two deep-linking to `?etapa=<n>`. `destaque` breaks ties (route first, stops last). Tested in `tests/busca.test.mjs`.
 
 **`lib/calendarUtils.js`** - Liturgical calendar utilities
 
