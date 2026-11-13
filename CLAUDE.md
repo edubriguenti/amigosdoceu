@@ -99,7 +99,7 @@ The application is driven by multiple JSON data sources in the `data/` directory
   - All aggregation goes through `lib/conexoesData.js`
 
 ### Routing Structure
-- `/` - Modernized home: "Hoje" block (`HojeNoCeu`: celebration, prayer of the day prayed in place via `OracaoDoDiaModal`, daily sticker unlocked by that prayer, "Continuar minha jornada →") + 4 large hero buttons + "Explore também" grid. ISR (`revalidate: 3600`). **Renders without the global header** (`<Layout hideHeader fullBleed>`).
+- `/` - Modernized home: search field (`BuscaHome`, GET form to `/busca?q=` — the home has no header, so this is its only way into the global search) + "Hoje" block (`HojeNoCeu`: celebration, prayer of the day prayed in place via `OracaoDoDiaModal`, daily sticker unlocked by that prayer, "Continuar minha jornada →") + 4 large hero buttons + "Explore também" grid. ISR (`revalidate: 3600`). **Renders without the global header** (`<Layout hideHeader fullBleed>`).
 - `/santos` - Saints gallery with search/filter
 - `/santos/[slug]` - Individual saint detail page
 - `/igrejas` - Churches gallery with search/filter

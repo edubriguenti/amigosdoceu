@@ -3,6 +3,7 @@ import SEO from '../components/SEO'
 import HomeHeroButton from '../components/HomeHeroButton'
 import HomeSecondaryCard from '../components/HomeSecondaryCard'
 import HojeNoCeu from '../components/HojeNoCeu'
+import BuscaHome from '../components/BuscaHome'
 import { motion } from 'framer-motion'
 import { janelaDeDias, REVALIDATE_HOJE } from '../lib/hoje'
 
@@ -69,7 +70,7 @@ export default function Home({ dias, hojeServidor }) {
     },
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://amigosdoceu.vercel.app/santos?q={search_term_string}',
+      target: 'https://amigosdoceu.vercel.app/busca?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   }
@@ -93,6 +94,7 @@ export default function Home({ dias, hojeServidor }) {
         <p className="text-base md:text-lg text-neutral-300 leading-relaxed">
           Uma jornada contemplativa pela fé católica. Escolha por onde começar.
         </p>
+        <BuscaHome />
       </motion.section>
 
       <HojeNoCeu dias={dias} hojeServidor={hojeServidor} />

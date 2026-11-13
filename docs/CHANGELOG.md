@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-13: campo de busca na home
+
+- **PR:** (preenchido após a abertura)
+- **Problema:** a home é renderizada sem header (`<Layout hideHeader>`) e sem barra inferior, então a página de entrada não tinha nenhum caminho até a busca global: a lupa só existe no header das páginas internas, e nem o rodapé nem o "Explore também" levam a `/busca`. Visto no Chromium (390px e 1280px, build de produção). Além disso, o `SearchAction` do JSON-LD da home apontava para `/santos?q=…`, mas `/santos` ignora `?q=` (`hooks/useSearch.js` começa com consulta vazia).
+- **Solução:** novo `components/BuscaHome.js`, um formulário de busca logo abaixo do título da home: `role="search"`, rótulo acessível, campo de 52px e botão de 44px, `enterKeyHint="search"`. Envia para `/busca?q=<texto>` com `router.push` (e, sem JavaScript, como formulário GET para o mesmo endereço). Consulta vazia leva a `/busca` com as sugestões. O `SearchAction` passa a apontar para `/busca?q={search_term_string}`.
+- **Benefício:** quem chega ao site já sabendo o que procura (um santo, uma oração, uma cidade do Caminho) encontra em um passo, sem precisar descobrir que a busca só aparece nas páginas internas.
+- **Testes:** `npm run lint` (0 erros, 18 avisos já existentes), `npm test` (10/10), `npm run build`. Playwright no build de produção, em 390px e 1280px: digitar "pamplona" + Enter abre `/busca?q=pamplona` com o campo preenchido e as etapas do Caminho Francês no topo; enviar vazio abre `/busca`; "voltar" retorna à home; sem rolagem horizontal; nenhum erro de página. Placeholder conferido sem corte em 390px (em 320px o ícone some para caber).
+- **Limitações:** sem JavaScript o formulário chega a `/busca?q=…`, mas a própria `/busca` só mostra resultados com JavaScript (comportamento anterior, não alterado).
+- **Arquivos:** `components/BuscaHome.js` (novo), `pages/index.js`, `CLAUDE.md`, `docs/proximas-etapas.md`.
+
 ## 2026-11-12: busca encontra as peregrinações (rotas, etapas e paradas)
 
 - **PR:** [#76](https://github.com/edubriguenti/amigosdoceu/pull/76)
