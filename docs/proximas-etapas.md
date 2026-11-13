@@ -179,7 +179,8 @@ Branch sugerida: `improve/navegacao-mobile`
 
 ## Etapa 5: descoberta (depois)
 
-- [x] Busca global em `/busca` (2026-10-21). Próximo: lupa/atalho na home, busca no texto das orações e tolerância a erros de digitação.
+- [x] Busca global em `/busca` (2026-10-21). Próximo: busca no texto das orações e tolerância a erros de digitação.
+- [x] Campo de busca na home (2026-11-13), que não tem header e não levava à `/busca`; `SearchAction` do JSON-LD agora aponta para `/busca?q=` (antes `/santos?q=`, que ignora o parâmetro). Resta: `/busca` depende de JavaScript para mostrar resultados.
 - [x] Peregrinações na busca (2026-11-12): rotas, etapas (pelas cidades) e paradas sem página, com link direto para a etapa.
 - [ ] Peregrinações: alvos de toque pequenos na página da rota, medidos em 390px: "Ver no mapa" (30px), "Rezar: … →" (17px) e a trilha de navegação (17px); "Abrir o mapa" em `/peregrinacoes` (20px).
 - [ ] `package-lock.json` fora de sincronia com o `package.json`: `npm ci` falha ("Missing: @emnapi/runtime… from lock file", visto em 2026-11-12); `npm install` funciona. Regenerar o lockfile num PR próprio.
