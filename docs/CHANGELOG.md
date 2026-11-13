@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-13: campo de busca na home
 
-- **PR:** (preenchido após a abertura)
+- **PR:** [#77](https://github.com/edubriguenti/amigosdoceu/pull/77)
 - **Problema:** a home é renderizada sem header (`<Layout hideHeader>`) e sem barra inferior, então a página de entrada não tinha nenhum caminho até a busca global: a lupa só existe no header das páginas internas, e nem o rodapé nem o "Explore também" levam a `/busca`. Visto no Chromium (390px e 1280px, build de produção). Além disso, o `SearchAction` do JSON-LD da home apontava para `/santos?q=…`, mas `/santos` ignora `?q=` (`hooks/useSearch.js` começa com consulta vazia).
 - **Solução:** novo `components/BuscaHome.js`, um formulário de busca logo abaixo do título da home: `role="search"`, rótulo acessível, campo de 52px e botão de 44px, `enterKeyHint="search"`. Envia para `/busca?q=<texto>` com `router.push` (e, sem JavaScript, como formulário GET para o mesmo endereço). Consulta vazia leva a `/busca` com as sugestões. O `SearchAction` passa a apontar para `/busca?q={search_term_string}`.
 - **Benefício:** quem chega ao site já sabendo o que procura (um santo, uma oração, uma cidade do Caminho) encontra em um passo, sem precisar descobrir que a busca só aparece nas páginas internas.
