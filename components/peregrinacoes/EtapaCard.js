@@ -74,7 +74,7 @@ function EtapaCard({ rotaSlug, etapa, ativa, feita, carregado, onAlternar, onFoc
         <button
           type="button"
           onClick={() => onFocar(e.numero)}
-          className="shrink-0 rounded-full border border-cosmic-border px-3 py-1.5 text-xs text-neutral-200 hover:border-cosmic-gold/60 hover:text-cosmic-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold"
+          className="shrink-0 inline-flex min-h-[44px] items-center rounded-full border border-cosmic-border px-4 py-1.5 text-xs text-neutral-200 hover:border-cosmic-gold/60 hover:text-cosmic-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold"
         >
           Ver no mapa
         </button>
@@ -109,7 +109,7 @@ function EtapaCard({ rotaSlug, etapa, ativa, feita, carregado, onAlternar, onFoc
                 </span>
                 <span className="min-w-0">
                   {p.href ? (
-                    <Link href={p.href} className="font-serif text-neutral-50 underline decoration-cosmic-gold/50 underline-offset-4 hover:text-cosmic-gold">
+                    <Link href={p.href} className="inline-flex min-h-[44px] items-center font-serif text-neutral-50 underline decoration-cosmic-gold/50 underline-offset-4 hover:text-cosmic-gold">
                       {p.nome}
                     </Link>
                   ) : (
@@ -129,7 +129,7 @@ function EtapaCard({ rotaSlug, etapa, ativa, feita, carregado, onAlternar, onFoc
           {e.meditacao && <p className="font-serif italic text-neutral-100 leading-relaxed">{e.meditacao}</p>}
           {e.oracao && (
             <p className="mt-2 text-sm">
-              <Link href={e.oracao.href} className="text-cosmic-gold underline underline-offset-4 hover:text-amber-300">
+              <Link href={e.oracao.href} className="inline-flex min-h-[44px] items-center text-cosmic-gold underline underline-offset-4 hover:text-amber-300">
                 Rezar: {e.oracao.nome} →
               </Link>
             </p>
