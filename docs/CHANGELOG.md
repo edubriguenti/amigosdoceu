@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-14: Peregrinações com alvos de toque de 44px no celular
+
+- **PR:** [#78](https://github.com/edubriguenti/amigosdoceu/pull/78)
+- **Problema:** em 390px (Chromium, build de produção) as páginas de rota tinham, em cada uma das 33 etapas do Caminho Francês, links "Rezar: … →" com 17px e botões "Ver no mapa" com 30px, além de paradas com página própria (21px), trilha de navegação (17px), "História e avisos ao peregrino" (28px), "Ver rota inteira" no mapa (30px) e "Abrir o mapa" em `/peregrinacoes` (20px). É uma tela usada caminhando, com o dedo em movimento: toques errados são frequentes.
+- **Solução:** `inline-flex min-h-[44px] items-center` (convenção do projeto) nesses elementos; trilha de navegação virou `flex` com `mb-2` para a faixa não crescer demais.
+- **Benefício:** peregrino acerta o toque de "Rezar", "Ver no mapa" e das paradas sem ampliar a tela.
+- **Testes:** Playwright (390px) antes/depois em `/peregrinacoes`, `/peregrinacoes/caminho-da-fe` e `/peregrinacoes/caminho-frances-de-santiago?etapa=3`: elementos < 40px caíram de dezenas para apenas o link oculto "Pular para conteúdo" e a atribuição Leaflet/OpenStreetMap; "Ver no mapa" continua focando a etapa, "História e avisos" abre, "Ver rota inteira" mede 44px, sem overflow horizontal e 0 erros de página; captura de uma etapa conferida. `npm run lint` (0 erros, 18 avisos preexistentes), `npm test` (10/10), `validate:peregrinacoes` e `build` ok.
+- **Limitações:** as paradas com página agora ocupam mais altura na lista (44px por link). Atribuição do mapa (Leaflet/OSM) mantida pequena. `npm ci` ainda falha por lockfile fora de sincronia (não alterado aqui). Não testado com leitor de tela.
+- **Arquivos:** `components/peregrinacoes/EtapaCard.js`, `components/peregrinacoes/RotaMapa.js`, `pages/peregrinacoes/[slug].js`, `pages/peregrinacoes/index.js`, `docs/proximas-etapas.md`.
+
 ## 2026-11-13: campo de busca na home
 
 - **PR:** [#77](https://github.com/edubriguenti/amigosdoceu/pull/77)

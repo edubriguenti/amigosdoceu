@@ -113,7 +113,7 @@ export default function RotaMapa({ slug, nome, etapas, ativa, feitas, onSelecion
           <button
             type="button"
             onClick={() => setVisao('rota')}
-            className="rounded-full border border-[#8a6a3a] bg-[#f1e6cb] px-3 py-1.5 text-xs font-semibold text-[#3b2f24] shadow hover:bg-[#e6d7b5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8a1c1c]"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-[#8a6a3a] bg-[#f1e6cb] px-4 py-1.5 text-xs font-semibold text-[#3b2f24] shadow hover:bg-[#e6d7b5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8a1c1c]"
           >
             Ver rota inteira
           </button>

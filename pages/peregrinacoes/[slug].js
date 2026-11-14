@@ -127,8 +127,8 @@ export default function PaginaRota({ rota }) {
       />
 
       <div className="py-8 md:py-10">
-        <nav aria-label="Trilha de navegação" className="text-sm text-neutral-400 mb-4">
-          <Link href="/peregrinacoes" className="hover:text-cosmic-gold underline-offset-4 hover:underline">
+        <nav aria-label="Trilha de navegação" className="text-sm text-neutral-400 mb-2 flex flex-wrap items-center">
+          <Link href="/peregrinacoes" className="inline-flex min-h-[44px] items-center hover:text-cosmic-gold underline-offset-4 hover:underline">
             Peregrinações
           </Link>
           <span aria-hidden="true"> / </span>
@@ -196,7 +196,7 @@ export default function PaginaRota({ rota }) {
           </div>
 
           <details className="mt-6 rounded-xl border border-cosmic-border bg-cosmic-surface/40 px-5 py-4 group">
-            <summary className="cursor-pointer font-serif text-lg text-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold rounded">
+            <summary className="cursor-pointer min-h-[44px] flex items-center font-serif text-lg text-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold rounded">
               História e avisos ao peregrino
             </summary>
             <div className="mt-3 space-y-3 text-neutral-200 leading-relaxed">

@@ -47,7 +47,7 @@ export default function Peregrinacoes({ rotas, esbocos }) {
 
         <p className="mt-10 text-neutral-400">
           Quer ver todos os lugares sagrados do portal?{' '}
-          <Link href="/mapa" className="text-cosmic-gold underline underline-offset-4 hover:text-amber-300">
+          <Link href="/mapa" className="inline-flex min-h-[44px] items-center text-cosmic-gold underline underline-offset-4 hover:text-amber-300">
             Abrir o mapa
           </Link>
           .
