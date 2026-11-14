@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-14: Peregrinações com alvos de toque de 44px no celular
 
-- **PR:** a registrar após a abertura (branch `claude/keen-euler-93qt0b`)
+- **PR:** [#78](https://github.com/edubriguenti/amigosdoceu/pull/78)
 - **Problema:** em 390px (Chromium, build de produção) as páginas de rota tinham, em cada uma das 33 etapas do Caminho Francês, links "Rezar: … →" com 17px e botões "Ver no mapa" com 30px, além de paradas com página própria (21px), trilha de navegação (17px), "História e avisos ao peregrino" (28px), "Ver rota inteira" no mapa (30px) e "Abrir o mapa" em `/peregrinacoes` (20px). É uma tela usada caminhando, com o dedo em movimento: toques errados são frequentes.
 - **Solução:** `inline-flex min-h-[44px] items-center` (convenção do projeto) nesses elementos; trilha de navegação virou `flex` com `mb-2` para a faixa não crescer demais.
 - **Benefício:** peregrino acerta o toque de "Rezar", "Ver no mapa" e das paradas sem ampliar a tela.
