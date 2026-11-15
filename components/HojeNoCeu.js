@@ -7,6 +7,7 @@ import { useAlbum } from '../hooks/useAlbum'
 import { useOracoes } from '../hooks/useOracoes'
 import useDiaAtual from '../hooks/useDiaAtual'
 import { dataPorExtenso } from '../lib/datas'
+import { hrefDiaCalendario } from '../lib/calendarioLink'
 import { getNovenasEmAndamento } from '../lib/jornada'
 
 /**
@@ -67,7 +68,7 @@ function HojeNaIgreja({ celebracao, santos, igrejas = [], proxima, onRezar }) {
               Próxima celebração, {quando(proxima.emDias)} ({proxima.data}):{' '}
               <Link
                 href={
-                  proxima.santoSlug ? `/santos/${proxima.santoSlug}` : proxima.igrejaSlug ? `/igrejas/${proxima.igrejaSlug}` : '/calendario'
+                  proxima.santoSlug ? `/santos/${proxima.santoSlug}` : proxima.igrejaSlug ? `/igrejas/${proxima.igrejaSlug}` : hrefDiaCalendario(proxima.iso)
                 }
                 className="text-cosmic-blue-light hover:underline"
               >

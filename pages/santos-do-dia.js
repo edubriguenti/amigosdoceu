@@ -4,6 +4,7 @@ import SEO from '../components/SEO'
 import SaintCard from '../components/SaintCard'
 import useDiaAtual from '../hooks/useDiaAtual'
 import { dataPorExtenso } from '../lib/datas'
+import { hrefDiaCalendario } from '../lib/calendarioLink'
 import { janelaDeDias, proximasCelebracoes, REVALIDATE_HOJE } from '../lib/hoje'
 
 // Renderizada no servidor (ISR) para o dia de São Paulo; useDiaAtual corrige para o dia do usuário.
@@ -27,7 +28,7 @@ const botao =
 
 export default function SantosDoDia({ dias, hojeServidor, proximas }) {
   const dia = useDiaAtual(dias, hojeServidor)
-  const { celebracao, santos, igrejas, figurinha, oracao } = dia
+  const { celebracao, santos, igrejas, figurinha, oracao, proxima } = dia
   const santoPrincipal = santos[0]
 
   return (
@@ -63,6 +64,19 @@ export default function SantosDoDia({ dias, hojeServidor, proximas }) {
               <p className="text-neutral-300">
                 Hoje não há uma celebração específica no calendário litúrgico. Ainda assim, há uma oração e uma figurinha esperando por você.
               </p>
+              {proxima && (
+                <p className="mt-4 text-sm text-neutral-300">
+                  Próxima celebração: {proxima.data} · {proxima.tipo}
+                  <Link
+                    href={
+                      proxima.santoSlug ? `/santos/${proxima.santoSlug}` : proxima.igrejaSlug ? `/igrejas/${proxima.igrejaSlug}` : hrefDiaCalendario(proxima.iso)
+                    }
+                    className="flex items-center justify-center min-h-11 text-base text-cosmic-blue-light hover:underline"
+                  >
+                    {proxima.nome} →
+                  </Link>
+                </p>
+              )}
             </>
           )}
 
@@ -131,12 +145,14 @@ export default function SantosDoDia({ dias, hojeServidor, proximas }) {
                       <Link href={`/santos/${prox.santos[0]}`} className="inline-flex items-center min-h-11 text-sm text-cosmic-blue-light hover:underline">
                         Ver santo →
                       </Link>
+                    ) : prox.igrejas?.[0] ? (
+                      <Link href={`/igrejas/${prox.igrejas[0].slug}`} className="inline-flex items-center min-h-11 text-sm text-cosmic-blue-light hover:underline">
+                        Ver igreja →
+                      </Link>
                     ) : (
-                      prox.igrejas?.[0] && (
-                        <Link href={`/igrejas/${prox.igrejas[0].slug}`} className="inline-flex items-center min-h-11 text-sm text-cosmic-blue-light hover:underline">
-                          Ver igreja →
-                        </Link>
-                      )
+                      <Link href={hrefDiaCalendario(prox.iso)} className="inline-flex items-center min-h-11 text-sm text-cosmic-blue-light hover:underline">
+                        Ver no calendário →
+                      </Link>
                     )}
                   </div>
                   <div className="text-sm font-medium text-neutral-300 whitespace-nowrap">

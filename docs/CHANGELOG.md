@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-15: link direto para um dia do calendário (`/calendario?dia=AAAA-MM-DD`)
+
+- **PR:** (preenchido após a abertura)
+- **Problema:** em dia sem celebração (hoje, 15/11), a home anuncia "Próxima celebração, em 2 dias: Santa Isabel da Hungria". Como ela ainda não tem página, o link caía em `/calendario` genérico: mês aberto, nenhum dia selecionado e a celebração fora da tela (reproduzido em 390px: 0 dias selecionados, rolagem no topo). Em `/santos-do-dia`, o mesmo dia mostrava só "Dia comum", sem dizer o que vem a seguir, e 9 das 10 "Próximas celebrações importantes" não tinham link nenhum. O painel do dia no calendário também se perdia ao recarregar e não podia ser compartilhado.
+- **Solução:** `/calendario?dia=AAAA-MM-DD` abre o mês certo com o painel do dia aberto (`lib/calendarioLink.js`: `hrefDiaCalendario`, `lerDiaDaQuery`). Selecionar um dia atualiza a URL (`router.replace` shallow); desmarcar ou trocar de mês limpa. Data inválida ou dia sem celebração só abre o mês, sem erro. A home e `/santos-do-dia` usam o link quando a celebração não tem santo nem igreja; `/santos-do-dia` passou a mostrar a próxima celebração no "Dia comum" e "Ver no calendário →" nas próximas celebrações sem página.
+- **Benefício:** quem toca na próxima celebração chega direto nela, e um dia do calendário pode ser recarregado, favoritado ou enviado a alguém.
+- **Arquivos:** `lib/calendarioLink.js` (novo), `components/CalendarioMensal.js`, `components/HojeNoCeu.js`, `lib/hoje.js`, `pages/santos-do-dia.js`, `tests/calendarioLink.test.mjs` (novo).
+- **Testes:** `npm test` 15/15 (5 novos); `npm run lint` 0 erros (18 avisos preexistentes); `npm run build` ok. Playwright em 390px e 1280px, build de produção, 19 verificações por largura, todas ok: home → 17/11 selecionado e painel dentro da tela; recarregar mantém; clicar outro dia atualiza a URL; desmarcar e trocar de mês limpam; `?dia=2027-03-19` abre Março 2027 em São José; dia sem celebração e valores inválidos (`abc`, `2026-02-31`, vazio) abrem o mês sem seleção; `/calendario` sem parâmetro inalterado; `/santos-do-dia` com link de 44px, 10/10 próximas celebrações com link, sem overflow; 0 erros de página.
+- **Limitações:** dia sem celebração não ganha painel próprio (só abre o mês). As imagens remotas do Wikimedia não carregam no ambiente de teste (proxy), o que não afeta esta mudança. Santa Isabel da Hungria (17/11) e Santa Cecília (22/11) seguem sem página: a busca de imagens no Wikimedia estava bloqueada nesta execução.
+
 ## 2026-11-14: Peregrinações com alvos de toque de 44px no celular
 
 - **PR:** [#78](https://github.com/edubriguenti/amigosdoceu/pull/78)
