@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-15: link direto para um dia do calendário (`/calendario?dia=AAAA-MM-DD`)
 
-- **PR:** (preenchido após a abertura)
+- **PR:** [#79](https://github.com/edubriguenti/amigosdoceu/pull/79)
 - **Problema:** em dia sem celebração (hoje, 15/11), a home anuncia "Próxima celebração, em 2 dias: Santa Isabel da Hungria". Como ela ainda não tem página, o link caía em `/calendario` genérico: mês aberto, nenhum dia selecionado e a celebração fora da tela (reproduzido em 390px: 0 dias selecionados, rolagem no topo). Em `/santos-do-dia`, o mesmo dia mostrava só "Dia comum", sem dizer o que vem a seguir, e 9 das 10 "Próximas celebrações importantes" não tinham link nenhum. O painel do dia no calendário também se perdia ao recarregar e não podia ser compartilhado.
 - **Solução:** `/calendario?dia=AAAA-MM-DD` abre o mês certo com o painel do dia aberto (`lib/calendarioLink.js`: `hrefDiaCalendario`, `lerDiaDaQuery`). Selecionar um dia atualiza a URL (`router.replace` shallow); desmarcar ou trocar de mês limpa. Data inválida ou dia sem celebração só abre o mês, sem erro. A home e `/santos-do-dia` usam o link quando a celebração não tem santo nem igreja; `/santos-do-dia` passou a mostrar a próxima celebração no "Dia comum" e "Ver no calendário →" nas próximas celebrações sem página.
 - **Benefício:** quem toca na próxima celebração chega direto nela, e um dia do calendário pode ser recarregado, favoritado ou enviado a alguém.
