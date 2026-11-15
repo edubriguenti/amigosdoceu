@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { hrefDiaCalendario, lerDiaDaQuery } from '../lib/calendarioLink'
 import { getCalendarioMes, getCelebracaoDoDia, getSantosPorSlugs } from '../lib/calendarUtils'
 
 const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
@@ -18,10 +20,29 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
     if (diaSelecionado) painelRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
   }, [diaSelecionado])
 
+  // Link direto `/calendario?dia=YYYY-MM-DD`: abre o mês e, se houver celebração, o painel do dia.
+  const router = useRouter()
+  const diaDaUrl = router.isReady ? lerDiaDaQuery(router.query.dia)?.iso : undefined
+  useEffect(() => {
+    const alvo = lerDiaDaQuery(diaDaUrl)
+    if (!alvo) return
+    setMes(alvo.mes)
+    setAno(alvo.ano)
+    setDiaSelecionado(getCelebracaoDoDia(new Date(alvo.ano, alvo.mes - 1, alvo.dia)) ? alvo.dia : null)
+  }, [diaDaUrl])
+
+  // Mantém a URL em dia com a seleção, para o painel aberto poder ser compartilhado e sobreviver ao recarregar.
+  const selecionarDia = (dia) => {
+    setDiaSelecionado(dia)
+    const iso = dia ? `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}` : null
+    if (!iso && !router.query.dia) return
+    router.replace(iso ? hrefDiaCalendario(iso) : '/calendario', undefined, { shallow: true, scroll: false })
+  }
+
   const calendario = getCalendarioMes(mes, ano)
 
   const mesAnterior = () => {
-    setDiaSelecionado(null)
+    selecionarDia(null)
     if (mes === 1) {
       setMes(12)
       setAno(ano - 1)
@@ -31,7 +52,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
   }
 
   const mesSeguinte = () => {
-    setDiaSelecionado(null)
+    selecionarDia(null)
     if (mes === 12) {
       setMes(1)
       setAno(ano + 1)
@@ -41,7 +62,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
   }
 
   const mesAtual = () => {
-    setDiaSelecionado(null)
+    selecionarDia(null)
     setMes(hoje.getMonth() + 1)
     setAno(hoje.getFullYear())
   }
@@ -186,7 +207,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
               <button
                 key={dia}
                 type="button"
-                onClick={() => setDiaSelecionado(selecionado ? null : dia)}
+                onClick={() => selecionarDia(selecionado ? null : dia)}
                 aria-pressed={selecionado}
                 aria-label={`${dia} de ${calendario.mesNome}: ${celebracao.nome}, ${celebracao.tipo}`}
                 className={`${classes} hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700`}
