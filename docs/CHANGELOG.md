@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-16: orações e novenas com título, descrição e prévia de compartilhamento
 
-- **PR:** PR_LINK
+- **PR:** [#80](https://github.com/edubriguenti/amigosdoceu/pull/80)
 - **Problema:** as 17 páginas de oração e as 5 de novena não tinham `<title>`, descrição, URL canônica, Open Graph nem dados estruturados. Elas passavam `title` e `description` ao `Layout`, que ignora essas props (o `Layout` nunca renderizou `<Head>`). Visto no Chromium, build de produção, 390px e 1280px: `document.title` vazio em `/oracoes/pai-nosso` e `/novenas/novena-santo-antonio` (a aba mostra o endereço), 0 elementos `<title>` no HTML do servidor. São páginas que estão no sitemap e têm botões de compartilhar no WhatsApp, Facebook e Telegram: o link ia sem título nem imagem. `/rosario` usava `<Head>` à mão, sem canônica nem `og:image`.
 - **Solução:** `lib/seoOracoes.js` (novo, lógica pura) monta as props do `<SEO>`: `seoOracao`, `seoNovena` e `SEO_ROSARIO`. Título ("Pai Nosso: oração completa", "Novena a Santo Antônio: 9 dias de oração"; nomes que já dizem "Oração" ficam como estão), descrição de até 160 caracteres cortada em palavra inteira, canônica, palavras-chave e JSON-LD `Article` + `BreadcrumbList`. As três páginas passam a usar `<SEO>`.
 - **Benefício:** quem busca uma oração no Google vê título e descrição; o link compartilhado mostra prévia; a aba e o histórico do navegador mostram o nome da oração.
