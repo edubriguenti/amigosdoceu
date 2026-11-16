@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-16: orações e novenas com título, descrição e prévia de compartilhamento
+
+- **PR:** [#80](https://github.com/edubriguenti/amigosdoceu/pull/80)
+- **Problema:** as 17 páginas de oração e as 5 de novena não tinham `<title>`, descrição, URL canônica, Open Graph nem dados estruturados. Elas passavam `title` e `description` ao `Layout`, que ignora essas props (o `Layout` nunca renderizou `<Head>`). Visto no Chromium, build de produção, 390px e 1280px: `document.title` vazio em `/oracoes/pai-nosso` e `/novenas/novena-santo-antonio` (a aba mostra o endereço), 0 elementos `<title>` no HTML do servidor. São páginas que estão no sitemap e têm botões de compartilhar no WhatsApp, Facebook e Telegram: o link ia sem título nem imagem. `/rosario` usava `<Head>` à mão, sem canônica nem `og:image`.
+- **Solução:** `lib/seoOracoes.js` (novo, lógica pura) monta as props do `<SEO>`: `seoOracao`, `seoNovena` e `SEO_ROSARIO`. Título ("Pai Nosso: oração completa", "Novena a Santo Antônio: 9 dias de oração"; nomes que já dizem "Oração" ficam como estão), descrição de até 160 caracteres cortada em palavra inteira, canônica, palavras-chave e JSON-LD `Article` + `BreadcrumbList`. As três páginas passam a usar `<SEO>`.
+- **Benefício:** quem busca uma oração no Google vê título e descrição; o link compartilhado mostra prévia; a aba e o histórico do navegador mostram o nome da oração.
+- **Arquivos:** `lib/seoOracoes.js` (novo), `pages/oracoes/[slug].js`, `pages/novenas/[slug].js`, `pages/rosario.js`, `tests/seoOracoes.test.mjs` (novo), `CLAUDE.md`, `SEO_FOLLOWUP.md`, `docs/proximas-etapas.md`.
+- **Testes:** `npm test` 21/21 (6 novos: regras de título e descrição, todas as orações e novenas cadastradas com título ≤ 60, descrição entre 50 e 160 e sem repetição, e uma rede de segurança que falha se alguma página em `pages/` não usar `<SEO>`); `npm run lint` 0 erros (18 avisos preexistentes); `npm run build` ok. Playwright no build de produção, 390px e 1280px: `/oracoes/pai-nosso`, `/oracoes/oracao-sao-bento`, `/oracoes/terco-misericordia`, `/novenas/novena-santo-antonio` e `/rosario` com 1 `<title>`, descrição, canônica, `og:title`, `og:image` e JSON-LD; navegação no cliente (lista → Ave Maria → voltar) troca o título nas duas direções; sem rolagem horizontal e 0 erros de página.
+- **Limitações:** as prévias usam a imagem padrão do site (orações e novenas não têm imagem própria). Não validei o JSON-LD no Rich Results Test do Google nem a prévia real no WhatsApp (sem acesso externo neste ambiente). O texto da oração entra no JSON-LD (`articleBody`), o que aumenta um pouco o HTML.
+
 ## 2026-11-15: link direto para um dia do calendário (`/calendario?dia=AAAA-MM-DD`)
 
 - **PR:** [#79](https://github.com/edubriguenti/amigosdoceu/pull/79)

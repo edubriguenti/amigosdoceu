@@ -18,6 +18,7 @@ Pendências da auditoria SEO (rodada em 2026-05-01 pelo `searchfit-seo:seo-audit
 | H4 | Alt text descritivo nos cards (não só nome) | mesmos componentes |
 | H5 | JSON-LD por entidade: `Person` (santos), `Place`+`ReligiousBuilding` (igrejas), `Event` (aparições) + `BreadcrumbList` em todas | nas 3 páginas de detalhe |
 | H6 | Canonical em todas as páginas (consequência de C1) | via `<SEO>` |
+| C6 | `<SEO>` em `oracoes/[slug]`, `novenas/[slug]` e `rosario` (estavam sem `<title>`, descrição e canônica) + JSON-LD `Article` e `BreadcrumbList` (2026-11-16) | `lib/seoOracoes.js`, 3 páginas |
 | M1 | Inter + Playfair Display via `next/font/google` (self-hosted, swap, sem CLS) | `pages/_app.js`, `tailwind.config.cjs`, `styles/globals.css` |
 
 ---

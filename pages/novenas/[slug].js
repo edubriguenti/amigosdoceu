@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { coletar } from '../../hooks/useAlbum';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import NovenaTracker from '../../components/NovenaTracker';
 import useNovena from '../../hooks/useNovena';
 import novenas from '../../data/novenas.json';
@@ -10,6 +11,7 @@ import Link from 'next/link';
 import EntidadesRelacionadas from '../../components/EntidadesRelacionadas';
 import { getRelacionadas } from '../../lib/relacoes';
 import { resumoFigurinha } from '../../lib/albumData';
+import { seoNovena } from '../../lib/seoOracoes';
 
 export async function getStaticPaths() {
   const paths = novenas.map((novena) => ({
@@ -92,10 +94,8 @@ export default function NovenaPage({ novena, santoRelacionado, relacionadas, fig
   };
 
   return (
-    <Layout
-      title={`${novena.nome} - Novenas`}
-      description={novena.descricao || `${novena.nome} - Novena católica de ${novena.duracao} dias.`}
-    >
+    <Layout>
+      <SEO {...seoNovena(novena)} />
       {/* Breadcrumb */}
       <div className="bg-primary-50 py-1">
         <div className="container mx-auto px-4">

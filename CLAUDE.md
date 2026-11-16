@@ -24,7 +24,7 @@ Cada agente deve respeitar estritamente o ownership e as zonas proibidas definid
 - `npm run build` - Build for production
 - `npm start` - Start production server
 - `npm run lint` - ESLint (`eslint.config.mjs`, `next/core-web-vitals`). Must pass with **0 errors** before a PR.
-- `npm test` - Unit tests for pure logic in `lib/` (Node's built-in runner, `tests/*.test.mjs`, no extra dependency). Currently covers `lib/busca.js` and `lib/calendarioLink.js`.
+- `npm test` - Unit tests for pure logic in `lib/` (Node's built-in runner, `tests/*.test.mjs`, no extra dependency). Currently covers `lib/busca.js`, `lib/calendarioLink.js` and `lib/seoOracoes.js` (plus a guard that every file in `pages/` uses `<SEO>`).
 - `npm run validate:album` - Validate the Álbum Sagrado catalog (coverage, duplicates, rarities, images). Run after changing `data/album/album.json` or adding content.
 - `npm run validate:relacoes` - Validate the relations graph (`data/relacoes.json` + `santoRelacionado` + `santos.relacionamentos`): refs exist, no self-loops, no duplicates in either direction, no duplicating santo↔santo or derived relations; for `santos.relacionamentos`: known `tipo`, each pair on one saint only, `contemporaneo` only with overlapping lifespans. Run after changing any of those.
 - `npm run validate:peregrinacoes` - Validate the pilgrimage routes (`data/peregrinacoes/` + `public/rotas/`): contiguous numbered stages, refs exist, every stage has a prayer or meditation, generated track/GPX files present and in sync. Run after editing a route.
@@ -174,6 +174,8 @@ All detail pages use Next.js dynamic routes with the `[slug]` pattern.
 
 **`lib/calendarioLink.js`** - Pure, client-safe deep link to a calendar day: `hrefDiaCalendario(iso)` and `lerDiaDaQuery(valor)` (returns `null` for anything that is not a real `YYYY-MM-DD` date). Tested in `tests/calendarioLink.test.mjs`.
 
+**`lib/seoOracoes.js`** - Pure builders of `<SEO>` props for `/oracoes/[slug]`, `/novenas/[slug]` and `/rosario`: `seoOracao(oracao)`, `seoNovena(novena)`, `SEO_ROSARIO` (title, description ≤ 160 chars, canonical, keywords, `Article` + `BreadcrumbList` JSON-LD). Use as `<SEO {...seoOracao(oracao)} />`. Tested in `tests/seoOracoes.test.mjs`.
+
 **`lib/datas.js`** - Civil dates as `YYYY-MM-DD`. `dataBrasil()` = date in São Paulo (the server/ISR "today"); `diaLocal()` = date in the user's environment. Client-safe (no JSON imports).
 
 **`lib/hoje.js`** - **Server-only** "Hoje" layer, the single source of the day's rules: `montarDia(iso)` (celebration, saints, daily sticker, prayer of the day), `janelaDeDias()` (yesterday/today/tomorrow in BR time), `proximasCelebracoes()`. Use only in `getStaticProps`; pages pass the window to `hooks/useDiaAtual.js`, which renders the server day on SSR and switches to the user's local day after mount. Never import it (or `lib/albumData.js`) from components rendered on the home — it pulls every JSON into the bundle.
@@ -308,6 +310,6 @@ Manual steps for reference:
 
 ## SEO
 
-- Every page must use the `<SEO>` component (not raw `<Head>`). Pass `title`, `description`, `url`, optional `keywords` and `structuredData` (JSON-LD).
+- Every page must use the `<SEO>` component (not raw `<Head>`). `Layout` does **not** take `title`/`description` — props passed to it are silently dropped; `npm test` fails if a page has no `<SEO>`. Pass `title`, `description`, `url`, optional `keywords` and `structuredData` (JSON-LD).
 - The home and `/conexoes` ship `WebSite` and `LearningResource` schemas respectively.
 - Sitemap is generated dynamically by `pages/sitemap.xml.js` from `data/*.json`. **When adding a new top-level static page, also add it to the `staticPages` array there** (priority + changefreq).

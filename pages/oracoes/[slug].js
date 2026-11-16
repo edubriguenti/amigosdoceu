@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import FavoritoButton from '../../components/FavoritoButton';
 import YouTubePlayer from '../../components/YouTubePlayer';
 import oracoes from '../../data/oracoes.json';
@@ -11,6 +12,7 @@ import EntidadesRelacionadas from '../../components/EntidadesRelacionadas';
 import BotaoRezei from '../../components/BotaoRezei';
 import { getRelacionadas } from '../../lib/relacoes';
 import { resumoFigurinha } from '../../lib/albumData';
+import { seoOracao } from '../../lib/seoOracoes';
 
 export async function getStaticPaths() {
   const paths = oracoes.map((oracao) => ({
@@ -93,10 +95,8 @@ export default function OracaoPage({ oracao, santoRelacionado, oracoesRelacionad
   };
 
   return (
-    <Layout
-      title={`${oracao.nome} - Orações`}
-      description={oracao.descricao || `${oracao.nome} - Oração católica tradicional.`}
-    >
+    <Layout>
+      <SEO {...seoOracao(oracao)} />
       {/* Breadcrumb */}
       <div className="bg-primary-50 py-1">
         <div className="container mx-auto px-4">

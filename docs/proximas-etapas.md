@@ -183,8 +183,10 @@ Branch sugerida: `improve/navegacao-mobile`
 - [x] Campo de busca na home (2026-11-13), que não tem header e não levava à `/busca`; `SearchAction` do JSON-LD agora aponta para `/busca?q=` (antes `/santos?q=`, que ignora o parâmetro). Resta: `/busca` depende de JavaScript para mostrar resultados.
 - [x] Peregrinações na busca (2026-11-12): rotas, etapas (pelas cidades) e paradas sem página, com link direto para a etapa.
 - [x] Peregrinações: alvos de toque (2026-11-14): "Ver no mapa", "Rezar: … →", paradas com página, trilha de navegação, "História e avisos", "Ver rota inteira" e "Abrir o mapa" agora com 44px. Restam só a atribuição do Leaflet/OSM (12–15px, texto legal do mapa).
+- [x] SEO das orações, novenas e do Rosário (2026-11-16): as páginas de detalhe não tinham `<title>` nem descrição (passavam as props ao `Layout`, que as ignora); agora usam `<SEO>` via `lib/seoOracoes.js`, e um teste falha se alguma página em `pages/` ficar sem `<SEO>`. Restam: imagem de compartilhamento própria por oração e os itens pendentes de `SEO_FOLLOWUP.md`.
+- [ ] Busca: celebrações do calendário fora do índice ("natal", "cecília", "todos os santos" e "advento" dão 0 resultados, visto em 2026-11-16) e a sugestão "Rosário" não traz a página `/rosario` (nem "terço"). Incluir celebrações (link `?dia=`) e as páginas de seção no índice.
 - [ ] `package-lock.json` fora de sincronia com o `package.json`: `npm ci` falha ("Missing: @emnapi/runtime… from lock file", visto em 2026-11-12); `npm install` funciona. Regenerar o lockfile num PR próprio.
-- [ ] Testes: `npm test` (runner nativo do Node, `tests/*.test.mjs`) cobre `lib/busca.js` e `lib/calendarioLink.js`. Próximos candidatos, todos lógica pura: `lib/oracoesRezadas.js`, `lib/jornada.js`, `lib/peregrinacoesRegras.js`.
+- [ ] Testes: `npm test` (runner nativo do Node, `tests/*.test.mjs`) cobre `lib/busca.js`, `lib/calendarioLink.js` e `lib/seoOracoes.js`. Próximos candidatos, todos lógica pura: `lib/oracoesRezadas.js`, `lib/jornada.js`, `lib/peregrinacoesRegras.js`.
 
 - Filtros e categorias de santos: apóstolos, mártires, doutores, papas, fundadores,
   santos do Brasil, padroeiro de… (`lib/searchUtils.js` já tem a base).
