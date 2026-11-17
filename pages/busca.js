@@ -3,24 +3,25 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { buscar, montarIndice, TIPOS_BUSCA } from '../lib/busca'
+import { buscar, celebracoesDoCalendario, hrefResultado, montarIndice, SECOES_BUSCA, SUGESTOES_BUSCA, TIPOS_BUSCA } from '../lib/busca'
+import { diaLocal } from '../lib/datas'
 import santos from '../data/santos.json'
 import oracoes from '../data/oracoes.json'
 import novenas from '../data/novenas.json'
 import aparicoes from '../data/aparicoes.json'
 import igrejas from '../data/igrejas.json'
 import vidaCristo from '../data/vida-cristo.json'
+import calendario from '../data/calendario-liturgico.json'
 import { getAllConexoes } from '../lib/conexoesData'
 import { getRotasCompletas } from '../lib/peregrinacoesData'
 
 export async function getStaticProps() {
   const indice = montarIndice({
     santos, oracoes, novenas, aparicoes, igrejas, vidaCristo, conexoes: getAllConexoes(), peregrinacoes: getRotasCompletas(),
+    celebracoes: celebracoesDoCalendario(calendario), secoes: SECOES_BUSCA,
   })
   return { props: { indice } }
 }
-
-const SUGESTOES = ['Maria', 'Rosário', 'Fátima', 'Roma', 'Páscoa', 'Padroeiro', 'Peregrinação']
 
 export default function Busca({ indice }) {
   const router = useRouter()
@@ -40,6 +41,8 @@ export default function Busca({ indice }) {
   }, [todos])
   const resultados = tipo ? todos.filter((r) => r.tipo === tipo) : todos
   const consultaVazia = texto.trim() === ''
+  // Resultados só existem no cliente (a consulta vem do estado), então o "hoje" do usuário é seguro aqui.
+  const hoje = diaLocal()
 
   const atualizar = (valor) => {
     setTexto(valor)
@@ -51,7 +54,7 @@ export default function Busca({ indice }) {
     <Layout>
       <SEO
         title="Buscar"
-        description="Busque santos, orações, novenas, aparições, igrejas, eventos da vida de Cristo, conexões bíblicas e peregrinações."
+        description="Busque santos, orações, novenas, aparições, igrejas, eventos da vida de Cristo, conexões bíblicas, peregrinações e celebrações do calendário."
         url="https://amigosdoceu.vercel.app/busca"
         noindex={true}
       />
@@ -76,7 +79,7 @@ export default function Busca({ indice }) {
           <div className="text-center">
             <p className="text-neutral-300 mb-4">Digite um nome, tema ou lugar. Ou comece por aqui:</p>
             <ul className="flex flex-wrap justify-center gap-2">
-              {SUGESTOES.map((s) => (
+              {SUGESTOES_BUSCA.map((s) => (
                 <li key={s}>
                   <button
                     type="button"
@@ -128,7 +131,7 @@ export default function Busca({ indice }) {
                 {resultados.map((r) => (
                   <li key={r.id}>
                     <Link
-                      href={r.href}
+                      href={hrefResultado(r, hoje)}
                       className="flex gap-3 p-4 rounded-xl border border-cosmic-border bg-cosmic-surface hover:border-cosmic-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold"
                     >
                       <span className="text-2xl" aria-hidden="true">{TIPOS_BUSCA[r.tipo].icone}</span>

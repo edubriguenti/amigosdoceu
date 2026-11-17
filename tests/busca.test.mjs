@@ -111,3 +111,78 @@ test('parada de rota vem depois das entidades com página, mesmo as que casam s�
     ['igreja:matriz-sao-roque', 'igreja:santuario-da-serra', 'peregrinacao:caminho-teste#1:0']
   )
 })
+
+// ── Seções do site e celebrações do calendário ─────────────────────────────
+
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
+import { celebracoesDoCalendario, hrefResultado, SECOES_BUSCA, SUGESTOES_BUSCA } from '../lib/busca.js'
+import { proximaOcorrencia } from '../lib/calendarioLink.js'
+
+const raiz = new URL('..', import.meta.url).pathname
+const json = (caminho) => JSON.parse(readFileSync(join(raiz, caminho), 'utf8'))
+
+test('proximaOcorrencia: hoje, ainda este ano, já passou e 29 de fevereiro', () => {
+  assert.equal(proximaOcorrencia(11, 22, '2026-11-17'), '2026-11-22')
+  assert.equal(proximaOcorrencia(11, 17, '2026-11-17'), '2026-11-17')
+  assert.equal(proximaOcorrencia(1, 1, '2026-11-17'), '2027-01-01')
+  assert.equal(proximaOcorrencia(2, 29, '2026-11-17'), '2028-02-29')
+  assert.equal(proximaOcorrencia(2, 30, '2026-11-17'), null)
+  assert.equal(proximaOcorrencia(1, 1, 'ontem'), null)
+})
+
+test('celebrações viram itens com data no resumo e link para a próxima ocorrência no calendário', () => {
+  const celebracoes = celebracoesDoCalendario({
+    janeiro: { 1: { nome: 'Santa Maria, Mãe de Deus', tipo: 'Solenidade', descricao: 'Oitava do Natal' } },
+    novembro: { 22: { nome: 'Santa Cecília', tipo: 'Memória', descricao: 'Padroeira dos músicos' }, 2: { nome: 'Finados', tipo: 'Comemoração' } },
+  })
+  assert.deepEqual(celebracoes.map((c) => `${c.mes}/${c.dia}`), ['1/1', '11/2', '11/22'], 'ordem do ano')
+  const indice = montarIndice({ ...base, celebracoes })
+  const [cecilia] = buscar(indice, 'cecilia')
+  assert.equal(cecilia.id, 'celebracao:11-22')
+  assert.equal(cecilia.resumo, '22 de novembro · Memória · Padroeira dos músicos')
+  assert.equal(hrefResultado(cecilia, '2026-11-17'), '/calendario?dia=2026-11-22')
+  assert.equal(hrefResultado(cecilia, '2026-12-01'), '/calendario?dia=2027-11-22')
+  assert.deepEqual(buscar(indice, 'musicos').map((r) => r.id), ['celebracao:11-22'], 'descrição entra na busca')
+  assert.deepEqual(buscar(indice, '22 de novembro').map((r) => r.id), ['celebracao:11-22'], 'data por extenso entra na busca')
+  assert.equal(hrefResultado({ href: '/santos/x' }, '2026-11-17'), '/santos/x', 'itens sem data não mudam')
+})
+
+test('seção do site vem antes de uma página com a mesma pontuação', () => {
+  const indice = montarIndice({
+    ...base,
+    oracoes: [{ slug: 'salve-rainha', nome: 'Rosário de Salve Rainha', descricao: '' }],
+    secoes: SECOES_BUSCA,
+  })
+  assert.deepEqual(buscar(indice, 'rosario').map((r) => r.href).slice(0, 2), ['/rosario', '/oracoes/salve-rainha'])
+  assert.equal(buscar(indice, 'terço')[0].href, '/rosario', 'sinônimo leva à seção')
+  assert.equal(buscar(indice, 'figurinhas')[0].href, '/album-sagrado')
+})
+
+test('dados reais: celebrações, seções e todas as sugestões da busca vazia trazem resultado', () => {
+  const calendario = json('data/calendario-liturgico.json')
+  const celebracoes = celebracoesDoCalendario(calendario)
+  const total = Object.values(calendario).reduce((n, mes) => n + Object.keys(mes).length, 0)
+  assert.equal(celebracoes.length, total, 'nenhuma celebração perdida (inclusive março, chave "marco")')
+  const indice = montarIndice({
+    santos: json('data/santos.json'), oracoes: json('data/oracoes.json'), novenas: json('data/novenas.json'),
+    aparicoes: json('data/aparicoes.json'), igrejas: json('data/igrejas.json'), vidaCristo: json('data/vida-cristo.json'),
+    conexoes: [], celebracoes, secoes: SECOES_BUSCA,
+  })
+  assert.equal(new Set(indice.map((i) => i.id)).size, indice.length, 'ids únicos')
+  assert.ok(indice.every((i) => TIPOS_BUSCA[i.tipo]), 'todo item tem tipo conhecido')
+  for (const s of SUGESTOES_BUSCA) assert.ok(buscar(indice, s).length > 0, `sugestão "${s}" sem resultado`)
+  for (const q of ['natal', 'todos os santos', 'cecília', 'finados']) {
+    assert.ok(buscar(indice, q).some((r) => r.tipo === 'celebracao'), `"${q}" deveria achar a celebração`)
+  }
+  assert.equal(buscar(indice, 'páscoa')[0].href, '/vida-de-cristo?evento=ressurreicao')
+  for (const [q, href] of [['rosário', '/rosario'], ['calendário', '/calendario'], ['álbum', '/album-sagrado'], ['mapa', '/mapa']]) {
+    assert.equal(buscar(indice, q)[0].href, href, `"${q}" deveria abrir ${href}`)
+  }
+  // Toda seção aponta para uma página que existe.
+  for (const s of SECOES_BUSCA) {
+    const arquivo = s.href.slice(1)
+    const existe = [`pages/${arquivo}.js`, `pages/${arquivo}/index.js`].some((f) => { try { readFileSync(join(raiz, f)); return true } catch { return false } })
+    assert.ok(existe, `seção ${s.href} sem página em pages/`)
+  }
+})
