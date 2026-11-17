@@ -184,7 +184,7 @@ Branch sugerida: `improve/navegacao-mobile`
 - [x] Peregrinações na busca (2026-11-12): rotas, etapas (pelas cidades) e paradas sem página, com link direto para a etapa.
 - [x] Peregrinações: alvos de toque (2026-11-14): "Ver no mapa", "Rezar: … →", paradas com página, trilha de navegação, "História e avisos", "Ver rota inteira" e "Abrir o mapa" agora com 44px. Restam só a atribuição do Leaflet/OSM (12–15px, texto legal do mapa).
 - [x] SEO das orações, novenas e do Rosário (2026-11-16): as páginas de detalhe não tinham `<title>` nem descrição (passavam as props ao `Layout`, que as ignora); agora usam `<SEO>` via `lib/seoOracoes.js`, e um teste falha se alguma página em `pages/` ficar sem `<SEO>`. Restam: imagem de compartilhamento própria por oração e os itens pendentes de `SEO_FOLLOWUP.md`.
-- [ ] Busca: celebrações do calendário fora do índice ("natal", "cecília", "todos os santos" e "advento" dão 0 resultados, visto em 2026-11-16) e a sugestão "Rosário" não traz a página `/rosario` (nem "terço"). Incluir celebrações (link `?dia=`) e as páginas de seção no índice.
+- [x] Busca encontra celebrações e seções (2026-11-17): as 112 celebrações de data fixa (link para a próxima ocorrência em `/calendario?dia=`) e 16 páginas de seção ("rosário"/"terço" → `/rosario`, "álbum", "calendário", "mapa"); a sugestão "Páscoa", que dava 0 resultados, agora acha a Ressurreição. Restam: tempos e festas móveis (Advento, Quaresma, Páscoa, Pentecostes) não estão no calendário; tolerância a erros de digitação; busca no texto das orações; em "maria" a seção "Aparições marianas" vem antes da "Ave Maria" (o bônus de título conta substring, não início de palavra).
 - [ ] `package-lock.json` fora de sincronia com o `package.json`: `npm ci` falha ("Missing: @emnapi/runtime… from lock file", visto em 2026-11-12); `npm install` funciona. Regenerar o lockfile num PR próprio.
 - [ ] Testes: `npm test` (runner nativo do Node, `tests/*.test.mjs`) cobre `lib/busca.js`, `lib/calendarioLink.js` e `lib/seoOracoes.js`. Próximos candidatos, todos lógica pura: `lib/oracoesRezadas.js`, `lib/jornada.js`, `lib/peregrinacoesRegras.js`.
 
@@ -192,7 +192,7 @@ Branch sugerida: `improve/navegacao-mobile`
   santos do Brasil, padroeiro de… (`lib/searchUtils.js` já tem a base).
 - Conexões da Bíblia como rede: passagem ↔ evento de Cristo ↔ santo ↔ igreja, usando o
   mesmo grafo de `lib/relacoesGrafo.js`, com os tipos novos `biblia:` e `trilha:`.
-- Página do dia no calendário (parcial: `/calendario` já abre um painel com o dia selecionado, com Ver santo, Ver no Álbum, Rezar e Novena quando existem; desde 2026-11-15 o painel tem link direto `/calendario?dia=AAAA-MM-DD`, usado pela home e por Santos do Dia; falta painel para dia sem celebração e as celebrações na busca global): cada celebração vira um mini-hub
+- Página do dia no calendário (parcial: `/calendario` já abre um painel com o dia selecionado, com Ver santo, Ver no Álbum, Rezar e Novena quando existem; desde 2026-11-15 o painel tem link direto `/calendario?dia=AAAA-MM-DD`, usado pela home, por Santos do Dia e, desde 2026-11-17, pela busca global; falta painel para dia sem celebração): cada celebração vira um mini-hub
   (Ver santo · Ver no Álbum · Rezar · Novena relacionada).
 
 ---
