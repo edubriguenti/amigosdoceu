@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-18: botão de favoritar visível no celular e com alvo de toque de 44px
 
-- **PR:** PR_PLACEHOLDER
+- **PR:** [#82](https://github.com/edubriguenti/amigosdoceu/pull/82)
 - **Problema:** nos cards de `/santos`, `/igrejas` e `/aparicoes` o botão ❤ ficava com `opacity-0` e só aparecia com `group-hover`. Em telas de toque não existe hover, então quem usa o celular nunca via como favoritar; no teclado, o foco caía num botão invisível. Medido no Chromium (iPhone 13 e 1280px, build de produção): o botão tinha 32px e o seletor "Ordenar por" 35px, abaixo dos 44px adotados no projeto.
 - **Solução:** `FavoritoButton` (variante ícone) ganhou área de toque de 44px com o círculo visível dentro dela, `aria-pressed` e anel de foco no círculo. Os três cards usam a classe `.favorito-sobreposto` (`styles/globals.css`): sempre visível sem hover; com mouse, aparece ao passar o mouse sobre o card ou ao receber foco. O seletor de ordenação passou a `min-h-[44px]`.
 - **Benefício:** o favoritar passa a ser descobrível e acertável no celular, e acessível por teclado.
