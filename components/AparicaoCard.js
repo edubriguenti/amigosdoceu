@@ -21,7 +21,7 @@ export default function AparicaoCard({ aparicao }) {
           <p className="text-xs text-neutral-400 mt-1">{aparicao.data}</p>
         </div>
       </Link>
-      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="favorito-sobreposto absolute right-0.5 top-0.5">
         <FavoritoButton tipo="aparicoes" item={aparicao} size="sm" />
       </div>
     </div>

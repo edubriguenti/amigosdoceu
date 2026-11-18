@@ -21,7 +21,7 @@ export default function ChurchCard({ church }) {
           <p className="text-sm text-neutral-400 line-clamp-2">{church.descricao}</p>
         </div>
       </Link>
-      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="favorito-sobreposto absolute right-0.5 top-0.5">
         <FavoritoButton tipo="igrejas" item={church} size="sm" />
       </div>
     </div>

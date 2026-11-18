@@ -252,3 +252,16 @@ h1, h2, h3 {
     display: none !important;
   }
 }
+
+/* Botão de favoritar sobre a imagem dos cards: sempre visível em telas de toque
+   (sem hover); em telas com mouse aparece ao passar o mouse ou ao receber foco. */
+@media (hover: hover) {
+  .favorito-sobreposto {
+    opacity: 0;
+    transition: opacity 150ms;
+  }
+  .group:hover .favorito-sobreposto,
+  .favorito-sobreposto:focus-within {
+    opacity: 1;
+  }
+}
