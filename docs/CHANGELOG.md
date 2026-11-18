@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-18: botão de favoritar visível no celular e com alvo de toque de 44px
+
+- **PR:** PR_PLACEHOLDER
+- **Problema:** nos cards de `/santos`, `/igrejas` e `/aparicoes` o botão ❤ ficava com `opacity-0` e só aparecia com `group-hover`. Em telas de toque não existe hover, então quem usa o celular nunca via como favoritar; no teclado, o foco caía num botão invisível. Medido no Chromium (iPhone 13 e 1280px, build de produção): o botão tinha 32px e o seletor "Ordenar por" 35px, abaixo dos 44px adotados no projeto.
+- **Solução:** `FavoritoButton` (variante ícone) ganhou área de toque de 44px com o círculo visível dentro dela, `aria-pressed` e anel de foco no círculo. Os três cards usam a classe `.favorito-sobreposto` (`styles/globals.css`): sempre visível sem hover; com mouse, aparece ao passar o mouse sobre o card ou ao receber foco. O seletor de ordenação passou a `min-h-[44px]`.
+- **Benefício:** o favoritar passa a ser descobrível e acertável no celular, e acessível por teclado.
+- **Arquivos:** `components/FavoritoButton.js`, `components/SaintCard.js`, `components/ChurchCard.js`, `components/AparicaoCard.js`, `components/SearchResults.js`, `styles/globals.css`, `docs/proximas-etapas.md`.
+- **Testes:** `npm run lint` 0 erros (18 avisos preexistentes); `npm test` 25/25; `npm run build` ok. Playwright no build de produção: em iPhone 13, botão 44×44 e visível (opacity 1) em `/santos`, `/igrejas` e `/aparicoes`; tocar favorita (`aria-pressed=true`), o favorito persiste após recarregar e aparece em `/favoritos`; em 1280px a opacidade é 0 em repouso, 1 no hover e 1 com foco; 0 erros de página; captura conferida.
+- **Limitações:** o build local usou respostas simuladas do Google Fonts (sem acesso a ele no ambiente), então a tipografia da captura não é a real. Imagens remotas do Wikimedia não carregam no ambiente. O coração de um item já favoritado continua oculto em repouso no desktop. Não testado com leitor de tela.
+
 ## 2026-11-17: busca encontra as celebrações do calendário e as seções do site
 
 - **PR:** [#81](https://github.com/edubriguenti/amigosdoceu/pull/81)

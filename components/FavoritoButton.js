@@ -70,33 +70,39 @@ export default function FavoritoButton({ tipo, item, variant = 'icon', size = 'm
     );
   }
 
-  // Variante 'icon' (padrão)
+  // Variante 'icon' (padrão): o botão tem sempre ao menos 44px (alvo de toque);
+  // o círculo visível é o span interno, no tamanho pedido.
   return (
     <button
       onClick={handleClick}
-      className={`
-        ${sizeClasses[size]}
-        flex items-center justify-center
-        rounded-full
-        transition-all duration-300
-        ${isFav
-          ? 'bg-accent-600 text-white shadow-md hover:bg-accent-700'
-          : 'bg-white/90 backdrop-blur-sm text-neutral-600 hover:bg-white hover:text-accent-500 shadow-sm'
-        }
-        ${isAnimating ? 'scale-110' : 'scale-100'}
-        focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2
-      `}
+      className="group/fav flex h-11 w-11 items-center justify-center rounded-full focus:outline-none"
       aria-label={isFav ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
+      aria-pressed={isFav}
       title={isFav ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
     >
       <span
         className={`
-          ${iconSizeClasses[size]}
-          transition-transform duration-300
-          ${isAnimating ? 'scale-125 rotate-12' : 'scale-100'}
+          ${sizeClasses[size]}
+          flex items-center justify-center
+          rounded-full
+          transition-all duration-300
+          ${isFav
+            ? 'bg-accent-600 text-white shadow-md group-hover/fav:bg-accent-700'
+            : 'bg-white/90 backdrop-blur-sm text-neutral-600 group-hover/fav:bg-white group-hover/fav:text-accent-500 shadow-sm'
+          }
+          ${isAnimating ? 'scale-110' : 'scale-100'}
+          group-focus-visible/fav:ring-2 group-focus-visible/fav:ring-accent-500 group-focus-visible/fav:ring-offset-2
         `}
       >
-        {isFav ? '❤️' : '🤍'}
+        <span
+          className={`
+            ${iconSizeClasses[size]}
+            transition-transform duration-300
+            ${isAnimating ? 'scale-125 rotate-12' : 'scale-100'}
+          `}
+        >
+          {isFav ? '❤️' : '🤍'}
+        </span>
       </span>
     </button>
   );
