@@ -187,7 +187,7 @@ Branch sugerida: `improve/navegacao-mobile`
 - [x] Busca encontra celebrações e seções (2026-11-17): as 112 celebrações de data fixa (link para a próxima ocorrência em `/calendario?dia=`) e 16 páginas de seção ("rosário"/"terço" → `/rosario`, "álbum", "calendário", "mapa"); a sugestão "Páscoa", que dava 0 resultados, agora acha a Ressurreição. Restam: tempos e festas móveis (Advento, Quaresma, Páscoa, Pentecostes) não estão no calendário; tolerância a erros de digitação; busca no texto das orações; em "maria" a seção "Aparições marianas" vem antes da "Ave Maria" (o bônus de título conta substring, não início de palavra).
 - [x] Favoritar nos cards (2026-11-18): ❤ visível em telas de toque (antes só com hover) e alvo de 44px. Resta: manter visível o ❤ de itens já favoritados no desktop; `/santos` ignora `?q=`.
 - [ ] `package-lock.json` fora de sincronia com o `package.json`: `npm ci` falha ("Missing: @emnapi/runtime… from lock file", visto em 2026-11-12); `npm install` funciona. Regenerar o lockfile num PR próprio.
-- [ ] Testes: `npm test` (runner nativo do Node, `tests/*.test.mjs`) cobre `lib/busca.js`, `lib/calendarioLink.js` e `lib/seoOracoes.js`. Próximos candidatos, todos lógica pura: `lib/oracoesRezadas.js`, `lib/jornada.js`, `lib/peregrinacoesRegras.js`.
+- [ ] Testes: `npm test` (runner nativo do Node, `tests/*.test.mjs`) cobre `lib/busca.js`, `lib/calendarioLink.js`, `lib/seoOracoes.js` e `lib/oracoesRezadas.js`. Próximos candidatos, todos lógica pura: `lib/jornada.js`, `lib/peregrinacoesRegras.js`.
 
 - Filtros e categorias de santos: apóstolos, mártires, doutores, papas, fundadores,
   santos do Brasil, padroeiro de… (`lib/searchUtils.js` já tem a base).
