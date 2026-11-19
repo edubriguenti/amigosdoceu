@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-19: testes automatizados da sequência de orações
 
-- **PR:** ver lista de PRs do repositório
+- **PR:** [#83](https://github.com/edubriguenti/amigosdoceu/pull/83)
 - **Problema:** a regra de sequência ("rezou hoje → termina hoje; só ontem → continua; senão 0") e o registro idempotente de orações (`lib/oracoesRezadas.js`) alimentam Minha Jornada, o bloco "Hoje" e a figurinha do dia, mas não tinham teste, e era o primeiro candidato listado em `docs/proximas-etapas.md`. A exploração no Chromium (build de produção, 22 rotas em 390px e 1280px) não achou erro de página/console, estouro horizontal, h1 ausente nem imagem sem `alt`; nenhum bug novo foi reproduzido. Também confirmei que "Dia comum" em 19/11 está correto: as memórias obrigatórias de fev–abr já estão no calendário, o que falta são as facultativas (o projeto não tem esse tipo).
 - **Solução:** `tests/oracoesRezadas.test.mjs` (12 testes): estado vazio, sequência com/sem hoje e ontem, quebra por dia sem rezar, várias orações no mesmo dia, virada de mês/ano, `somarDias` (29/02), idempotência e imutabilidade do registro, ref vazia e normalização de dado corrompido.
 - **Benefício:** protege contra regressões a regra que decide se a pessoa "mantém a sequência".
