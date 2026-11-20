@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { buscar, montarIndice, normalizar, TIPOS_BUSCA } from '../lib/busca.js'
+import { buscar, buscarAproximado, distanciaEdicao, toleranciaDe, montarIndice, normalizar, TIPOS_BUSCA } from '../lib/busca.js'
 
 const base = { santos: [], oracoes: [], novenas: [], aparicoes: [], igrejas: [], vidaCristo: [], conexoes: [] }
 
@@ -185,4 +185,40 @@ test('dados reais: celebrações, seções e todas as sugestões da busca vazia 
     const existe = [`pages/${arquivo}.js`, `pages/${arquivo}/index.js`].some((f) => { try { readFileSync(join(raiz, f)); return true } catch { return false } })
     assert.ok(existe, `seção ${s.href} sem página em pages/`)
   }
+})
+
+test('distanciaEdicao e toleranciaDe', () => {
+  assert.equal(distanciaEdicao('francisco', 'francisco'), 0)
+  assert.equal(distanciaEdicao('fransisco', 'francisco'), 1)
+  assert.equal(distanciaEdicao('abc', 'wxyz', 2) > 2, true)
+  assert.deepEqual(['pai', 'ave', 'maria', 'ressurreicao'].map(toleranciaDe), [0, 0, 1, 2])
+})
+
+test('buscarAproximado tolera erro de digitação, mas não palavras curtas nem lixo', () => {
+  const indice = montarIndice({
+    ...base,
+    santos: [{ slug: 'sao-francisco-de-assis', nome: 'São Francisco de Assis', descricao: 'Fundador dos franciscanos.', tags: [] }],
+    oracoes: [{ slug: 'pai-nosso', nome: 'Pai Nosso', descricao: 'Oração de Jesus.', tags: [] }, { slug: 'paz', nome: 'Oração da Paz', descricao: 'Paz.', tags: [] }],
+  })
+  assert.equal(buscar(indice, 'sao fransisco').length, 0, 'a busca exata continua exata')
+  assert.equal(buscarAproximado(indice, 'sao fransisco')[0].href, '/santos/sao-francisco-de-assis')
+  assert.equal(buscarAproximado(indice, 'franciso')[0].href, '/santos/sao-francisco-de-assis')
+  assert.equal(buscarAproximado(indice, 'fransis')[0].href, '/santos/sao-francisco-de-assis', 'palavra ainda por escrever')
+  assert.equal(buscarAproximado(indice, 'pai')[0], undefined, '3 letras: só exato')
+  assert.deepEqual(buscarAproximado(indice, 'xqzwvk'), [])
+  assert.deepEqual(buscarAproximado(indice, '   '), [])
+})
+
+test('dados reais: grafias erradas comuns acham o item certo; lixo continua sem resultado', () => {
+  const indice = montarIndice({
+    santos: json('data/santos.json'), oracoes: json('data/oracoes.json'), novenas: json('data/novenas.json'),
+    aparicoes: json('data/aparicoes.json'), igrejas: json('data/igrejas.json'), vidaCristo: json('data/vida-cristo.json'),
+    conexoes: [], celebracoes: celebracoesDoCalendario(json('data/calendario-liturgico.json')), secoes: SECOES_BUSCA,
+  })
+  const titulos = (q) => buscarAproximado(indice, q).map((r) => r.titulo)
+  assert.ok(titulos('sao fransisco').includes('São Francisco de Assis'))
+  assert.ok(titulos('ressureição').includes('Ressurreição'))
+  assert.ok(titulos('fatma').includes('Nossa Senhora de Fátima'))
+  assert.ok(titulos('rozario').includes('Rosário'))
+  assert.deepEqual(titulos('xyzabc'), [])
 })
