@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-20: busca tolera erros de digitação
 
-- **PR:** PR_LINK
+- **PR:** [#84](https://github.com/edubriguenti/amigosdoceu/pull/84)
 - **Problema:** no Chromium (build de produção, 390px e 1280px) `/busca?q=sao fransisco` dava "Nenhum resultado", assim como "ressureição", "fatma" ou "rozario". A busca exigia que cada termo fosse substring exata (sem acento), e a lista de pendências de `docs/proximas-etapas.md` já citava a falta de tolerância a erros de digitação. Em celular, onde se digita rápido e sem correção, o beco sem saída é comum.
 - **Solução:** `lib/busca.js` ganhou `buscarAproximado` (+ `distanciaEdicao`, `toleranciaDe`): só roda quando a busca exata não acha nada; cada termo precisa ser exato ou parecido (distância de edição ≤ 1 para 4–7 letras, ≤ 2 para 8+; palavras de até 3 letras só exatas) com alguma palavra do item ou com o começo dela. `pages/busca.js` mostra "N resultados para grafias parecidas com “…”". A busca exata não mudou.
 - **Benefício:** "sao fransisco", "ressureição", "fatma", "rozario", "lourdis" e "guadalupi" levam ao item certo em vez de uma tela vazia.
