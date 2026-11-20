@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { buscar, celebracoesDoCalendario, hrefResultado, montarIndice, SECOES_BUSCA, SUGESTOES_BUSCA, TIPOS_BUSCA } from '../lib/busca'
+import { buscar, buscarAproximado, celebracoesDoCalendario, hrefResultado, montarIndice, SECOES_BUSCA, SUGESTOES_BUSCA, TIPOS_BUSCA } from '../lib/busca'
 import { diaLocal } from '../lib/datas'
 import santos from '../data/santos.json'
 import oracoes from '../data/oracoes.json'
@@ -33,7 +33,13 @@ export default function Busca({ indice }) {
     if (router.isReady && typeof router.query.q === 'string') setTexto(router.query.q)
   }, [router.isReady, router.query.q])
 
-  const todos = useMemo(() => buscar(indice, texto), [indice, texto])
+  // Busca exata primeiro; se nada vier, tolera erros de digitação e avisa que a grafia foi aproximada.
+  const { todos, aproximado } = useMemo(() => {
+    const exatos = buscar(indice, texto)
+    if (exatos.length) return { todos: exatos, aproximado: false }
+    const parecidos = buscarAproximado(indice, texto)
+    return { todos: parecidos, aproximado: parecidos.length > 0 }
+  }, [indice, texto])
   const contagem = useMemo(() => {
     const c = {}
     todos.forEach((r) => { c[r.tipo] = (c[r.tipo] || 0) + 1 })
@@ -117,7 +123,7 @@ export default function Busca({ indice }) {
             <p role="status" aria-live="polite" className="text-sm text-neutral-400 mb-3">
               {resultados.length === 0
                 ? `Nenhum resultado para “${texto.trim()}”.`
-                : `${resultados.length} ${resultados.length === 1 ? 'resultado' : 'resultados'}`}
+                : `${resultados.length} ${resultados.length === 1 ? 'resultado' : 'resultados'}${aproximado ? ` para grafias parecidas com “${texto.trim()}”` : ''}`}
             </p>
 
             {resultados.length === 0 ? (

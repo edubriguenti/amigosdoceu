@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-20: busca tolera erros de digitação
+
+- **PR:** PR_LINK
+- **Problema:** no Chromium (build de produção, 390px e 1280px) `/busca?q=sao fransisco` dava "Nenhum resultado", assim como "ressureição", "fatma" ou "rozario". A busca exigia que cada termo fosse substring exata (sem acento), e a lista de pendências de `docs/proximas-etapas.md` já citava a falta de tolerância a erros de digitação. Em celular, onde se digita rápido e sem correção, o beco sem saída é comum.
+- **Solução:** `lib/busca.js` ganhou `buscarAproximado` (+ `distanciaEdicao`, `toleranciaDe`): só roda quando a busca exata não acha nada; cada termo precisa ser exato ou parecido (distância de edição ≤ 1 para 4–7 letras, ≤ 2 para 8+; palavras de até 3 letras só exatas) com alguma palavra do item ou com o começo dela. `pages/busca.js` mostra "N resultados para grafias parecidas com “…”". A busca exata não mudou.
+- **Benefício:** "sao fransisco", "ressureição", "fatma", "rozario", "lourdis" e "guadalupi" levam ao item certo em vez de uma tela vazia.
+- **Arquivos:** `lib/busca.js`, `pages/busca.js`, `tests/busca.test.mjs`, `CLAUDE.md`, `docs/proximas-etapas.md`.
+- **Testes:** `npm test` 40/40 (3 novos: distância/tolerância, regras de `buscarAproximado` e dados reais); `npm run lint` 0 erros (18 avisos preexistentes); `npm run build` ok. Playwright no build de produção, 390px e 1280px: "sao fransisco" → 9 resultados com o aviso de grafia parecida; "xyzabc" continua "Nenhum resultado"; "francisco" (exata) sem o aviso; sem rolagem horizontal e 0 erros de página. Medido em Node com os dados reais: ≤ 25 ms por consulta aproximada.
+- **Limitações:** só aciona quando a busca exata não acha nada (um erro de digitação num termo de uma consulta que ainda casa outro item não é corrigido); não oferece "Você quis dizer…"; sem teste com leitor de tela.
+
 ## 2026-11-19: testes automatizados da sequência de orações
 
 - **PR:** [#83](https://github.com/edubriguenti/amigosdoceu/pull/83)
