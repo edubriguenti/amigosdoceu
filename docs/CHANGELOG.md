@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-21: Santa Cecília cadastrada e ligada à memória de 22/11
+
+- **PR:** [#85](https://github.com/edubriguenti/amigosdoceu/pull/85)
+- **Problema:** a memória de Santa Cecília (22/11) era a próxima do calendário sem santo ligado (lista em `docs/proximas-etapas.md`); no dia, o bloco "Hoje", "Santos do Dia" e o botão "Conhecer" não levariam a nenhuma página.
+- **Solução:** entrada `santa-cecilia` em `data/santos.json` (padroeira dos músicos; datas incertas marcadas como tradição no texto, `dataFalecimento` "~230", nascimento `null`) e `"santos": ["santa-cecilia"]` na celebração de 22/11. `imagem: null` (placeholder temático): o Wikimedia Commons é bloqueado pelo proxy deste ambiente, então a imagem não pôde ser baixada.
+- **Benefício:** em 22/11 a home, Santos do Dia e o calendário levam à página dela; entra no Álbum Sagrado (#071) e na busca ("músicos").
+- **Arquivos:** `data/santos.json`, `data/calendario-liturgico.json`, `docs/proximas-etapas.md`.
+- **Testes:** `npm test` 40/40; `npm run lint` 0 erros (18 avisos preexistentes); `validate:album`, `validate:relacoes` e `validate:imagens` sem erros; `npm run build` ok. Playwright no build de produção, relógio simulado em 22/11, 390px e 1280px: `/santos/santa-cecilia` com h1, sem rolagem horizontal e aviso "Nova figurinha colada"; home, `/santos-do-dia` e `/busca?q=musicos` mostram Santa Cecília; 0 erros de página.
+- **Limitações:** sem imagem (a adicionar quando houver acesso ao Wikimedia); sem relações em `relacoes.json`; texto biográfico baseado na tradição, revisar. Próximo sem santo ligado: 24/11 (Santo André Dung-Lac e Companheiros).
+
 ## 2026-11-20: busca tolera erros de digitação
 
 - **PR:** [#84](https://github.com/edubriguenti/amigosdoceu/pull/84)
