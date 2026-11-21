@@ -523,5 +523,31 @@
     "doutorIgreja": false,
     "popularidade": 45,
     "relacionamentos": []
+  },
+  {
+    "nome": "Santa Cecília",
+    "slug": "santa-cecilia",
+    "imagem": null,
+    "descricao": "Cecília foi uma jovem cristã de Roma, mártir dos primeiros séculos da Igreja. Segundo a tradição, nasceu numa família nobre, consagrou a virgindade a Cristo e converteu o noivo, Valeriano, e o cunhado, Tibúrcio, que também foram martirizados. Os relatos antigos dizem que, durante as festas do casamento, enquanto os instrumentos tocavam, ela cantava a Deus em seu coração; por isso passou a ser venerada como padroeira dos músicos e do canto sacro. Os detalhes da sua vida vêm de uma tradição posterior e a data do martírio é incerta (costuma-se situá-la no século III). Seu nome consta desde a Antiguidade no Cânon Romano da Missa. Sua devoção está ligada às Catacumbas de São Calisto e à basílica de Santa Cecília no Trastevere, em Roma, onde seu sepulcro é venerado; a célebre estátua de Stefano Maderno (1599) recorda a posição em que o corpo foi encontrado. A Igreja celebra sua memória em 22 de novembro.",
+    "oracao": "Santa Cecília, virgem e mártir, que louvastes o Senhor com o coração e com a vida, alcançai-nos a graça de fazer da nossa existência um canto de louvor a Deus. Protegei os músicos, os cantores e todos os que servem a liturgia com a sua arte, e ajudai-nos a permanecer fiéis a Cristo até o fim. Amém.",
+    "tags": [
+      "Mártir",
+      "Música",
+      "Virgem"
+    ],
+    "dataNascimento": null,
+    "dataFalecimento": "~230",
+    "dataCanonizacao": "Pré-Congregação",
+    "pais": "Itália",
+    "ordemReligiosa": null,
+    "padroeiro": [
+      "Músicos",
+      "Cantores",
+      "Música sacra"
+    ],
+    "periodo": "Antiguidade",
+    "doutorIgreja": false,
+    "popularidade": 65,
+    "relacionamentos": []
   }
 ]
