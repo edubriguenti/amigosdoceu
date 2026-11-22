@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-22: calendário abre qualquer dia, também os sem celebração
+
+- **PR:** a registrar após a abertura (branch `claude/keen-euler-ytras5`)
+- **Problema:** em `/calendario` só os dias coloridos eram clicáveis. Um link `/calendario?dia=2026-11-23` (dia sem celebração) abria o mês mas não mostrava painel nenhum, sem explicação; e a dica "Toque em um dia colorido" deixava o resto da grade como botão morto. Visto no Chromium (build de produção, 390px e 1280px).
+- **Solução:** todo dia da grade é um botão (`aria-label` "… sem celebração" quando for o caso). Dia sem celebração abre um painel "Dia comum" com o atalho "Próxima: <celebração> (data) →", que muda de mês/ano se preciso e atualiza a URL. O link direto de dia comum agora abre o painel. Nova função `getProximaCelebracaoApos` em `lib/calendarUtils.js`.
+- **Benefício:** nenhum toque ou link no calendário cai no vazio; o usuário sempre chega à próxima celebração.
+- **Arquivos:** `components/CalendarioMensal.js`, `lib/calendarUtils.js`, `docs/proximas-etapas.md`.
+- **Testes:** `npm test` 40/40; `npm run lint` 0 erros (18 avisos preexistentes); `npm run build` ok. Playwright no build de produção, 390px e 1280px: deep link de 23/11 mostra "Dia comum" e a próxima (24/11); clicar nela abre 24/11 e a URL; clicar em dia comum abre o painel e clicar de novo fecha; de 30/12 a próxima atravessa para 1/1/2027 (muda o mês e o ano); sem rolagem horizontal e 0 erros de página.
+- **Limitações:** sem teste unitário (`lib/calendarUtils.js` importa JSON, que o runner do Node não carrega sem configuração); só celebrações de data fixa existem no calendário, então "Dia comum" não considera tempos litúrgicos móveis; não testado com leitor de tela.
+
 ## 2026-11-21: Santa Cecília cadastrada e ligada à memória de 22/11
 
 - **PR:** [#85](https://github.com/edubriguenti/amigosdoceu/pull/85)
