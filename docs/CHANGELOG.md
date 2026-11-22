@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-22: calendário abre qualquer dia, também os sem celebração
 
-- **PR:** a registrar após a abertura (branch `claude/keen-euler-ytras5`)
+- **PR:** [#86](https://github.com/edubriguenti/amigosdoceu/pull/86)
 - **Problema:** em `/calendario` só os dias coloridos eram clicáveis. Um link `/calendario?dia=2026-11-23` (dia sem celebração) abria o mês mas não mostrava painel nenhum, sem explicação; e a dica "Toque em um dia colorido" deixava o resto da grade como botão morto. Visto no Chromium (build de produção, 390px e 1280px).
 - **Solução:** todo dia da grade é um botão (`aria-label` "… sem celebração" quando for o caso). Dia sem celebração abre um painel "Dia comum" com o atalho "Próxima: <celebração> (data) →", que muda de mês/ano se preciso e atualiza a URL. O link direto de dia comum agora abre o painel. Nova função `getProximaCelebracaoApos` em `lib/calendarUtils.js`.
 - **Benefício:** nenhum toque ou link no calendário cai no vazio; o usuário sempre chega à próxima celebração.
