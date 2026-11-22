@@ -102,6 +102,7 @@ desses dados.
 
 ### 2.1 Calendário
 0. [x] Santos já cadastrados sem festa ligados ao calendário (São Sebastião 20/01, Dom Bosco 31/01, Cátedra de São Pedro 22/02, Santa Rita 22/05, São Bento 11/07) e removida a Santa Catarina duplicada em 25/03, que escondia a Anunciação.
+0n. [x] 22/11/2026: `/calendario` abre qualquer dia (dia comum mostra painel com atalho para a próxima celebração). Falta painel para tempos litúrgicos móveis. Próximo santo a cadastrar: 24/11 (Santo André Dung-Lac). Candidato de testes: `lib/jornada.js`, `lib/peregrinacoesRegras.js`.
 0m. [x] 21/11/2026: Santa Cecília cadastrada e ligada à memória de 22/11 (sem imagem ainda). Próximo dia sem santo ligado: 24/11 (Santo André Dung-Lac e Companheiros). 17/11 (Santa Isabel da Hungria) segue sem santo.
 0l. [x] 11/11/2026: São Josafá cadastrado e ligado à memória de 12/11 (sem imagem ainda). Próximos dias sem santo ligado: 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília).
 0k. [x] 08/11/2026: campo `igrejas` nas celebrações (Latrão, Aparecida, Guadalupe); "Conhecer" da home, Santos do Dia e Calendário levam à igreja. Candidatas: Dedicação das Basílicas de São Pedro e São Paulo (18/11, `basilica-sao-pedro`), Santa Maria Maior (05/08), Lourdes (11/02) e Fátima (13/05) se entrarem no calendário. Próximos dias sem santo: 12/11 (São Josafá), 17/11 (Santa Isabel da Hungria), 22/11 (Santa Cecília).
@@ -195,7 +196,7 @@ Branch sugerida: `improve/navegacao-mobile`
   santos do Brasil, padroeiro de… (`lib/searchUtils.js` já tem a base).
 - Conexões da Bíblia como rede: passagem ↔ evento de Cristo ↔ santo ↔ igreja, usando o
   mesmo grafo de `lib/relacoesGrafo.js`, com os tipos novos `biblia:` e `trilha:`.
-- Página do dia no calendário (parcial: `/calendario` já abre um painel com o dia selecionado, com Ver santo, Ver no Álbum, Rezar e Novena quando existem; desde 2026-11-15 o painel tem link direto `/calendario?dia=AAAA-MM-DD`, usado pela home, por Santos do Dia e, desde 2026-11-17, pela busca global; falta painel para dia sem celebração): cada celebração vira um mini-hub
+- Página do dia no calendário (parcial: `/calendario` já abre um painel com o dia selecionado, com Ver santo, Ver no Álbum, Rezar e Novena quando existem; desde 2026-11-15 o painel tem link direto `/calendario?dia=AAAA-MM-DD`, usado pela home, por Santos do Dia e, desde 2026-11-17, pela busca global; painel para dia sem celebração desde 2026-11-22): cada celebração vira um mini-hub
   (Ver santo · Ver no Álbum · Rezar · Novena relacionada).
 
 ---

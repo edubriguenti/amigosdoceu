@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { hrefDiaCalendario, lerDiaDaQuery } from '../lib/calendarioLink'
-import { getCalendarioMes, getCelebracaoDoDia, getSantosPorSlugs } from '../lib/calendarUtils'
+import { getCalendarioMes, getCelebracaoDoDia, getProximaCelebracaoApos, getSantosPorSlugs } from '../lib/calendarUtils'
 
 const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 
@@ -20,7 +20,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
     if (diaSelecionado) painelRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
   }, [diaSelecionado])
 
-  // Link direto `/calendario?dia=YYYY-MM-DD`: abre o mês e, se houver celebração, o painel do dia.
+  // Link direto `/calendario?dia=YYYY-MM-DD`: abre o mês e o painel do dia (também de um dia comum).
   const router = useRouter()
   const diaDaUrl = router.isReady ? lerDiaDaQuery(router.query.dia)?.iso : undefined
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
     if (!alvo) return
     setMes(alvo.mes)
     setAno(alvo.ano)
-    setDiaSelecionado(getCelebracaoDoDia(new Date(alvo.ano, alvo.mes - 1, alvo.dia)) ? alvo.dia : null)
+    setDiaSelecionado(alvo.dia)
   }, [diaDaUrl])
 
   // Mantém a URL em dia com a seleção, para o painel aberto poder ser compartilhado e sobreviver ao recarregar.
@@ -70,6 +70,19 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
   const celebracaoSelecionada = diaSelecionado
     ? getCelebracaoDoDia(new Date(ano, mes - 1, diaSelecionado))
     : null
+  // Dia sem celebração: o painel oferece o caminho para a próxima, em vez de ficar mudo.
+  const proximaCelebracao =
+    diaSelecionado && !celebracaoSelecionada
+      ? getProximaCelebracaoApos(new Date(ano, mes - 1, diaSelecionado))
+      : null
+  const irParaCelebracao = (celebracao) => {
+    const d = celebracao.data
+    const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+    router.replace(hrefDiaCalendario(iso), undefined, { shallow: true, scroll: false })
+    setMes(d.getMonth() + 1)
+    setAno(d.getFullYear())
+    setDiaSelecionado(d.getDate())
+  }
   const santosSelecionados = getSantosPorSlugs(celebracaoSelecionada?.santos)
 
   // Criar array de dias do calendário
@@ -195,21 +208,13 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
               </div>
             )
 
-            if (!celebracao) {
-              return (
-                <div key={dia} className={classes}>
-                  {conteudo}
-                </div>
-              )
-            }
-
             return (
               <button
                 key={dia}
                 type="button"
                 onClick={() => selecionarDia(selecionado ? null : dia)}
                 aria-pressed={selecionado}
-                aria-label={`${dia} de ${calendario.mesNome}: ${celebracao.nome}, ${celebracao.tipo}`}
+                aria-label={`${dia} de ${calendario.mesNome}: ${celebracao ? `${celebracao.nome}, ${celebracao.tipo}` : 'sem celebração'}`}
                 className={`${classes} hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700`}
               >
                 {conteudo}
@@ -301,9 +306,23 @@ export default function CalendarioMensal({ mesInicial, anoInicial, albumHrefs = 
               </div>
             )}
           </div>
+        ) : diaSelecionado ? (
+          <div className="p-4 rounded-lg border bg-white border-gray-200">
+            <div className="text-sm font-medium text-gray-700">{diaSelecionado} de {calendario.mesNome} · Dia comum</div>
+            <p className="text-sm text-gray-700 mt-1">Nenhuma celebração do calendário neste dia.</p>
+            {proximaCelebracao && (
+              <button
+                type="button"
+                onClick={() => irParaCelebracao(proximaCelebracao)}
+                className="mt-2 inline-flex items-center min-h-11 text-left text-sm text-blue-800 font-medium hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700"
+              >
+                Próxima: {proximaCelebracao.nome} ({proximaCelebracao.diaNumero} de {proximaCelebracao.mesNome}) →
+              </button>
+            )}
+          </div>
         ) : (
           <p className="text-sm text-neutral-300">
-            Toque em um dia colorido para ver a celebração e o santo do dia.
+            Toque em um dia para ver a celebração e o santo do dia. Os dias coloridos têm celebração.
           </p>
         )}
       </div>
