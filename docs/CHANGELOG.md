@@ -4,7 +4,7 @@ Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapa
 
 ## 2026-11-28: botões e filtros com alvo de toque de 44px no celular
 
-- **PR:** a preencher após abrir
+- **PR:** [#87](https://github.com/edubriguenti/amigosdoceu/pull/87)
 - **Problema:** no Chromium (iPhone 13, build de produção, 21 rotas) os botões do bloco "Hoje" da home (Conhecer, Rezar, Rezar agora: 36–38px), de `/santos-do-dia`, os 7 links de ação de `/minha-jornada` (36–38px) e os filtros de categoria de `/oracoes`, `/novenas` e `/intencoes` (36–38px) ficavam abaixo dos 44px adotados no projeto. Sem erro de página nem rolagem horizontal em nenhuma rota.
 - **Solução:** `min-h-[44px]` nas constantes de botão (`HojeNoCeu`, `minha-jornada`, `santos-do-dia`), nos chips de filtro e nos botões de `IntencoesOracao`.
 - **Benefício:** menos toques errados nas ações do fluxo diário (rezar → figurinha → jornada).
