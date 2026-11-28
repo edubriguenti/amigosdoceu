@@ -28,9 +28,9 @@ function saudacao(hora) {
 
 const rotulo = 'text-xs font-semibold uppercase tracking-widest text-cosmic-gold'
 const botaoSecundario =
-  'inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border border-cosmic-border bg-cosmic-surface-2 text-neutral-100 hover:border-cosmic-gold/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold'
+  'inline-flex min-h-[44px] items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border border-cosmic-border bg-cosmic-surface-2 text-neutral-100 hover:border-cosmic-gold/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold'
 const botaoPrimario =
-  'inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-cosmic-gold text-[#1b1406] hover:bg-amber-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
+  'inline-flex min-h-[44px] items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-cosmic-gold text-[#1b1406] hover:bg-amber-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
 
 function quando(emDias) {
   return emDias === 1 ? 'amanhã' : `em ${emDias} dias`

@@ -2,6 +2,16 @@
 
 Registro cumulativo, mais recente primeiro. Planejamento em `docs/proximas-etapas.md`.
 
+## 2026-11-28: botões e filtros com alvo de toque de 44px no celular
+
+- **PR:** [#87](https://github.com/edubriguenti/amigosdoceu/pull/87)
+- **Problema:** no Chromium (iPhone 13, build de produção, 21 rotas) os botões do bloco "Hoje" da home (Conhecer, Rezar, Rezar agora: 36–38px), de `/santos-do-dia`, os 7 links de ação de `/minha-jornada` (36–38px) e os filtros de categoria de `/oracoes`, `/novenas` e `/intencoes` (36–38px) ficavam abaixo dos 44px adotados no projeto. Sem erro de página nem rolagem horizontal em nenhuma rota.
+- **Solução:** `min-h-[44px]` nas constantes de botão (`HojeNoCeu`, `minha-jornada`, `santos-do-dia`), nos chips de filtro e nos botões de `IntencoesOracao`.
+- **Benefício:** menos toques errados nas ações do fluxo diário (rezar → figurinha → jornada).
+- **Arquivos:** `components/HojeNoCeu.js`, `components/IntencoesOracao.js`, `pages/minha-jornada.js`, `pages/santos-do-dia.js`, `pages/oracoes/index.js`, `pages/novenas/index.js`, `docs/proximas-etapas.md`.
+- **Testes:** `npm test` 40/40; `npm run lint` 0 erros (18 avisos preexistentes); `npm run build` ok. Playwright (iPhone 13) no build novo: nenhum link/botão abaixo de 43px em `/`, `/minha-jornada`, `/santos-do-dia`, `/oracoes`, `/novenas`; em `/intencoes` só "+ Nova intenção" media 40px antes do ajuste final e não foi remedido depois dele; sem rolagem horizontal e 0 erros de página.
+- **Limitações:** sem captura visual comparada nem teste com leitor de tela; restam alvos de 36px em `/conexoes` (favoritar) e nas relações de santo (Lista/Agrupado), além do zoom do Leaflet.
+
 ## 2026-11-22: calendário abre qualquer dia, também os sem celebração
 
 - **PR:** [#86](https://github.com/edubriguenti/amigosdoceu/pull/86)

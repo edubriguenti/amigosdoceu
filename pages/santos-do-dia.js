@@ -24,7 +24,7 @@ const ESTILO_TIPO = {
 const estiloTipo = (tipo) => ESTILO_TIPO[tipo] || 'border-cosmic-purple/60 text-purple-300 bg-cosmic-purple/10'
 
 const botao =
-  'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold'
+  'inline-flex min-h-[44px] items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-gold'
 
 export default function SantosDoDia({ dias, hojeServidor, proximas }) {
   const dia = useDiaAtual(dias, hojeServidor)
