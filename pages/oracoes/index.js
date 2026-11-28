@@ -80,7 +80,7 @@ export default function OracoesPage() {
               <button
                 key={categoria}
                 onClick={() => setCategoriaFiltro(categoria)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`min-h-[44px] px-5 py-2 rounded-full text-sm font-medium transition-all ${
                   categoriaFiltro === categoria
                     ? 'bg-accent-600 text-white shadow-md'
                     : 'bg-primary-100 text-neutral-700 hover:bg-primary-200'
